@@ -51,14 +51,16 @@ h1,h2,h3,.serif{font-family:'Fraunces','Noto Serif SC','Noto Serif KR',serif;fon
 .btn.wide{width:100%}
 
 /* ============ TOPBAR & NAV ============ */
-.topbar{background:var(--green-d);color:var(--sand);font-size:12.5px;padding:8px 0}
+/* FIX: topbar diberi z-index lebih tinggi dari navbar agar popup bahasa tidak tertutup */
+.topbar{background:var(--green-d);color:var(--sand);font-size:12.5px;padding:8px 0;position:relative;z-index:56}
 .topbar .container{display:flex;justify-content:space-between;align-items:center;gap:14px}
 .topbar .tb-left{display:flex;align-items:center;gap:8px;opacity:.9}
 .topbar .tb-right{display:flex;align-items:center;gap:16px}
 .lang{position:relative}
 .lang-btn{display:flex;align-items:center;gap:7px;background:transparent;border:1px solid rgba(243,238,223,.3);color:var(--sand);padding:5px 12px;border-radius:999px;font-size:12.5px;font-weight:600;transition:.2s}
 .lang-btn:hover{border-color:var(--sand)}
-.lang-menu{position:absolute;right:0;top:calc(100% + 8px);background:var(--white);color:var(--ink);border:1px solid var(--line);border-radius:14px;box-shadow:0 18px 40px rgba(23,37,28,.18);padding:6px;min-width:190px;display:none;z-index:50}
+/* FIX: z-index popup bahasa dinaikkan ke 60 (di atas navbar yang 55) */
+.lang-menu{position:absolute;right:0;top:calc(100% + 8px);background:var(--white);color:var(--ink);border:1px solid var(--line);border-radius:14px;box-shadow:0 18px 40px rgba(23,37,28,.18);padding:6px;min-width:190px;display:none;z-index:60}
 .lang-menu.open{display:block}
 .lang-menu button{display:flex;width:100%;align-items:center;justify-content:space-between;gap:14px;padding:9px 13px;border:none;background:transparent;border-radius:9px;font-size:13.5px;font-weight:600;color:var(--ink)}
 .lang-menu button:hover{background:var(--bg2)}
