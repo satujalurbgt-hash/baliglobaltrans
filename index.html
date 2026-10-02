@@ -1,0 +1,1264 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1D3A2C">
+<title>Bali Global Tran — Tour, Hotel Lembongan & Penjemputan Bandara</title>
+<meta name="description" content="Bali Global Tran — travel agent lokal Bali: paket tour, hotel Nusa Lembongan, dan penjemputan bandara 24/7. Booking mudah via WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ============ DASAR ============ */
+:root{
+  --bg:#F7F2E7; --bg2:#EFE7D4; --white:#FFFDF8;
+  --ink:#232D24; --muted:#6E7A6B;
+  --green:#2E5641; --green-d:#1D3A2C; --green-x:#152B20;
+  --terra:#BF5B32; --terra-d:#A3491F; --gold:#D9A13B;
+  --line:#E2D8C3; --sand:#F3EEDF;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans','Noto Sans SC','Noto Sans KR',sans-serif;background:var(--bg);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;width:100%;height:100%;object-fit:cover}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer}
+::selection{background:var(--green);color:var(--sand)}
+.container{width:min(1160px,92%);margin:0 auto}
+section{padding:92px 0;scroll-margin-top:84px}
+.lucide{width:18px;height:18px;stroke-width:2}
+.ic-s{width:13px;height:13px}.ic-m{width:16px;height:16px}.ic-l{width:22px;height:22px}
+
+/* ============ TIPOGRAFI UMUM ============ */
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--terra)}
+.eyebrow::before{content:"";width:30px;height:1.5px;background:var(--terra)}
+h1,h2,h3,.serif{font-family:'Fraunces','Noto Serif SC','Noto Serif KR',serif;font-weight:600;letter-spacing:-.015em}
+.sec-head h2{font-size:clamp(1.9rem,3.6vw,2.9rem);line-height:1.12;margin:14px 0 12px;max-width:640px}
+.sec-head .sub{color:var(--muted);max-width:560px;font-size:15.5px}
+
+/* ============ TOMBOL ============ */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:13px 24px;border-radius:999px;font-weight:700;font-size:14px;border:1.5px solid transparent;transition:.25s}
+.btn.solid{background:var(--green);color:var(--sand)}
+.btn.solid:hover{background:var(--green-d);transform:translateY(-2px)}
+.btn.terra{background:var(--terra);color:#FFF3E6}
+.btn.terra:hover{background:var(--terra-d);transform:translateY(-2px)}
+.btn.ghost{border-color:rgba(35,45,36,.28);color:var(--ink);background:transparent}
+.btn.ghost:hover{border-color:var(--ink)}
+.btn.on-dark{border-color:rgba(243,238,223,.35);color:var(--sand)}
+.btn.on-dark:hover{border-color:var(--sand)}
+.btn.sm{padding:9px 16px;font-size:13px}
+.btn.wide{width:100%}
+
+/* ============ TOPBAR & NAV ============ */
+.topbar{background:var(--green-d);color:var(--sand);font-size:12.5px;padding:8px 0}
+.topbar .container{display:flex;justify-content:space-between;align-items:center;gap:14px}
+.topbar .tb-left{display:flex;align-items:center;gap:8px;opacity:.9}
+.topbar .tb-right{display:flex;align-items:center;gap:16px}
+.lang{position:relative}
+.lang-btn{display:flex;align-items:center;gap:7px;background:transparent;border:1px solid rgba(243,238,223,.3);color:var(--sand);padding:5px 12px;border-radius:999px;font-size:12.5px;font-weight:600;transition:.2s}
+.lang-btn:hover{border-color:var(--sand)}
+.lang-menu{position:absolute;right:0;top:calc(100% + 8px);background:var(--white);color:var(--ink);border:1px solid var(--line);border-radius:14px;box-shadow:0 18px 40px rgba(23,37,28,.18);padding:6px;min-width:190px;display:none;z-index:50}
+.lang-menu.open{display:block}
+.lang-menu button{display:flex;width:100%;align-items:center;justify-content:space-between;gap:14px;padding:9px 13px;border:none;background:transparent;border-radius:9px;font-size:13.5px;font-weight:600;color:var(--ink)}
+.lang-menu button:hover{background:var(--bg2)}
+.lang-menu button.on{color:var(--terra)}
+
+.nav{position:sticky;top:0;z-index:55;background:rgba(247,242,231,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav .container{display:flex;align-items:center;justify-content:space-between;height:72px;gap:20px}
+.logo{display:flex;align-items:center;gap:11px}
+.logo-mark{width:42px;height:42px;border-radius:13px;background:var(--green-d);color:var(--gold);display:flex;align-items:center;justify-content:center;flex:none;overflow:hidden}
+.logo-mark img{width:100%;height:100%;object-fit:contain;background:var(--white);padding:4px}
+.logo-name{font-family:'Fraunces',serif;font-size:20px;font-weight:600;line-height:1.05}
+.logo-sub{font-size:9.5px;letter-spacing:.3em;font-weight:700;color:var(--terra);text-transform:uppercase}
+.nav-links{display:flex;gap:26px}
+.nav-links a{font-size:14px;font-weight:600;color:var(--ink);position:relative;padding:4px 0}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:2px;background:var(--terra);transition:.25s}
+.nav-links a:hover::after{width:100%}
+.nav-cta{display:flex;align-items:center;gap:12px}
+.burger{display:none;background:none;border:none;color:var(--ink);padding:6px}
+
+/* Drawer mobile */
+.drawer{position:fixed;inset:0;background:var(--green-d);color:var(--sand);z-index:70;padding:26px;display:flex;flex-direction:column;transform:translateX(102%);transition:.4s cubic-bezier(.6,.05,.28,.99)}
+.drawer.open{transform:translateX(0)}
+.drawer-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:34px}
+.drawer-top .logo-mark{background:rgba(217,161,59,.15);color:var(--gold)}
+.drawer nav{display:flex;flex-direction:column;gap:6px}
+.drawer nav a{font-family:'Fraunces',serif;font-size:30px;padding:9px 0;border-bottom:1px solid rgba(243,238,223,.12)}
+.drawer .d-lang{margin-top:auto;display:flex;gap:8px;flex-wrap:wrap;padding-top:24px}
+.drawer .d-lang button{background:transparent;border:1px solid rgba(243,238,223,.3);color:var(--sand);padding:8px 15px;border-radius:999px;font-size:13px;font-weight:600}
+.drawer .d-lang button.on{background:var(--gold);border-color:var(--gold);color:var(--green-x)}
+.icon-btn{background:transparent;border:1px solid rgba(243,238,223,.3);color:var(--sand);width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+
+/* ============ HERO ============ */
+.hero{padding:70px 0 96px;position:relative}
+.hero .container{display:grid;grid-template-columns:1.04fr .96fr;gap:56px;align-items:center}
+.hero-chip{display:inline-flex;align-items:center;gap:9px;background:var(--white);border:1px solid var(--line);border-radius:999px;padding:7px 15px;font-size:12.5px;font-weight:700;color:var(--green-d)}
+.hero-chip .dot{width:7px;height:7px;border-radius:50%;background:var(--terra);flex:none}
+.hero h1{font-size:clamp(2.5rem,5.6vw,4.4rem);line-height:1.03;margin:20px 0 22px}
+.hero h1 .hl{color:var(--terra);font-style:italic;font-weight:500}
+.hero .lead{color:var(--muted);font-size:16.5px;max-width:520px}
+.hero-cta{display:flex;gap:14px;margin-top:32px;flex-wrap:wrap}
+.hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:50px}
+.hstat{border-left:1.5px solid var(--line);padding-left:14px}
+.hstat b{display:block;font-family:'Fraunces',serif;font-size:27px;font-weight:600;color:var(--green-d);line-height:1.1}
+.hstat span{font-size:11.5px;color:var(--muted);font-weight:600;letter-spacing:.02em}
+.hero-visual{position:relative}
+.orb{position:absolute;top:-46px;right:-70px;width:330px;height:330px;border-radius:50%;background:var(--bg2);z-index:0}
+.arch-main{position:relative;z-index:1;width:76%;margin-left:auto;aspect-ratio:4/5;border-radius:999px 999px 26px 26px;overflow:hidden;border:8px solid var(--white);box-shadow:0 30px 60px rgba(23,37,28,.18)}
+.arch-small{position:absolute;z-index:2;left:-6px;bottom:-38px;width:47%;aspect-ratio:5/4;border-radius:24px;overflow:hidden;border:8px solid var(--white);box-shadow:0 22px 44px rgba(23,37,28,.2)}
+.float-card{position:absolute;z-index:3;top:38px;left:-14px;display:flex;align-items:center;gap:11px;background:var(--white);border:1px solid var(--line);border-radius:16px;padding:12px 17px;box-shadow:0 16px 34px rgba(23,37,28,.14)}
+.float-card .fic{width:36px;height:36px;border-radius:11px;background:var(--green-d);color:var(--gold);display:flex;align-items:center;justify-content:center;flex:none}
+.float-card b{font-size:13px;display:block;line-height:1.3}
+.float-card span{font-size:11.5px;color:var(--muted)}
+.float-chip{position:absolute;z-index:3;bottom:44px;right:8px;display:flex;align-items:center;gap:8px;background:var(--green-d);color:var(--sand);border-radius:999px;padding:9px 16px;font-size:12.5px;font-weight:700;box-shadow:0 14px 30px rgba(23,37,28,.25)}
+.float-chip .lucide{color:var(--gold)}
+
+/* ============ MARQUEE ============ */
+.marquee{background:var(--green-d);color:var(--sand);overflow:hidden;border-top:1px solid var(--green-x)}
+.mq-track{display:flex;width:max-content;gap:52px;padding:15px 0;animation:mq 30s linear infinite}
+.mq-track span{display:flex;align-items:center;gap:12px;font-size:13px;font-weight:700;letter-spacing:.22em;white-space:nowrap}
+.mq-track .lucide{color:var(--gold);width:15px;height:15px}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* ============ DESTINASI ============ */
+.tabs{display:inline-flex;gap:4px;background:var(--bg2);padding:6px;border-radius:999px;margin-top:30px;flex-wrap:wrap}
+.tab{border:none;background:transparent;padding:9px 19px;border-radius:999px;font-size:13.5px;font-weight:700;color:var(--muted);display:inline-flex;align-items:center;gap:7px;transition:.25s}
+.tab.on{background:var(--green-d);color:var(--sand)}
+.dgrid{margin-top:44px;columns:3;column-gap:20px}
+.dcard{break-inside:avoid;margin-bottom:20px;background:var(--white);border:1px solid var(--line);border-radius:22px;overflow:hidden;cursor:pointer;transition:transform .35s,box-shadow .35s;display:flex;flex-direction:column}
+.dcard:hover{transform:translateY(-5px);box-shadow:0 22px 44px rgba(23,37,28,.13)}
+.dcard figure{position:relative;overflow:hidden;flex:none}
+.dcard figure img{transition:transform .6s ease}
+.dcard:hover figure img{transform:scale(1.06)}
+.cat{position:absolute;top:14px;left:14px;display:inline-flex;align-items:center;gap:6px;background:rgba(21,43,32,.82);color:var(--sand);font-size:10.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;padding:6px 11px;border-radius:999px;backdrop-filter:blur(4px)}
+.cat .lucide{width:11px;height:11px;color:var(--gold)}
+.dbody{padding:18px 20px 20px}
+.darea{display:flex;align-items:center;gap:6px;font-size:11.5px;font-weight:700;color:var(--terra);letter-spacing:.05em;text-transform:uppercase}
+.darea .lucide{width:12px;height:12px}
+.dbody h3{font-size:21px;margin:8px 0 7px}
+.dbody p{font-size:13.5px;color:var(--muted);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.dmore{display:inline-flex;align-items:center;gap:6px;margin-top:13px;font-size:13px;font-weight:700;color:var(--terra)}
+.dmore .lucide{width:14px;height:14px;transition:.25s}
+.dcard:hover .dmore .lucide{transform:translate(2px,-2px)}
+
+/* ============ MODAL ============ */
+.modal{position:fixed;inset:0;z-index:75;display:none;align-items:center;justify-content:center;padding:20px}
+.modal.open{display:flex}
+.modal .backdrop{position:absolute;inset:0;background:rgba(18,28,21,.6);backdrop-filter:blur(5px)}
+.sheet{position:relative;width:min(720px,100%);max-height:88vh;overflow-y:auto;background:var(--bg);border-radius:26px;animation:pop .35s cubic-bezier(.3,1.4,.5,1)}
+@keyframes pop{from{opacity:0;transform:translateY(24px) scale(.96)}}
+.sheet figure{height:280px;position:relative}
+.sheet .xbtn{position:absolute;top:16px;right:16px;width:38px;height:38px;border-radius:50%;border:none;background:rgba(255,253,248,.92);color:var(--ink);display:flex;align-items:center;justify-content:center;z-index:2}
+.sheet .mbody{padding:26px 30px 30px}
+.sheet h3{font-size:30px;margin:8px 0 4px}
+.sheet .spots{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 22px}
+.spot{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line);background:var(--white);padding:7px 13px;border-radius:999px;font-size:12.5px;font-weight:600}
+.spot .lucide{width:13px;height:13px;color:var(--green)}
+.sheet .actions{display:flex;gap:12px;flex-wrap:wrap}
+
+/* ============ PAKET ============ */
+.plist{margin-top:44px;border-bottom:1px solid var(--line)}
+.prow{border-top:1px solid var(--line)}
+.phead{display:grid;grid-template-columns:58px 1fr auto 30px;gap:20px;align-items:center;padding:26px 6px;cursor:pointer;transition:.2s}
+.phead:hover{background:rgba(255,253,248,.7)}
+.pnum{font-family:'Fraunces',serif;font-style:italic;font-size:19px;color:var(--terra)}
+.pname{font-size:clamp(19px,2.4vw,26px);line-height:1.15}
+.pmeta{font-size:12.5px;color:var(--muted);font-weight:600;margin-top:3px}
+.pprice{text-align:right}
+.pprice b{font-family:'Fraunces',serif;font-size:21px;font-weight:600;color:var(--green-d);white-space:nowrap}
+.pprice span{display:block;font-size:11.5px;color:var(--muted)}
+.pchev{color:var(--muted);transition:.35s;display:flex;justify-content:center}
+.prow.open .pchev{transform:rotate(45deg);color:var(--terra)}
+.pbody{display:grid;grid-template-rows:0fr;transition:grid-template-rows .5s cubic-bezier(.4,0,.2,1)}
+.prow.open .pbody{grid-template-rows:1fr}
+.pbody>div{overflow:hidden}
+.pinner{display:grid;grid-template-columns:1.15fr .85fr;gap:36px;padding:4px 6px 32px 84px}
+.itin-t{font-size:11.5px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+.itin{list-style:none}
+.itin li{display:flex;gap:12px;align-items:baseline;padding:7px 0;font-size:14px;border-bottom:1px dashed var(--line)}
+.itin .n{font-family:'Fraunces',serif;font-style:italic;color:var(--terra);font-size:14px;flex:none;width:20px}
+.incl-box{background:var(--white);border:1px solid var(--line);border-radius:18px;padding:20px 22px;height:100%;display:flex;flex-direction:column;gap:14px}
+.incl-box .row{display:flex;gap:10px;font-size:13.5px;color:var(--ink)}
+.incl-box .row .lucide{color:var(--green);flex:none;margin-top:3px;width:15px;height:15px}
+.incl-box .btn{margin-top:auto}
+
+/* ============ LEMBONGAN (SECTION GELAP) ============ */
+.lembongan{background:var(--green-d);color:var(--sand)}
+.lembongan .eyebrow{color:var(--gold)}
+.lembongan .eyebrow::before{background:var(--gold)}
+.lembongan .sec-head h2{color:var(--sand)}
+.lemb-top{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;margin-top:10px}
+.lemb-desc{color:rgba(243,238,223,.75);font-size:15.5px;max-width:520px}
+.acts{display:grid;grid-template-columns:1fr 1fr;gap:22px 26px;margin-top:34px}
+.act{display:flex;gap:13px}
+.act .aic{width:40px;height:40px;flex:none;border-radius:12px;background:rgba(217,161,59,.15);border:1px solid rgba(217,161,59,.35);color:var(--gold);display:flex;align-items:center;justify-content:center}
+.act b{font-size:14.5px;display:block}
+.act p{font-size:12.5px;color:rgba(243,238,223,.65);line-height:1.5}
+.lemb-arch{aspect-ratio:4/5;border-radius:999px 999px 26px 26px;overflow:hidden;border:8px solid rgba(243,238,223,.12);position:relative}
+.stays{margin-top:74px}
+.stays-head{display:flex;justify-content:space-between;align-items:baseline;gap:20px;margin-bottom:24px}
+.stays-head h3{font-size:clamp(20px,2.6vw,26px);color:var(--sand)}
+.stays-grid{display:grid;grid-template-columns:1.08fr 1fr;gap:20px}
+.stay-feat{grid-row:span 2;background:var(--white);color:var(--ink);border-radius:22px;overflow:hidden;display:flex;flex-direction:column}
+.stay-feat figure{height:250px;position:relative;flex:none}
+.stay-feat .dbody{padding:22px 24px 24px;display:flex;flex-direction:column;flex:1}
+.pop-tag{position:absolute;top:14px;right:14px;background:var(--gold);color:var(--green-x);font-size:10.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:6px 12px;border-radius:999px}
+.stay-sm{background:var(--white);color:var(--ink);border-radius:20px;padding:16px;display:flex;gap:16px;align-items:center}
+.stay-sm figure{width:104px;height:104px;border-radius:15px;overflow:hidden;flex:none}
+.stay-sm h4{font-family:'Fraunces',serif;font-size:17px;font-weight:600}
+.stay-sm .darea{margin:3px 0 5px}
+.stay-sm p{font-size:12px;color:var(--muted);line-height:1.45}
+.stay-foot{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:auto;padding-top:14px}
+.price b{font-family:'Fraunces',serif;font-size:20px;font-weight:600;color:var(--green-d)}
+.price span{font-size:12px;color:var(--muted)}
+.stay-sm .stay-foot{padding-top:8px;margin-top:6px}
+.stay-sm .price b{font-size:17px}
+
+/* ============ TRANSPORT ============ */
+.transport{background:var(--bg2)}
+.tr-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;margin-top:44px;align-items:start}
+.step{display:flex;gap:20px;position:relative;padding-bottom:34px}
+.step:last-child{padding-bottom:0}
+.step::before{content:"";position:absolute;left:21px;top:46px;bottom:4px;width:1.5px;background-image:linear-gradient(var(--terra) 40%,transparent 40%);background-size:1.5px 8px}
+.step:last-child::before{display:none}
+.step .num{width:44px;height:44px;flex:none;border-radius:50%;border:1.5px solid var(--terra);color:var(--terra);font-family:'Fraunces',serif;font-style:italic;font-size:18px;display:flex;align-items:center;justify-content:center;background:var(--bg2)}
+.step b{font-size:16.5px;display:block;margin-top:8px}
+.step p{font-size:13.5px;color:var(--muted);margin-top:4px}
+.rates{background:var(--white);border:1px solid var(--line);border-radius:24px;padding:26px 28px;box-shadow:0 20px 44px rgba(23,37,28,.08)}
+.rates-head{display:flex;align-items:center;gap:12px;margin-bottom:8px}
+.rates-head .ric{width:40px;height:40px;border-radius:12px;background:var(--green-d);color:var(--gold);display:flex;align-items:center;justify-content:center;flex:none}
+.rates-head b{font-size:16px}
+.route{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:13px 0;border-bottom:1px dashed var(--line)}
+.route .rn{font-weight:700;font-size:14.5px}
+.route .rt{font-size:12px;color:var(--muted);margin-left:8px;font-weight:600}
+.route .rp{font-family:'Fraunces',serif;font-size:16.5px;color:var(--terra);white-space:nowrap}
+.rates .note{display:flex;gap:9px;font-size:12.5px;color:var(--muted);margin:16px 0 20px}
+.rates .note .lucide{color:var(--green);flex:none;margin-top:2px;width:15px;height:15px}
+
+/* ============ FAQ ============ */
+.faq-wrap{max-width:820px;margin:40px auto 0}
+.frow{border-top:1px solid var(--line)}
+.frow:last-child{border-bottom:1px solid var(--line)}
+.fq{width:100%;display:flex;justify-content:space-between;align-items:center;gap:18px;background:none;border:none;text-align:left;padding:22px 6px;font-size:16.5px;font-weight:700;color:var(--ink)}
+.fq .lucide{flex:none;color:var(--terra);transition:.35s;width:20px;height:20px}
+.frow.open .fq .lucide{transform:rotate(45deg)}
+.fa{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s ease}
+.frow.open .fa{grid-template-rows:1fr}
+.fa>div{overflow:hidden}
+.fa p{padding:0 6px 24px;color:var(--muted);font-size:14.5px;max-width:680px}
+
+/* ============ BOOKING ============ */
+.booking{background:var(--bg)}
+.bk-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;margin-top:44px;align-items:start}
+.bk-form{background:var(--green-d);border-radius:28px;padding:38px;color:var(--sand)}
+.bk-form.flash{animation:flash 1.2s ease}
+@keyframes flash{0%,100%{box-shadow:0 0 0 0 transparent}30%{box-shadow:0 0 0 5px var(--gold)}}
+.frow2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.fld label{display:block;font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:rgba(243,238,223,.65);margin-bottom:8px}
+.fld input,.fld select,.fld textarea{width:100%;background:var(--white);border:1.5px solid transparent;border-radius:13px;padding:13px 15px;font-family:inherit;font-size:14px;color:var(--ink);transition:.2s;appearance:none}
+.fld select{background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="%23232D24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>');background-repeat:no-repeat;background-position:right 14px center;padding-right:40px}
+.fld textarea{resize:vertical;min-height:88px}
+.fld input:focus,.fld select:focus,.fld textarea:focus{outline:none;border-color:var(--gold)}
+.bk-form .btn{margin-top:8px}
+.bk-hint{display:flex;align-items:center;justify-content:center;gap:8px;font-size:12px;color:rgba(243,238,223,.6);margin-top:14px;text-align:center}
+.bk-side{display:flex;flex-direction:column;gap:16px}
+.wa-card{background:var(--white);border:1px solid var(--line);border-radius:22px;padding:28px;display:flex;align-items:center;gap:18px}
+.wa-card .wic{width:54px;height:54px;flex:none;border-radius:16px;background:#E7F0E4;color:var(--green);display:flex;align-items:center;justify-content:center}
+.wa-card .lucide{width:25px;height:25px}
+.wa-card b{font-family:'Fraunces',serif;font-size:23px;font-weight:600;display:block;line-height:1.2}
+.wa-card span{font-size:12.5px;color:var(--muted)}
+.wa-card .btn{margin-left:auto;flex:none}
+.side-row{display:flex;gap:14px;background:var(--white);border:1px solid var(--line);border-radius:18px;padding:18px 20px;align-items:flex-start}
+.side-row .sic{width:38px;height:38px;flex:none;border-radius:11px;background:var(--bg2);color:var(--terra);display:flex;align-items:center;justify-content:center}
+.side-row b{font-size:14.5px;display:block}
+.side-row p{font-size:12.5px;color:var(--muted)}
+
+/* ============ FOOTER ============ */
+footer{background:var(--green-x);color:rgba(243,238,223,.8);padding:66px 0 26px}
+.ft-grid{display:grid;grid-template-columns:1.4fr 1fr 1.1fr;gap:44px;padding-bottom:44px;border-bottom:1px solid rgba(243,238,223,.12)}
+.ft-brand p{font-size:13.5px;color:rgba(243,238,223,.6);margin-top:14px;max-width:300px}
+.ft-brand .logo-mark{background:rgba(217,161,59,.15);color:var(--gold)}
+.ft-brand .logo-name,.ft-brand .logo-sub{color:var(--sand)}
+footer h4{color:var(--sand);font-size:13px;letter-spacing:.18em;text-transform:uppercase;margin-bottom:18px;font-weight:800}
+.ft-links{display:flex;flex-direction:column;gap:11px}
+.ft-links a{font-size:14px;transition:.2s}
+.ft-links a:hover{color:var(--gold)}
+.ft-contact{display:flex;flex-direction:column;gap:13px;font-size:13.5px}
+.ft-contact div{display:flex;gap:11px;align-items:flex-start}
+.ft-contact .lucide{color:var(--gold);flex:none;margin-top:3px;width:15px;height:15px}
+.ft-bottom{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;padding-top:24px;font-size:12.5px;color:rgba(243,238,223,.45)}
+
+/* ============ CHAT AI ============ */
+.fab{position:fixed;right:22px;bottom:22px;width:58px;height:58px;border-radius:50%;background:var(--terra);color:#FFF3E6;border:none;display:flex;align-items:center;justify-content:center;box-shadow:0 14px 34px rgba(191,91,50,.42);z-index:65;transition:.3s}
+.fab:hover{transform:scale(1.08)}
+.fab .lucide{width:25px;height:25px}
+.fab .ping{position:absolute;top:4px;right:4px;width:13px;height:13px;border-radius:50%;background:var(--gold);border:2.5px solid var(--bg)}
+.cpanel{position:fixed;right:22px;bottom:94px;width:min(384px,calc(100vw - 30px));height:min(560px,calc(100dvh - 132px));background:var(--bg);border:1px solid var(--line);border-radius:22px;box-shadow:0 32px 64px rgba(21,43,32,.28);display:flex;flex-direction:column;overflow:hidden;z-index:64;opacity:0;pointer-events:none;transform:translateY(16px) scale(.97);transition:.32s cubic-bezier(.3,1.2,.4,1)}
+.cpanel.open{opacity:1;pointer-events:auto;transform:none}
+.chead{background:var(--green-d);color:var(--sand);padding:15px 18px;display:flex;align-items:center;gap:12px;flex:none}
+.chead .cav{width:40px;height:40px;border-radius:13px;background:var(--gold);color:var(--green-x);display:flex;align-items:center;justify-content:center;flex:none}
+.chead b{font-family:'Fraunces',serif;font-size:16.5px;font-weight:600;display:block;line-height:1.15}
+.chead .st{display:flex;align-items:center;gap:6px;font-size:11px;color:rgba(243,238,223,.7)}
+.chead .st .d{width:7px;height:7px;border-radius:50%;background:#7BC47F;animation:pulse 1.8s infinite}
+@keyframes pulse{50%{opacity:.4}}
+.chead .cwa{margin-left:auto;width:38px;height:38px;border-radius:12px;border:1px solid rgba(243,238,223,.3);background:transparent;color:var(--sand);display:flex;align-items:center;justify-content:center;transition:.2s}
+.chead .cwa:hover{background:rgba(243,238,223,.12)}
+.cbody{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px;scrollbar-width:thin}
+.msg{max-width:84%;padding:11px 14px;border-radius:16px;font-size:13.5px;white-space:pre-line;line-height:1.55;animation:pop .3s ease}
+.msg.bot{background:var(--white);border:1px solid var(--line);border-top-left-radius:5px;align-self:flex-start}
+.msg.me{background:var(--green);color:var(--sand);border-top-right-radius:5px;align-self:flex-end}
+.msg.typing{display:flex;gap:5px;align-items:center;padding:15px 16px}
+.msg.typing i{width:6px;height:6px;border-radius:50%;background:var(--muted);animation:blink 1.1s infinite}
+.msg.typing i:nth-child(2){animation-delay:.18s}.msg.typing i:nth-child(3){animation-delay:.36s}
+@keyframes blink{50%{opacity:.25;transform:translateY(-2px)}}
+.chips-row{display:flex;gap:8px;flex-wrap:wrap;padding:0 16px 12px;flex:none}
+.qchip{border:1px solid var(--line);background:var(--white);border-radius:999px;padding:7px 13px;font-size:12px;font-weight:700;color:var(--green-d);transition:.2s}
+.qchip:hover{background:var(--green-d);color:var(--sand);border-color:var(--green-d)}
+.cinput{display:flex;gap:9px;padding:12px;border-top:1px solid var(--line);background:var(--white);flex:none}
+.cinput input{flex:1;border:1px solid var(--line);background:var(--bg);border-radius:999px;padding:11px 17px;font-family:inherit;font-size:13.5px;color:var(--ink)}
+.cinput input:focus{outline:none;border-color:var(--gold)}
+.cinput button{width:42px;height:42px;flex:none;border-radius:50%;border:none;background:var(--terra);color:#FFF3E6;display:flex;align-items:center;justify-content:center;transition:.2s}
+.cinput button:hover{background:var(--terra-d)}
+
+/* ============ TOAST & REVEAL ============ */
+.toast{position:fixed;top:20px;left:50%;transform:translate(-50%,-90px);background:var(--ink);color:var(--sand);padding:13px 22px;border-radius:999px;font-size:13.5px;font-weight:600;z-index:85;transition:.45s cubic-bezier(.3,1.2,.4,1);display:flex;align-items:center;gap:9px;box-shadow:0 18px 40px rgba(0,0,0,.25);max-width:calc(100vw - 40px)}
+.toast.show{transform:translate(-50%,0)}
+.toast .lucide{color:var(--gold);width:16px;height:16px;flex:none}
+.rv{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.rv.in{opacity:1;transform:none}
+
+/* ============ RESPONSIVE ============ */
+@media(max-width:1020px){
+  .nav-links{display:none}
+  .burger{display:flex}
+  .nav .btn{display:none}
+  .hero .container{grid-template-columns:1fr;gap:64px}
+  .hero-visual{max-width:520px;margin:0 auto;width:100%}
+  .hero-stats{grid-template-columns:repeat(2,1fr);gap:24px}
+  .dgrid{columns:2}
+  .pinner{grid-template-columns:1fr;padding-left:6px;gap:24px}
+  .lemb-top{grid-template-columns:1fr;gap:48px}
+  .lemb-arch{max-width:480px}
+  .stays-grid{grid-template-columns:1fr}
+  .stay-feat{grid-row:auto}
+  .tr-grid{grid-template-columns:1fr;gap:48px}
+  .bk-grid{grid-template-columns:1fr}
+  .ft-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:640px){
+  section{padding:70px 0}
+  .topbar .tb-left{display:none}
+  .topbar .container{justify-content:flex-end}
+  .dgrid{columns:1}
+  .dcard figure{height:230px!important}
+  .dcard{margin-bottom:16px}
+  .phead{grid-template-columns:1fr 26px;gap:10px;padding:20px 2px}
+  .pnum{display:none}
+  .pprice{grid-column:1;text-align:left;margin-top:2px}
+  .pprice span{display:inline;margin-left:6px}
+  .pchev{grid-row:1;grid-column:2}
+  .acts{grid-template-columns:1fr}
+  .bk-form{padding:26px 22px}
+  .frow2{grid-template-columns:1fr}
+  .wa-card{flex-wrap:wrap}
+  .wa-card .btn{margin-left:0;width:100%}
+  .ft-grid{grid-template-columns:1fr;gap:32px}
+  .float-card{left:0;padding:10px 13px}
+  .float-card span{display:none}
+  .sheet figure{height:200px}
+  .sheet .mbody{padding:22px}
+}
+</style>
+</head>
+<body>
+
+<!-- ================= TOPBAR ================= -->
+<div class="topbar">
+  <div class="container">
+    <div class="tb-left">
+      <i data-lucide="shield-check" class="ic-s"></i>
+      <span data-i18n="tag"></span>
+    </div>
+    <div class="tb-right">
+      <span style="display:flex;align-items:center;gap:7px;opacity:.9">
+        <i data-lucide="clock" class="ic-s"></i><span data-i18n="hours"></span>
+      </span>
+      <div class="lang">
+        <button class="lang-btn" id="langBtn" aria-label="Language">
+          <i data-lucide="globe" class="ic-s"></i>
+          <span id="langCur">ID</span>
+          <i data-lucide="chevron-down" class="ic-s"></i>
+        </button>
+        <div class="lang-menu" id="langMenu"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= NAVBAR ================= -->
+<header class="nav">
+  <div class="container">
+    <a class="logo" href="#beranda">
+      <span class="logo-mark"><i data-lucide="palmtree" class="ic-l"></i></span>
+      <span>
+        <span class="logo-name">Bali Global Tran</span><br>
+        <span class="logo-sub" data-i18n="brand"></span>
+      </span>
+    </a>
+    <nav class="nav-links">
+      <a href="#beranda" data-i18n="navHome"></a>
+      <a href="#destinasi" data-i18n="navDest"></a>
+      <a href="#paket" data-i18n="navPack"></a>
+      <a href="#lembongan" data-i18n="navLemb"></a>
+      <a href="#transport" data-i18n="navTrans"></a>
+      <a href="#faq" data-i18n="navFaq"></a>
+      <a href="#booking" data-i18n="navContact"></a>
+    </nav>
+    <div class="nav-cta">
+      <a href="#booking" class="btn terra sm" data-i18n="navBook"></a>
+      <button class="burger" id="burger" aria-label="Menu"><i data-lucide="menu" class="ic-l"></i></button>
+    </div>
+  </div>
+</header>
+
+<!-- Drawer mobile -->
+<div class="drawer" id="drawer">
+  <div class="drawer-top">
+    <a class="logo" href="#beranda">
+      <span class="logo-mark"><i data-lucide="palmtree" class="ic-l"></i></span>
+      <span class="logo-name" style="color:var(--sand)">Bali Global Tran</span>
+    </a>
+    <button class="icon-btn" id="drawerClose" aria-label="Tutup"><i data-lucide="x" class="ic-l"></i></button>
+  </div>
+  <nav>
+    <a href="#beranda" data-i18n="navHome"></a>
+    <a href="#destinasi" data-i18n="navDest"></a>
+    <a href="#paket" data-i18n="navPack"></a>
+    <a href="#lembongan" data-i18n="navLemb"></a>
+    <a href="#transport" data-i18n="navTrans"></a>
+    <a href="#faq" data-i18n="navFaq"></a>
+    <a href="#booking" data-i18n="navContact"></a>
+  </nav>
+  <div class="d-lang" id="drawerLang"></div>
+</div>
+
+<main>
+<!-- ================= HERO ================= -->
+<section class="hero" id="beranda">
+  <div class="container">
+    <div class="rv in">
+      <span class="hero-chip"><span class="dot"></span><span data-i18n="heroEyebrow"></span></span>
+      <h1><span data-i18n="heroL1"></span><br><span class="hl" data-i18n="heroL2"></span><br><span data-i18n="heroL3"></span></h1>
+      <p class="lead" data-i18n="heroDesc"></p>
+      <div class="hero-cta">
+        <a href="#paket" class="btn solid"><span data-i18n="ctaPack"></span><i data-lucide="arrow-right" class="ic-m"></i></a>
+        <a href="#" class="btn ghost wa-open"><i data-lucide="message-circle" class="ic-m"></i><span data-i18n="ctaWa"></span></a>
+      </div>
+      <div class="hero-stats">
+        <div class="hstat"><b>12+</b><span data-i18n="st1"></span></div>
+        <div class="hstat"><b>9</b><span data-i18n="st2"></span></div>
+        <div class="hstat"><b>4</b><span data-i18n="st3"></span></div>
+        <div class="hstat"><b>24/7</b><span data-i18n="st4"></span></div>
+      </div>
+    </div>
+    <div class="hero-visual rv in" style="transition-delay:.15s">
+      <div class="orb"></div>
+      <div class="arch-main"><img src="https://picsum.photos/seed/bgt-hero/900/1120.jpg" alt="Bali"></div>
+      <div class="arch-small"><img src="https://picsum.photos/seed/bgt-raft/560/450.jpg" alt="Bali"></div>
+      <div class="float-card">
+        <span class="fic"><i data-lucide="plane" class="ic-m"></i></span>
+        <span><b data-i18n="badge24"></b><span>Ngurah Rai</span></span>
+      </div>
+      <div class="float-chip"><i data-lucide="fish" class="ic-m"></i>Manta Point</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= MARQUEE ================= -->
+<div class="marquee" aria-hidden="true">
+  <div class="mq-track" id="mqTrack"></div>
+</div>
+
+<!-- ================= DESTINASI ================= -->
+<section id="destinasi">
+  <div class="container">
+    <div class="sec-head rv">
+      <span class="eyebrow" data-i18n="destEyebrow"></span>
+      <h2 data-i18n="destTitle"></h2>
+      <p class="sub" data-i18n="destSub"></p>
+      <div class="tabs" id="tabs">
+        <button class="tab on" data-f="all" data-i18n="tabAll"></button>
+        <button class="tab" data-f="sea"><i data-lucide="waves" class="ic-s"></i><span data-i18n="tabSea"></span></button>
+        <button class="tab" data-f="land"><i data-lucide="trees" class="ic-s"></i><span data-i18n="tabLand"></span></button>
+        <button class="tab" data-f="mount"><i data-lucide="mountain" class="ic-s"></i><span data-i18n="tabMount"></span></button>
+      </div>
+    </div>
+    <div class="dgrid" id="dgrid"></div>
+  </div>
+</section>
+
+<!-- ================= PAKET TOUR ================= -->
+<section id="paket">
+  <div class="container">
+    <div class="sec-head rv">
+      <span class="eyebrow" data-i18n="pkgEyebrow"></span>
+      <h2 data-i18n="pkgTitle"></h2>
+      <p class="sub" data-i18n="pkgSub"></p>
+    </div>
+    <div class="plist rv" id="plist"></div>
+  </div>
+</section>
+
+<!-- ================= LEMBONGAN ================= -->
+<section class="lembongan" id="lembongan">
+  <div class="container">
+    <div class="lemb-top">
+      <div class="rv">
+        <span class="eyebrow" data-i18n="lembEyebrow"></span>
+        <h2 style="font-size:clamp(1.8rem,3.4vw,2.7rem);line-height:1.12;margin:14px 0 14px" data-i18n="lembTitle"></h2>
+        <p class="lemb-desc" data-i18n="lembDesc"></p>
+        <div class="acts">
+          <div class="act"><span class="aic"><i data-lucide="fish" class="ic-m"></i></span><span><b data-i18n="a1t"></b><p data-i18n="a1d"></p></span></div>
+          <div class="act"><span class="aic"><i data-lucide="sailboat" class="ic-m"></i></span><span><b data-i18n="a2t"></b><p data-i18n="a2d"></p></span></div>
+          <div class="act"><span class="aic"><i data-lucide="waves" class="ic-m"></i></span><span><b data-i18n="a3t"></b><p data-i18n="a3d"></p></span></div>
+          <div class="act"><span class="aic"><i data-lucide="shell" class="ic-m"></i></span><span><b data-i18n="a4t"></b><p data-i18n="a4d"></p></span></div>
+        </div>
+      </div>
+      <div class="lemb-arch rv" style="transition-delay:.15s">
+        <img src="https://picsum.photos/seed/bgt-lembongan/800/1000.jpg" alt="Nusa Lembongan">
+      </div>
+    </div>
+    <div class="stays rv">
+      <div class="stays-head">
+        <h3 data-i18n="stayTitle"></h3>
+        <a href="#" class="wa-open" style="display:inline-flex;align-items:center;gap:7px;font-size:13.5px;font-weight:700;color:var(--gold)">
+          <i data-lucide="message-circle" class="ic-m"></i><span data-i18n="ctaWa"></span>
+        </a>
+      </div>
+      <div class="stays-grid" id="stays"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TRANSPORT / PENJEMPUTAN ================= -->
+<section class="transport" id="transport">
+  <div class="container">
+    <div class="sec-head rv">
+      <span class="eyebrow" data-i18n="trEyebrow"></span>
+      <h2 data-i18n="trTitle"></h2>
+      <p class="sub" data-i18n="trDesc"></p>
+    </div>
+    <div class="tr-grid">
+      <div class="rv">
+        <div class="step">
+          <span class="num">1</span>
+          <span><b data-i18n="s1t"></b><p data-i18n="s1d"></p></span>
+        </div>
+        <div class="step">
+          <span class="num">2</span>
+          <span><b data-i18n="s2t"></b><p data-i18n="s2d"></p></span>
+        </div>
+        <div class="step">
+          <span class="num">3</span>
+          <span><b data-i18n="s3t"></b><p data-i18n="s3d"></p></span>
+        </div>
+      </div>
+      <div class="rates rv" style="transition-delay:.12s">
+        <div class="rates-head">
+          <span class="ric"><i data-lucide="plane" class="ic-m"></i></span>
+          <b data-i18n="rateT"></b>
+        </div>
+        <div>
+          <div class="route"><span><span class="rn">Kuta / Seminyak</span><span class="rt">±25 min</span></span><span class="rp">Rp 150.000</span></div>
+          <div class="route"><span><span class="rn">Canggu</span><span class="rt">±40 min</span></span><span class="rp">Rp 200.000</span></div>
+          <div class="route"><span><span class="rn">Nusa Dua</span><span class="rt">±30 min</span></span><span class="rp">Rp 175.000</span></div>
+          <div class="route"><span><span class="rn">Ubud</span><span class="rt">±75 min</span></span><span class="rp">Rp 300.000</span></div>
+          <div class="route"><span><span class="rn">Bedugul</span><span class="rt">±2 h</span></span><span class="rp">Rp 450.000</span></div>
+          <div class="route"><span><span class="rn">Sidemen</span><span class="rt">±2,5 h</span></span><span class="rp">Rp 550.000</span></div>
+        </div>
+        <p class="note"><i data-lucide="shield-check"></i><span data-i18n="rateNote"></span></p>
+        <button class="btn terra wide" id="rateCta"><i data-lucide="plane" class="ic-m"></i><span data-i18n="rateCta"></span></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section id="faq">
+  <div class="container">
+    <div class="sec-head rv" style="text-align:center;max-width:640px;margin:0 auto">
+      <span class="eyebrow" data-i18n="faqEyebrow"></span>
+      <h2 style="margin-left:auto;margin-right:auto" data-i18n="faqTitle"></h2>
+    </div>
+    <div class="faq-wrap rv" id="flist"></div>
+  </div>
+</section>
+
+<!-- ================= BOOKING ================= -->
+<section id="booking">
+  <div class="container">
+    <div class="sec-head rv">
+      <span class="eyebrow" data-i18n="bkEyebrow"></span>
+      <h2 data-i18n="bkTitle"></h2>
+      <p class="sub" data-i18n="bkDesc"></p>
+    </div>
+    <div class="bk-grid">
+      <form class="bk-form rv" id="bkForm" novalidate>
+        <div class="frow2">
+          <div class="fld"><label data-i18n="bkName"></label><input id="fName" data-i18n-ph="phName"></div>
+          <div class="fld"><label data-i18n="bkPhone"></label><input id="fPhone" inputmode="tel" placeholder="0812 3456 7890"></div>
+        </div>
+        <div class="frow2">
+          <div class="fld"><label data-i18n="bkSvc"></label>
+            <select id="fSvc">
+              <option value="svc1" data-i18n="svc1"></option>
+              <option value="svc2" data-i18n="svc2"></option>
+              <option value="svc3" data-i18n="svc3"></option>
+              <option value="svc4" data-i18n="svc4"></option>
+              <option value="svc5" data-i18n="svc5"></option>
+            </select>
+          </div>
+          <div class="fld"><label data-i18n="bkItem"></label><input id="fItem" data-i18n-ph="phItem"></div>
+        </div>
+        <div class="frow2">
+          <div class="fld"><label data-i18n="bkDate"></label><input id="fDate" type="date"></div>
+          <div class="fld"><label data-i18n="bkPax"></label><input id="fPax" type="number" min="1" max="30" value="2"></div>
+        </div>
+        <div class="fld" style="margin-bottom:18px"><label data-i18n="bkMsg"></label><textarea id="fMsg" data-i18n-ph="phMsg"></textarea></div>
+        <button type="submit" class="btn terra wide" style="padding:15px"><i data-lucide="send" class="ic-m"></i><span data-i18n="bkSubmit"></span></button>
+        <p class="bk-hint"><i data-lucide="message-circle" class="ic-s"></i><span data-i18n="bkHint"></span></p>
+      </form>
+      <div class="bk-side rv" style="transition-delay:.12s">
+        <div class="wa-card">
+          <span class="wic"><i data-lucide="message-circle"></i></span>
+          <span><b>+62 819-3330-1033</b><span data-i18n="sideWaD"></span></span>
+          <a href="#" class="btn solid sm wa-open" style="background:var(--green)"><i data-lucide="send" class="ic-s"></i>WhatsApp</a>
+        </div>
+        <div class="side-row"><span class="sic"><i data-lucide="message-circle" class="ic-m"></i></span><span><b data-i18n="sd1t"></b><p data-i18n="sd1d"></p></span></div>
+        <div class="side-row"><span class="sic"><i data-lucide="credit-card" class="ic-m"></i></span><span><b data-i18n="sd2t"></b><p data-i18n="sd2d"></p></span></div>
+        <div class="side-row"><span class="sic"><i data-lucide="refresh-cw" class="ic-m"></i></span><span><b data-i18n="sd3t"></b><p data-i18n="sd3d"></p></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="container">
+    <div class="ft-grid">
+      <div class="ft-brand">
+        <a class="logo" href="#beranda">
+          <span class="logo-mark"><i data-lucide="palmtree" class="ic-l"></i></span>
+          <span><span class="logo-name">Bali Global Tran</span><br><span class="logo-sub" data-i18n="brand"></span></span>
+        </a>
+        <p data-i18n="ftTag"></p>
+      </div>
+      <div>
+        <h4 data-i18n="ftNav"></h4>
+        <div class="ft-links">
+          <a href="#destinasi" data-i18n="navDest"></a>
+          <a href="#paket" data-i18n="navPack"></a>
+          <a href="#lembongan" data-i18n="navLemb"></a>
+          <a href="#transport" data-i18n="navTrans"></a>
+          <a href="#booking" data-i18n="navBook"></a>
+        </div>
+      </div>
+      <div>
+        <h4 data-i18n="ftContact"></h4>
+        <div class="ft-contact">
+          <div><i data-lucide="map-pin"></i><span data-i18n="ftAddr"></span></div>
+          <div><i data-lucide="message-circle"></i><a href="#" class="wa-open" style="font-weight:700">+62 819-3330-1033</a></div>
+          <div><i data-lucide="clock"></i><span data-i18n="hours"></span></div>
+        </div>
+      </div>
+    </div>
+    <div class="ft-bottom">
+      <span data-i18n="ftRights"></span>
+      <span data-i18n="ftMade"></span>
+    </div>
+  </div>
+</footer>
+
+<!-- ================= MODAL DESTINASI ================= -->
+<div class="modal" id="modal" role="dialog" aria-modal="true">
+  <div class="backdrop" id="modalBg"></div>
+  <div class="sheet">
+    <figure><img id="mImg" src="" alt=""><button class="xbtn" id="mCloseX" aria-label="Close"><i data-lucide="x" class="ic-m"></i></button></figure>
+    <div class="mbody">
+      <span class="darea" id="mArea"></span>
+      <h3 id="mName"></h3>
+      <p id="mDesc" style="color:var(--muted);font-size:14.5px"></p>
+      <div class="it-t" style="margin-top:20px" data-i18n="mSpots"></div>
+      <div class="spots" id="mSpots"></div>
+      <div class="actions">
+        <button class="btn terra" id="mWa"><i data-lucide="message-circle" class="ic-m"></i><span data-i18n="mWa"></span></button>
+        <button class="btn ghost" id="mClose2" data-i18n="mClose"></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= CHAT AI ================= -->
+<button class="fab" id="fab" aria-label="Chat"><i data-lucide="message-circle"></i><span class="ping"></span></button>
+<div class="cpanel" id="cpanel" role="dialog" aria-label="Chat">
+  <div class="chead">
+    <span class="cav"><i data-lucide="bot" class="ic-l"></i></span>
+    <span><b data-i18n="cTitle"></b><span class="st"><span class="d"></span><span data-i18n="cStatus"></span></span></span>
+    <a href="#" class="cwa wa-open" id="chatWa" aria-label="WhatsApp" data-i18n-title="cWaBtn"><i data-lucide="send" class="ic-m"></i></a>
+  </div>
+  <div class="cbody" id="cbody"></div>
+  <div class="chips-row" id="chipsRow"></div>
+  <div class="cinput">
+    <input id="cInput" data-i18n-ph="cPh">
+    <button id="cSend" aria-label="Send"><i data-lucide="send" class="ic-m"></i></button>
+  </div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast"><i data-lucide="sparkles"></i><span id="toastMsg"></span></div>
+
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<script>
+/* =====================================================================
+   KONFIGURASI — cukup ubah bagian ini saja
+   ===================================================================== */
+const WA_NUM = '6281933301033';      // Nomor WhatsApp Bali Global Tran
+const LOGO_URL = '';                 // ← TEMPATKAN LOGO ANDA DI SINI
+                                     //   contoh: 'logo.png'  (letakkan file logo.png
+                                     //   di folder yang sama dengan index.html)
+                                     //   atau URL online: 'https://...'
+const BRAND_NAME = 'Bali Global Tran';
+const waLink = txt => 'https://wa.me/' + WA_NUM + '?text=' + encodeURIComponent(txt);
+
+/* ===================== KAMUS BAHASA ===================== */
+const T = {
+id:{brand:"Tour & Travel",tag:"Travel Agent Lokal Bali · Berlisensi",hours:"Setiap hari 07.00–21.00 WITA",
+navHome:"Beranda",navDest:"Destinasi",navPack:"Paket Tour",navLemb:"Lembongan",navTrans:"Transport",navFaq:"FAQ",navContact:"Kontak",navBook:"Booking",
+heroEyebrow:"Travel agent lokal — Bali, Indonesia",heroL1:"Jelajahi Bali",heroL2:"dari laut dan darat,",heroL3:"hingga puncak gunung.",
+heroDesc:"Paket tour, penginapan Nusa Lembongan, dan penjemputan bandara — tersusun rapi oleh tim Bali Global Tran, dengan sentuhan kebalian yang lembut, sejuk, dan alami.",
+ctaPack:"Lihat Paket Tour",ctaWa:"Chat WhatsApp",badge24:"Penjemputan Bandara 24/7",
+st1:"Destinasi kurasi",st2:"Tahun pengalaman",st3:"Bahasa didukung",st4:"Penjemputan bandara",
+destEyebrow:"Destinasi",destTitle:"Satu pulau, tiga dunia: laut, darat, dan gunung.",destSub:"Pilih kategorinya — setiap tempat di bawah sudah kami kunjungi sendiri dan siap mengantar Anda ke sana.",
+tabAll:"Semua",tabSea:"Laut",tabLand:"Darat",tabMount:"Gunung",cardDetail:"Lihat detail",
+mSpots:"Sorotan",mWa:"Pesan via WhatsApp",mClose:"Tetap jelajah",
+pkgEyebrow:"Paket Tour",pkgTitle:"Perjalanan yang sudah dirancang rapi — tinggal ikut.",pkgSub:"Harga per orang, minimal 2 peserta. Tour privat, bukan rombongan besar.",
+pItin:"Rute harian",pIncl:"Sudah termasuk",pBook:"Pesan paket ini",pPer:"per orang",
+lembEyebrow:"Nusa Lembongan",lembTitle:"Pulau kecil, keajaiban besar — 30 menit dari Sanur.",lembDesc:"Air jernih, laguna biru, dan malam yang tenang. Kami urus tiket fast boat, snorkeling, hingga penginapan pilihan.",
+lembActs:"Aktivitas unggulan",stayTitle:"Penginapan pilihan",perNight:"/malam",hTag:"Terpopuler",hBook:"Booking",
+a1t:"Snorkeling Manta Point",a1d:"Berenang berdampingan dengan pari manta di perairan terbuka Penida.",
+a2t:"Tur Mangrove",a2d:"Menyusuri hutan bakau yang tenang dengan perahu tradisional.",
+a3t:"Devil's Tears & Sunset",a3d:"Semburan ombak dan golden hour terbaik di seluruh pulau.",
+a4t:"Dream & Sunset Beach",a4d:"Laguna biru keemasan untuk berenang dan sore yang santai.",
+trEyebrow:"Transportasi",trTitle:"Penjemputan bandara & hotel, tanpa drama.",trDesc:"Driver berpengalaman menunggu di pintu kedatangan dengan papan nama Anda. Mobil privat ber-AC, harga pasti, tanpa biaya tersembunyi.",
+s1t:"Kirim jadwal kedatangan",s1d:"Isi form booking di bawah atau langsung chat WhatsApp kami.",s2t:"Konfirmasi driver",s2d:"Nama driver & nomor mobil dikirim sebelum Anda mendarat.",s3t:"Dijemput & berangkat",s3d:"Driver menunggu dengan papan nama Anda di pintu kedatangan.",
+rateT:"Tarif dari Bandara Ngurah Rai",rateNote:"Mobil privat (maks 4 penumpang) — sudah termasuk driver, BBM & air mineral. Antar-jemput antar hotel di seluruh Bali dihitung sesuai jarak.",rateCta:"Pesan penjemputan",
+faqEyebrow:"FAQ",faqTitle:"Pertanyaan yang sering masuk.",
+bkEyebrow:"Booking",bkTitle:"Ceritakan rencana Anda — sisanya kami susun.",bkDesc:"Isi form singkat ini; detail otomatis terbuka di WhatsApp kami. Dibalas ±5 menit pada jam operasional.",
+bkName:"Nama lengkap",bkPhone:"Nomor WhatsApp",bkSvc:"Pilih layanan",svc1:"Paket Tour",svc2:"Hotel / Penginapan Lembongan",svc3:"Penjemputan Bandara",svc4:"Antar-Jemput Hotel",svc5:"Lainnya",
+bkItem:"Paket / destinasi (opsional)",bkDate:"Tanggal",bkPax:"Jumlah peserta",bkMsg:"Catatan tambahan",bkSubmit:"Kirim ke WhatsApp",bkHint:"Form ini terhubung langsung ke WhatsApp 0819-3330-1033.",
+phName:"Nama Anda",phItem:"cth. Nusa Penida Day Trip",phMsg:"cth. flight jam 10.00, 4 orang",
+sd1t:"Respons cepat",sd1d:"Dibalas tim lokal kami, bukan bot otomatis.",sd2t:"Harga transparan",sd2d:"Tanpa biaya tersembunyi — bayar setelah konfirmasi.",sd3t:"Bebas atur ulang",sd3d:"Reschedule gratis hingga H-2 sebelum berangkat.",
+sideWaD:"Balasan cepat setiap hari 07.00–21.00 WITA",
+fq1:"Bagaimana cara booking?",fa1:"Isi form booking di halaman ini atau chat WhatsApp 0819-3330-1033. Kami cek ketersediaan, lalu Anda bayar setelah konfirmasi — mudah dan aman.",
+fq2:"Apakah bisa dijemput di hotel?",fa2:"Bisa. Semua paket tour sudah termasuk antar-jemput hotel area Kuta, Seminyak, Canggu, dan Ubud. Area lain menyesuaikan jarak.",
+fq3:"Pembayaran bagaimana?",fa3:"Bayar saat konfirmasi via transfer bank, QRIS, atau tunai kepada driver. Paket multi-hari cukup DP 30%.",
+fq4:"Kalau perlu membatalkan?",fa4:"Pembatalan gratis hingga H-2 sebelum keberangkatan. Cuaca buruk? Kami tawarkan reschedule atau refund penuh.",
+ftTag:"Perjalanan yang lembut, sejuk, dan alami — khas Bali sejati.",ftNav:"Jelajahi",ftContact:"Kontak",ftAddr:"Bali, Indonesia",ftRights:"© 2025 Bali Global Tran. Semua hak dilindungi.",ftMade:"Dibuat dengan sepenuh hati di Bali",
+tLang:"Bahasa diganti: {x}",tFill:"Mohon isi nama dan nomor WhatsApp terlebih dulu.",tOpen:"Membuka WhatsApp…",bkAuto:"Paket \"{x}\" siap di form booking — lengkapi datanya.",
+cTitle:"Asisten Global",cStatus:"Online · balasan instan",cPh:"Tulis pertanyaan Anda…",cWaBtn:"Lanjut ke WhatsApp",
+cHello:"Halo! Saya asisten virtual Bali Global Tran. Tanyakan soal paket, harga, penjemputan bandara, atau penginapan Lembongan — saya jawab langsung.",
+chip1:"Paket & harga",chip2:"Penjemputan bandara",chip3:"Hotel Lembongan",
+ai_pack:"Paket terpopuler kami:\n• Nusa Penida Day Trip — Rp 550.000/orang\n• Ubud Culture & Waterfall — Rp 450.000/orang\n• Kintamani Sunrise & Hot Spring — Rp 600.000/orang\n• Lembongan 2D1N — Rp 850.000/orang\n\nSudah termasuk mobil, driver & tiket masuk. Min. 2 orang. Mau saya arahkan ke form booking?",
+ai_air:"Penjemputan bandara tersedia 24/7. Driver menunggu di pintu kedatangan dengan papan nama. Tarif: Kuta/Seminyak Rp 150rb, Canggu Rp 200rb, Ubud Rp 300rb. Kirim tanggal & nomor penerbangan, sisanya kami atur.",
+ai_lem:"Nusa Lembongan & Penida ±30 menit dari Sanur dengan fast boat. Tersedia day trip, paket 2D1N (Rp 850rb, hotel termasuk), snorkeling manta, dan tur mangrove. Penginapan mulai Rp 250rb/malam.",
+ai_hot:"Pilihan penginapan kami di Lembongan: Villa Kayu Lembongan Rp 750rb, Sunset Garden Bungalow Rp 450rb, Homestay Asri Rp 250rb per malam. Semua bisa dipesan lewat WhatsApp kami.",
+ai_book:"Cara booking termudah: isi form di bagian Booking, atau langsung chat WhatsApp 0819-3330-1033. Sebutkan layanan, tanggal, dan jumlah orang — kami balas secepatnya.",
+ai_pay:"Pembayaran bisa transfer bank, QRIS, atau tunai ke driver. Untuk perjalanan multi-hari cukup DP 30% di awal.",
+ai_hours:"Kami online setiap hari 07.00–21.00 WITA. Penjemputan bandara tetap berjalan 24 jam.",
+ai_greet:"Halo! Senang bertemu Anda. Mau tanya paket tour, penjemputan bandara, atau penginapan Lembongan?",
+ai_thx:"Sama-sama! Saya siap kapan pun Anda butuh lagi.",
+ai_def:"Hmm, saya belum yakin maksudnya. Coba tanyakan tentang: paket & harga, penjemputan bandara, hotel Lembongan, atau cara booking. Atau langsung hubungi tim kami di WhatsApp 0819-3330-1033.",
+ai_wa:"Halo Bali Global Tran! Saya baru chat dengan asisten dan ingin lanjut ke tim Anda.",
+helloMsg:"Halo Bali Global Tran! Saya ingin booking:",destWa:"Halo! Saya tertarik dengan destinasi {n}. Boleh info paket & harganya?"},
+en:{brand:"Tour & Travel",tag:"Local Bali Travel Agent · Licensed",hours:"Open daily 07.00–21.00 WITA",
+navHome:"Home",navDest:"Destinations",navPack:"Tour Packages",navLemb:"Lembongan",navTrans:"Transport",navFaq:"FAQ",navContact:"Contact",navBook:"Book Now",
+heroEyebrow:"Local travel agent — Bali, Indonesia",heroL1:"Discover Bali",heroL2:"from sea and land",heroL3:"to the mountain tops.",
+heroDesc:"Tour packages, Nusa Lembongan stays, and airport pickups — neatly arranged by the Bali Global Tran team, with the gentle, cool, natural touch of true Bali.",
+ctaPack:"View Tour Packages",ctaWa:"Chat on WhatsApp",badge24:"24/7 Airport Pickup",
+st1:"Curated destinations",st2:"Years of experience",st3:"Languages supported",st4:"Airport pickup",
+destEyebrow:"Destinations",destTitle:"One island, three worlds: sea, land, and mountains.",destSub:"Pick a category — every place below has been visited by our own team and is ready for you.",
+tabAll:"All",tabSea:"Sea",tabLand:"Land",tabMount:"Mountain",cardDetail:"View details",
+mSpots:"Highlights",mWa:"Book via WhatsApp",mClose:"Keep exploring",
+pkgEyebrow:"Tour Packages",pkgTitle:"Journeys already designed to perfection — just come along.",pkgSub:"Prices per person, minimum 2 guests. Private tours, never crowded buses.",
+pItin:"Daily route",pIncl:"What's included",pBook:"Book this package",pPer:"per person",
+lembEyebrow:"Nusa Lembongan",lembTitle:"A small island with big wonders — 30 minutes from Sanur.",lembDesc:"Crystal water, blue lagoons, and calm nights. We handle fast boats, snorkeling, and hand-picked stays.",
+lembActs:"Signature activities",stayTitle:"Where to stay",perNight:"/night",hTag:"Most loved",hBook:"Book",
+a1t:"Manta Point Snorkeling",a1d:"Swim alongside manta rays in Penida's open water.",
+a2t:"Mangrove Boat Tour",a2d:"Glide through a quiet mangrove forest in a traditional boat.",
+a3t:"Devil's Tears & Sunset",a3d:"Crashing wave bursts and the island's best golden hour.",
+a4t:"Dream & Sunset Beach",a4d:"Golden-blue lagoons for swimming and slow afternoons.",
+trEyebrow:"Transport",trTitle:"Airport & hotel pickup, zero hassle.",trDesc:"Experienced drivers wait at arrivals holding your name board. Private AC cars, fixed prices, no hidden fees.",
+s1t:"Send your arrival schedule",s1d:"Fill the booking form below or chat us directly on WhatsApp.",s2t:"Driver confirmation",s2d:"Driver name & car plate are sent before you land.",s3t:"Met & on the road",s3d:"Your driver waits with your name board at arrivals.",
+rateT:"Rates from Ngurah Rai Airport",rateNote:"Private car (max 4 passengers) — includes driver, fuel & mineral water. Hotel-to-hotel transfers across Bali are priced by distance.",rateCta:"Book a pickup",
+faqEyebrow:"FAQ",faqTitle:"Questions we hear the most.",
+bkEyebrow:"Booking",bkTitle:"Tell us your plan — we'll arrange the rest.",bkDesc:"Fill this short form; your details open automatically in our WhatsApp. Replies within ±5 minutes during operating hours.",
+bkName:"Full name",bkPhone:"WhatsApp number",bkSvc:"Choose a service",svc1:"Tour package",svc2:"Hotel / Lembongan stay",svc3:"Airport pickup",svc4:"Hotel transfer",svc5:"Other",
+bkItem:"Package / destination (optional)",bkDate:"Date",bkPax:"Guests",bkMsg:"Additional notes",bkSubmit:"Send to WhatsApp",bkHint:"This form connects straight to WhatsApp 0819-3330-1033.",
+phName:"Your name",phItem:"e.g. Nusa Penida Day Trip",phMsg:"e.g. 10 AM flight, 4 people",
+sd1t:"Fast response",sd1d:"Answered by our local team, not a bot.",sd2t:"Transparent pricing",sd2d:"No hidden fees — pay after confirmation.",sd3t:"Flexible reschedule",sd3d:"Free changes up to 2 days before departure.",
+sideWaD:"Fast replies daily 07.00–21.00 WITA",
+fq1:"How do I book?",fa1:"Fill the booking form on this page or WhatsApp 0819-3330-1033. We confirm availability, and you pay after confirmation — simple and safe.",
+fq2:"Can you pick me up at my hotel?",fa2:"Yes. All tour packages include hotel transfers in Kuta, Seminyak, Canggu, and Ubud. Other areas are adjusted by distance.",
+fq3:"How does payment work?",fa3:"Pay at confirmation via bank transfer, QRIS, or cash to the driver. Multi-day packages only need a 30% deposit.",
+fq4:"What if I need to cancel?",fa4:"Free cancellation until 2 days before departure. Bad weather? We offer reschedule or a full refund.",
+ftTag:"Journeys gentle, cool, and true to Bali.",ftNav:"Explore",ftContact:"Contact",ftAddr:"Bali, Indonesia",ftRights:"© 2025 Bali Global Tran. All rights reserved.",ftMade:"Crafted with heart in Bali",
+tLang:"Language changed: {x}",tFill:"Please fill in your name and WhatsApp number first.",tOpen:"Opening WhatsApp…",bkAuto:"Package \"{x}\" is ready in the booking form — just complete your details.",
+cTitle:"Global Assistant",cStatus:"Online · instant replies",cPh:"Type your question…",cWaBtn:"Continue to WhatsApp",
+cHello:"Hi! I'm the virtual assistant of Bali Global Tran. Ask about packages, prices, airport pickup, or Lembongan stays — I answer instantly.",
+chip1:"Packages & prices",chip2:"Airport pickup",chip3:"Lembongan hotels",
+ai_pack:"Our most popular packages:\n• Nusa Penida Day Trip — Rp 550,000/person\n• Ubud Culture & Waterfall — Rp 450,000/person\n• Kintamani Sunrise & Hot Spring — Rp 600,000/person\n• Lembongan 2D1N — Rp 850,000/person\n\nIncludes car, driver & entrance fees. Min. 2 people. Want me to take you to the booking form?",
+ai_air:"Airport pickup runs 24/7. Your driver waits at arrivals with a name board. Rates: Kuta/Seminyak Rp 150k, Canggu Rp 200k, Ubud Rp 300k. Send your date & flight number — we handle the rest.",
+ai_lem:"Nusa Lembongan & Penida are ±30 min by fast boat from Sanur. We offer day trips, 2D1N packages (Rp 850k incl. stay), manta snorkeling, and mangrove tours. Stays from Rp 250k/night.",
+ai_hot:"Our picks in Lembongan: Villa Kayu Rp 750k, Sunset Garden Bungalow Rp 450k, Homestay Asri Rp 250k per night. All bookable via our WhatsApp.",
+ai_book:"Easiest way: fill the booking form (Booking section) or chat WhatsApp 0819-3330-1033 with your service, date, and group size — we reply fast.",
+ai_pay:"We accept bank transfer, QRIS, or cash to the driver. Multi-day trips only need a 30% deposit upfront.",
+ai_hours:"We're online daily 07.00–21.00 WITA (GMT+8). Airport pickups run 24 hours.",
+ai_greet:"Hello! Nice to meet you. Ask me about tour packages, airport pickup, or Lembongan stays.",
+ai_thx:"You're welcome! I'm here anytime you need me.",
+ai_def:"Hmm, I'm not sure I got that. Try asking about: packages & prices, airport pickup, Lembongan hotels, or how to book. Or reach our team on WhatsApp 0819-3330-1033.",
+ai_wa:"Hello Bali Global Tran! I was just chatting with your assistant and would like to continue with your team.",
+helloMsg:"Hello Bali Global Tran! I'd like to book:",destWa:"Hi! I'm interested in {n}. Could you share packages & prices?"},
+zh:{brand:"旅游服务",tag:"巴厘岛本地旅行社 · 持照经营",hours:"每日 07:00–21:00（巴厘时间）",
+navHome:"首页",navDest:"目的地",navPack:"一日游套餐",navLemb:"蓝梦岛",navTrans:"接送",navFaq:"常见问题",navContact:"联系",navBook:"预订",
+heroEyebrow:"巴厘岛本地旅行社 — 印度尼西亚",heroL1:"探索巴厘",heroL2:"从海洋与大地，",heroL3:"到火山之巅。",
+heroDesc:"一日游套餐、蓝梦岛住宿与机场接送——由 Bali Global Tran 本地团队精心安排，带您感受巴厘温柔、清凉、自然的韵味。",
+ctaPack:"查看一日游套餐",ctaWa:"WhatsApp 咨询",badge24:"24小时机场接送",
+st1:"精选目的地",st2:"年本地经验",st3:"种语言支持",st4:"机场接送",
+destEyebrow:"目的地",destTitle:"一座岛，三个世界：海洋、大地与火山。",destSub:"选择类别——以下每个地点我们都亲自探访过，随时为您出发。",
+tabAll:"全部",tabSea:"海洋",tabLand:"陆地",tabMount:"火山",cardDetail:"查看详情",
+mSpots:"亮点",mWa:"通过 WhatsApp 预订",mClose:"继续浏览",
+pkgEyebrow:"一日游套餐",pkgTitle:"行程已为您安排妥当，只需出发。",pkgSub:"价格为每人，2人起订。私人专车，绝无拥挤大巴。",
+pItin:"每日行程",pIncl:"费用包含",pBook:"预订此套餐",pPer:"/人",
+lembEyebrow:"蓝梦岛",lembTitle:"小岛大惊奇——距沙努尔仅30分钟。",lembDesc:"清澈海水、蓝色泻湖与宁静夜晚。快艇、浮潜与精选住宿，全部为您安排。",
+lembActs:"特色活动",stayTitle:"精选住宿",perNight:"/晚",hTag:"最受欢迎",hBook:"预订",
+a1t:"Manta 浮潜",a1d:"在佩尼达外海与蝠鲼同游。",
+a2t:"红树林游船",a2d:"乘传统小船穿行静谧的红树林。",
+a3t:"魔鬼之泪 & 日落",a3d:"惊涛拍岸与全岛最美的黄金时刻。",
+a4t:"梦海滩 & 日落海滩",a4d:"金蓝色泻湖，游泳与慢时光。",
+trEyebrow:"接送服务",trTitle:"机场与酒店接送，轻松无忧。",trDesc:"经验丰富的司机在到达口举牌等候。私家空调车，明码标价，绝无隐藏费用。",
+s1t:"发送航班信息",s1d:"填写下方预订表单，或直接 WhatsApp 联系我们。",s2t:"确认司机",s2d:"落地前收到司机姓名与车牌信息。",s3t:"接机出发",s3d:"司机在到达口举牌等候您的到来。",
+rateT:"伍拉·赖机场出发价目",rateNote:"私家车（最多4人）——含司机、油费与饮用水。巴厘全岛酒店间接送按距离计价。",rateCta:"预订接机",
+faqEyebrow:"常见问题",faqTitle:"大家最常问的问题。",
+bkEyebrow:"预订",bkTitle:"告诉我们您的计划，其余交给我们。",bkDesc:"填写简短表单，信息将自动在 WhatsApp 打开。营业时间内约5分钟回复。",
+bkName:"姓名",bkPhone:"WhatsApp 号码",bkSvc:"选择服务",svc1:"一日游套餐",svc2:"酒店 / 蓝梦岛住宿",svc3:"机场接机",svc4:"酒店间接送",svc5:"其他",
+bkItem:"套餐 / 目的地（可选）",bkDate:"日期",bkPax:"人数",bkMsg:"补充说明",bkSubmit:"发送到 WhatsApp",bkHint:"此表单直连 WhatsApp 0819-3330-1033。",
+phName:"您的姓名",phItem:"例如：佩尼达岛一日游",phMsg:"例如：10点航班，4人",
+sd1t:"快速回复",sd1d:"由本地团队回复，而非机器人。",sd2t:"价格透明",sd2d:"无隐藏费用，确认后再付款。",sd3t:"免费改期",sd3d:"出发前2天可免费更改。",
+sideWaD:"每日 07:00–21:00 快速回复",
+fq1:"如何预订？",fa1:"填写本页的预订表格，或直接 WhatsApp 0819-3330-1033。我们确认后您再付款，简单又安心。",
+fq2:"可以到酒店接吗？",fa2:"可以。所有一日游套餐均含库塔、水明漾、长谷与乌布地区的酒店接送，其他区域按距离另计。",
+fq3:"如何付款？",fa3:"确认后可通过银行转账、QRIS 或向司机现金支付。多日套餐仅需 30% 订金。",
+fq4:"可以取消吗？",fa4:"出发前2天取消免费。如遇恶劣天气，可改期或全额退款。",
+ftTag:"温柔、清凉、最本真的巴厘之旅。",ftNav:"探索",ftContact:"联系我们",ftAddr:"印度尼西亚 巴厘岛",ftRights:"© 2025 Bali Global Tran. 保留所有权利。",ftMade:"在巴厘岛用心打造",
+tLang:"语言已切换：{x}",tFill:"请先填写姓名和 WhatsApp 号码。",tOpen:"正在打开 WhatsApp…",bkAuto:"套餐“{x}”已填入预订表单——请补充您的信息。",
+cTitle:"Global 智能助手",cStatus:"在线 · 即时回复",cPh:"输入您的问题…",cWaBtn:"转接 WhatsApp",
+cHello:"您好！我是 Bali Global Tran 的智能助手。可咨询套餐、价格、机场接机或蓝梦岛住宿——即时为您解答。",
+chip1:"套餐与价格",chip2:"机场接机",chip3:"蓝梦岛住宿",
+ai_pack:"最受欢迎的套餐：\n• 佩尼达岛一日游 — Rp 550.000/人\n• 乌布文化与瀑布 — Rp 450.000/人\n• 金塔马尼日出温泉 — Rp 600.000/人\n• 蓝梦岛2天1夜 — Rp 850.000/人\n\n含专车、司机与门票，2人起订。需要我带您去预订表单吗？",
+ai_air:"机场接机24小时服务，司机在到达口举牌等候。价格：库塔/水明漾 Rp 150.000，长谷 Rp 200.000，乌布 Rp 300.000。发送日期与航班号即可，其余交给我们。",
+ai_lem:"从沙努尔乘快艇约30分钟即达蓝梦岛与佩尼达岛。有一日游、2天1夜套餐（Rp 850.000 含住宿）、Manta 浮潜与红树林游船。住宿每晚 Rp 250.000 起。",
+ai_hot:"蓝梦岛推荐住宿：Villa Kayu Rp 750.000、Sunset Garden Bungalow Rp 450.000、Homestay Asri Rp 250.000 每晚，均可通过 WhatsApp 预订。",
+ai_book:"最简单的预订方式：填写下方预订表单，或直接 WhatsApp 0819-3330-1033，告知服务、日期与人数，我们会尽快回复。",
+ai_pay:"支持银行转账、QRIS 或向司机现金支付。多日行程仅需 30% 订金。",
+ai_hours:"每天 07:00–21:00（巴厘时间）在线，机场接机24小时服务。",
+ai_greet:"您好！很高兴见到您。想了解一日游、机场接机还是蓝梦岛住宿？",
+ai_thx:"不客气！随时欢迎再来问我。",
+ai_def:"抱歉，我不太明白您的问题。可以试试询问：套餐与价格、机场接机、蓝梦岛住宿或预订方式。也可直接 WhatsApp 0819-3330-1033 联系我们的团队。",
+ai_wa:"您好 Bali Global Tran！我刚与助手聊天，想继续联系你们的团队。",
+helloMsg:"您好 Bali Global Tran！我想预订：",destWa:"您好！我想了解{n}的套餐与价格。"},
+ko:{brand:"투어 & 여행",tag:"발리 현지 여행사 · 라이선스 보유",hours:"매일 07:00–21:00 (발리 시간)",
+navHome:"홈",navDest:"여행지",navPack:"투어 패키지",navLemb:"렘본간",navTrans:"픽업",navFaq:"FAQ",navContact:"연락처",navBook:"예약",
+heroEyebrow:"발리 현지 여행사 — 인도네시아",heroL1:"발리를 여행하세요",heroL2:"바다와 대륙에서",heroL3:"화산의 정상까지.",
+heroDesc:"투어 패키지, 누사렘본간 숙소, 공항 픽업 — Bali Global Tran 현지 팀이 꼼꼼히 준비하고, 부드럽고 시원하며 자연 그대로의 발리를 전합니다.",
+ctaPack:"투어 패키지 보기",ctaWa:"WhatsApp 문의",badge24:"24시간 공항 픽업",
+st1:"큐레이션 여행지",st2:"년 현지 경력",st3:"개 언어 지원",st4:"공항 픽업",
+destEyebrow:"여행지",destTitle:"하나의 섬, 세 개의 세계: 바다, 육지, 화산.",destSub:"카테고리를 선택하세요 — 모든 곳을 팀이 직접 방문해 확인했습니다.",
+tabAll:"전체",tabSea:"바다",tabLand:"육지",tabMount:"산",cardDetail:"자세히 보기",
+mSpots:"하이라이트",mWa:"WhatsApp으로 예약",mClose:"계속 둘러보기",
+pkgEyebrow:"투어 패키지",pkgTitle:"완벽하게 준비된 여행 — 함께 떠나기만 하면 됩니다.",pkgSub:"1인 가격, 최소 2인. 혼잡한 버스가 아닌 프라이빗 투어입니다.",
+pItin:"일정",pIncl:"포함 사항",pBook:"이 패키지 예약",pPer:"/인",
+lembEyebrow:"누사렘본간",lembTitle:"작은 섬, 큰 감동 — 사누르에서 30분.",lembDesc:"맑은 바다, 푸른 라군, 평화로운 밤. 고속보트, 스노클링, 추천 숙소까지 모두 준비합니다.",
+lembActs:"핵심 액티비티",stayTitle:"추천 숙소",perNight:"/박",hTag:"가장 인기",hBook:"예약",
+a1t:"만타 포인트 스노클링",a1d:"페니다의 푸른 바다에서 만타가와 함께 수영.",
+a2t:"망그로브 보트 투어",a2d:"전통 보트로 고요한 망그로브 숲을 지나요.",
+a3t:"데빌스 티어스 & 일몰",a3d:"파도 분수와 섬에서 가장 아름다운 골든아워.",
+a4t:"드림 & 선셋 비치",a4d:"금빛 라군에서 수영과 여유로운 오후를.",
+trEyebrow:"교통",trTitle:"공항·호텔 픽업, 걱정 없이.",trDesc:"경험 많은 기사가 도착 게이트에서 이름판을 들고 기다립니다. 프라이빗 에어컨 차량, 투명한 가격.",
+s1t:"도착 정보 전송",s1d:"아래 예약 폼 작성 또는 WhatsApp으로 직접 연락.",s2t:"기사 확인",s2d:"착륙 전 기사 이름과 차량 번호를 보내드립니다.",s3t:"픽업 후 출발",s3d:"기사가 이름판을 들고 도착 게이트에서 대기합니다.",
+rateT:"응우라라이 공항 출발 요금",rateNote:"프라이빗 차량(최대 4인) — 기사, 유류비, 생수 포함. 발리 전 지역 호텔 간 이동은 거리에 따라 계산됩니다.",rateCta:"픽업 예약",
+faqEyebrow:"FAQ",faqTitle:"가장 많이 받는 질문들.",
+bkEyebrow:"예약",bkTitle:"계획을 알려주세요 — 나머지는 저희가 준비합니다.",bkDesc:"간단한 폼을 작성하면 WhatsApp으로 자동 연결됩니다. 운영 시간 내 약 5분 내 답변.",
+bkName:"이름",bkPhone:"WhatsApp 번호",bkSvc:"서비스 선택",svc1:"투어 패키지",svc2:"호텔 / 렘본간 숙소",svc3:"공항 픽업",svc4:"호텔 간 이동",svc5:"기타",
+bkItem:"패키지 / 여행지 (선택)",bkDate:"날짜",bkPax:"인원",bkMsg:"추가 메모",bkSubmit:"WhatsApp으로 보내기",bkHint:"이 폼은 WhatsApp 0819-3330-1033 으로 연결됩니다.",
+phName:"이름",phItem:"예: 누사페니다 데이 트립",phMsg:"예: 10시 비행, 4인",
+sd1t:"빠른 응답",sd1d:"봇이 아닌 현지 팀이 답변합니다.",sd2t:"투명한 가격",sd2d:"숨은 비용 없음, 확정 후 결제.",sd3t:"유연한 일정 변경",sd3d:"출발 2일 전까지 무료 변경.",
+sideWaD:"매일 07:00–21:00 빠른 답변",
+fq1:"예약은 어떻게 하나요?",fa1:"이 페이지의 예약 폼을 작성하거나 WhatsApp 0819-3330-1033 으로 연락주세요. 예약 확정 후 결제하시면 됩니다.",
+fq2:"호텔 픽업이 되나요?",fa2:"네. 모든 투어 패키지에 쿠타·세미냑·창구·우붓 지역 호텔 픽업이 포함되어 있습니다. 타 지역은 거리에 따라 조정됩니다.",
+fq3:"결제는 어떻게 하나요?",fa3:"확정 후 계좌이체, QRIS 또는 기사에게 현금 결제가 가능합니다. 다일 일정은 30% 예약금만 부탁드립니다.",
+fq4:"취소하고 싶으면요?",fa4:"출발 2일 전까지 무료 취소 가능합니다. 악천후 시 일정 변경 또는 전액 환불이 가능합니다.",
+ftTag:"부드럽고 시원하고 자연 그대로인 발리 여행.",ftNav:"둘러보기",ftContact:"연락처",ftAddr:"인도네시아 발리",ftRights:"© 2025 Bali Global Tran. All rights reserved.",ftMade:"발리에서 정성껏 제작",
+tLang:"언어 변경: {x}",tFill:"이름과 WhatsApp 번호를 먼저 입력해 주세요.",tOpen:"WhatsApp을 여는 중…",bkAuto:"패키지 '{x}'이(가) 예약 폼에 담겼습니다 — 나머지 정보를 입력해 주세요.",
+cTitle:"글로벌 어시스턴트",cStatus:"온라인 · 즉시 답변",cPh:"질문을 입력하세요…",cWaBtn:"WhatsApp으로 연결",
+cHello:"안녕하세요! Bali Global Tran 어시스턴트입니다. 패키지, 가격, 공항 픽업, 렘본간 숙소 등 무엇이든 물어보세요.",
+chip1:"패키지 & 가격",chip2:"공항 픽업",chip3:"렘본간 숙소",
+ai_pack:"가장 인기 있는 패키지:\n• 누사페니다 데이 트립 — Rp 550.000/인\n• 우붓 문화 & 폭포 — Rp 450.000/인\n• 긴타마니 일출 & 온천 — Rp 600.000/인\n• 렘본간 1박 2일 — Rp 850.000/인\n\n차량, 기사, 입장료 포함. 2인 이상. 예약 폼으로 안내해 드릴까요?",
+ai_air:"공항 픽업은 24시간 운영되며 기사가 도착 게이트에서 이름판을 들고 기다립니다. 요금: 쿠타/세미냑 Rp 150.000, 창구 Rp 200.000, 우붓 Rp 300.000. 날짜와 편명만 보내주세요.",
+ai_lem:"사누르에서 고속보트로 약 30분이면 렘본간과 페니다에 도착합니다. 데이 트립, 1박 2일 패키지(Rp 850.000, 숙박 포함), 만타 스노클링, 망그로브 투어가 있으며 숙박은 1박 Rp 250.000부터입니다.",
+ai_hot:"렘본간 추천 숙소: Villa Kayu Rp 750.000, Sunset Garden Bungalow Rp 450.000, Homestay Asri Rp 250.000 (1박). 모두 WhatsApp으로 예약 가능합니다.",
+ai_book:"가장 쉬운 방법: 아래 예약 폼을 작성하거나 WhatsApp 0819-3330-1033 으로 서비스·날짜·인원을 알려주세요. 빠르게 답변드립니다.",
+ai_pay:"계좌이체, QRIS 또는 기사에게 현금 결제가 가능합니다. 다일 일정은 30% 예약금만 부탁드립니다.",
+ai_hours:"매일 07:00–21:00 (발리 시간) 온라인이며 공항 픽업은 24시간 운영됩니다.",
+ai_greet:"안녕하세요! 만나서 반갑습니다. 투어 패키지, 공항 픽업, 렘본간 숙소 중 무엇을 도와드릴까요?",
+ai_thx:"천만에요! 언제든 다시 물어보세요.",
+ai_def:"죄송합니다, 잘 이해하지 못했어요. 패키지·가격, 공항 픽업, 렘본간 숙소, 예약 방법 중에서 물어봐 주세요. WhatsApp 0819-3330-1033 으로도 연락 가능합니다.",
+ai_wa:"안녕하세요 Bali Global Tran! 방금 어시스턴트와 대화하고 팀과 계속 상담하고 싶습니다.",
+helloMsg:"안녕하세요 Bali Global Tran! 예약을 원합니다:",destWa:"안녕하세요! {n}에 관심이 있어요. 패키지와 가격을 알려주실 수 있나요?"}
+};
+
+/* ===================== DATA ===================== */
+const DEST=[
+{id:"penida",cat:"sea",seed:"bgt-penida",name:"Nusa Penida",area:{id:"Klungkung · Timur Bali",en:"Klungkung · East Bali",zh:"克隆孔 · 东部",ko:"클룽쿵 · 동부"},desc:{id:"Tebing raksasa Kelingking dan air biru sebening kristal — ikon timur Bali.",en:"The giant Kelingking cliff and crystal-blue water — Bali's eastern icon.",zh:"精灵坠崖巨崖与水晶般清澈的海水——巴厘东部的标志。",ko:"켈링킹 거대 절벽과 수정처럼 푸른 바다 — 발리 동부의 아이콘."},spots:["Kelingking Beach","Broken Beach","Crystal Bay"]},
+{id:"lembongan",cat:"sea",seed:"bgt-lembongan-dest",name:"Nusa Lembongan",area:{id:"Klungkung · Timur Bali",en:"Klungkung · East Bali",zh:"克隆孔 · 东部",ko:"클룽쿵 · 동부"},desc:{id:"Pulau tenang berlaguna biru, hanya 30 menit dari daratan Bali.",en:"A calm island with blue lagoons, just 30 minutes from Bali.",zh:"距巴厘岛仅30分钟的宁静泻湖小岛。",ko:"발리에서 30분 거리, 푸른 라군의 평화로운 섬."},spots:["Dream Beach","Mangrove Forest","Yellow Bridge"]},
+{id:"uluwatu",cat:"sea",seed:"bgt-uluwatu",name:"Uluwatu",area:{id:"Badung · Selatan",en:"Badung · South",zh:"巴东县 · 南部",ko:"바둥 · 남부"},desc:{id:"Pura di ujung tebing 70 meter di atas samudra Hindia, terkenal Kecak sunset.",en:"A clifftop temple 70m above the Indian Ocean, famous for Kecak sunset.",zh:"矗立于70米悬崖之上的神庙，印度洋日落与克差舞的故乡。",ko:"인도양 위 70m 절벽 위의 사원, 케차 석양으로 유명."},spots:["Uluwatu Temple","Kecak Fire Dance","Padang Padang"]},
+{id:"kuta",cat:"sea",seed:"bgt-kuta",name:"Kuta & Seminyak",area:{id:"Badung · Selatan",en:"Badung · South",zh:"巴东县 · 南部",ko:"바둥 · 남부"},desc:{id:"Pantai pasir emas untuk surf pemula dan matahari tenggelam legendaris.",en:"Golden-sand beaches for beginner surf and legendary sunsets.",zh:"适合初学冲浪的金色沙滩与传奇日落。",ko:"초보 서핑과 일몰로 유명한 황금빛 해변."},spots:["Kuta Beach","Seminyak","Double Six"]},
+{id:"ubud",cat:"land",seed:"bgt-ubud",name:"Ubud & Tegalalang",area:{id:"Gianyar · Tengah",en:"Gianyar · Central",zh:"吉安雅 · 中部",ko:"기아르 · 중부"},desc:{id:"Jantung kebudayaan Bali: sawah terasering, jungle swing, dan galeri seni.",en:"Bali's cultural heart: rice terraces, jungle swings, and art galleries.",zh:"巴厘文化中心：梯田、丛林秋千与艺术画廊。",ko:"발리 문화의 중심: 라이스 테라스, 정글 스윙, 갤러리."},spots:["Tegalalang","Ubud Palace","Campuhan Ridge"]},
+{id:"tirta",cat:"land",seed:"bgt-tirta",name:"Tirta Empul",area:{id:"Tampaksiring · Gianyar",en:"Tampaksiring · Gianyar",zh:"坦帕克西林 · 吉安雅",ko:"탐파크시링 · 기아르"},desc:{id:"Pura mata air suci berusia ribuan tahun untuk ritual pemurnian.",en:"A thousand-year-old holy spring temple for purification rituals.",zh:"千年圣泉寺，感受净身仪式的神圣。",ko:"천년의 성수 사원, 정화 의식의 명소."},spots:["Tirta Empul","Gunung Kawi","Pura Mengening"]},
+{id:"monkey",cat:"land",seed:"bgt-monkey",name:"Monkey Forest Ubud",area:{id:"Gianyar · Tengah",en:"Gianyar · Central",zh:"吉安雅 · 中部",ko:"기아르 · 중부"},desc:{id:"Hutan banyan suci yang menjadi rumah ratusan monyet makaka.",en:"A sacred banyan forest home to hundreds of macaques.",zh:"数百只猕猴栖息的神圣榕树林。",ko:"수백 마리 원숭이가 사는 신성한 반얀숲."},spots:["Sacred Monkey Forest","Dalem Agung Temple","Dragon Bridge"]},
+{id:"jatiluwih",cat:"land",seed:"bgt-jatiluwih",name:"Jatiluwih",area:{id:"Tabanan · Barat",en:"Tabanan · West",zh:"塔巴南 · 西部",ko:"타바난 · 서부"},desc:{id:"Sawah terasering UNESCO terluas — hijau sejauh mata memandang.",en:"UNESCO-listed terraces, emerald green as far as the eye can see.",zh:"联合国教科文组织遗产梯田，满目苍翠。",ko:"유네스코 등재 테라스, 끝없이 펼쳐진 에메랄드."},spots:["Jatiluwih Terrace","Batukaru Temple","Yeh Hoo Waterfall"]},
+{id:"batur",cat:"mount",seed:"bgt-batur",name:"Gunung Batur",area:{id:"Kintamani · Utara",en:"Kintamani · North",zh:"金塔马尼 · 北部",ko:"긴타마니 · 북부"},desc:{id:"Trekking subuh 2 jam untuk matahari terbit di atas kaldera aktif.",en:"A 2-hour dawn trek to sunrise over an active caldera.",zh:"凌晨2小时徒步，在活火山口迎接日出。",ko:"새벽 2시간 트레킹, 활화산 칼데라 위 일출."},spots:["Mount Batur Summit","Sunrise Point","Lava Fields"]},
+{id:"kintamani",cat:"mount",seed:"bgt-kintamani",name:"Kintamani",area:{id:"Kintamani · Utara",en:"Kintamani · North",zh:"金塔马尼 · 北部",ko:"긴타마니 · 북부"},desc:{id:"Panorama kaldera dan Danau Batur dari tepian dataran tinggi yang sejuk.",en:"Caldera and Lake Batur panoramas from the cool highland rim.",zh:"清凉高原上的巴图尔火山口与湖泊全景。",ko:"시원한 고원에서 바라보는 칼데라와 바투르 호수."},spots:["Kintamani Viewpoint","Lake Batur","Trunyan Village"]},
+{id:"bedugul",cat:"mount",seed:"bgt-bedugul",name:"Bedugul & Ulun Danu",area:{id:"Tabanan · Dataran Tinggi",en:"Tabanan · Highlands",zh:"塔巴南 · 高原",ko:"타바난 · 고원"},desc:{id:"Danau berkabut dengan Ulun Danu — pura terapung paling fotogenik di Bali.",en:"A misty lake with Ulun Danu, Bali's most photogenic floating temple.",zh:"雾中湖泊与水神庙——巴厘最上镜的水上寺院。",ko:"안개 낀 호수와 울룬다누 수상 사원."},spots:["Ulun Danu Beratan","Bali Botanic Garden","Handara Gate"]},
+{id:"munduk",cat:"mount",seed:"bgt-munduk",name:"Munduk Highland",area:{id:"Buleleng · Dataran Tinggi",en:"Buleleng · Highlands",zh:"布莱伦 · 高原",ko:"블렐렝 · 고원"},desc:{id:"Dataran tinggi sejuk berisi air terjun, kebun cengkih, dan kabut pagi.",en:"Cool highlands of waterfalls, clove farms, and morning mist.",zh:"清凉高原上的瀑布、丁香园与晨雾。",ko:"폭포와 정원, 아침 안개의 시원한 고원 지대."},spots:["Munduk Waterfall","Twin Lakes","Clove Plantations"]}
+];
+
+const PKG=[
+{name:{id:"Nusa Penida Day Trip",en:"Nusa Penida Day Trip",zh:"佩尼达岛一日游",ko:"누사페니다 데이 트립"},price:"Rp 550.000",dur:"dur1",seed:"bgt-pkg-penida",
+ itin:{id:["Penjemputan hotel (04.30–05.30)","Fast boat dari Sanur","Kelingking Beach & Angel's Billabong","Broken Beach & Crystal Bay","Pulang & antar hotel"],en:["Hotel pickup (04.30–05.30)","Fast boat from Sanur","Kelingking Beach & Angel's Billabong","Broken Beach & Crystal Bay","Return & hotel drop-off"],zh:["酒店接驳（04:30–05:30）","从沙努尔乘快艇","精灵坠崖 & 天使浴池","破碎沙滩 & 水晶湾","返程并送回酒店"],ko:["호텔 픽업 (04:30–05:30)","사누르에서 고속보트","켈링킹 비치 & 엔젤스 빌라봉","브로큰 비치 & 크리스탈 베이","귀길 & 호텔 도착"]},
+ incl:{id:"Fast boat PP, mobil + driver di Penida, tiket masuk, lunch box, air mineral",en:"Return fast boat, car + driver on Penida, entrance fees, lunch box, mineral water",zh:"含往返快艇、岛上专车司机、门票、简餐、饮用水",ko:"왕복 고속보트, 페니다 현지 차량+기사, 입장료, 도시락, 생수 포함"}},
+{name:{id:"Ubud Culture & Waterfall",en:"Ubud Culture & Waterfall",zh:"乌布文化与瀑布",ko:"우붓 문화 & 폭포 투어"},price:"Rp 450.000",dur:"dur1",seed:"bgt-pkg-ubud",
+ itin:{id:["Penjemputan hotel (08.00)","Tegalalang Rice Terrace","Tirta Empul & Jungle Swing","Air terjun Tegenungan","Monkey Forest & antar hotel"],en:["Hotel pickup (08.00)","Tegalalang Rice Terrace","Tirta Empul & Jungle Swing","Tegenungan Waterfall","Monkey Forest & drop-off"],zh:["酒店接驳（08:00）","德格拉朗梯田","圣泉寺 & 丛林秋千","Tegenungan 瀑布","圣猴森林公园，后送回酒店"],ko:["호텔 픽업 (08:00)","테갈랄랑 라이스 테라스","티르타 엠풀 & 정글 스윙","테게눙안 폭포","우붓 원숭이숲 후 호텔 도착"]},
+ incl:{id:"Mobil privat + driver + BBM, semua tiket masuk, air mineral",en:"Private car + driver + fuel, all entrance tickets, mineral water",zh:"含私家车+司机+油费、所有门票、饮用水",ko:"전용차+기사+유류비, 전 입장료, 생수 포함"}},
+{name:{id:"Kintamani Sunrise & Hot Spring",en:"Kintamani Sunrise & Hot Spring",zh:"金塔马尼日出温泉",ko:"긴타마니 일출 & 온천"},price:"Rp 600.000",dur:"dur3",seed:"bgt-pkg-kintamani",
+ itin:{id:["Penjemputan hotel (02.00)","Sunrise trekking Gunung Batur","Sarapan pemandangan kaldera","Natural Hot Spring Toya Devasya","Pulang via kebun kopi"],en:["Hotel pickup (02.00)","Sunrise trek on Mount Batur","Breakfast overlooking the caldera","Toya Devasya Natural Hot Spring","Return via coffee plantation"],zh:["酒店接驳（02:00）","巴图尔火山日出徒步","火山口早餐","Toya Devasya 天然温泉","途经咖啡园返程"],ko:["호텔 픽업 (02:00)","바투르 산 일출 트레킹","칼데라 조망 아침식사","토야 데바스야 온천","커피 농장 경유 귀가"]},
+ incl:{id:"Mobil privat, pemandu trekking, tiket masuk & hot spring, sarapan",en:"Private car, trekking guide, entrance & hot spring tickets, breakfast",zh:"含专车、登山向导、门票与温泉、早餐",ko:"전용차, 트레킹 가이드, 입장료·온천, 아침식사 포함"}},
+{name:{id:"Lembongan 2D1N",en:"Lembongan 2D1N",zh:"蓝梦岛2天1夜",ko:"렘본간 1박 2일"},price:"Rp 850.000",dur:"dur4",seed:"bgt-pkg-lembongan",
+ itin:{id:["Fast boat Sanur–Lembongan","Snorkeling Manta Point (3 spot)","Tur mangrove & pantai barat","Penginapan + sarapan","Fast boat pulang & antar hotel"],en:["Fast boat Sanur–Lembongan","Manta Point snorkeling (3 spots)","Mangrove & west-coast tour","Stay + breakfast","Return boat & hotel drop-off"],zh:["快艇 沙努尔–蓝梦岛","Manta 浮潜（3处）","红树林 & 西岸巡游","住宿含早餐","返程快艇并送回酒店"],ko:["고속보트 사누르–렘본간","만타 포인트 스노클링 (3곳)","망그로브 & 서해안 투어","숙박 + 아침식사","복귀 보트 후 호텔 도착"]},
+ incl:{id:"Fast boat PP, snorkeling + alat, penginapan 1 malam, sarapan",en:"Return fast boat, snorkeling gear, 1-night stay, breakfast",zh:"含往返快艇、浮潜装备、1晚住宿、早餐",ko:"왕복 고속보트, 스노클링 장비, 1박 숙박, 아침식사 포함"}}
+];
+T.id.dur1="1 Hari";T.en.dur1="1 Day";T.zh.dur1="1 天";T.ko.dur1="1일";
+T.id.dur3="Mulai 02.00";T.en.dur3="Starts 02.00";T.zh.dur3="02:00 出发";T.ko.dur3="02:00 출발";
+T.id.dur4="2 Hari 1 Malam";T.en.dur4="2 Days 1 Night";T.zh.dur4="2天1夜";T.ko.dur4="1박 2일";
+
+const STAY=[
+{id:"villa",name:"Villa Kayu Lembongan",seed:"bgt-stay-villa",price:"Rp 750.000",feat:true,
+ area:{id:"Jungutbatu · Tepi laut",en:"Jungutbatu · Beachfront",zh:"朱古巴图 · 海滨",ko:"중굿바투 · 해변"},
+ desc:{id:"Villa tepi laut dengan kolam privat, teras kayu, dan sarapan khas Bali.",en:"Beachfront villa with private pool, wooden terrace, and Balinese breakfast.",zh:"海滨别墅，带私人泳池、木制露台与巴厘式早餐。",ko:"개인 수영장, 나무 테라스, 발리식 아침식사가 있는 해변 빌라."}},
+{id:"bungalow",name:"Sunset Garden Bungalow",seed:"bgt-stay-bungalow",price:"Rp 450.000",
+ area:{id:"Bukit Lembongan",en:"Lembongan Hill",zh:"蓝梦山丘",ko:"렘본간 언덕"},
+ desc:{id:"Bungalow taman tropis dengan teras ayunan dan sunset barat.",en:"Tropical garden bungalow with swing terrace and west-facing sunsets.",zh:"热带花园平房，秋千露台与西侧日落景观。",ko:"그네 테라스와 서쪽 일몰이 보이는 열대 정원 부갈로."}},
+{id:"homestay",name:"Homestay Asri Lembongan",seed:"bgt-stay-homestay",price:"Rp 250.000",
+ area:{id:"Desa Lembongan",en:"Lembongan Village",zh:"蓝梦村落",ko:"렘본간 마을"},
+ desc:{id:"Rumah keluarga bersih dan hangat, 5 menit dari Yellow Bridge.",en:"A warm, spotless family home, 5 minutes from Yellow Bridge.",zh:"温馨整洁的家庭旅馆，距黄桥5分钟。",ko:"옐로우 브리지까지 5분, 깨끗하고 따뜻한 가족 호스텔."}}
+];
+
+const FAQ_KEYS=[["fq1","fa1"],["fq2","fa2"],["fq3","fa3"],["fq4","fa4"]];
+
+/* ===================== STATE & UTIL ===================== */
+let lang="id", activeFilter="all", chatStarted=false;
+const $=s=>document.querySelector(s), $$=s=>document.querySelectorAll(s);
+const t=k=>(T[lang][k]!==undefined?T[lang][k]:(T.id[k]||""));
+const L=o=>o[lang]||o.id;
+const refreshIcons=()=>{ if(window.lucide) lucide.createIcons(); };
+
+/* ===================== LOGO KUSTOM ===================== */
+/* Jika LOGO_URL diisi, ikon palem otomatis diganti logo Anda
+   di navbar, menu mobile, dan footer sekaligus. */
+if(LOGO_URL){
+  document.querySelectorAll(".logo-mark").forEach(m=>{
+    m.innerHTML=`<img src="${LOGO_URL}" alt="Logo ${BRAND_NAME}">`;
+  });
+}
+
+/* ===================== TOAST ===================== */
+let toastTimer;
+function toast(msg){
+  $("#toastMsg").textContent=msg;
+  const el=$("#toast"); el.classList.add("show");
+  clearTimeout(toastTimer); toastTimer=setTimeout(()=>el.classList.remove("show"),3200);
+}
+
+/* ===================== I18N ===================== */
+const LANG_NAMES={id:"Bahasa Indonesia",en:"English",zh:"中文",ko:"한국어"};
+function buildLangMenus(){
+  $("#langMenu").innerHTML=Object.keys(LANG_NAMES).map(l=>
+    `<button data-l="${l}" class="${l===lang?'on':''}">${LANG_NAMES[l]}<i data-lucide="check" class="ic-s" style="visibility:${l===lang?'visible':'hidden'}"></i></button>`).join("");
+  $("#drawerLang").innerHTML=Object.keys(LANG_NAMES).map(l=>
+    `<button data-l="${l}" class="${l===lang?'on':''}">${LANG_NAMES[l]}</button>`).join("");
+  $$("#langMenu button").forEach(b=>b.onclick=()=>{setLang(b.dataset.l);$("#langMenu").classList.remove("open");});
+  $$("#drawerLang button").forEach(b=>b.onclick=()=>setLang(b.dataset.l));
+  refreshIcons();
+}
+function applyI18n(){
+  document.documentElement.lang=lang;
+  $$("[data-i18n]").forEach(el=>el.textContent=t(el.dataset.i18n));
+  $$("[data-i18n-ph]").forEach(el=>el.placeholder=t(el.dataset.i18nPh));
+  $$("[data-i18n-title]").forEach(el=>el.title=t(el.dataset.i18nTitle));
+  $("#langCur").textContent=lang.toUpperCase();
+  buildLangMenus();
+}
+function setLang(l){
+  if(l===lang) return;
+  lang=l; applyI18n(); renderDest(); renderPkg(); renderStays(); renderFaq(); renderChips();
+  closeModal();
+  toast(t("tLang").replace("{x}",LANG_NAMES[l]));
+}
+
+/* ===================== MARQUEE ===================== */
+(function(){
+  const items=[["waves","NUSA PENIDA"],["sun","ULUWATU"],["palmtree","TEGALALANG"],["mountain","GUNUNG BATUR"],["shell","NUSA LEMBONGAN"],["flower-2","UBUD"],["mountain-snow","KINTAMANI"],["trees","JATILUWIH"],["water","MUNDUK"],["landmark","BEDUGUL"]];
+  const html=items.map(i=>`<span><i data-lucide="${i[0]}"></i>${i[1]}</span>`).join("");
+  $("#mqTrack").innerHTML=html+html;
+})();
+
+/* ===================== DESTINASI ===================== */
+const CAT_ICON={sea:"waves",land:"trees",mount:"mountain"};
+const CAT_KEY={sea:"tabSea",land:"tabLand",mount:"tabMount"};
+function renderDest(){
+  const list=DEST.filter(d=>activeFilter==="all"||d.cat===activeFilter);
+  const heights=[300,210,250,190];
+  $("#dgrid").innerHTML=list.map((d,i)=>{
+    const h=window.innerWidth<=640?230:heights[i%heights.length];
+    return `<article class="dcard" data-id="${d.id}">
+      <figure style="height:${h}px"><img loading="lazy" src="https://picsum.photos/seed/${d.seed}/800/620.jpg" alt="${d.name}">
+        <span class="cat"><i data-lucide="${CAT_ICON[d.cat]}"></i>${t(CAT_KEY[d.cat])}</span></figure>
+      <div class="dbody">
+        <span class="darea"><i data-lucide="map-pin"></i>${L(d.area)}</span>
+        <h3>${d.name}</h3>
+        <p>${L(d.desc)}</p>
+        <span class="dmore">${t("cardDetail")} <i data-lucide="arrow-up-right"></i></span>
+      </div></article>`;
+  }).join("");
+  refreshIcons();
+  $$("#dgrid .dcard").forEach(c=>c.addEventListener("click",()=>openDest(c.dataset.id)));
+}
+ $$("#tabs .tab").forEach(b=>b.addEventListener("click",()=>{
+  activeFilter=b.dataset.f;
+  $$("#tabs .tab").forEach(x=>x.classList.toggle("on",x===b));
+  renderDest();
+}));
+
+/* Modal destinasi */
+let curDest=null;
+function openDest(id){
+  const d=DEST.find(x=>x.id===id); if(!d) return;
+  curDest=d;
+  $("#mImg").src=`https://picsum.photos/seed/${d.seed}-wide/1000/560.jpg`;
+  $("#mArea").innerHTML=`<i data-lucide="map-pin" class="ic-s"></i>${L(d.area)} · ${t(CAT_KEY[d.cat])}`;
+  $("#mName").textContent=d.name;
+  $("#mDesc").textContent=L(d.desc);
+  $("#mSpots").innerHTML=d.spots.map(s=>`<span class="spot"><i data-lucide="check"></i>${s}</span>`).join("");
+  $("#modal").classList.add("open"); document.body.style.overflow="hidden";
+  refreshIcons();
+}
+function closeModal(){$("#modal").classList.remove("open");document.body.style.overflow="";}
+ $("#mCloseX").onclick=closeModal; $("#mClose2").onclick=closeModal; $("#modalBg").onclick=closeModal;
+document.addEventListener("keydown",e=>{if(e.key==="Escape"){closeModal();$("#drawer").classList.remove("open");}});
+ $("#mWa").onclick=()=>{ if(!curDest) return;
+  window.open(waLink(t("destWa").replace("{n}",curDest.name)),"_blank"); toast(t("tOpen")); };
+
+/* ===================== PAKET ===================== */
+function renderPkg(){
+  $("#plist").innerHTML=PKG.map((p,i)=>`
+    <div class="prow" data-i="${i}">
+      <div class="phead">
+        <span class="pnum">0${i+1}</span>
+        <span><div class="pname">${L(p.name)}</div><div class="pmeta">${t(p.dur)}</div></span>
+        <span class="pprice"><b>${p.price}</b><span>${t("pPer")}</span></span>
+        <span class="pchev"><i data-lucide="plus"></i></span>
+      </div>
+      <div class="pbody"><div><div class="pinner">
+        <div>
+          <div class="itin-t">${t("pItin")}</div>
+          <ol class="itin">${L(p.itin).map((s,j)=>`<li><span class="n">${j+1}</span>${s}</li>`).join("")}</ol>
+        </div>
+        <div class="incl-box">
+          <div class="row"><i data-lucide="check"></i><span><strong>${t("pIncl")}:</strong><br>${L(p.incl)}</span></div>
+          <div class="row"><i data-lucide="users"></i><span>${t("pkgSub")}</span></div>
+          <button class="btn terra" data-book="${i}"><i data-lucide="message-circle" class="ic-m"></i>${t("pBook")}</button>
+        </div>
+      </div></div></div>
+    </div>`).join("");
+  refreshIcons();
+  $$("#plist .phead").forEach(h=>h.addEventListener("click",()=>h.parentElement.classList.toggle("open")));
+  $$("#plist [data-book]").forEach(b=>b.addEventListener("click",e=>{
+    e.stopPropagation();
+    const p=PKG[+b.dataset.book];
+    $("#fSvc").value="svc1"; $("#fItem").value=L(p.name);
+    document.getElementById("booking").scrollIntoView({behavior:"smooth"});
+    const f=$("#bkForm"); f.classList.remove("flash"); void f.offsetWidth; f.classList.add("flash");
+    toast(t("bkAuto").replace("{x}",L(p.name)));
+  }));
+}
+
+/* ===================== PENGINAPAN LEMBONGAN ===================== */
+function renderStays(){
+  const feat=STAY.find(s=>s.feat), rest=STAY.filter(s=>!s.feat);
+  $("#stays").innerHTML=`
+    <div class="stay-feat">
+      <figure><span class="pop-tag">${t("hTag")}</span><img loading="lazy" src="https://picsum.photos/seed/${feat.seed}/900/560.jpg" alt="${feat.name}"></figure>
+      <div class="dbody">
+        <span class="darea"><i data-lucide="map-pin"></i>${L(feat.area)}</span>
+        <h3 style="font-size:24px;margin:8px 0 7px">${feat.name}</h3>
+        <p style="font-size:13.5px;color:var(--muted)">${L(feat.desc)}</p>
+        <div class="stay-foot">
+          <span class="price"><b>${feat.price}</b><span>${t("perNight")}</span></span>
+          <button class="btn terra sm" data-stay="${feat.id}"><i data-lucide="bed-double" class="ic-s"></i>${t("hBook")}</button>
+        </div>
+      </div>
+    </div>
+    ${rest.map(s=>`
+    <div class="stay-sm">
+      <figure><img loading="lazy" src="https://picsum.photos/seed/${s.seed}/300/300.jpg" alt="${s.name}"></figure>
+      <div style="flex:1">
+        <h4>${s.name}</h4>
+        <span class="darea"><i data-lucide="map-pin"></i>${L(s.area)}</span>
+        <p>${L(s.desc)}</p>
+        <div class="stay-foot">
+          <span class="price"><b>${s.price}</b><span>${t("perNight")}</span></span>
+          <button class="btn ghost sm" data-stay="${s.id}">${t("hBook")}</button>
+        </div>
+      </div>
+    </div>`).join("")}`;
+  refreshIcons();
+  $$("#stays [data-stay]").forEach(b=>b.addEventListener("click",()=>{
+    const s=STAY.find(x=>x.id===b.dataset.stay);
+    $("#fSvc").value="svc2"; $("#fItem").value=s.name;
+    document.getElementById("booking").scrollIntoView({behavior:"smooth"});
+    const f=$("#bkForm"); f.classList.remove("flash"); void f.offsetWidth; f.classList.add("flash");
+    toast(t("bkAuto").replace("{x}",s.name));
+  }));
+}
+
+/* ===================== FAQ ===================== */
+function renderFaq(){
+  $("#flist").innerHTML=FAQ_KEYS.map(k=>`
+    <div class="frow">
+      <button class="fq">${t(k[0])}<i data-lucide="plus"></i></button>
+      <div class="fa"><div><p>${t(k[1])}</p></div></div>
+    </div>`).join("");
+  refreshIcons();
+  $$("#flist .fq").forEach(q=>q.addEventListener("click",()=>q.parentElement.classList.toggle("open")));
+}
+
+/* ===================== BOOKING → WHATSAPP ===================== */
+const dateEl=$("#fDate"); const today=new Date(); today.setDate(today.getDate()+1);
+dateEl.min=today.toISOString().split("T")[0]; dateEl.value=dateEl.min;
+ $("#bkForm").addEventListener("submit",e=>{
+  e.preventDefault();
+  const name=$("#fName").value.trim(), phone=$("#fPhone").value.trim();
+  if(!name||!phone){toast(t("tFill"));return;}
+  const msg=[t("helloMsg"),
+    `${t("bkName")}: ${name}`,
+    `${t("bkPhone")}: ${phone}`,
+    `${t("bkSvc")}: ${t($("#fSvc").value)}`,
+    `${t("bkItem")}: ${$("#fItem").value.trim()||"-"}`,
+    `${t("bkDate")}: ${$("#fDate").value||"-"}`,
+    `${t("bkPax")}: ${$("#fPax").value||"2"}`,
+    `${t("bkMsg")}: ${$("#fMsg").value.trim()||"-"}`].join("\n");
+  window.open(waLink(msg),"_blank"); toast(t("tOpen"));
+});
+ $("#rateCta").onclick=()=>{
+  $("#fSvc").value="svc3";
+  document.getElementById("booking").scrollIntoView({behavior:"smooth"});
+  const f=$("#bkForm"); f.classList.remove("flash"); void f.offsetWidth; f.classList.add("flash");
+};
+ $$(".wa-open").forEach(a=>a.addEventListener("click",e=>{
+  e.preventDefault();
+  window.open(waLink(t("ai_wa")),"_blank"); toast(t("tOpen"));
+}));
+
+/* ===================== CHAT AI (SIMULASI LOKAL) ===================== */
+function pushMsg(who,text){
+  const b=$("#cbody"), el=document.createElement("div");
+  el.className="msg "+who; el.textContent=text; b.appendChild(el);
+  b.scrollTop=b.scrollHeight; return el;
+}
+function botSay(text,delay){
+  const b=$("#cbody"), ty=document.createElement("div");
+  ty.className="msg bot typing"; ty.innerHTML="<i></i><i></i><i></i>";
+  setTimeout(()=>{b.appendChild(ty);b.scrollTop=b.scrollHeight;},150);
+  setTimeout(()=>{ty.remove();pushMsg("bot",text);},delay);
+}
+function hit(txt,w){
+  if(/^[a-z]{1,4}$/i.test(w)) return new RegExp("\\b"+w+"\\b","i").test(txt);
+  return txt.includes(w);
+}
+const INTENTS=[
+ ["ai_thx",["terima kasih","makasih","thank","감사","고마","谢谢","多谢"]],
+ ["ai_hours",["jam","buka","tutup","open","hour","时间","几点","운영","시간"]],
+ ["ai_pay",["bayar","payment","dp","cash","transfer","lunas","支付","付款","결제","지불"]],
+ ["ai_air",["bandara","jemput","airport","pickup","pick up","接机","机场","공항","픽업"]],
+ ["ai_hot",["hotel","villa","penginapan","stay","inn","homestay","酒店","住宿","숙소","호텔"]],
+ ["ai_lem",["lembongan","penida","nusa","蓝梦","佩尼达","렘본간","페니다"]],
+ ["ai_book",["book","booking","reserv","pesan","daftar","预约","预订","예약"]],
+ ["ai_pack",["paket","tour","package","price","harga","biaya","trip","价","费用","패키지","투어","가격","비용"]],
+ ["ai_greet",["halo","hallo","hai","hi","hello","hey","안녕","你好","您好"]],
+];
+function aiReply(text){
+  const s=text.toLowerCase();
+  for(const [key,words] of INTENTS){
+    if(words.some(w=>hit(s,w))) return t(key);
+  }
+  return t("ai_def");
+}
+function sendChat(text){
+  if(!text.trim()) return;
+  pushMsg("me",text); $("#cInput").value="";
+  botSay(aiReply(text), 650+Math.random()*500);
+}
+function renderChips(){
+  $("#chipsRow").innerHTML=["chip1","chip2","chip3"].map(k=>`<button class="qchip" data-c="${k}">${t(k)}</button>`).join("");
+  $$("#chipsRow .qchip").forEach(c=>c.onclick=()=>sendChat(t(c.dataset.c)));
+}
+ $("#fab").addEventListener("click",()=>{
+  const p=$("#cpanel"); p.classList.toggle("open");
+  if(p.classList.contains("open")&&!chatStarted){
+    chatStarted=true; botSay(t("cHello"),350);
+    setTimeout(()=>{const b=$("#cbody");b.scrollTop=b.scrollHeight;},1200);
+  }
+});
+ $("#cSend").onclick=()=>sendChat($("#cInput").value);
+ $("#cInput").addEventListener("keydown",e=>{if(e.key==="Enter")sendChat($("#cInput").value);});
+ $("#chatWa").addEventListener("click",e=>{e.preventDefault();window.open(waLink(t("ai_wa")),"_blank");});
+
+/* ===================== NAV / DRAWER / LANG ===================== */
+ $("#burger").onclick=()=>$("#drawer").classList.add("open");
+ $("#drawerClose").onclick=()=>$("#drawer").classList.remove("open");
+ $$("#drawer nav a").forEach(a=>a.onclick=()=>$("#drawer").classList.remove("open"));
+ $("#langBtn").onclick=e=>{e.stopPropagation();$("#langMenu").classList.toggle("open");};
+document.addEventListener("click",e=>{if(!e.target.closest(".lang"))$("#langMenu").classList.remove("open");});
+
+/* ===================== REVEAL ON SCROLL ===================== */
+const io=new IntersectionObserver(es=>es.forEach(en=>{
+  if(en.isIntersecting){en.target.classList.add("in");io.unobserve(en.target);}
+}),{threshold:.12});
+ $$(".rv").forEach(el=>io.observe(el));
+
+/* ===================== INIT ===================== */
+applyI18n(); renderDest(); renderPkg(); renderStays(); renderFaq(); renderChips(); refreshIcons();
+</script>
+</body>
+</html>
