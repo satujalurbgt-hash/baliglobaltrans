@@ -45,13 +45,11 @@ h1,h2,h3,.serif{font-family:'Fraunces','Noto Serif SC','Noto Serif KR',serif;fon
 .btn.terra:hover{background:var(--terra-d);transform:translateY(-2px)}
 .btn.ghost{border-color:rgba(35,45,36,.28);color:var(--ink);background:transparent}
 .btn.ghost:hover{border-color:var(--ink)}
-.btn.on-dark{border-color:rgba(243,238,223,.35);color:var(--sand)}
-.btn.on-dark:hover{border-color:var(--sand)}
 .btn.sm{padding:9px 16px;font-size:13px}
 .btn.wide{width:100%}
 
 /* ============ TOPBAR & NAV ============ */
-/* FIX: topbar diberi z-index lebih tinggi dari navbar agar popup bahasa tidak tertutup */
+/* FIX: popup bahasa selalu tampil di atas navbar */
 .topbar{background:var(--green-d);color:var(--sand);font-size:12.5px;padding:8px 0;position:relative;z-index:56}
 .topbar .container{display:flex;justify-content:space-between;align-items:center;gap:14px}
 .topbar .tb-left{display:flex;align-items:center;gap:8px;opacity:.9}
@@ -59,7 +57,6 @@ h1,h2,h3,.serif{font-family:'Fraunces','Noto Serif SC','Noto Serif KR',serif;fon
 .lang{position:relative}
 .lang-btn{display:flex;align-items:center;gap:7px;background:transparent;border:1px solid rgba(243,238,223,.3);color:var(--sand);padding:5px 12px;border-radius:999px;font-size:12.5px;font-weight:600;transition:.2s}
 .lang-btn:hover{border-color:var(--sand)}
-/* FIX: z-index popup bahasa dinaikkan ke 60 (di atas navbar yang 55) */
 .lang-menu{position:absolute;right:0;top:calc(100% + 8px);background:var(--white);color:var(--ink);border:1px solid var(--line);border-radius:14px;box-shadow:0 18px 40px rgba(23,37,28,.18);padding:6px;min-width:190px;display:none;z-index:60}
 .lang-menu.open{display:block}
 .lang-menu button{display:flex;width:100%;align-items:center;justify-content:space-between;gap:14px;padding:9px 13px;border:none;background:transparent;border-radius:9px;font-size:13.5px;font-weight:600;color:var(--ink)}
@@ -466,8 +463,8 @@ footer h4{color:var(--sand);font-size:13px;letter-spacing:.18em;text-transform:u
     </div>
     <div class="hero-visual rv in" style="transition-delay:.15s">
       <div class="orb"></div>
-      <div class="arch-main"><img src="https://picsum.photos/seed/bgt-hero/900/1120.jpg" alt="Bali"></div>
-      <div class="arch-small"><img src="https://picsum.photos/seed/bgt-raft/560/450.jpg" alt="Bali"></div>
+      <div class="arch-main"><img id="imgHero" src="" alt="Bali"></div>
+      <div class="arch-small"><img id="imgHeroS" src="" alt="Bali"></div>
       <div class="float-card">
         <span class="fic"><i data-lucide="plane" class="ic-m"></i></span>
         <span><b data-i18n="badge24"></b><span>Ngurah Rai</span></span>
@@ -528,7 +525,7 @@ footer h4{color:var(--sand);font-size:13px;letter-spacing:.18em;text-transform:u
         </div>
       </div>
       <div class="lemb-arch rv" style="transition-delay:.15s">
-        <img src="https://picsum.photos/seed/bgt-lembongan/800/1000.jpg" alt="Nusa Lembongan">
+        <img id="imgLemb" src="" alt="Nusa Lembongan">
       </div>
     </div>
     <div class="stays rv">
@@ -724,15 +721,59 @@ footer h4{color:var(--sand);font-size:13px;letter-spacing:.18em;text-transform:u
 <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 <script>
 /* =====================================================================
-   KONFIGURASI — cukup ubah bagian ini saja
+   PENGATURAN — CUKUP UBAH BAGIAN INI SAJA
    ===================================================================== */
-const WA_NUM = '6281933301033';      // Nomor WhatsApp Bali Global Tran
-const LOGO_URL = '';                 // ← TEMPATKAN LOGO ANDA DI SINI
-                                     //   contoh: 'logo.png'  (letakkan file logo.png
-                                     //   di folder yang sama dengan index.html)
-                                     //   atau URL online: 'https://...'
+
+// 1) NOMOR WHATSAPP (format internasional: 62... tanpa + dan tanpa spasi)
+const WA_NUM = '6281933301033';
+
+// 2) LOGO ANDA — SUDAH DIPASANG: bgt.png
+//    Syarat: file bgt.png harus ada di folder yang sama dengan index.html
+//    Nanti kalau mau ganti, cukup ubah tulisan di antara tanda kutip ini.
+const LOGO_URL = '512B.png';
+
+// 3) GAMBAR-GAMBAR ANDA (bisa .jpg / .png / .webp)
+//    CARA PAKAI:
+//    a) Buat folder bernama "images" di folder yang sama dengan index.html
+//    b) Taruh foto Anda di situ, contoh: images/penida.jpg
+//    c) Isi nama filenya di bawah, contoh: penida:'images/penida.jpg'
+//    d) Kosongkan ('') = otomatis memakai gambar contoh
+//    Bisa juga pakai link online: 'https://situsanda.com/foto.jpg'
+const IMG = {
+  /* --- Halaman utama --- */
+  heroUtama : '',   // Foto besar di kanan atas (disarankan potret, cth 900x1120)
+  heroKecil : '',   // Foto kecil menempel di hero (cth 560x450)
+  lembongan : '',   // Foto pulau Lembongan di section gelap (cth 800x1000)
+
+  /* --- Destinasi: LAUT --- */
+  penida    : '',   // cth: 'images/penida.jpg'
+  lembonganDest: '',// cth: 'images/lembongan-2.jpg'
+  uluwatu   : '',
+  kuta      : '',
+
+  /* --- Destinasi: DARAT --- */
+  ubud      : '',
+  tirta     : '',
+  monkey    : '',
+  jatiluwih : '',
+
+  /* --- Destinasi: GUNUNG --- */
+  batur     : '',
+  kintamani : '',
+  bedugul   : '',
+  munduk    : '',
+
+  /* --- Penginapan Lembongan --- */
+  villa     : '',   // cth: 'images/villa.jpg'
+  bungalow  : '',
+  homestay  : ''
+};
+
 const BRAND_NAME = 'Bali Global Tran';
 const waLink = txt => 'https://wa.me/' + WA_NUM + '?text=' + encodeURIComponent(txt);
+
+/* Bantuan: jika gambar kosong, pakai gambar contoh otomatis */
+const pic = (v, seed, w, h) => v ? v : `https://picsum.photos/seed/${seed}/${w}/${h}.jpg`;
 
 /* ===================== KAMUS BAHASA ===================== */
 const T = {
@@ -748,7 +789,7 @@ mSpots:"Sorotan",mWa:"Pesan via WhatsApp",mClose:"Tetap jelajah",
 pkgEyebrow:"Paket Tour",pkgTitle:"Perjalanan yang sudah dirancang rapi — tinggal ikut.",pkgSub:"Harga per orang, minimal 2 peserta. Tour privat, bukan rombongan besar.",
 pItin:"Rute harian",pIncl:"Sudah termasuk",pBook:"Pesan paket ini",pPer:"per orang",
 lembEyebrow:"Nusa Lembongan",lembTitle:"Pulau kecil, keajaiban besar — 30 menit dari Sanur.",lembDesc:"Air jernih, laguna biru, dan malam yang tenang. Kami urus tiket fast boat, snorkeling, hingga penginapan pilihan.",
-lembActs:"Aktivitas unggulan",stayTitle:"Penginapan pilihan",perNight:"/malam",hTag:"Terpopuler",hBook:"Booking",
+stayTitle:"Penginapan pilihan",perNight:"/malam",hTag:"Terpopuler",hBook:"Booking",
 a1t:"Snorkeling Manta Point",a1d:"Berenang berdampingan dengan pari manta di perairan terbuka Penida.",
 a2t:"Tur Mangrove",a2d:"Menyusuri hutan bakau yang tenang dengan perahu tradisional.",
 a3t:"Devil's Tears & Sunset",a3d:"Semburan ombak dan golden hour terbaik di seluruh pulau.",
@@ -796,7 +837,7 @@ mSpots:"Highlights",mWa:"Book via WhatsApp",mClose:"Keep exploring",
 pkgEyebrow:"Tour Packages",pkgTitle:"Journeys already designed to perfection — just come along.",pkgSub:"Prices per person, minimum 2 guests. Private tours, never crowded buses.",
 pItin:"Daily route",pIncl:"What's included",pBook:"Book this package",pPer:"per person",
 lembEyebrow:"Nusa Lembongan",lembTitle:"A small island with big wonders — 30 minutes from Sanur.",lembDesc:"Crystal water, blue lagoons, and calm nights. We handle fast boats, snorkeling, and hand-picked stays.",
-lembActs:"Signature activities",stayTitle:"Where to stay",perNight:"/night",hTag:"Most loved",hBook:"Book",
+stayTitle:"Where to stay",perNight:"/night",hTag:"Most loved",hBook:"Book",
 a1t:"Manta Point Snorkeling",a1d:"Swim alongside manta rays in Penida's open water.",
 a2t:"Mangrove Boat Tour",a2d:"Glide through a quiet mangrove forest in a traditional boat.",
 a3t:"Devil's Tears & Sunset",a3d:"Crashing wave bursts and the island's best golden hour.",
@@ -844,7 +885,7 @@ mSpots:"亮点",mWa:"通过 WhatsApp 预订",mClose:"继续浏览",
 pkgEyebrow:"一日游套餐",pkgTitle:"行程已为您安排妥当，只需出发。",pkgSub:"价格为每人，2人起订。私人专车，绝无拥挤大巴。",
 pItin:"每日行程",pIncl:"费用包含",pBook:"预订此套餐",pPer:"/人",
 lembEyebrow:"蓝梦岛",lembTitle:"小岛大惊奇——距沙努尔仅30分钟。",lembDesc:"清澈海水、蓝色泻湖与宁静夜晚。快艇、浮潜与精选住宿，全部为您安排。",
-lembActs:"特色活动",stayTitle:"精选住宿",perNight:"/晚",hTag:"最受欢迎",hBook:"预订",
+stayTitle:"精选住宿",perNight:"/晚",hTag:"最受欢迎",hBook:"预订",
 a1t:"Manta 浮潜",a1d:"在佩尼达外海与蝠鲼同游。",
 a2t:"红树林游船",a2d:"乘传统小船穿行静谧的红树林。",
 a3t:"魔鬼之泪 & 日落",a3d:"惊涛拍岸与全岛最美的黄金时刻。",
@@ -892,7 +933,7 @@ mSpots:"하이라이트",mWa:"WhatsApp으로 예약",mClose:"계속 둘러보기
 pkgEyebrow:"투어 패키지",pkgTitle:"완벽하게 준비된 여행 — 함께 떠나기만 하면 됩니다.",pkgSub:"1인 가격, 최소 2인. 혼잡한 버스가 아닌 프라이빗 투어입니다.",
 pItin:"일정",pIncl:"포함 사항",pBook:"이 패키지 예약",pPer:"/인",
 lembEyebrow:"누사렘본간",lembTitle:"작은 섬, 큰 감동 — 사누르에서 30분.",lembDesc:"맑은 바다, 푸른 라군, 평화로운 밤. 고속보트, 스노클링, 추천 숙소까지 모두 준비합니다.",
-lembActs:"핵심 액티비티",stayTitle:"추천 숙소",perNight:"/박",hTag:"가장 인기",hBook:"예약",
+stayTitle:"추천 숙소",perNight:"/박",hTag:"가장 인기",hBook:"예약",
 a1t:"만타 포인트 스노클링",a1d:"페니다의 푸른 바다에서 만타가와 함께 수영.",
 a2t:"망그로브 보트 투어",a2d:"전통 보트로 고요한 망그로브 숲을 지나요.",
 a3t:"데빌스 티어스 & 일몰",a3d:"파도 분수와 섬에서 가장 아름다운 골든아워.",
@@ -931,32 +972,34 @@ helloMsg:"안녕하세요 Bali Global Tran! 예약을 원합니다:",destWa:"안
 };
 
 /* ===================== DATA ===================== */
+/* Kolom "img" mengacu ke nama di IMG di atas — ganti foto lewat IMG saja */
+
 const DEST=[
-{id:"penida",cat:"sea",seed:"bgt-penida",name:"Nusa Penida",area:{id:"Klungkung · Timur Bali",en:"Klungkung · East Bali",zh:"克隆孔 · 东部",ko:"클룽쿵 · 동부"},desc:{id:"Tebing raksasa Kelingking dan air biru sebening kristal — ikon timur Bali.",en:"The giant Kelingking cliff and crystal-blue water — Bali's eastern icon.",zh:"精灵坠崖巨崖与水晶般清澈的海水——巴厘东部的标志。",ko:"켈링킹 거대 절벽과 수정처럼 푸른 바다 — 발리 동부의 아이콘."},spots:["Kelingking Beach","Broken Beach","Crystal Bay"]},
-{id:"lembongan",cat:"sea",seed:"bgt-lembongan-dest",name:"Nusa Lembongan",area:{id:"Klungkung · Timur Bali",en:"Klungkung · East Bali",zh:"克隆孔 · 东部",ko:"클룽쿵 · 동부"},desc:{id:"Pulau tenang berlaguna biru, hanya 30 menit dari daratan Bali.",en:"A calm island with blue lagoons, just 30 minutes from Bali.",zh:"距巴厘岛仅30分钟的宁静泻湖小岛。",ko:"발리에서 30분 거리, 푸른 라군의 평화로운 섬."},spots:["Dream Beach","Mangrove Forest","Yellow Bridge"]},
-{id:"uluwatu",cat:"sea",seed:"bgt-uluwatu",name:"Uluwatu",area:{id:"Badung · Selatan",en:"Badung · South",zh:"巴东县 · 南部",ko:"바둥 · 남부"},desc:{id:"Pura di ujung tebing 70 meter di atas samudra Hindia, terkenal Kecak sunset.",en:"A clifftop temple 70m above the Indian Ocean, famous for Kecak sunset.",zh:"矗立于70米悬崖之上的神庙，印度洋日落与克差舞的故乡。",ko:"인도양 위 70m 절벽 위의 사원, 케차 석양으로 유명."},spots:["Uluwatu Temple","Kecak Fire Dance","Padang Padang"]},
-{id:"kuta",cat:"sea",seed:"bgt-kuta",name:"Kuta & Seminyak",area:{id:"Badung · Selatan",en:"Badung · South",zh:"巴东县 · 南部",ko:"바둥 · 남부"},desc:{id:"Pantai pasir emas untuk surf pemula dan matahari tenggelam legendaris.",en:"Golden-sand beaches for beginner surf and legendary sunsets.",zh:"适合初学冲浪的金色沙滩与传奇日落。",ko:"초보 서핑과 일몰로 유명한 황금빛 해변."},spots:["Kuta Beach","Seminyak","Double Six"]},
-{id:"ubud",cat:"land",seed:"bgt-ubud",name:"Ubud & Tegalalang",area:{id:"Gianyar · Tengah",en:"Gianyar · Central",zh:"吉安雅 · 中部",ko:"기아르 · 중부"},desc:{id:"Jantung kebudayaan Bali: sawah terasering, jungle swing, dan galeri seni.",en:"Bali's cultural heart: rice terraces, jungle swings, and art galleries.",zh:"巴厘文化中心：梯田、丛林秋千与艺术画廊。",ko:"발리 문화의 중심: 라이스 테라스, 정글 스윙, 갤러리."},spots:["Tegalalang","Ubud Palace","Campuhan Ridge"]},
-{id:"tirta",cat:"land",seed:"bgt-tirta",name:"Tirta Empul",area:{id:"Tampaksiring · Gianyar",en:"Tampaksiring · Gianyar",zh:"坦帕克西林 · 吉安雅",ko:"탐파크시링 · 기아르"},desc:{id:"Pura mata air suci berusia ribuan tahun untuk ritual pemurnian.",en:"A thousand-year-old holy spring temple for purification rituals.",zh:"千年圣泉寺，感受净身仪式的神圣。",ko:"천년의 성수 사원, 정화 의식의 명소."},spots:["Tirta Empul","Gunung Kawi","Pura Mengening"]},
-{id:"monkey",cat:"land",seed:"bgt-monkey",name:"Monkey Forest Ubud",area:{id:"Gianyar · Tengah",en:"Gianyar · Central",zh:"吉安雅 · 中部",ko:"기아르 · 중부"},desc:{id:"Hutan banyan suci yang menjadi rumah ratusan monyet makaka.",en:"A sacred banyan forest home to hundreds of macaques.",zh:"数百只猕猴栖息的神圣榕树林。",ko:"수백 마리 원숭이가 사는 신성한 반얀숲."},spots:["Sacred Monkey Forest","Dalem Agung Temple","Dragon Bridge"]},
-{id:"jatiluwih",cat:"land",seed:"bgt-jatiluwih",name:"Jatiluwih",area:{id:"Tabanan · Barat",en:"Tabanan · West",zh:"塔巴南 · 西部",ko:"타바난 · 서부"},desc:{id:"Sawah terasering UNESCO terluas — hijau sejauh mata memandang.",en:"UNESCO-listed terraces, emerald green as far as the eye can see.",zh:"联合国教科文组织遗产梯田，满目苍翠。",ko:"유네스코 등재 테라스, 끝없이 펼쳐진 에메랄드."},spots:["Jatiluwih Terrace","Batukaru Temple","Yeh Hoo Waterfall"]},
-{id:"batur",cat:"mount",seed:"bgt-batur",name:"Gunung Batur",area:{id:"Kintamani · Utara",en:"Kintamani · North",zh:"金塔马尼 · 北部",ko:"긴타마니 · 북부"},desc:{id:"Trekking subuh 2 jam untuk matahari terbit di atas kaldera aktif.",en:"A 2-hour dawn trek to sunrise over an active caldera.",zh:"凌晨2小时徒步，在活火山口迎接日出。",ko:"새벽 2시간 트레킹, 활화산 칼데라 위 일출."},spots:["Mount Batur Summit","Sunrise Point","Lava Fields"]},
-{id:"kintamani",cat:"mount",seed:"bgt-kintamani",name:"Kintamani",area:{id:"Kintamani · Utara",en:"Kintamani · North",zh:"金塔马尼 · 北部",ko:"긴타마니 · 북부"},desc:{id:"Panorama kaldera dan Danau Batur dari tepian dataran tinggi yang sejuk.",en:"Caldera and Lake Batur panoramas from the cool highland rim.",zh:"清凉高原上的巴图尔火山口与湖泊全景。",ko:"시원한 고원에서 바라보는 칼데라와 바투르 호수."},spots:["Kintamani Viewpoint","Lake Batur","Trunyan Village"]},
-{id:"bedugul",cat:"mount",seed:"bgt-bedugul",name:"Bedugul & Ulun Danu",area:{id:"Tabanan · Dataran Tinggi",en:"Tabanan · Highlands",zh:"塔巴南 · 高原",ko:"타바난 · 고원"},desc:{id:"Danau berkabut dengan Ulun Danu — pura terapung paling fotogenik di Bali.",en:"A misty lake with Ulun Danu, Bali's most photogenic floating temple.",zh:"雾中湖泊与水神庙——巴厘最上镜的水上寺院。",ko:"안개 낀 호수와 울룬다누 수상 사원."},spots:["Ulun Danu Beratan","Bali Botanic Garden","Handara Gate"]},
-{id:"munduk",cat:"mount",seed:"bgt-munduk",name:"Munduk Highland",area:{id:"Buleleng · Dataran Tinggi",en:"Buleleng · Highlands",zh:"布莱伦 · 高原",ko:"블렐렝 · 고원"},desc:{id:"Dataran tinggi sejuk berisi air terjun, kebun cengkih, dan kabut pagi.",en:"Cool highlands of waterfalls, clove farms, and morning mist.",zh:"清凉高原上的瀑布、丁香园与晨雾。",ko:"폭포와 정원, 아침 안개의 시원한 고원 지대."},spots:["Munduk Waterfall","Twin Lakes","Clove Plantations"]}
+{id:"penida",cat:"sea",img:"penida",seed:"bgt-penida",name:"Nusa Penida",area:{id:"Klungkung · Timur Bali",en:"Klungkung · East Bali",zh:"克隆孔 · 东部",ko:"클룽쿵 · 동부"},desc:{id:"Tebing raksasa Kelingking dan air biru sebening kristal — ikon timur Bali.",en:"The giant Kelingking cliff and crystal-blue water — Bali's eastern icon.",zh:"精灵坠崖巨崖与水晶般清澈的海水——巴厘东部的标志。",ko:"켈링킹 거대 절벽과 수정처럼 푸른 바다 — 발리 동부의 아이콘."},spots:["Kelingking Beach","Broken Beach","Crystal Bay"]},
+{id:"lembongan",cat:"sea",img:"lembonganDest",seed:"bgt-lembongan-dest",name:"Nusa Lembongan",area:{id:"Klungkung · Timur Bali",en:"Klungkung · East Bali",zh:"克隆孔 · 东部",ko:"클룽쿵 · 동부"},desc:{id:"Pulau tenang berlaguna biru, hanya 30 menit dari daratan Bali.",en:"A calm island with blue lagoons, just 30 minutes from Bali.",zh:"距巴厘岛仅30分钟的宁静泻湖小岛。",ko:"발리에서 30분 거리, 푸른 라군의 평화로운 섬."},spots:["Dream Beach","Mangrove Forest","Yellow Bridge"]},
+{id:"uluwatu",cat:"sea",img:"uluwatu",seed:"bgt-uluwatu",name:"Uluwatu",area:{id:"Badung · Selatan",en:"Badung · South",zh:"巴东县 · 南部",ko:"바둥 · 남부"},desc:{id:"Pura di ujung tebing 70 meter di atas samudra Hindia, terkenal Kecak sunset.",en:"A clifftop temple 70m above the Indian Ocean, famous for Kecak sunset.",zh:"矗立于70米悬崖之上的神庙，印度洋日落与克差舞的故乡。",ko:"인도양 위 70m 절벽 위의 사원, 케차 석양으로 유명."},spots:["Uluwatu Temple","Kecak Fire Dance","Padang Padang"]},
+{id:"kuta",cat:"sea",img:"kuta",seed:"bgt-kuta",name:"Kuta & Seminyak",area:{id:"Badung · Selatan",en:"Badung · South",zh:"巴东县 · 南部",ko:"바둥 · 남부"},desc:{id:"Pantai pasir emas untuk surf pemula dan matahari tenggelam legendaris.",en:"Golden-sand beaches for beginner surf and legendary sunsets.",zh:"适合初学冲浪的金色沙滩与传奇日落。",ko:"초보 서핑과 일몰로 유명한 황금빛 해변."},spots:["Kuta Beach","Seminyak","Double Six"]},
+{id:"ubud",cat:"land",img:"ubud",seed:"bgt-ubud",name:"Ubud & Tegalalang",area:{id:"Gianyar · Tengah",en:"Gianyar · Central",zh:"吉安雅 · 中部",ko:"기아르 · 중부"},desc:{id:"Jantung kebudayaan Bali: sawah terasering, jungle swing, dan galeri seni.",en:"Bali's cultural heart: rice terraces, jungle swings, and art galleries.",zh:"巴厘文化中心：梯田、丛林秋千与艺术画廊。",ko:"발리 문화의 중심: 라이스 테라스, 정글 스윙, 갤러리."},spots:["Tegalalang","Ubud Palace","Campuhan Ridge"]},
+{id:"tirta",cat:"land",img:"tirta",seed:"bgt-tirta",name:"Tirta Empul",area:{id:"Tampaksiring · Gianyar",en:"Tampaksiring · Gianyar",zh:"坦帕克西林 · 吉安雅",ko:"탐파크시링 · 기아르"},desc:{id:"Pura mata air suci berusia ribuan tahun untuk ritual pemurnian.",en:"A thousand-year-old holy spring temple for purification rituals.",zh:"千年圣泉寺，感受净身仪式的神圣。",ko:"천년의 성수 사원, 정화 의식의 명소."},spots:["Tirta Empul","Gunung Kawi","Pura Mengening"]},
+{id:"monkey",cat:"land",img:"monkey",seed:"bgt-monkey",name:"Monkey Forest Ubud",area:{id:"Gianyar · Tengah",en:"Gianyar · Central",zh:"吉安雅 · 中部",ko:"기아르 · 중부"},desc:{id:"Hutan banyan suci yang menjadi rumah ratusan monyet makaka.",en:"A sacred banyan forest home to hundreds of macaques.",zh:"数百只猕猴栖息的神圣榕树林。",ko:"수백 마리 원숭이가 사는 신성한 반얀숲."},spots:["Sacred Monkey Forest","Dalem Agung Temple","Dragon Bridge"]},
+{id:"jatiluwih",cat:"land",img:"jatiluwih",seed:"bgt-jatiluwih",name:"Jatiluwih",area:{id:"Tabanan · Barat",en:"Tabanan · West",zh:"塔巴南 · 西部",ko:"타바난 · 서부"},desc:{id:"Sawah terasering UNESCO terluas — hijau sejauh mata memandang.",en:"UNESCO-listed terraces, emerald green as far as the eye can see.",zh:"联合国教科文组织遗产梯田，满目苍翠。",ko:"유네스코 등재 테라스, 끝없이 펼쳐진 에메랄드."},spots:["Jatiluwih Terrace","Batukaru Temple","Yeh Hoo Waterfall"]},
+{id:"batur",cat:"mount",img:"batur",seed:"bgt-batur",name:"Gunung Batur",area:{id:"Kintamani · Utara",en:"Kintamani · North",zh:"金塔马尼 · 北部",ko:"긴타마니 · 북부"},desc:{id:"Trekking subuh 2 jam untuk matahari terbit di atas kaldera aktif.",en:"A 2-hour dawn trek to sunrise over an active caldera.",zh:"凌晨2小时徒步，在活火山口迎接日出。",ko:"새벽 2시간 트레킹, 활화산 칼데라 위 일출."},spots:["Mount Batur Summit","Sunrise Point","Lava Fields"]},
+{id:"kintamani",cat:"mount",img:"kintamani",seed:"bgt-kintamani",name:"Kintamani",area:{id:"Kintamani · Utara",en:"Kintamani · North",zh:"金塔马尼 · 北部",ko:"긴타마니 · 북부"},desc:{id:"Panorama kaldera dan Danau Batur dari tepian dataran tinggi yang sejuk.",en:"Caldera and Lake Batur panoramas from the cool highland rim.",zh:"清凉高原上的巴图尔火山口与湖泊全景。",ko:"시원한 고원에서 바라보는 칼데라와 바투르 호수."},spots:["Kintamani Viewpoint","Lake Batur","Trunyan Village"]},
+{id:"bedugul",cat:"mount",img:"bedugul",seed:"bgt-bedugul",name:"Bedugul & Ulun Danu",area:{id:"Tabanan · Dataran Tinggi",en:"Tabanan · Highlands",zh:"塔巴南 · 高原",ko:"타바난 · 고원"},desc:{id:"Danau berkabut dengan Ulun Danu — pura terapung paling fotogenik di Bali.",en:"A misty lake with Ulun Danu, Bali's most photogenic floating temple.",zh:"雾中湖泊与水神庙——巴厘最上镜的水上寺院。",ko:"안개 낀 호수와 울룬다누 수상 사원."},spots:["Ulun Danu Beratan","Bali Botanic Garden","Handara Gate"]},
+{id:"munduk",cat:"mount",img:"munduk",seed:"bgt-munduk",name:"Munduk Highland",area:{id:"Buleleng · Dataran Tinggi",en:"Buleleng · Highlands",zh:"布莱伦 · 高原",ko:"블렐렝 · 고원"},desc:{id:"Dataran tinggi sejuk berisi air terjun, kebun cengkih, dan kabut pagi.",en:"Cool highlands of waterfalls, clove farms, and morning mist.",zh:"清凉高原上的瀑布、丁香园与晨雾。",ko:"폭포와 정원, 아침 안개의 시원한 고원 지대."},spots:["Munduk Waterfall","Twin Lakes","Clove Plantations"]}
 ];
 
 const PKG=[
-{name:{id:"Nusa Penida Day Trip",en:"Nusa Penida Day Trip",zh:"佩尼达岛一日游",ko:"누사페니다 데이 트립"},price:"Rp 550.000",dur:"dur1",seed:"bgt-pkg-penida",
+{name:{id:"Nusa Penida Day Trip",en:"Nusa Penida Day Trip",zh:"佩尼达岛一日游",ko:"누사페니다 데이 트립"},price:"Rp 550.000",dur:"dur1",
  itin:{id:["Penjemputan hotel (04.30–05.30)","Fast boat dari Sanur","Kelingking Beach & Angel's Billabong","Broken Beach & Crystal Bay","Pulang & antar hotel"],en:["Hotel pickup (04.30–05.30)","Fast boat from Sanur","Kelingking Beach & Angel's Billabong","Broken Beach & Crystal Bay","Return & hotel drop-off"],zh:["酒店接驳（04:30–05:30）","从沙努尔乘快艇","精灵坠崖 & 天使浴池","破碎沙滩 & 水晶湾","返程并送回酒店"],ko:["호텔 픽업 (04:30–05:30)","사누르에서 고속보트","켈링킹 비치 & 엔젤스 빌라봉","브로큰 비치 & 크리스탈 베이","귀길 & 호텔 도착"]},
  incl:{id:"Fast boat PP, mobil + driver di Penida, tiket masuk, lunch box, air mineral",en:"Return fast boat, car + driver on Penida, entrance fees, lunch box, mineral water",zh:"含往返快艇、岛上专车司机、门票、简餐、饮用水",ko:"왕복 고속보트, 페니다 현지 차량+기사, 입장료, 도시락, 생수 포함"}},
-{name:{id:"Ubud Culture & Waterfall",en:"Ubud Culture & Waterfall",zh:"乌布文化与瀑布",ko:"우붓 문화 & 폭포 투어"},price:"Rp 450.000",dur:"dur1",seed:"bgt-pkg-ubud",
+{name:{id:"Ubud Culture & Waterfall",en:"Ubud Culture & Waterfall",zh:"乌布文化与瀑布",ko:"우붓 문화 & 폭포 투어"},price:"Rp 450.000",dur:"dur1",
  itin:{id:["Penjemputan hotel (08.00)","Tegalalang Rice Terrace","Tirta Empul & Jungle Swing","Air terjun Tegenungan","Monkey Forest & antar hotel"],en:["Hotel pickup (08.00)","Tegalalang Rice Terrace","Tirta Empul & Jungle Swing","Tegenungan Waterfall","Monkey Forest & drop-off"],zh:["酒店接驳（08:00）","德格拉朗梯田","圣泉寺 & 丛林秋千","Tegenungan 瀑布","圣猴森林公园，后送回酒店"],ko:["호텔 픽업 (08:00)","테갈랄랑 라이스 테라스","티르타 엠풀 & 정글 스윙","테게눙안 폭포","우붓 원숭이숲 후 호텔 도착"]},
  incl:{id:"Mobil privat + driver + BBM, semua tiket masuk, air mineral",en:"Private car + driver + fuel, all entrance tickets, mineral water",zh:"含私家车+司机+油费、所有门票、饮用水",ko:"전용차+기사+유류비, 전 입장료, 생수 포함"}},
-{name:{id:"Kintamani Sunrise & Hot Spring",en:"Kintamani Sunrise & Hot Spring",zh:"金塔马尼日出温泉",ko:"긴타마니 일출 & 온천"},price:"Rp 600.000",dur:"dur3",seed:"bgt-pkg-kintamani",
+{name:{id:"Kintamani Sunrise & Hot Spring",en:"Kintamani Sunrise & Hot Spring",zh:"金塔马尼日出温泉",ko:"긴타마니 일출 & 온천"},price:"Rp 600.000",dur:"dur3",
  itin:{id:["Penjemputan hotel (02.00)","Sunrise trekking Gunung Batur","Sarapan pemandangan kaldera","Natural Hot Spring Toya Devasya","Pulang via kebun kopi"],en:["Hotel pickup (02.00)","Sunrise trek on Mount Batur","Breakfast overlooking the caldera","Toya Devasya Natural Hot Spring","Return via coffee plantation"],zh:["酒店接驳（02:00）","巴图尔火山日出徒步","火山口早餐","Toya Devasya 天然温泉","途经咖啡园返程"],ko:["호텔 픽업 (02:00)","바투르 산 일출 트레킹","칼데라 조망 아침식사","토야 데바스야 온천","커피 농장 경유 귀가"]},
  incl:{id:"Mobil privat, pemandu trekking, tiket masuk & hot spring, sarapan",en:"Private car, trekking guide, entrance & hot spring tickets, breakfast",zh:"含专车、登山向导、门票与温泉、早餐",ko:"전용차, 트레킹 가이드, 입장료·온천, 아침식사 포함"}},
-{name:{id:"Lembongan 2D1N",en:"Lembongan 2D1N",zh:"蓝梦岛2天1夜",ko:"렘본간 1박 2일"},price:"Rp 850.000",dur:"dur4",seed:"bgt-pkg-lembongan",
+{name:{id:"Lembongan 2D1N",en:"Lembongan 2D1N",zh:"蓝梦岛2天1夜",ko:"렘본간 1박 2일"},price:"Rp 850.000",dur:"dur4",
  itin:{id:["Fast boat Sanur–Lembongan","Snorkeling Manta Point (3 spot)","Tur mangrove & pantai barat","Penginapan + sarapan","Fast boat pulang & antar hotel"],en:["Fast boat Sanur–Lembongan","Manta Point snorkeling (3 spots)","Mangrove & west-coast tour","Stay + breakfast","Return boat & hotel drop-off"],zh:["快艇 沙努尔–蓝梦岛","Manta 浮潜（3处）","红树林 & 西岸巡游","住宿含早餐","返程快艇并送回酒店"],ko:["고속보트 사누르–렘본간","만타 포인트 스노클링 (3곳)","망그로브 & 서해안 투어","숙박 + 아침식사","복귀 보트 후 호텔 도착"]},
  incl:{id:"Fast boat PP, snorkeling + alat, penginapan 1 malam, sarapan",en:"Return fast boat, snorkeling gear, 1-night stay, breakfast",zh:"含往返快艇、浮潜装备、1晚住宿、早餐",ko:"왕복 고속보트, 스노클링 장비, 1박 숙박, 아침식사 포함"}}
 ];
@@ -965,13 +1008,13 @@ T.id.dur3="Mulai 02.00";T.en.dur3="Starts 02.00";T.zh.dur3="02:00 出发";T.ko.d
 T.id.dur4="2 Hari 1 Malam";T.en.dur4="2 Days 1 Night";T.zh.dur4="2天1夜";T.ko.dur4="1박 2일";
 
 const STAY=[
-{id:"villa",name:"Villa Kayu Lembongan",seed:"bgt-stay-villa",price:"Rp 750.000",feat:true,
+{id:"villa",img:"villa",seed:"bgt-stay-villa",name:"Villa Kayu Lembongan",price:"Rp 750.000",feat:true,
  area:{id:"Jungutbatu · Tepi laut",en:"Jungutbatu · Beachfront",zh:"朱古巴图 · 海滨",ko:"중굿바투 · 해변"},
  desc:{id:"Villa tepi laut dengan kolam privat, teras kayu, dan sarapan khas Bali.",en:"Beachfront villa with private pool, wooden terrace, and Balinese breakfast.",zh:"海滨别墅，带私人泳池、木制露台与巴厘式早餐。",ko:"개인 수영장, 나무 테라스, 발리식 아침식사가 있는 해변 빌라."}},
-{id:"bungalow",name:"Sunset Garden Bungalow",seed:"bgt-stay-bungalow",price:"Rp 450.000",
+{id:"bungalow",img:"bungalow",seed:"bgt-stay-bungalow",name:"Sunset Garden Bungalow",price:"Rp 450.000",
  area:{id:"Bukit Lembongan",en:"Lembongan Hill",zh:"蓝梦山丘",ko:"렘본간 언덕"},
  desc:{id:"Bungalow taman tropis dengan teras ayunan dan sunset barat.",en:"Tropical garden bungalow with swing terrace and west-facing sunsets.",zh:"热带花园平房，秋千露台与西侧日落景观。",ko:"그네 테라스와 서쪽 일몰이 보이는 열대 정원 부갈로."}},
-{id:"homestay",name:"Homestay Asri Lembongan",seed:"bgt-stay-homestay",price:"Rp 250.000",
+{id:"homestay",img:"homestay",seed:"bgt-stay-homestay",name:"Homestay Asri Lembongan",price:"Rp 250.000",
  area:{id:"Desa Lembongan",en:"Lembongan Village",zh:"蓝梦村落",ko:"렘본간 마을"},
  desc:{id:"Rumah keluarga bersih dan hangat, 5 menit dari Yellow Bridge.",en:"A warm, spotless family home, 5 minutes from Yellow Bridge.",zh:"温馨整洁的家庭旅馆，距黄桥5分钟。",ko:"옐로우 브리지까지 5분, 깨끗하고 따뜻한 가족 호스텔."}}
 ];
@@ -985,14 +1028,17 @@ const t=k=>(T[lang][k]!==undefined?T[lang][k]:(T.id[k]||""));
 const L=o=>o[lang]||o.id;
 const refreshIcons=()=>{ if(window.lucide) lucide.createIcons(); };
 
-/* ===================== LOGO KUSTOM ===================== */
-/* Jika LOGO_URL diisi, ikon palem otomatis diganti logo Anda
-   di navbar, menu mobile, dan footer sekaligus. */
+/* ===================== PASANG LOGO & GAMBAR UTAMA ===================== */
+/* Logo bgt.png menggantikan ikon palem di navbar, menu mobile, dan footer */
 if(LOGO_URL){
   document.querySelectorAll(".logo-mark").forEach(m=>{
     m.innerHTML=`<img src="${LOGO_URL}" alt="Logo ${BRAND_NAME}">`;
   });
 }
+/* Gambar hero & Lembongan diambil dari IMG */
+ $("#imgHero").src  = pic(IMG.heroUtama,'bgt-hero',900,1120);
+ $("#imgHeroS").src = pic(IMG.heroKecil,'bgt-raft',560,450);
+ $("#imgLemb").src  = pic(IMG.lembongan,'bgt-lembongan',800,1000);
 
 /* ===================== TOAST ===================== */
 let toastTimer;
@@ -1044,7 +1090,7 @@ function renderDest(){
   $("#dgrid").innerHTML=list.map((d,i)=>{
     const h=window.innerWidth<=640?230:heights[i%heights.length];
     return `<article class="dcard" data-id="${d.id}">
-      <figure style="height:${h}px"><img loading="lazy" src="https://picsum.photos/seed/${d.seed}/800/620.jpg" alt="${d.name}">
+      <figure style="height:${h}px"><img loading="lazy" src="${pic(IMG[d.img],d.seed,800,620)}" alt="${d.name}">
         <span class="cat"><i data-lucide="${CAT_ICON[d.cat]}"></i>${t(CAT_KEY[d.cat])}</span></figure>
       <div class="dbody">
         <span class="darea"><i data-lucide="map-pin"></i>${L(d.area)}</span>
@@ -1067,7 +1113,7 @@ let curDest=null;
 function openDest(id){
   const d=DEST.find(x=>x.id===id); if(!d) return;
   curDest=d;
-  $("#mImg").src=`https://picsum.photos/seed/${d.seed}-wide/1000/560.jpg`;
+  $("#mImg").src=pic(IMG[d.img],d.seed+"-w",1000,560);
   $("#mArea").innerHTML=`<i data-lucide="map-pin" class="ic-s"></i>${L(d.area)} · ${t(CAT_KEY[d.cat])}`;
   $("#mName").textContent=d.name;
   $("#mDesc").textContent=L(d.desc);
@@ -1120,7 +1166,7 @@ function renderStays(){
   const feat=STAY.find(s=>s.feat), rest=STAY.filter(s=>!s.feat);
   $("#stays").innerHTML=`
     <div class="stay-feat">
-      <figure><span class="pop-tag">${t("hTag")}</span><img loading="lazy" src="https://picsum.photos/seed/${feat.seed}/900/560.jpg" alt="${feat.name}"></figure>
+      <figure><span class="pop-tag">${t("hTag")}</span><img loading="lazy" src="${pic(IMG[feat.img],feat.seed,900,560)}" alt="${feat.name}"></figure>
       <div class="dbody">
         <span class="darea"><i data-lucide="map-pin"></i>${L(feat.area)}</span>
         <h3 style="font-size:24px;margin:8px 0 7px">${feat.name}</h3>
@@ -1133,7 +1179,7 @@ function renderStays(){
     </div>
     ${rest.map(s=>`
     <div class="stay-sm">
-      <figure><img loading="lazy" src="https://picsum.photos/seed/${s.seed}/300/300.jpg" alt="${s.name}"></figure>
+      <figure><img loading="lazy" src="${pic(IMG[s.img],s.seed,300,300)}" alt="${s.name}"></figure>
       <div style="flex:1">
         <h4>${s.name}</h4>
         <span class="darea"><i data-lucide="map-pin"></i>${L(s.area)}</span>
