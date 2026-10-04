@@ -3,62 +3,40 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0f5e96">
+<meta name="description" content="Bali Global Trans — Paket tour private, aktivitas seru, water sport, dan airport transfer di Bali.">
 <title>Bali Global Trans | Paket Tour, Aktivitas & Water Sport Bali</title>
+<link rel="icon" href="data:,">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{
-    --sky:#eaf5fc; --sky-deep:#dcecf7;
-    --blue:#1f7fc4; --blue-dark:#0f5e96; --blue-deep:#0c3550; --blue-ink:#123a54;
-    --text:#2c4356; --muted:#63798a; --gold:#f2a93b; --border:#d7e8f3;
-    --shadow:0 15px 45px rgba(23,94,140,.10);
-}
+:root{--sky:#eaf5fc;--sky-deep:#dcecf7;--blue:#1f7fc4;--blue-dark:#0f5e96;--blue-deep:#0c3550;--blue-ink:#123a54;--text:#2c4356;--muted:#63798a;--gold:#f2a93b;--border:#d7e8f3;--shadow:0 15px 45px rgba(23,94,140,.10)}
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
 html{scroll-behavior:smooth;scroll-padding-top:90px}
-body{
-    font-family:Inter,Arial,sans-serif;color:var(--text);line-height:1.6;
-    overflow-x:hidden;
-    background:
-        radial-gradient(560px 170px at 12% 8%, rgba(255,255,255,.9), transparent 70%),
-        radial-gradient(720px 210px at 88% 20%, rgba(255,255,255,.85), transparent 70%),
-        linear-gradient(180deg,#f2faff,#e4f2fb 55%,#edf7fd);
-    background-attachment:fixed;
-}
+body{font-family:Inter,Arial,sans-serif;color:var(--text);line-height:1.6;overflow-x:hidden;background:linear-gradient(180deg,#f2faff,#e4f2fb 55%,#edf7fd)}
 img{width:100%;display:block}
-img[data-place]{
-    opacity:0;transition:opacity .6s ease;
-    background:linear-gradient(110deg,#d8eaf6 8%,#eaf6fd 18%,#d8eaf6 33%);
-    background-size:200% 100%;animation:shimmer 1.6s linear infinite;
-}
-img[data-place].img-ok{opacity:1;animation:none;background:none}
-@keyframes shimmer{to{background-position:-200% 0}}
 a{text-decoration:none;color:inherit}
-button{font-family:inherit;cursor:pointer}
+button{font-family:inherit;cursor:pointer;touch-action:manipulation}
+.ic{flex:none;vertical-align:-2px}
 
-/* ================= HEADER ================= */
+/* ===== HEADER ===== */
 .header{height:70px;background:rgba(255,255,255,.92);backdrop-filter:blur(14px);position:sticky;top:0;z-index:1000;border-bottom:1px solid rgba(31,127,196,.12)}
 .header-inner{max-width:1220px;height:100%;margin:auto;padding:0 18px;display:flex;align-items:center;justify-content:space-between}
 .logo{display:flex;align-items:center;gap:10px;min-width:0}
 .logo img{width:44px;height:44px;object-fit:contain;flex:none}
-.logo>div{min-width:0}
 .logo-name{font-family:"Playfair Display",serif;font-size:17px;font-weight:600;color:var(--blue-ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.logo-sub{font-size:8px;letter-spacing:2px;text-transform:uppercase;color:#7d95a5;white-space:nowrap}
+.logo-sub{font-size:8px;letter-spacing:2px;text-transform:uppercase;color:#7d95a5}
 .nav{display:flex;align-items:center;gap:26px}
-.nav a{font-size:13px;color:#4a6577;font-weight:500}
-.nav a:hover{color:var(--blue)}
-.nav-book{background:var(--blue);color:#fff !important;padding:11px 17px;border-radius:9px;transition:.2s}
-.nav-book:hover{background:var(--blue-dark)}
-.menu{display:none;border:0;background:none;font-size:26px;color:var(--blue);width:44px;height:44px;align-items:center;justify-content:center}
+.nav a{font-size:13px;color:#4a6577;font-weight:500;transition:color .15s}.nav a:hover{color:var(--blue)}
+.nav-book{background:var(--blue);color:#fff!important;padding:11px 17px;border-radius:9px}
+.menu{display:none;align-items:center;justify-content:center;width:44px;height:44px;border:0;background:none;color:var(--blue);border-radius:10px}
+.menu:active{background:#eaf4fc}
 
-/* ================= HERO ================= */
+/* ===== HERO ===== */
 .hero{position:relative;min-height:88svh;display:flex;align-items:center;overflow:hidden}
 .hero-bg{position:absolute;inset:0;height:100%;object-fit:cover}
-.hero-overlay{position:absolute;inset:0;
-    background:radial-gradient(circle at 82% 16%, rgba(255,214,140,.4), transparent 32%),
-    linear-gradient(180deg, rgba(8,64,102,.72), rgba(8,64,102,.45) 55%, rgba(180,220,245,.10));}
-.hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:90px;
-    background:linear-gradient(180deg, rgba(234,245,252,0), var(--sky));z-index:2}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,64,102,.74),rgba(8,64,102,.46) 55%,rgba(180,220,245,.10))}
 .hero-inner{position:relative;z-index:3;width:100%;max-width:1220px;margin:auto;padding:90px 20px 70px}
 .hero-content{max-width:650px;color:#fff}
 .hero-small{text-transform:uppercase;letter-spacing:3px;font-size:10.5px;margin-bottom:14px;opacity:.92}
@@ -68,21 +46,19 @@ button{font-family:inherit;cursor:pointer}
 .btn-primary{background:#fff;color:var(--blue-dark);padding:14px 20px;border-radius:10px;font-size:13px;font-weight:700;min-height:48px;display:inline-flex;align-items:center;justify-content:center}
 .btn-outline{border:1px solid rgba(255,255,255,.75);color:#fff;padding:13px 20px;border-radius:10px;font-size:13px;font-weight:600;min-height:48px;display:inline-flex;align-items:center;justify-content:center}
 .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:26px}
-.hstat{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);backdrop-filter:blur(6px);
-    border-radius:12px;padding:10px 8px;color:#fff;font-size:10px;font-weight:600;text-align:center}
+.hstat{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);backdrop-filter:blur(6px);border-radius:12px;padding:10px 8px;color:#fff;font-size:10px;font-weight:600;text-align:center}
 .hstat b{font-family:"Playfair Display",serif;font-size:15px;display:block;margin-bottom:2px}
 
-/* ================= SEARCH ================= */
+/* ===== SEARCH ===== */
 .search-wrap{max-width:1060px;margin:-40px auto 0;position:relative;z-index:10;padding:0 16px}
-.search-box{background:#fff;border-radius:17px;box-shadow:0 18px 50px rgba(15,94,150,.16);
-    padding:12px;display:grid;grid-template-columns:1.2fr 1fr 1fr auto;gap:9px;align-items:stretch}
+.search-box{background:#fff;border-radius:17px;box-shadow:0 18px 50px rgba(15,94,150,.16);padding:12px;display:grid;grid-template-columns:1.2fr 1fr 1fr auto;gap:9px}
 .search-field{border:1px solid var(--border);border-radius:11px;padding:11px 13px;background:#f4faff}
 .search-field label{display:block;font-size:8.5px;color:#8aa2b2;text-transform:uppercase;letter-spacing:1px;margin-bottom:3px}
 .search-field strong{font-size:11.5px;color:var(--blue-ink)}
-.search-btn{border:0;background:var(--blue);color:#fff;padding:0 25px;border-radius:11px;font-weight:600;min-height:48px}
+.search-btn{border:0;background:var(--blue);color:#fff;padding:0 25px;border-radius:11px;font-weight:600;min-height:48px;display:inline-flex;align-items:center;justify-content:center;gap:7px}
 .search-btn:hover{background:var(--blue-dark)}
 
-/* ================= SEKSI ================= */
+/* ===== SECTIONS ===== */
 .container{max-width:1220px;margin:auto;padding:56px 18px}
 .section-head{margin-bottom:26px}
 .section-label{font-size:9.5px;letter-spacing:3px;text-transform:uppercase;color:var(--blue);font-weight:800;margin-bottom:7px}
@@ -91,22 +67,19 @@ button{font-family:inherit;cursor:pointer}
 .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
 .reveal.in{opacity:1;transform:none}
 
-/* ================= PAKET ================= */
+/* ===== PAKET ===== */
 .package-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.package-card{background:#fff;border:1px solid var(--border);border-radius:17px;overflow:hidden;
-    box-shadow:var(--shadow);transition:.3s;display:flex;flex-direction:column}
-.package-card:hover{transform:translateY(-5px);box-shadow:0 22px 55px rgba(23,94,140,.16)}
-.package-image{height:200px;position:relative;overflow:hidden}
+.package-card{background:#fff;border:1px solid var(--border);border-radius:17px;overflow:hidden;box-shadow:var(--shadow);transition:.3s;display:flex;flex-direction:column}
+.package-card:hover{transform:translateY(-5px)}
+.package-image{height:200px;position:relative;overflow:hidden;background:#dcecf7}
 .package-image img{height:100%;object-fit:cover;transition:.45s}
 .package-card:hover .package-image img{transform:scale(1.05)}
-.badge{position:absolute;top:12px;left:12px;background:var(--gold);color:#4a3200;padding:6px 11px;border-radius:20px;font-size:10px;font-weight:800}
-.fav{position:absolute;top:11px;right:11px;width:40px;height:40px;border-radius:50%;border:0;background:rgba(255,255,255,.92);color:#7d95a5;font-size:17px}
+.badge{position:absolute;top:12px;left:12px;background:var(--gold);color:#4a3200;padding:6px 11px;border-radius:20px;font-size:10px;font-weight:800;z-index:2}
 .package-body{padding:16px 16px 18px;display:flex;flex-direction:column;flex:1}
 .package-location{color:#8aa2b2;font-size:10px;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
 .package-title{font-family:"Playfair Display",serif;font-size:19px;color:var(--blue-ink);margin-bottom:4px}
 .rating{display:flex;align-items:center;gap:6px;font-size:11px;margin-bottom:12px}
-.stars{color:var(--gold);letter-spacing:1px}
-.rating span{color:#7d95a5}
+.stars{color:var(--gold);letter-spacing:1px}.rating span{color:#7d95a5}
 .stops-label{font-size:10px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--blue);margin-bottom:6px}
 .stop{display:flex;align-items:center;gap:10px;padding:7px 0;border-top:1px dashed var(--border)}
 .stop-img{width:54px;height:40px;border-radius:8px;overflow:hidden;flex:none;background:#dcecf7}
@@ -114,44 +87,42 @@ button{font-family:inherit;cursor:pointer}
 .stop-name{font-size:12px;font-weight:700;color:var(--blue-ink);line-height:1.3}
 .stop-time{font-size:10px;color:var(--muted);font-weight:600}
 .package-info{display:flex;gap:14px;padding:11px 0;margin-top:6px;border-top:1px solid var(--border);border-bottom:1px solid var(--border);color:#6b8496;font-size:10px;font-weight:600;flex-wrap:wrap}
+.package-info span{display:inline-flex;align-items:center;gap:5px}
 .package-bottom{display:flex;align-items:end;justify-content:space-between;gap:10px;margin-top:auto;padding-top:14px;flex-wrap:wrap}
 .price-label{display:block;color:#8aa2b2;font-size:9px;margin-bottom:3px}
-.price{color:var(--blue-ink);font-size:18px;font-weight:800}
-.price small{font-size:9px;font-weight:400}
-.detail-btn{background:#e2f1fb;color:var(--blue-dark);border:0;padding:12px 16px;border-radius:9px;font-size:12px;font-weight:800;transition:.2s;min-height:44px}
+.price{color:var(--blue-ink);font-size:18px;font-weight:800}.price small{font-size:9px;font-weight:400}
+.detail-btn{background:#e2f1fb;color:var(--blue-dark);border:0;padding:12px 16px;border-radius:9px;font-size:12px;font-weight:800;min-height:44px;transition:.2s}
 .detail-btn:hover{background:var(--blue);color:#fff}
 
-/* ================= AKTIVITAS ================= */
+/* ===== AKTIVITAS ===== */
 .activities{background:var(--sky-deep)}
 .activity-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
 .activity-card{background:#fff;border:1px solid var(--border);border-radius:16px;overflow:hidden;box-shadow:var(--shadow);transition:.3s;display:flex;flex-direction:column}
-.activity-card:hover{transform:translateY(-5px);box-shadow:0 20px 48px rgba(23,94,140,.16)}
-.activity-image{height:160px;overflow:hidden;position:relative}
+.activity-card:hover{transform:translateY(-5px)}
+.activity-image{height:160px;overflow:hidden;position:relative;background:#dcecf7}
 .activity-image img{height:100%;object-fit:cover;transition:.45s}
-.activity-card:hover .activity-image img{transform:scale(1.06)}
-.act-emoji{position:absolute;top:10px;left:10px;background:#fff;border-radius:50%;width:38px;height:38px;display:flex;align-items:center;justify-content:center;font-size:19px;box-shadow:0 6px 16px rgba(12,53,80,.18)}
+.act-ico{position:absolute;top:10px;left:10px;background:#fff;border-radius:50%;width:38px;height:38px;display:flex;align-items:center;justify-content:center;color:var(--blue-dark);box-shadow:0 6px 16px rgba(12,53,80,.18);z-index:2}
 .activity-body{padding:15px 16px 17px;display:flex;flex-direction:column;flex:1}
 .activity-title{font-family:"Playfair Display",serif;font-size:17px;color:var(--blue-ink);margin-bottom:6px}
 .activity-desc{font-size:12px;color:var(--muted);line-height:1.7;flex:1}
 .act-chips{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0}
-.act-chip{font-size:9.5px;font-weight:800;color:var(--blue-dark);background:#e2f1fb;border-radius:999px;padding:4px 10px}
+.act-chip{font-size:9.5px;font-weight:800;color:var(--blue-dark);background:#e2f1fb;border-radius:999px;padding:5px 10px;display:inline-flex;align-items:center;gap:5px}
 .act-bottom{display:flex;align-items:end;justify-content:space-between;border-top:1px solid var(--border);padding-top:12px;gap:8px;flex-wrap:wrap}
 .act-book{background:var(--blue);color:#fff;border:0;border-radius:8px;padding:11px 15px;font-size:11px;font-weight:800;min-height:42px}
 .act-book:hover{background:var(--blue-dark)}
 
-/* ================= DESTINASI ================= */
+/* ===== DESTINASI ===== */
 .destination-grid{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:200px;gap:14px}
-.destination{border-radius:15px;overflow:hidden;position:relative;cursor:pointer}
+.destination{border-radius:15px;overflow:hidden;position:relative;cursor:pointer;background:#dcecf7}
 .destination img{height:100%;object-fit:cover;transition:.4s}
 .destination:hover img{transform:scale(1.06)}
-.destination-overlay{position:absolute;inset:0;background:linear-gradient(transparent 40%, rgba(8,50,80,.82));display:flex;align-items:end;padding:16px;color:#fff}
+.destination-overlay{position:absolute;inset:0;background:linear-gradient(transparent 40%,rgba(8,50,80,.82));display:flex;align-items:end;padding:16px;color:#fff}
 .destination-name{font-family:"Playfair Display",serif;font-size:20px}
 .destination-small{font-size:10px;opacity:.85;margin-top:2px}
 
-/* ================= PROMO / LAYANAN / WHY ================= */
+/* ===== PROMO & LAYANAN ===== */
 .promo{display:grid;grid-template-columns:1fr 1fr;border-radius:22px;overflow:hidden;background:linear-gradient(120deg,var(--blue),var(--blue-dark));color:#fff}
-.promo-image{min-height:320px}
-.promo-image img{height:100%;object-fit:cover}
+.promo-image{min-height:320px}.promo-image img{height:100%;object-fit:cover}
 .promo-content{padding:40px;display:flex;flex-direction:column;justify-content:center}
 .promo-small{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#cfe6f5;margin-bottom:12px}
 .promo h2{font-family:"Playfair Display",serif;font-size:clamp(24px,5vw,34px);line-height:1.2;margin-bottom:14px}
@@ -169,27 +140,26 @@ button{font-family:inherit;cursor:pointer}
 .why-item h3{font-size:13px;margin-bottom:4px;color:var(--blue-ink)}
 .why-item p{font-size:11.5px;color:var(--muted)}
 
-/* ================= BOOKING ================= */
+/* ===== BOOKING ===== */
 .book-grid{display:grid;grid-template-columns:1fr .78fr;gap:26px;align-items:start}
 .form-card{background:#fff;border:1px solid var(--border);border-radius:20px;padding:24px;box-shadow:var(--shadow)}
 .f-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
 .field label{display:block;font-size:10.5px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
-.field input,.field select,.field textarea{width:100%;padding:13px 14px;border:1.5px solid var(--border);border-radius:11px;background:#f9fdff;font-family:inherit;font-size:16px;color:var(--text);outline:none;transition:.25s;-webkit-appearance:none;appearance:none}
+.field input,.field select,.field textarea{width:100%;padding:13px 14px;border:1.5px solid var(--border);border-radius:11px;background:#f9fdff;font-family:inherit;font-size:16px;color:var(--text);outline:none;-webkit-appearance:none;appearance:none}
 .field input:focus,.field select:focus,.field textarea:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(31,127,196,.14)}
 .field.err input,.field.err select{border-color:#c94f42;background:#fdf4f2}
 .field .msg{display:none;font-size:11px;color:#c94f42;font-weight:600;margin-top:4px}
 .field.err .msg{display:block}
 .act-checks{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.act-check{display:flex;align-items:center;gap:10px;border:1.5px solid var(--border);border-radius:11px;padding:12px;cursor:pointer;font-size:12px;font-weight:600;background:#f9fdff;transition:.2s}
-.act-check:hover{border-color:#b9d9ee}
+.act-check{display:flex;align-items:center;gap:10px;border:1.5px solid var(--border);border-radius:11px;padding:12px;cursor:pointer;font-size:12px;font-weight:600;background:#f9fdff}
 .act-check input{accent-color:var(--blue);width:19px;height:19px;flex:none}
 .act-check.on{border-color:var(--blue);background:#eaf6fe}
+.act-check .ac-ico{color:var(--blue-dark);display:flex;flex:none}
 .act-check small{display:block;color:var(--muted);font-weight:500;font-size:10.5px}
 .stepper{display:flex;align-items:center;border:1.5px solid var(--border);border-radius:11px;overflow:hidden;background:#f9fdff}
 .stepper button{width:52px;height:50px;border:none;background:transparent;font-size:21px;font-weight:700;color:var(--blue-ink)}
-.stepper button:hover{background:#eaf6fe}
 .stepper span{flex:1;text-align:center;font-weight:800;font-size:16px}
-.btn-submit{width:100%;border:0;background:var(--blue);color:#fff;padding:16px;border-radius:12px;font-size:15px;font-weight:800;transition:.2s;margin-top:14px;min-height:54px}
+.btn-submit{width:100%;border:0;background:var(--blue);color:#fff;padding:16px;border-radius:12px;font-size:15px;font-weight:800;margin-top:14px;min-height:54px;display:flex;align-items:center;justify-content:center;gap:8px}
 .btn-submit:hover{background:var(--blue-dark)}
 .summary{background:#fff;border:1px solid var(--border);border-radius:20px;padding:24px;box-shadow:var(--shadow);position:sticky;top:96px}
 .summary h3{font-family:"Playfair Display",serif;font-size:20px;color:var(--blue-ink);margin-bottom:4px}
@@ -203,31 +173,30 @@ button{font-family:inherit;cursor:pointer}
 .btn-wa{width:100%;display:flex;align-items:center;justify-content:center;gap:9px;background:#1faa59;color:#fff;padding:16px;border-radius:12px;font-size:15px;font-weight:800;min-height:54px;text-align:center}
 .btn-wa:hover{background:#178a47}
 
-/* ================= MODAL ================= */
+/* ===== MODAL ===== */
 .modal{position:fixed;inset:0;z-index:2000;display:none;align-items:center;justify-content:center;background:rgba(8,40,64,.55);backdrop-filter:blur(6px);padding:14px}
 .modal.open{display:flex}
 .modal-box{background:#fff;border-radius:20px;max-width:780px;width:100%;max-height:92dvh;overflow:auto;position:relative;animation:pop .35s cubic-bezier(.2,.9,.3,1.15) both;-webkit-overflow-scrolling:touch}
 @keyframes pop{from{opacity:0;transform:translateY(26px) scale(.97)}to{opacity:1;transform:none}}
-.modal-close{position:absolute;top:12px;right:12px;z-index:5;width:42px;height:42px;border-radius:50%;border:0;background:rgba(255,255,255,.94);color:var(--blue-ink);font-size:20px;font-weight:700;box-shadow:0 6px 16px rgba(12,53,80,.2)}
-.modal-hero{height:220px;overflow:hidden}
-.modal-hero img{height:100%;object-fit:cover}
+.modal-close{position:absolute;top:12px;right:12px;z-index:5;width:42px;height:42px;border-radius:50%;border:0;background:rgba(255,255,255,.94);color:var(--blue-ink);display:flex;align-items:center;justify-content:center;box-shadow:0 6px 16px rgba(12,53,80,.2)}
+.modal-hero{height:260px;overflow:hidden;background:#dcecf7}.modal-hero img{height:100%;object-fit:cover}
 .modal-body{padding:22px 20px 26px}
 .modal-body h3{font-family:"Playfair Display",serif;font-size:24px;color:var(--blue-ink)}
 .modal-meta{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0 18px}
-.modal-meta span{font-size:11px;font-weight:700;color:var(--blue-dark);background:#e2f1fb;border-radius:999px;padding:6px 13px}
+.modal-meta span{font-size:11px;font-weight:700;color:var(--blue-dark);background:#e2f1fb;border-radius:999px;padding:6px 13px;display:inline-flex;align-items:center;gap:5px}
 .mstop{display:flex;gap:12px;padding:14px 0;border-top:1px dashed var(--border)}
 .mstop-img{width:88px;height:68px;border-radius:12px;overflow:hidden;flex:none;background:#dcecf7}
 .mstop-img img{height:100%;object-fit:cover}
-.mstop-time{font-size:10.5px;font-weight:800;color:var(--blue);letter-spacing:.5px}
+.mstop-time{font-size:10.5px;font-weight:800;color:var(--blue)}
 .mstop h4{font-size:14px;color:var(--blue-ink);margin:2px 0 4px}
 .mstop p{font-size:12px;color:var(--muted);line-height:1.65}
 .modal-foot{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;background:#f0f8fe;border-radius:14px;padding:16px 18px;margin-top:18px}
 .modal-foot .btn-wa{width:auto;padding:13px 20px;min-height:50px}
 
-/* ================= CTA & FOOTER ================= */
+/* ===== CTA & FOOTER ===== */
 .cta{position:relative;overflow:hidden;border-radius:22px;padding:52px 24px;text-align:center;color:#fff}
 .cta-bg{position:absolute;inset:0;height:100%;object-fit:cover}
-.cta-overlay{position:absolute;inset:0;background:linear-gradient(90deg, rgba(10,70,110,.88), rgba(15,94,146,.78))}
+.cta-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,70,110,.88),rgba(15,94,146,.78))}
 .cta-content{position:relative;z-index:2}
 .cta h2{font-family:"Playfair Display",serif;font-size:clamp(26px,6vw,36px);margin-bottom:12px}
 .cta p{color:rgba(255,255,255,.82);font-size:13px;max-width:600px;margin:auto}
@@ -236,1435 +205,466 @@ button{font-family:inherit;cursor:pointer}
 .footer-inner{max-width:1220px;margin:auto;display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:34px}
 .footer h3{font-family:"Playfair Display",serif;font-size:18px;margin-bottom:12px}
 .footer p,.footer a{color:rgba(255,255,255,.65);font-size:12px;line-height:1.8}
-.footer a{display:block;margin:7px 0;padding:2px 0}
-.footer a:hover{color:#fff}
+.footer a{display:flex;align-items:center;gap:7px;margin:7px 0}.footer a:hover{color:#fff}
 .footer-bottom{max-width:1220px;margin:34px auto 0;border-top:1px solid rgba(255,255,255,.12);padding-top:16px;color:rgba(255,255,255,.45);font-size:10.5px}
 
-/* ================= TOMBOL WA MELAYANG ================= */
-.wa-float{
-    position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom));z-index:1500;
-    width:58px;height:58px;border-radius:50%;background:#1faa59;color:#fff;
-    display:none;align-items:center;justify-content:center;
-    box-shadow:0 12px 28px rgba(31,170,89,.45);
-}
+/* ===== FLOAT WA & TOAST ===== */
+.wa-float{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom));z-index:1500;width:58px;height:58px;border-radius:50%;background:#1faa59;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 28px rgba(31,170,89,.45)}
 .wa-float svg{width:30px;height:30px;fill:#fff}
-.wa-float.show{display:flex}
+#toasts{position:fixed;bottom:calc(90px + env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);z-index:6000;display:flex;flex-direction:column;gap:10px;align-items:center;width:max-content;max-width:92vw}
+.toast{background:var(--blue-ink);color:#fff;padding:12px 18px;border-radius:999px;font-size:13px;font-weight:600;display:flex;align-items:center;gap:8px;text-align:center}
 
-/* ================= TOAST ================= */
-#toasts{position:fixed;bottom:calc(88px + env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);z-index:6000;display:flex;flex-direction:column;gap:10px;align-items:center;width:max-content;max-width:92vw}
-.toast{background:var(--blue-ink);color:#fff;padding:12px 20px;border-radius:999px;font-size:13px;font-weight:600;box-shadow:0 18px 36px -12px rgba(12,53,80,.5);animation:tIn .4s cubic-bezier(.2,.9,.3,1.2) both;text-align:center}
-.toast.out{animation:tOut .35s ease both}
-@keyframes tIn{from{opacity:0;transform:translateY(24px) scale(.94)}to{opacity:1;transform:none}}
-@keyframes tOut{to{opacity:0;transform:translateY(16px)}}
-
-/* ================= LOGIN ADMIN ================= */
-.alogin{position:fixed;inset:0;z-index:5500;display:none;align-items:center;justify-content:center;background:rgba(8,40,64,.6);backdrop-filter:blur(6px);padding:16px}
-.alogin.open{display:flex}
-.alogin-box{background:#fff;border-radius:18px;padding:26px 22px;width:min(400px,100%);text-align:center;box-shadow:0 30px 70px rgba(8,40,64,.4);max-height:92dvh;overflow:auto}
-.alogin-box .lock{width:54px;height:54px;border-radius:50%;background:#e2f1fb;color:var(--blue);font-size:24px;display:flex;align-items:center;justify-content:center;margin:0 auto 12px}
-.alogin-box h3{font-family:"Playfair Display",serif;color:var(--blue-ink);font-size:20px;margin-bottom:4px}
-.alogin-box p{font-size:12px;color:#63798a;margin-bottom:16px;line-height:1.6}
-.alogin-box input{width:100%;padding:13px;border:1.5px solid var(--border);border-radius:10px;font-size:16px;text-align:center;outline:none;margin-bottom:10px;background:#f9fdff}
-.alogin-box input:focus{border-color:var(--blue)}
-.alogin-err{font-size:11.5px;color:#c94f42;font-weight:700;min-height:16px;margin-bottom:6px}
-.alogin-link{font-size:11px;color:#7d95a5;display:inline-block;margin-top:10px}
-.alogin-link:hover{color:var(--blue)}
-
-/* ================= PANEL ADMIN ================= */
-.admin{position:fixed;inset:0;z-index:5000;display:none;background:#eef5fb;color:#22384a}
-.admin.open{display:grid;grid-template-columns:225px 1fr;grid-template-rows:58px 1fr}
-.adm-top{grid-column:1/3;background:var(--blue-ink);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 14px;gap:10px}
-.adm-top b{font-family:"Playfair Display",serif;font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.adm-top .btns{display:flex;gap:6px;flex:none}
-.adm-btn{border:0;border-radius:8px;padding:10px 14px;font-size:12px;font-weight:800;transition:.2s;min-height:42px}
-.adm-btn.save{background:var(--gold);color:#4a3200}
-.adm-btn.close{background:rgba(255,255,255,.15);color:#fff}
-.adm-btn.warm{background:#e2544a;color:#fff}
-.adm-btn.blue{background:var(--blue);color:#fff}
-.adm-btn:hover{filter:brightness(1.1)}
-.adm-side{background:#fff;border-right:1px solid var(--border);padding:12px 8px;display:flex;flex-direction:column;gap:4px;overflow:auto}
-.adm-side button{border:0;background:none;text-align:left;padding:12px 14px;border-radius:9px;font-size:13px;font-weight:700;color:#4a6577;display:flex;gap:9px;align-items:center;min-height:44px;white-space:nowrap}
-.adm-side button:hover{background:#eaf4fc}
-.adm-side button.act{background:var(--blue);color:#fff}
-.adm-main{overflow:auto;padding:18px;-webkit-overflow-scrolling:touch}
-.adm-sec{display:none;max-width:940px}
-.adm-sec.on{display:block}
-.adm-sec h2{font-family:"Playfair Display",serif;font-size:20px;color:var(--blue-ink);margin-bottom:4px}
-.adm-sec .hint{font-size:12px;color:#63798a;margin-bottom:16px}
-.adm-card{background:#fff;border:1px solid var(--border);border-radius:14px;padding:16px;margin-bottom:14px}
-.adm-card h3{font-size:14px;color:var(--blue-ink);margin-bottom:12px;display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
-.adm-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.adm-f label{display:block;font-size:10px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;color:#63798a;margin-bottom:5px}
-.adm-f input,.adm-f select,.adm-f textarea{width:100%;padding:11px 12px;border:1.5px solid var(--border);border-radius:9px;font-family:inherit;font-size:16px;color:var(--text);background:#f9fdff;outline:none;-webkit-appearance:none;appearance:none}
-.adm-f textarea{resize:vertical;min-height:64px}
-.adm-f input:focus,.adm-f select:focus,.adm-f textarea:focus{border-color:var(--blue)}
-.imgw{display:flex;gap:12px;align-items:center;background:#f4faff;border:1px dashed var(--border);border-radius:12px;padding:10px;margin-top:8px;flex-wrap:wrap}
-.imgw-thumb{width:86px;height:60px;border-radius:8px;overflow:hidden;flex:none;background:#dcecf7}
-.imgw-thumb img{height:100%;object-fit:cover}
-.imgw .col{flex:1;display:flex;flex-direction:column;gap:6px;min-width:180px}
-.imgw input[type=text]{width:100%;padding:10px;border:1.5px solid var(--border);border-radius:8px;font-size:14px;background:#fff;outline:none}
-.imgw .row{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
-.mini{border:0;background:#e2f1fb;color:var(--blue-dark);border-radius:7px;padding:9px 12px;font-size:11.5px;font-weight:800;min-height:38px}
-.mini:hover{background:var(--blue);color:#fff}
-.mini.danger{background:#fde9e7;color:#c94f42}
-.mini.danger:hover{background:#c94f42;color:#fff}
-
-/* ==================================================
-   RESPONSIVE — TABLET
-================================================== */
-@media(max-width:1020px){
-    .package-grid{grid-template-columns:1fr 1fr}
-    .activity-grid{grid-template-columns:1fr 1fr}
-    .destination-grid{grid-template-columns:1fr 1fr}
-    .services{grid-template-columns:1fr 1fr}
-    .book-grid{grid-template-columns:1fr}
-    .summary{position:static}
-    .admin.open{grid-template-columns:1fr;grid-template-rows:58px auto 1fr}
-    .adm-top{grid-column:1}
-    .adm-side{flex-direction:row;overflow-x:auto;border-right:0;border-bottom:1px solid var(--border);padding:8px;-webkit-overflow-scrolling:touch}
-    .adm-side button{flex:none}
-}
+/* ================== TABLET ================== */
+@media(max-width:1020px){.package-grid{grid-template-columns:1fr 1fr}.activity-grid{grid-template-columns:1fr 1fr}.destination-grid{grid-template-columns:1fr 1fr}.services{grid-template-columns:1fr 1fr}.book-grid{grid-template-columns:1fr}.summary{position:static}}
 @media(max-width:950px){
-    .nav{
-        display:none;position:absolute;top:70px;left:0;right:0;background:#fff;
-        padding:18px;flex-direction:column;align-items:stretch;gap:6px;
-        box-shadow:0 20px 40px rgba(12,53,80,.12);
-    }
-    .nav.open{display:flex}
-    .nav a{padding:13px 10px;border-radius:9px;font-size:14px;min-height:46px;display:flex;align-items:center}
-    .nav a:hover{background:#eaf4fc}
-    .nav-book{justify-content:center;text-align:center}
-    .menu{display:flex}
-    .promo{grid-template-columns:1fr}
-    .promo-image{min-height:220px}
-    .promo-content{padding:30px 22px}
-    .promo-button{width:100%;text-align:center}
+.nav{display:none;position:absolute;top:70px;left:0;right:0;background:#fff;padding:14px;flex-direction:column;align-items:stretch;gap:4px;box-shadow:0 20px 40px rgba(12,53,80,.12);border-top:1px solid var(--border)}
+.nav.open{display:flex}
+.nav a{padding:13px 12px;border-radius:10px;font-size:14.5px;min-height:48px;display:flex;align-items:center}
+.nav a:active{background:#eaf4fc}
+.nav-book{justify-content:center}
+.menu{display:flex}
+.promo{grid-template-columns:1fr}.promo-image{min-height:220px}.promo-content{padding:30px 22px}
 }
 
-/* ==================================================
-   RESPONSIVE — HP (fokus utama)
-================================================== */
+/* ================== MOBILE (HP) ================== */
 @media(max-width:640px){
-
-    /* Header rapat & logo tidak terpotong */
-    .header{height:62px}
-    .nav{top:62px}
-    .header-inner{padding:0 14px}
-    .logo img{width:40px;height:40px}
-    .logo-name{font-size:15.5px;max-width:56vw}
-    .logo-sub{display:none}
-
-    /* Hero memenuhi layar & teks lega */
-    .hero{min-height:92svh}
-    .hero-inner{padding:100px 18px 60px}
-    .hero h1{font-size:clamp(30px,8.5vw,40px)}
-    .hero p{font-size:13.5px}
-    .hero-buttons{flex-direction:column}
-    .btn-primary,.btn-outline{width:100%;text-align:center}
-    .hero-stats{grid-template-columns:repeat(3,1fr);gap:6px}
-    .hstat{padding:9px 4px;font-size:9px;border-radius:10px}
-    .hstat b{font-size:13px}
-
-    /* Search box jadi 1 kolom */
-    .search-wrap{margin-top:-30px;padding:0 14px}
-    .search-box{grid-template-columns:1fr;padding:10px;gap:8px}
-    .search-btn{min-height:50px;font-size:14px}
-
-    /* Semua grid utama → 1 kolom */
-    .container{padding:44px 15px}
-    .section-head{margin-bottom:22px}
-    .package-grid,
-    .activity-grid,
-    .services{grid-template-columns:1fr}
-    .destination-grid{grid-template-columns:1fr 1fr;grid-auto-rows:150px;gap:10px}
-    .destination-name{font-size:16px}
-
-    /* Kartu paket: gambar lebih tinggi, angka & tombol lega */
-    .package-image{height:215px}
-    .package-bottom{align-items:stretch}
-    .package-bottom>div:first-child{flex:1}
-    .detail-btn{width:100%;text-align:center}
-    .act-bottom{align-items:stretch}
-    .act-bottom>div:first-child{flex:1}
-    .act-book{width:100%;text-align:center;min-height:46px}
-    .activity-image{height:180px}
-
-    /* Form booking penuh 1 kolom & nyaman disentuh */
-    .form-card{padding:18px 16px;border-radius:16px}
-    .f-row{grid-template-columns:1fr}
-    .act-checks{grid-template-columns:1fr}
-    .field input,.field select,.field textarea{font-size:16px} /* cegah zoom otomatis iOS */
-    .stepper button{width:56px;height:52px}
-    .summary{padding:20px 16px;border-radius:16px}
-    .sum-total b{font-size:23px}
-    .btn-wa{font-size:14.5px}
-
-    /* Modal detail memenuhi HP */
-    .modal{padding:10px;align-items:flex-end}
-    .modal-box{max-height:94dvh;border-radius:20px 20px 0 0}
-    .modal-hero{height:180px}
-    .modal-body{padding:18px 16px 24px}
-    .modal-body h3{font-size:21px}
-    .mstop-img{width:72px;height:58px}
-    .modal-foot{flex-direction:column;align-items:stretch;text-align:center}
-    .modal-foot .btn-wa{width:100%}
-
-    /* CTA & footer */
-    .cta{padding:40px 18px}
-    .cta-button{width:100%;text-align:center}
-    .footer-inner{grid-template-columns:1fr;gap:24px}
-    .footer a{padding:6px 0}
-
-    /* Tombol WA melayang tampil di HP */
-    .wa-float{display:none}
-    .wa-float.show{display:flex}
-    .wa-float{width:56px;height:56px;bottom:calc(14px + env(safe-area-inset-bottom))}
-
-    /* Admin tetap nyaman di HP */
-    .admin.open{grid-template-rows:104px auto 1fr}
-    .adm-top{flex-wrap:wrap;height:auto;padding:8px 12px;gap:8px}
-    .adm-top b{font-size:13px;width:100%}
-    .adm-top .btns{width:100%;display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px}
-    .adm-top .btns .adm-btn{width:100%;padding:10px 6px;font-size:11px}
-    .adm-main{padding:14px 12px}
-    .adm-grid{grid-template-columns:1fr}
-    .adm-card{padding:14px 12px}
-    .imgw{align-items:stretch}
-    .imgw .col{min-width:0}
-    .imgw-thumb{width:100%;height:120px}
-    .alogin-box{padding:22px 16px}
-
-    /* Toast di atas tombol WA */
-    #toasts{bottom:calc(84px + env(safe-area-inset-bottom));width:92vw}
+html{scroll-padding-top:76px}
+.header{height:62px}.nav{top:62px}
+.header-inner{padding:0 14px}
+.logo img{width:38px;height:38px}
+.logo-name{font-size:15px;max-width:52vw}
+.logo-sub{display:none}
+.hero{min-height:92svh}
+.hero-inner{padding:96px 16px 64px}
+.hero h1{font-size:clamp(30px,9.5vw,40px)}
+.hero p{font-size:14px}
+.hero-buttons{flex-direction:column;gap:9px}
+.btn-primary,.btn-outline{width:100%}
+.search-wrap{margin-top:-26px}
+.search-box{grid-template-columns:1fr;padding:10px}
+.search-field strong{font-size:13px}
+.search-btn{min-height:52px;font-size:14px;width:100%}
+.container{padding:44px 16px}
+.section-head{margin-bottom:20px}
+.package-grid,.activity-grid,.services{grid-template-columns:1fr;gap:14px}
+.package-image{height:200px}
+.package-body{padding:14px 14px 16px}
+.package-title{font-size:17.5px}
+.package-info{gap:10px;font-size:10.5px}
+.package-bottom{flex-direction:column;align-items:stretch;gap:10px}
+.package-bottom>div:first-child{display:flex;align-items:baseline;justify-content:space-between}
+.detail-btn{width:100%;text-align:center}
+.stop-img{width:48px;height:38px}
+.activity-image{height:150px}
+.activity-grid{gap:12px}
+.act-bottom{flex-direction:column;align-items:stretch}
+.act-bottom>div:first-child{display:flex;align-items:baseline;justify-content:space-between}
+.act-book{width:100%;text-align:center;display:flex;align-items:center;justify-content:center}
+.destination-grid{grid-template-columns:1fr 1fr;grid-auto-rows:140px;gap:10px}
+.destination{border-radius:12px}
+.destination-overlay{padding:12px}
+.destination-name{font-size:15.5px}
+.promo{border-radius:18px}
+.promo-content{padding:26px 18px}
+.promo-button{width:100%;text-align:center}
+.service{padding:18px 16px}
+.service-number{font-size:22px}
+.why-grid{grid-template-columns:1fr}
+.why-item{padding:16px}
+.form-card{padding:18px 16px;border-radius:16px}
+.f-row,.act-checks{grid-template-columns:1fr}
+.stepper button{width:48px;height:48px}
+.btn-submit{font-size:14.5px}
+.summary{padding:18px 16px;border-radius:16px}
+.sum-total b{font-size:22px}
+.modal{align-items:flex-end;padding:10px}
+.modal-box{max-height:94dvh;border-radius:20px 20px 0 0}
+.modal-hero{height:170px}
+.modal-body{padding:18px 16px 22px}
+.modal-body h3{font-size:20px}
+.mstop-img{width:72px;height:56px}
+.modal-foot{flex-direction:column;align-items:stretch}
+.modal-foot .btn-wa{width:100%}
+.cta{padding:44px 18px;border-radius:18px}
+.cta-button{width:100%;text-align:center}
+.footer{padding-top:40px}
+.footer-inner{grid-template-columns:1fr;gap:24px}
+.wa-float{width:54px;height:54px;right:14px}
+.wa-float svg{width:26px;height:26px}
+#toasts{bottom:calc(84px + env(safe-area-inset-bottom))}
+.toast{font-size:12.5px;padding:11px 16px}
 }
-
-/* HP sangat kecil (≤360px) */
-@media(max-width:360px){
-    .destination-grid{grid-template-columns:1fr;grid-auto-rows:170px}
-    .hero-stats{grid-template-columns:1fr 1fr}
-    .hstat:last-child{grid-column:1/3}
-}
+@media(hover:none){.package-card:hover,.activity-card:hover,.service:hover{transform:none}}
 </style>
 </head>
-
 <body>
 
-<header class="header">
-<div class="header-inner">
+<header class="header"><div class="header-inner">
     <a href="#beranda" class="logo">
-        <img id="logoImg" src="512B.png" alt="Logo Bali Global Trans">
-        <div>
-            <div class="logo-name" id="siteName">Bali Global Trans</div>
-            <div class="logo-sub" id="siteSub">Your Bali Travel Partner</div>
-        </div>
+        <img id="logoImg" src="512B.png" alt="Logo">
+        <div><div class="logo-name" id="siteName">Bali Global Trans</div><div class="logo-sub" id="siteSub"></div></div>
     </a>
     <nav class="nav" id="nav">
-        <a href="#beranda">Beranda</a>
-        <a href="#paket">Paket Tour</a>
-        <a href="#aktivitas">Aktivitas</a>
-        <a href="#destinasi">Destinasi</a>
-        <a href="#layanan">Layanan</a>
-        <a href="#booking" class="nav-book">Booking</a>
+        <a href="#beranda">Beranda</a><a href="#paket">Paket Tour</a><a href="#aktivitas">Aktivitas</a>
+        <a href="#destinasi">Destinasi</a><a href="#layanan">Layanan</a><a href="#booking" class="nav-book">Booking</a>
     </nav>
-    <button class="menu" onclick="toggleMenu()" aria-label="Menu">☰</button>
-</div>
-</header>
+    <button class="menu" id="menuBtn" onclick="toggleMenu()" aria-label="Buka menu"></button>
+</div></header>
 
 <section class="hero" id="beranda">
-    <img class="hero-bg" id="heroImg" loading="eager" alt="Sunrise Gunung Batur, Kintamani">
+    <img class="hero-bg" id="heroImg" alt="Bali" decoding="async">
     <div class="hero-overlay"></div>
-    <div class="hero-inner">
-        <div class="hero-content">
-            <div class="hero-small" id="heroSmall">Explore Bali With BGT</div>
-            <h1 id="heroTitle">Temukan Bali,<br>dengan cara yang berbeda.</h1>
-            <p id="heroDesc"></p>
-            <div class="hero-buttons">
-                <a href="#paket" class="btn-primary" id="heroBtn1">Lihat Paket Tour</a>
-                <a href="#aktivitas" class="btn-outline" id="heroBtn2">Aktivitas Seru</a>
-            </div>
-            <div class="hero-stats" id="heroStats"></div>
+    <div class="hero-inner"><div class="hero-content">
+        <div class="hero-small" id="heroSmall"></div>
+        <h1 id="heroTitle"></h1>
+        <p id="heroDesc"></p>
+        <div class="hero-buttons">
+            <a href="#paket" class="btn-primary" id="heroBtn1"></a>
+            <a href="#aktivitas" class="btn-outline" id="heroBtn2"></a>
         </div>
-    </div>
+        <div class="hero-stats" id="heroStats"></div>
+    </div></div>
 </section>
 
-<div class="search-wrap">
-<div class="search-box">
-    <div class="search-field"><label>Mau ke mana?</label><strong>Sunrise Kintamani • Penglipuran • Rafting</strong></div>
-    <div class="search-field"><label>Durasi</label><strong>10 Jam</strong></div>
-    <div class="search-field"><label>Tipe perjalanan</label><strong>Private Tour</strong></div>
+<div class="search-wrap"><div class="search-box">
+    <div class="search-field"><label>Mau ke mana?</label><strong id="sWhere"></strong></div>
+    <div class="search-field"><label>Durasi</label><strong id="sDur"></strong></div>
+    <div class="search-field"><label>Tipe perjalanan</label><strong id="sType"></strong></div>
     <button class="search-btn" onclick="goTo('paket')">Cari Paket</button>
-</div>
-</div>
+</div></div>
 
 <section class="container" id="paket">
     <div class="section-head reveal">
-        <div class="section-label">Pilihan Perjalanan</div>
-        <h2 class="section-title">Paket Tour Bali — 3–4 Destinasi per Paket</h2>
-        <p class="section-desc">Setiap paket memuat 3–4 lokasi utama dengan rute jam demi jam. Klik <b>Detail</b> untuk itinerary lengkapnya.</p>
+        <div class="section-label" id="pLabel"></div>
+        <h2 class="section-title" id="pTitle"></h2>
+        <p class="section-desc" id="pDesc"></p>
     </div>
     <div class="package-grid" id="packageGrid"></div>
 </section>
 
-<section class="activities" id="aktivitas">
-<div class="container">
+<section class="activities" id="aktivitas"><div class="container">
     <div class="section-head reveal">
-        <div class="section-label">Adrenalin & Keseruan</div>
-        <h2 class="section-title">Aktivitas Favorit di Bali</h2>
-        <p class="section-desc">Bisa digabung dengan paket tour atau dipesan terpisah. Semua dengan operator berlisensi dan alat safety lengkap.</p>
+        <div class="section-label" id="aLabel"></div>
+        <h2 class="section-title" id="aTitle"></h2>
+        <p class="section-desc" id="aDesc"></p>
     </div>
     <div class="activity-grid" id="activityGrid"></div>
-</div>
-</section>
+</div></section>
 
 <section class="container" id="destinasi">
     <div class="section-head reveal">
-        <div class="section-label">Jelajahi Bali</div>
-        <h2 class="section-title">Destinasi Favorit</h2>
+        <div class="section-label" id="dLabel"></div>
+        <h2 class="section-title" id="dTitle"></h2>
     </div>
     <div class="destination-grid" id="destGrid"></div>
 </section>
 
-<section class="container">
-<div class="promo reveal">
-    <div class="promo-image"><img id="promoImg" loading="lazy" alt="Handara Gate, Bali"></div>
+<section class="container"><div class="promo reveal">
+    <div class="promo-image"><img id="promoImg" alt="Promo" loading="lazy" decoding="async"></div>
     <div class="promo-content">
-        <div class="promo-small" id="promoSmall">Private Bali Experience</div>
-        <h2 id="promoTitle">Bali dalam satu hari, tanpa terburu-buru.</h2>
+        <div class="promo-small" id="promoSmall"></div>
+        <h2 id="promoTitle"></h2>
         <p id="promoDesc"></p>
-        <a href="#booking" class="promo-button" id="promoBtn">Susun Perjalanan Saya</a>
+        <a href="#booking" class="promo-button" id="promoBtn"></a>
     </div>
-</div>
-</section>
+</div></section>
 
 <section class="container" id="layanan">
     <div class="section-head reveal">
-        <div class="section-label">Layanan BGT</div>
-        <h2 class="section-title">Semua kebutuhan perjalanan Bali</h2>
+        <div class="section-label" id="lLabel"></div>
+        <h2 class="section-title" id="lTitle"></h2>
     </div>
-    <div class="services reveal">
-        <div class="service"><div class="service-number">01</div><h3>Private Tour</h3><p>Paket perjalanan private dengan driver dan kendaraan nyaman.</p></div>
-        <div class="service"><div class="service-number">02</div><h3>Paket Aktivitas</h3><p>Arung jeram, ATV, swing, dan water sport dengan operator berlisensi.</p></div>
-        <div class="service"><div class="service-number">03</div><h3>Airport Transfer</h3><p>Penjemputan dan pengantaran bandara menuju hotel atau villa.</p></div>
-        <div class="service"><div class="service-number">04</div><h3>Custom Trip</h3><p>Susun sendiri destinasi perjalanan sesuai waktu dan kebutuhan Anda.</p></div>
-    </div>
+    <div class="services reveal" id="servicesGrid"></div>
 </section>
 
 <section class="container" id="tentang">
     <div class="section-head reveal">
-        <div class="section-label">Mengapa BGT</div>
-        <h2 class="section-title">Perjalanan nyaman, pengalaman berkesan.</h2>
+        <div class="section-label" id="wLabel"></div>
+        <h2 class="section-title" id="wTitle"></h2>
     </div>
-    <div class="why-grid reveal">
-        <div class="why-item"><div class="why-number">01</div><div><h3>Driver Profesional</h3><p>Driver lokal yang memahami rute, jam hitung, dan spot terbaik Bali.</p></div></div>
-        <div class="why-item"><div class="why-number">02</div><div><h3>Harga Transparan</h3><p>Harga paket dan aktivitas ditampilkan jelas sebelum booking.</p></div></div>
-        <div class="why-item"><div class="why-number">03</div><div><h3>Private & Fleksibel</h3><p>Tidak ikut rombongan; rute dan jam bisa disesuaikan di jalan.</p></div></div>
-        <div class="why-item"><div class="why-number">04</div><div><h3>Booking Mudah</h3><p>Konsultasi dan booking langsung melalui WhatsApp, tanpa DP.</p></div></div>
-    </div>
+    <div class="why-grid reveal" id="whyGrid"></div>
 </section>
 
 <section class="container" id="booking">
     <div class="section-head reveal">
-        <div class="section-label">Pemesanan</div>
-        <h2 class="section-title">Kunci tanggal Anda</h2>
-        <p class="section-desc">Isi formulir — tanpa bayar di muka. Kami konfirmasi ketersediaan driver lewat WhatsApp.</p>
+        <div class="section-label" id="bLabel"></div>
+        <h2 class="section-title" id="bTitle"></h2>
+        <p class="section-desc" id="bDesc"></p>
     </div>
     <div class="book-grid">
         <form class="form-card reveal" id="bookForm" novalidate>
             <div class="f-row">
-                <div class="field" id="fNama">
-                    <label>Nama Lengkap</label>
-                    <input type="text" id="inNama" placeholder="cth. Putu Ayu" autocomplete="name">
-                    <span class="msg">Nama minimal 3 huruf.</span>
-                </div>
-                <div class="field" id="fWa">
-                    <label>Nomor WhatsApp</label>
-                    <input type="tel" id="inWa" placeholder="cth. 0812xxxxxxx" autocomplete="tel" inputmode="numeric">
-                    <span class="msg">Nomor tidak valid (9–14 digit).</span>
+                <div class="field" id="fNama"><label>Nama Lengkap</label><input type="text" id="inNama" placeholder="cth. Putu Ayu" autocomplete="name"><span class="msg">Nama minimal 3 huruf.</span></div>
+                <div class="field" id="fWa"><label>Nomor WhatsApp</label><input type="tel" id="inWa" placeholder="cth. 0812xxxxxxx" inputmode="numeric" autocomplete="tel"><span class="msg">Nomor tidak valid (9–14 digit).</span></div>
+            </div>
+            <div class="f-row">
+                <div class="field" id="fTgl"><label>Tanggal Tour</label><input type="date" id="inTgl"><span class="msg">Pilih tanggal mulai hari ini.</span></div>
+                <div class="field"><label>Jumlah Orang</label>
+                    <div class="stepper"><button type="button" id="stMin" aria-label="Kurangi">−</button><span id="stVal">2</span><button type="button" id="stPlus" aria-label="Tambah">+</button></div>
                 </div>
             </div>
             <div class="f-row">
-                <div class="field" id="fTgl">
-                    <label>Tanggal Tour</label>
-                    <input type="date" id="inTgl">
-                    <span class="msg">Pilih tanggal mulai hari ini.</span>
-                </div>
-                <div class="field">
-                    <label>Jumlah Orang</label>
-                    <div class="stepper">
-                        <button type="button" id="stMin" aria-label="Kurangi">−</button>
-                        <span id="stVal">2</span>
-                        <button type="button" id="stPlus" aria-label="Tambah">+</button>
-                    </div>
+                <div class="field"><label>Paket Tour</label><select id="inPkg" onchange="updateSummary()"></select></div>
+                <div class="field"><label>Area Penjemputan</label>
+                    <select id="inArea"><option>Kuta / Legian</option><option>Seminyak</option><option>Canggu</option><option>Sanur</option><option>Ubud</option><option>Bandara Ngurah Rai</option><option>Nusa Dua</option></select>
                 </div>
             </div>
-            <div class="f-row">
-                <div class="field"><label>Paket Tour</label><select id="inPkg"></select></div>
-                <div class="field">
-                    <label>Area Penjemputan</label>
-                    <select id="inArea">
-                        <option>Kuta / Legian</option><option>Seminyak</option><option>Canggu</option>
-                        <option>Sanur</option><option>Ubud</option><option>Bandara Ngurah Rai</option><option>Nusa Dua</option>
-                    </select>
-                </div>
-            </div>
-            <div class="field" style="margin-bottom:10px">
-                <label>Tambah Aktivitas (opsional — harga per orang)</label>
-                <div class="act-checks" id="actChecks"></div>
-            </div>
-            <div class="field">
-                <label>Catatan (opsional)</label>
-                <textarea id="inCatatan" rows="2" placeholder="cth. bawa anak kecil, vegetarian, ingin melukat…"></textarea>
-            </div>
-            <button type="submit" class="btn-submit">Buat Permintaan Booking →</button>
+            <div class="field" style="margin-bottom:10px"><label>Tambah Aktivitas (opsional)</label><div class="act-checks" id="actChecks"></div></div>
+            <div class="field"><label>Catatan (opsional)</label><textarea id="inCatatan" rows="2" placeholder="cth. bawa anak kecil, vegetarian…"></textarea></div>
+            <button type="submit" class="btn-submit">Buat Permintaan Booking <svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button>
         </form>
         <aside class="summary reveal">
-            <h3>Ringkasan permintaan</h3>
-            <p class="sub">Periksa sekali lagi, lalu kirim ke WhatsApp kami.</p>
+            <h3>Ringkasan permintaan</h3><p class="sub">Periksa sekali lagi, lalu kirim ke WhatsApp kami.</p>
             <div class="sum-row"><span>Paket</span><b id="sumPkg">—</b></div>
             <div class="sum-row"><span>Tanggal</span><b id="sumTgl">—</b></div>
             <div class="sum-row"><span>Penjemputan</span><b id="sumPickup">—</b></div>
             <div class="sum-row"><span>Peserta</span><b id="sumPax">—</b></div>
             <div class="sum-row"><span>Aktivitas</span><b id="sumAct">—</b></div>
             <div class="sum-total"><span>Estimasi total</span><b id="sumTotal">—</b></div>
-            <p class="sum-note">*Estimasi = harga paket + tiket aktivitas × jumlah orang. Tiket masuk lokasi dihitung terpisah.</p>
-            <a class="btn-wa" id="btnWa" href="#" target="_blank" rel="noopener">Kirim ke WhatsApp →</a>
+            <p class="sum-note">*Estimasi = harga paket + tiket aktivitas × jumlah orang.</p>
+            <a class="btn-wa" id="btnWa" href="#" target="_blank" rel="noopener"></a>
         </aside>
     </div>
 </section>
 
-<section class="container">
-<div class="cta">
-    <img class="cta-bg" id="ctaImg" loading="lazy" alt="Danau Beratan, Bedugul">
+<section class="container"><div class="cta">
+    <img class="cta-bg" id="ctaImg" alt="Bali" loading="lazy" decoding="async">
     <div class="cta-overlay"></div>
     <div class="cta-content">
-        <h2 id="ctaTitle">Siap menjelajahi Bali?</h2>
+        <h2 id="ctaTitle"></h2>
         <p id="ctaDesc"></p>
-        <a id="ctaBtn" target="_blank" class="cta-button" href="#">Chat dengan Bali Global Trans</a>
+        <a id="ctaBtn" target="_blank" class="cta-button" href="#"></a>
     </div>
-</div>
-</section>
+</div></section>
 
 <footer class="footer" id="kontak">
 <div class="footer-inner">
-    <div>
-        <h3 id="footName">Bali Global Trans</h3>
-        <p id="footDesc">Your Bali Travel Partner. Private tour, paket aktivitas, rental mobil, airport transfer dan perjalanan wisata Bali.</p>
-    </div>
-    <div>
-        <h3>Paket</h3>
-        <a href="#paket">Ubud & Kintamani</a>
-        <a href="#paket">Sunrise & Penglipuran</a>
-        <a href="#paket">Rafting + ATV</a>
-        <a href="#paket">Water Sport & Uluwatu</a>
-    </div>
-    <div>
-        <h3>Aktivitas</h3>
-        <a href="#aktivitas">Arung Jeram</a>
-        <a href="#aktivitas">ATV Ride</a>
-        <a href="#aktivitas">Jungle Swing</a>
-        <a href="#aktivitas">Water Sport</a>
-    </div>
-    <div>
-        <h3>Kontak</h3>
-        <a href="#">Bali, Indonesia</a>
-        <a href="mailto:info@baliglobaltrans.com" id="footMail">info@baliglobaltrans.com</a>
-        <a href="#" id="footWa" target="_blank">WhatsApp</a>
-    </div>
+    <div><h3 id="footName"></h3><p id="footDesc"></p></div>
+    <div><h3>Navigasi</h3><a href="#paket">Paket Tour</a><a href="#aktivitas">Aktivitas</a><a href="#destinasi">Destinasi</a><a href="#booking">Booking</a></div>
+    <div><h3>Aktivitas</h3><div id="footActs"></div></div>
+    <div><h3>Kontak</h3><a href="#">Bali, Indonesia</a><a href="#" id="footMail"></a><a href="#" id="footWa" target="_blank" rel="noopener"></a></div>
 </div>
-<div class="footer-bottom">© 2026 Bali Global Trans. All Rights Reserved. Foto destinasi: Wikimedia Commons.</div>
+<div class="footer-bottom">© <span id="footYear"></span> <span id="footName2"></span>. All Rights Reserved. Foto destinasi: Wikimedia Commons.</div>
 </footer>
 
-<!-- Tombol WhatsApp melayang (khas tampilan HP) -->
 <a class="wa-float" id="waFloat" href="#" target="_blank" rel="noopener" aria-label="Chat WhatsApp">
-    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.297-.497.1-.198.05-.371-.025-.52-.074-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+<svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.297-.497.1-.198.05-.371-.025-.52-.074-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
 
-<div class="modal" id="modal">
-    <div class="modal-box">
-        <button class="modal-close" onclick="closeModal()">×</button>
-        <div id="modalBody"></div>
-    </div>
-</div>
-
-<!-- ============ LOGIN / SETUP ADMIN ============ -->
-<div class="alogin" id="adminLogin">
-    <div class="alogin-box">
-        <div class="lock">🔒</div>
-        <h3>Panel Admin BGT</h3>
-
-        <div id="setupBox" style="display:none">
-            <p>Ini pertama kali admin dibuka di browser ini.<br>
-            Buat <b>kode admin pribadi Anda</b> — kode ini disimpan terenkripsi dan <b>tidak tertulis di file website</b>, jadi tidak bisa dibaca orang lain.</p>
-            <input type="password" id="setupOld" placeholder="Kode awal file (sekali pakai)">
-            <input type="password" id="setupNew" placeholder="Buat kode admin baru (min. 6 karakter)">
-            <input type="password" id="setupNew2" placeholder="Ulangi kode admin baru">
-            <div class="alogin-err" id="setupErr"></div>
-            <button class="adm-btn blue" style="width:100%" onclick="doSetup()">Buat Kode & Masuk</button>
-        </div>
-
-        <div id="loginBox" style="display:none">
-            <p>Masukkan kode admin pribadi Anda<br>untuk mengatur konten website.</p>
-            <input type="password" id="adminCode" placeholder="••••••••" autocomplete="off">
-            <div class="alogin-err" id="adminErr"></div>
-            <button class="adm-btn blue" style="width:100%" onclick="tryLogin()">Masuk</button>
-            <a href="#" class="alogin-link" onclick="forgotCode();return false;">Lupa kode admin?</a>
-        </div>
-
-        <button class="adm-btn close" style="width:100%;margin-top:8px;background:#eef2f6;color:#4a6577" onclick="closeAdminLogin()">Batal</button>
-    </div>
-</div>
-
-<!-- ============ PANEL ADMIN ============ -->
-<div class="admin" id="adminPanel">
-    <div class="adm-top">
-        <b>⚙ Panel Admin — Bali Global Trans</b>
-        <div class="btns">
-            <button class="adm-btn save" onclick="saveAdmin()">💾 Simpan</button>
-            <button class="adm-btn close" onclick="closeAdmin()">Tutup</button>
-            <button class="adm-btn warm" onclick="logoutAdmin()">Keluar</button>
-        </div>
-    </div>
-    <aside class="adm-side" id="admSide">
-        <button data-tab="umum" class="act">🏠 Umum & Logo</button>
-        <button data-tab="hero">🌄 Hero</button>
-        <button data-tab="paket">📦 Paket Tour</button>
-        <button data-tab="aktivitas">🚣 Aktivitas</button>
-        <button data-tab="destinasi">📍 Destinasi</button>
-        <button data-tab="lain">✉️ Promo & CTA</button>
-        <button data-tab="data">💾 Data</button>
-    </aside>
-    <main class="adm-main" id="admMain"></main>
-</div>
-
+<div class="modal" id="modal"><div class="modal-box"><button class="modal-close" onclick="closeModal()" aria-label="Tutup"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button><div id="modalBody"></div></div></div>
 <div id="toasts"></div>
 
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
 <script>
-/* ============================================================
-   KEAMANAN ADMIN — kode disimpan sebagai hash SHA-256,
-   tidak pernah tertulis di file website.
-============================================================ */
-const ADMIN_SETUP_CODE = 'BGT2025';
-const MAX_ATTEMPTS = 5;
-const LOCK_MINUTES = 10;
-let failCount = 0;
+const FIREBASE_CONFIG={apiKey:"AIzaSyB9DbCSfzFp8ech7tAhR0uxqKTNWe-HIXA",authDomain:"bali-global-trans-94154.firebaseapp.com",databaseURL:"https://bali-global-trans-94154-default-rtdb.firebaseio.com",projectId:"bali-global-trans-94154",storageBucket:"bali-global-trans-94154.firebasestorage.app",messagingSenderId:"408014293746",appId:"1:408014293746:web:d09808f265c6f1a6045e6b"};
+try{firebase.initializeApp(FIREBASE_CONFIG);}catch(e){}
+const db=firebase.database();
 
-function sha256(ascii){
-    function rr(v,a){return (v>>>a)|(v<<(32-a));}
-    var mp=Math.pow, mw=mp(2,32), res='';
-    var words=[], bitLen=ascii.length*8;
-    var hash=[], k=[], pc=0, prime=2, isC={};
-    for(var i=0;i<313;i++) isC[i]=0;
-    while(pc<64){
-        if(!isC[prime]){
-            for(i=prime*prime;i<313;i+=prime) isC[i]=1;
-            hash[pc]=(mp(prime,.5)*mw)|0;
-            k[pc++]=(mp(prime,1/3)*mw)|0;
-        }
-        prime++;
-    }
-    ascii+='\x80';
-    while(ascii.length%64-56) ascii+='\x00';
-    for(i=0;i<ascii.length;i++){
-        var j=ascii.charCodeAt(i);
-        if(j>>8) return '';
-        words[i>>2]|=j<<((3-i)%4)*8;
-    }
-    words[words.length]=((bitLen/mw)|0);
-    words[words.length]=(bitLen);
-    for(j=0;j<words.length;){
-        var w=words.slice(j,j+=16), oldH=hash;
-        hash=hash.slice(0,8);
-        for(i=0;i<64;i++){
-            var w15=w[i-15], w2=w[i-2];
-            var a=hash[0], e=hash[4];
-            var t1=hash[7]+(rr(e,6)^rr(e,11)^rr(e,25))+((e&hash[5])^((~e)&hash[6]))+k[i]
-                +(w[i]=(i<16)?w[i]:(w[i-16]+(rr(w15,7)^rr(w15,18)^(w15>>>3))+w[i-7]+(rr(w2,17)^rr(w2,19)^(w2>>>10)))|0);
-            var t2=(rr(a,2)^rr(a,13)^rr(a,22))+((a&hash[1])^(a&hash[2])^(hash[1]&hash[2]));
-            hash=[(t1+t2)|0].concat(hash);
-            hash[4]=(hash[4]+t1)|0;
-        }
-        for(i=0;i<8;i++) hash[i]=(hash[i]+oldH[i])|0;
-    }
-    for(i=0;i<8;i++) for(j=3;j+1;j--){
-        var b=(hash[i]>>(j*8))&255;
-        res+=((b<16)?0:'')+b.toString(16);
-    }
-    return res;
-}
-function utf8Encode(s){
-    var out='';
-    for(var i=0;i<s.length;i++){
-        var c=s.charCodeAt(i);
-        if(c<128) out+=String.fromCharCode(c);
-        else if(c<2048) out+=String.fromCharCode((c>>6)|192,(c&63)|128);
-        else out+=String.fromCharCode((c>>12)|224,((c>>6)&63)|128,(c&63)|128);
-    }
-    return out;
-}
-function sha256utf8(s){ return sha256(utf8Encode(s)); }
-function adminHash(){ return localStorage.getItem('bgt_admin_hash') || ''; }
-function lockMsg(){
-    var t = Number(localStorage.getItem('bgt_admin_lock')||0);
-    if(t > Date.now()){
-        var m = Math.ceil((t-Date.now())/60000);
-        var el = document.getElementById('adminErr');
-        if(el) el.textContent = 'Terlalu banyak percobaan salah. Coba lagi dalam '+m+' menit.';
-        return true;
-    }
-    return false;
-}
+/* ===== ★ SALIN BLOK DEFAULTS LENGKAP DARI admin.html KE SINI ★ ===== */
+const DEFAULTS={/* GANTI: tempel blok const DEFAULTS={...}; dari admin.html, harus identik */};
 
-/* ============================================================
-   KONFIGURASI DEFAULT
-============================================================ */
-const DEFAULTS = {
-    site: { name:'Bali Global Trans', sub:'Your Bali Travel Partner', wa:'6281234567890',
-            email:'info@baliglobaltrans.com',
-            footDesc:'Your Bali Travel Partner. Private tour, paket aktivitas, rental mobil, airport transfer dan perjalanan wisata Bali.' },
-    logo: { src:'' },
-    hero: {
-        small:'Explore Bali With BGT',
-        title:'Temukan Bali,\ndengan cara yang berbeda.',
-        desc:'Paket private tour 10 jam dengan 3–4 destinasi terbaik, ditambah aktivitas seru: arung jeram, ATV, jungle swing, dan water sport. Semua fleksibel sesuai gaya perjalanan Anda.',
-        btn1:'Lihat Paket Tour', btn2:'Aktivitas Seru',
-        stats:[ {b:'4.9/5', l:'2.400+ ulasan'}, {b:'10 Jam', l:'private per mobil'}, {b:'1–6 Orang', l:'plus driver lokal'} ]
-    },
-    promo: { small:'Private Bali Experience', title:'Bali dalam satu hari, tanpa terburu-buru.',
-        desc:'Gabungkan paket tour dengan aktivitas favorit Anda — pagi arung jeram, siang swing di atas sawah, sore sunset di Uluwatu. Driver kami bantu susun rutenya.', btn:'Susun Perjalanan Saya' },
-    cta: { title:'Siap menjelajahi Bali?',
-        desc:'Ceritakan rencana perjalanan Anda. Bali Global Trans akan membantu memilihkan paket, aktivitas, dan rute yang paling pas.', btn:'Chat dengan Bali Global Trans' },
-    packages: [
-        { id:'ubud-kintamani', badge:'POPULER', title:'Ubud & Kintamani Tour', location:'Ubud • Tegallalang • Kintamani',
-          rating:'4.9', price:750000, unit:'/mobil', dur:'10 Jam',
-          desc:'Rute klasik terbaik Bali: sawah terasering, pura air suci, kaldera vulkanik, dan hutan monyet.',
-          main:{ place:'Tegallalang Rice Terrace', first:'commons', commons:'Tegallalang rice terrace|Tegallalang Bali', wikiEn:'Tegallalang, Gianyar' },
-          stops:[
-            {t:'08.30', name:'Tegallalang Rice Terrace', desc:'Terasering subak warisan UNESCO. Coba jungle swing di tepi lembah (opsional).',
-             img:{ place:'Tegallalang Rice Terrace', first:'commons', commons:'Tegallalang rice terrace', wikiEn:'Tegallalang, Gianyar' }},
-            {t:'10.00', name:'Pura Tirta Empul', desc:'Melukat di kolam air suci Tampaksiring yang berusia seribu tahun (opsional).',
-             img:{ place:'Pura Tirta Empul', wikiEn:'Pura Tirta Empul', commons:'Tirta Empul Bali' }},
-            {t:'12.30', name:'Kintamani & Danau Batur', desc:'Makan siang di restoran tepi kaldera dengan panorama Gunung & Danau Batur.',
-             img:{ place:'Danau Batur, Kintamani', wikiEn:'Lake Batur', commons:'Lake Batur Kintamani|Mount Batur' }},
-            {t:'15.00', name:'Ubud Monkey Forest', desc:'Hutan beringin suci berisi ±1.200 monyet ekor panjang dan pura abad ke-14.',
-             img:{ place:'Ubud Monkey Forest', wikiEn:'Ubud Monkey Forest', commons:'Ubud Monkey Forest' }}
-          ],
-          include:['Mobil AC + driver','Bahan bakar & parkir','Air mineral','Sarung untuk masuk pura'] },
-        { id:'sunrise-penglipuran', badge:'SUNRISE', title:'Sunrise Kintamani & Penglipuran', location:'Kintamani • Bangli • Tegallalang',
-          rating:'4.9', price:800000, unit:'/mobil', dur:'10–11 Jam',
-          desc:'Berangkat dini hari: sunrise di kaldera Batur, kampung adat Penglipuran, swing, lalu air terjun.',
-          main:{ place:'Sunrise Gunung Batur, Kintamani', first:'commons', commons:'Mount Batur sunrise|Kintamani sunrise', wikiEn:'Mount Batur' },
-          stops:[
-            {t:'04.30', name:'Sunrise Gunung Batur', desc:'Matahari terbit dari penjuru kaldera Kintamani — kopi panas disediakan.',
-             img:{ place:'Sunrise Gunung Batur', first:'commons', commons:'Mount Batur sunrise', wikiEn:'Mount Batur' }},
-            {t:'08.30', name:'Kampung Adat Penglipuran', desc:'Kampung adat berjuluk salah satu terbersih di dunia; rumah tradisional & bambu raksasa.',
-             img:{ place:'Kampung Adat Penglipuran', first:'commons', commons:'Penglipuran village|Penglipuran Bali', wikiEn:'Penglipuran' }},
-            {t:'11.00', name:'Alas Harum Swing', desc:'Ayunan ikonik di atas sawah terasering + spot foto sarang burung.',
-             img:{ place:'Alas Harum, Tegallalang', first:'commons', commons:'Alas Harum|Bali Swing|Tegallalang rice terrace' }},
-            {t:'13.30', name:'Air Terjun Tegenungan', desc:'Air terjun dekat Ubud yang bisa dipakai berenang — penutup hari yang segar.',
-             img:{ place:'Air Terjun Tegenungan', wikiEn:'Tegenungan Waterfall', commons:'Tegenungan waterfall' }}
-          ],
-          include:['Mobil AC + driver','Bahan bakar & parkir','Air mineral + kopi pagi','Sarung untuk masuk pura'] },
-        { id:'adventure', badge:'ADRENALIN', title:'Adventure: Rafting + ATV + Swing', location:'Sungai Ayung • Ubud • Tegallalang',
-          rating:'4.9', price:950000, unit:'/orang', dur:'10 Jam',
-          desc:'Paket seru 3 aktivitas dalam sehari untuk yang suka tantangan — cocok berpasangan atau tim.',
-          main:{ place:'Arung Jeram Sungai Ayung', first:'commons', commons:'White water rafting Ayung|Rafting Bali', wikiEn:'Ayung River' },
-          stops:[
-            {t:'08.00', name:'Arung Jeram Sungai Ayung', desc:'Rafting grade II–III ±2 jam melewati tebing, ukiran sungai & air terjun kecil.',
-             img:{ place:'Arung jeram Sungai Ayung', first:'commons', commons:'White water rafting Ayung Bali|Rafting Bali', wikiEn:'Ayung River' }},
-            {t:'11.00', name:'ATV Ride Ubud', desc:'Setir quad bike melewati hutan, sungai dangkal, terowongan bambu & jalur lumpur.',
-             img:{ place:'ATV ride Bali', first:'commons', commons:'Quad bike Bali|ATV riding|Quad biking', wikiEn:'All-terrain vehicle' }},
-            {t:'13.30', name:'Alas Harum Swing', desc:'Ayunan tinggi di atas sawah + makan siang dengan pemandangan hijau.',
-             img:{ place:'Alas Harum Swing', first:'commons', commons:'Bali Swing|Alas Harum|Jungle swing Bali' }},
-            {t:'15.30', name:'Air Terjun Tegenungan', desc:'Basuh lumpur & lelah di air terjun Tegenungan sebelum kembali ke hotel.',
-             img:{ place:'Air Terjun Tegenungan', wikiEn:'Tegenungan Waterfall', commons:'Tegenungan waterfall' }}
-          ],
-          include:['Mobil AC + driver','Instruktur & alat safety','Perlengkapan rafting/ATV','Makan siang sederhana'] },
-        { id:'watersport', badge:'WATER SPORT', title:'Water Sport & Uluwatu Sunset', location:'Tanjung Benoa • Pandawa • Uluwatu',
-          rating:'4.9', price:850000, unit:'/mobil', dur:'10 Jam',
-          desc:'Pagi seru di laut selatan Bali, siang santai di pantai, sore ditutup kecak api di Uluwatu.',
-          main:{ place:'Water sport Tanjung Benoa', first:'commons', commons:'Parasailing Tanjung Benoa|Parasailing Bali|Jet ski Bali', wikiEn:'Tanjung Benoa' },
-          stops:[
-            {t:'09.00', name:'Water Sport Tanjung Benoa', desc:'Paket parasailing + banana boat + jet ski di laut tenang Tanjung Benoa.',
-             img:{ place:'Parasailing Tanjung Benoa', first:'commons', commons:'Parasailing Tanjung Benoa|Parasailing beach Bali|Jet ski Bali', wikiEn:'Tanjung Benoa' }},
-            {t:'11.30', name:'Pantai Pandawa', desc:'"Pantai Rahasia" yang terselip di antara tebing kapur putih raksasa.',
-             img:{ place:'Pantai Pandawa', first:'commons', commons:'Pandawa beach Bali', wikiEn:'Pandawa Beach' }},
-            {t:'13.30', name:'Garuda Wisnu Kencana', desc:'Patung setinggi 121 meter — ikon tertinggi Bali — di taman budaya GWK.',
-             img:{ place:'Patung Garuda Wisnu Kencana', wikiEn:'Garuda Wisnu Kencana', commons:'Garuda Wisnu Kencana' }},
-            {t:'16.30', name:'Uluwatu & Kecak Fire Dance', desc:'Sunset di puncak tebing 70 meter + pertunjukan tari kecak api saat senja (opsional).',
-             img:{ place:'Pura Luhur Uluwatu', wikiEn:'Pura Luhur Uluwatu', commons:'Uluwatu temple|Uluwatu sunset' }}
-          ],
-          include:['Mobil AC + driver','Bahan bakar & parkir','Air mineral','Bantuan beli tiket aktivitas'] },
-        { id:'bedugul', badge:'NATURE', title:'Bedugul & Jatiluwih Heritage', location:'Bedugul • Jatiluwih • Mengwi',
-          rating:'4.8', price:850000, unit:'/mobil', dur:'10 Jam',
-          desc:'Udara sejuk pegunungan, pura terapung, gerbang ikonik, dan terasering UNESCO terluas di Bali.',
-          main:{ place:'Pura Ulun Danu Bratan', wikiEn:'Pura Ulun Danu Bratan', commons:'Ulun Danu Bratan|Ulun Danu Bratan lake' },
-          stops:[
-            {t:'09.30', name:'Pura Ulun Danu Bratan', desc:'Pura "terapung" ikonik di Danau Beratan, dibangun 1633 untuk Dewi Danu.',
-             img:{ place:'Pura Ulun Danu Bratan', wikiEn:'Pura Ulun Danu Bratan', commons:'Ulun Danu Bratan' }},
-            {t:'11.00', name:'Handara Gate', desc:'Gerbang candi bentar ikonik yang viral — antriannya sepadan dengan fotonya.',
-             img:{ place:'Handara Gate Bali', first:'commons', commons:'Handara Gate Bali' }},
-            {t:'13.00', name:'Jatiluwih Rice Terrace', desc:'Terasering UNESCO terluas di Bali dengan pemandangan Gunung Batukaru.',
-             img:{ place:'Jatiluwih Rice Terrace', wikiEn:'Jatiluwih', commons:'Jatiluwih rice terrace|Jatiluwih Bali' }},
-            {t:'15.30', name:'Pura Taman Ayun', desc:'Pura kerajaan Mengwi dengan taman kolam luas — warisan dunia UNESCO.',
-             img:{ place:'Pura Taman Ayun', wikiEn:'Pura Taman Ayun', commons:'Taman Ayun temple' }}
-          ],
-          include:['Mobil AC + driver','Bahan bakar & parkir','Air mineral','Sarung untuk masuk pura'] },
-        { id:'lempuyang', badge:'EAST BALI', title:'Lempuyang Gate of Heaven', location:'Karangasem • Timur Bali',
-          rating:'4.9', price:900000, unit:'/mobil', dur:'11–12 Jam',
-          desc:'Perjalanan ke timur Bali: gerbang surga, taman air kerajaan, dan gua kelelawar di tebing laut.',
-          main:{ place:'Pura Lempuyang Gate of Heaven', first:'commons', commons:'Lempuyang temple|Gate of Heaven Bali', wikiEn:'Pura Penataran Agung Lempuyang' },
-          stops:[
-            {t:'08.00', name:'Pura Lempuyang', desc:'"Gate of Heaven" dengan latar Gunung Agung — foto paling ikonik di Bali.',
-             img:{ place:'Pura Lempuyang Gate of Heaven', first:'commons', commons:'Lempuyang temple|Gate of Heaven Bali', wikiEn:'Pura Penataran Agung Lempuyang' }},
-            {t:'11.00', name:'Tirta Gangga', desc:'Taman air pura dengan patung dewa, kolam ikan raksasa, dan stepping stone.',
-             img:{ place:'Tirta Gangga', wikiEn:'Tirta Gangga', commons:'Tirta Gangga Bali' }},
-            {t:'12.30', name:'Taman Ujung', desc:'Taman air kerajaan Karangasem dengan jembatan putih di atas kolam luas.',
-             img:{ place:'Taman Ujung Sukasada', first:'commons', commons:'Taman Ujung Sukasada|Sukasada Park' }},
-            {t:'14.30', name:'Pura Goa Lawah', desc:'Pura di mulut gua berisi ribuan kelelawar, tepi pantai timur Bali.',
-             img:{ place:'Pura Goa Lawah', wikiEn:'Pura Goa Lawah', commons:'Goa Lawah temple' }}
-          ],
-          include:['Mobil AC + driver','Bahan bakar & parkir','Air mineral + snack','Sarung untuk masuk pura'] }
-    ],
-    activities: [
-        { id:'rafting', emoji:'🚣', title:'Arung Jeram (Rafting)', price:450000, unit:'/orang', dur:'±2 jam di air', loc:'Sungai Ayung, Ubud',
-          desc:'Rakit karet melawan arus Sungai Ayung grade II–III selama ±2 jam, melewati tebing, ukiran sungai, dan air terjun kecil. Cocok untuk pemula.',
-          img:{ place:'Arung jeram Sungai Ayung Bali', first:'commons', commons:'White water rafting Ayung|Rafting Bali|White water rafting river', wikiEn:'Ayung River' } },
-        { id:'atv', emoji:'🏍️', title:'ATV Ride', price:400000, unit:'/orang', dur:'±1,5 jam', loc:'Ubud, Gianyar',
-          desc:'Setir sendiri quad bike melewati hutan tropis, sungai dangkal, terowongan bambu, dan jalur lumpur. Ada jalur single track untuk yang berani.',
-          img:{ place:'ATV ride di Bali', first:'commons', commons:'Quad bike Bali|ATV riding|Quad biking trail', wikiEn:'All-terrain vehicle' } },
-        { id:'swing', emoji:'🌳', title:'Jungle Swing', price:150000, unit:'/orang', dur:'±1 jam', loc:'Alas Harum, Tegallalang',
-          desc:'Ayunan raksasa di atas sawah terasering Tegallalang dengan pemandangan lembah hijau. Termasuk spot foto sarang burung.',
-          img:{ place:'Bali jungle swing', first:'commons', commons:'Bali Swing|Jungle swing Bali|Alas Harum' } },
-        { id:'watersport', emoji:'🪂', title:'Water Sport', price:350000, unit:'/orang', dur:'±2 jam', loc:'Tanjung Benoa, Badung',
-          desc:'Paket 3 kegiatan laut di Tanjung Benoa: parasailing, banana boat, dan jet ski, dengan instruktur dan alat safety lengkap.',
-          img:{ place:'Parasailing Tanjung Benoa', first:'commons', commons:'Parasailing Tanjung Benoa|Parasailing Bali|Jet ski beach', wikiEn:'Tanjung Benoa' } }
-    ],
-    destinations: [
-        { name:'Ubud', sub:'Seni • Budaya • Alam', img:{ place:'Ubud, Bali', first:'commons', commons:'Ubud Bali|Ubud palace', wikiEn:'Ubud' } },
-        { name:'Kintamani', sub:'Sunrise • Gunung & Danau Batur', img:{ place:'Kintamani, Gunung Batur', wikiEn:'Mount Batur', commons:'Kintamani Bali|Mount Batur' } },
-        { name:'Tanah Lot', sub:'Pura laut • Sunset', img:{ place:'Pura Tanah Lot', wikiEn:'Tanah Lot', commons:'Tanah Lot temple' } },
-        { name:'Uluwatu', sub:'Tebing • Kecak • Ocean', img:{ place:'Pura Luhur Uluwatu', wikiEn:'Pura Luhur Uluwatu', commons:'Uluwatu temple' } },
-        { name:'Nusa Penida', sub:'Kelingking • Crystal Bay', img:{ place:'Nusa Penida', wikiEn:'Nusa Penida', commons:'Nusa Penida Kelingking' } },
-        { name:'Bedugul', sub:'Danau Beratan • Ulun Danu', img:{ place:'Danau Beratan, Bedugul', wikiEn:'Lake Bratan', commons:'Lake Bratan Bali' } }
-    ],
-    imgHero:  { place:'Sunrise Gunung Batur, Kintamani', first:'commons', commons:'Mount Batur sunrise|Kintamani sunrise Bali', wikiEn:'Mount Batur' },
-    imgPromo: { place:'Handara Gate, Bali', first:'commons', commons:'Handara Gate Bali|Bali Handara gate' },
-    imgCta:   { place:'Danau Beratan, Bedugul', wikiEn:'Pura Ulun Danu Bratan', commons:'Ulun Danu Bratan lake' },
-    imgOver: {}
-};
+/* ===== MUAT KONFIG ===== */
+const CFG_KEY='bgt_config_v6';
+let CFG=loadCfg();
+function loadCfg(){let base=JSON.parse(JSON.stringify(DEFAULTS));try{const raw=localStorage.getItem(CFG_KEY);if(raw&&raw!=='__RESET__')return deepMerge(base,JSON.parse(raw));}catch(e){}return base;}
+function deepMerge(b,o){for(const k in o){if(o[k]&&typeof o[k]==='object'&&!Array.isArray(o[k])&&b[k]&&typeof b[k]==='object'&&!Array.isArray(b[k]))deepMerge(b[k],o[k]);else b[k]=o[k];}return b;}
+function persistCfg(){try{localStorage.setItem(CFG_KEY,JSON.stringify(CFG));}catch(e){}}
 
-let CFG = loadCfg();
-function loadCfg(){
-    try{
-        const raw = localStorage.getItem('bgt_config_v2');
-        if(raw){ return deepMerge(JSON.parse(JSON.stringify(DEFAULTS)), JSON.parse(raw)); }
-    }catch(e){}
-    return JSON.parse(JSON.stringify(DEFAULTS));
-}
-function deepMerge(base, over){
-    for(const k in over){
-        if(over[k] && typeof over[k]==='object' && !Array.isArray(over[k]) && base[k] && typeof base[k]==='object' && !Array.isArray(base[k]))
-            deepMerge(base[k], over[k]);
-        else base[k] = over[k];
-    }
-    return base;
-}
-function persistCfg(){ localStorage.setItem('bgt_config_v2', JSON.stringify(CFG)); }
+/* ===== UTIL ===== */
+const $=s=>document.querySelector(s);
+function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+function rupiah(n){return 'Rp'+Number(n||0).toLocaleString('id-ID');}
+function waLink(t){return 'https://wa.me/'+CFG.site.wa+'?text='+encodeURIComponent(t);}
+function toast(m){const t=document.createElement('div');t.className='toast';t.innerHTML='<svg class="ic" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>'+esc(m)+'</span>';$('#toasts').appendChild(t);setTimeout(()=>t.remove(),2600);}
+function goTo(id){document.getElementById(id).scrollIntoView({behavior:'smooth'});}
+function skyPh(name){const svg="<svg xmlns='http://www.w3.org/2000/svg' width='800' height='520'><rect width='800' height='520' fill='#dcecf7'/><text x='400' y='265' text-anchor='middle' font-family='Arial' font-size='22' font-weight='bold' fill='#7d95a5'>"+(name||'Bali')+"</text></svg>";return 'data:image/svg+xml;charset=UTF-8,'+encodeURIComponent(svg);}
 
-/* ============================================================
-   UTILITAS
-============================================================ */
-const $ = s => document.querySelector(s);
-function esc(s){ return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
-function rupiah(n){ return 'Rp' + Number(n||0).toLocaleString('id-ID'); }
-function waLink(t){ return 'https://wa.me/' + CFG.site.wa + '?text=' + encodeURIComponent(t); }
-function toast(msg){
-    const t = document.createElement('div'); t.className='toast'; t.textContent='✓ '+msg;
-    $('#toasts').appendChild(t);
-    setTimeout(()=>{ t.classList.add('out'); setTimeout(()=>t.remove(),380); }, 2800);
-}
-function toggleMenu(){ $('#nav').classList.toggle('open'); }
-function goTo(id){ document.getElementById(id).scrollIntoView({behavior:'smooth'}); }
-function favorite(b){ b.innerHTML = b.innerHTML==='♡' ? '♥' : '♡'; b.style.color = b.innerHTML==='♥' ? '#e2726e' : '#7d95a5'; }
-function isMobile(){ return window.matchMedia('(max-width:640px)').matches; }
+/* ===== ★ PUSTAKA IKON SVG (gaya garis profesional — bukan emoji) ★ ===== */
+const ICON={
+menu:'<line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>',
+close:'<line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>',
+pin:'<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/>',
+clock:'<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>',
+check:'<polyline points="20 6 9 17 4 12"/>',
+star:'<path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>',
+arrow:'<line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>',
+mail:'<rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/>',
+activity:'<path d="M22 12h-4l-3 9L9 3l-3 9H2"/>',
+waves:'<path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/>',
+bike:'<circle cx="18.5" cy="17.5" r="3.5"/><circle cx="5.5" cy="17.5" r="3.5"/><circle cx="15" cy="5" r="1"/><path d="M12 17.5V14l-3-3 4-3 2 3h2"/>',
+tree:'<path d="m17 14 3 3.3a1 1 0 0 1-.7 1.7H4.7a1 1 0 0 1-.7-1.7L7 14h-.3a1 1 0 0 1-.7-1.7L9 9h-.2A1 1 0 0 1 8 7.3L12 3l4 4.3a1 1 0 0 1-.8 1.7H15l3 3.3a1 1 0 0 1-.7 1.7H17Z"/><path d="M12 22v-3"/>',
+wind:'<path d="M17.7 7.7a2.5 2.5 0 1 1 1.8 4.3H2"/><path d="M9.6 4.6A2 2 0 1 1 11 8H2"/><path d="M12.6 19.4A2 2 0 1 0 14 16H2"/>',
+wa:'<path fill="currentColor" stroke="none" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.297-.497.1-.198.05-.371-.025-.52-.074-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>'};
+function ico(n,s){s=s||14;return '<svg class="ic" width="'+s+'" height="'+s+'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+(ICON[n]||ICON.activity)+'</svg>';}
+function actIcon(a){const id=String(a.id||'').toLowerCase();
+ if(id.indexOf('raft')>-1||a.emoji==='🚣')return'waves';
+ if(id.indexOf('atv')>-1||a.emoji==='🏍️')return'bike';
+ if(id.indexOf('swing')>-1||a.emoji==='🌳')return'tree';
+ if(id.indexOf('water')>-1||a.emoji==='🪂')return'wind';
+ return'activity';}
 
-/* ============================================================
-   MESIN GAMBAR SESUAI NAMA TEMPAT
-============================================================ */
-const imgCache = new Map();
+/* ===== MESIN GAMBAR ===== */
+const imgCache=new Map();
+async function commonsThumb(q){
+    if(imgCache.has(q))return imgCache.get(q);
+    try{const api='https://commons.wikimedia.org/w/api.php?action=query&format=json&origin=*&generator=search&gsrnamespace=6&gsrlimit=5&gsrsearch='+encodeURIComponent('filetype:bitmap '+q)+'&prop=imageinfo&iiprop=url&iiurlwidth=800';
+    const r=await fetch(api);if(r.ok){const d=await r.json();const pg=(d.query&&d.query.pages)?Object.values(d.query.pages):[];
+    const bad=/map|logo|flag|coat|seal|chart|diagram|banner/i;
+    const hit=pg.find(p=>p.title&&!bad.test(p.title)&&p.imageinfo&&p.imageinfo[0]&&p.imageinfo[0].thumburl);
+    if(hit){imgCache.set(q,hit.imageinfo[0].thumburl);return hit.imageinfo[0].thumburl;}}}catch(e){}
+    return null;}
+async function wikiThumb(title){
+    try{const r=await fetch('https://en.wikipedia.org/api/rest_v1/page/summary/'+encodeURIComponent(title));
+    if(r.ok){const d=await r.json();if(d.thumbnail&&d.thumbnail.source)return d.thumbnail.source;if(d.originalimage&&d.originalimage.source)return d.originalimage.source;}}catch(e){}
+    return null;}
+async function resolveImg(def,key){
+    if(key){const ov=CFG.imgOver&&CFG.imgOver[key];
+        if(ov){if(ov.src)return ov.src;
+            if(ov.kw){const u=await commonsThumb(ov.kw);if(u)return u;}}}
+    if(def){
+        if(def.commons){const u=await commonsThumb(def.commons);if(u)return u;}
+        if(def.wikiEn){const u=await wikiThumb(def.wikiEn);if(u)return u;}
+        if(def.place){const u=await commonsThumb(def.place);if(u)return u;}}
+    return skyPh((def&&def.place)||key||'Bali');}
+function setImage(el,def,key){
+    if(!el)return;
+    el.src=skyPh((def&&def.place)||key||'Bali');
+    resolveImg(def,key).then(u=>{el.src=u;});}
 
-function skyPlaceholder(name){
-    const svg = "<svg xmlns='http://www.w3.org/2000/svg' width='800' height='520'>" +
-        "<defs><linearGradient id='g' x1='0' y1='0' x2='0' y2='1'>" +
-        "<stop offset='0' stop-color='#bfe3f7'/><stop offset='1' stop-color='#eaf7ff'/></linearGradient></defs>" +
-        "<rect width='800' height='520' fill='url(#g)'/>" +
-        "<circle cx='645' cy='105' r='46' fill='#ffd27a'/>" +
-        "<g fill='#fff' opacity='.92'><ellipse cx='190' cy='140' rx='95' ry='34'/><ellipse cx='255' cy='118' rx='62' ry='26'/>" +
-        "<ellipse cx='555' cy='300' rx='115' ry='36'/><ellipse cx='625' cy='278' rx='72' ry='28'/></g>" +
-        "<g fill='#2a7fb8' opacity='.28'><path d='M-20 520 L130 395 L280 520 Z'/><path d='M180 520 L330 375 L480 520 Z'/>" +
-        "<path d='M430 520 L585 405 L740 520 Z'/></g>" +
-        "<text x='400' y='470' text-anchor='middle' font-family='Arial' font-size='30' font-weight='bold' fill='#0f4c75'>" + name + "</text></svg>";
-    return 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent(svg);
-}
-async function wikiSummary(title, lang){
-    const key = 'wiki:'+lang+':'+title;
-    if(imgCache.has(key)) return imgCache.get(key);
-    try{
-        const r = await fetch('https://'+lang+'.wikipedia.org/api/rest_v1/page/summary/'+encodeURIComponent(title));
-        if(r.ok){
-            const d = await r.json(); let u = null;
-            if(d.thumbnail && d.thumbnail.source) u = d.thumbnail.source.replace(/\/(\d+)px-/,'/1200px-');
-            else if(d.originalimage) u = d.originalimage.source;
-            imgCache.set(key,u); return u;
-        }
-    }catch(e){}
-    imgCache.set(key,null); return null;
-}
-async function commonsSearch(q){
-    const key = 'commons:'+q;
-    if(imgCache.has(key)) return imgCache.get(key);
-    try{
-        const api = 'https://commons.wikimedia.org/w/api.php?action=query&format=json&origin=*'+
-            '&generator=search&gsrnamespace=6&gsrlimit=8&gsrsearch='+encodeURIComponent('filetype:bitmap '+q)+
-            '&prop=imageinfo&iiprop=url&iiurlwidth=1200';
-        const r = await fetch(api);
-        if(r.ok){
-            const d = await r.json();
-            const pages = (d.query&&d.query.pages)?Object.values(d.query.pages):[];
-            const bad = /map|logo|flag|coat|seal|chart|diagram|banner/i;
-            let infos = pages.filter(p=>p.title&&!bad.test(p.title)&&p.imageinfo&&p.imageinfo[0]).map(p=>p.imageinfo[0]);
-            const land = infos.filter(i=>(i.width||0)>=(i.height||0));
-            const pool = land.length?land:infos;
-            pool.sort((a,b)=>(b.width||0)-(a.width||0));
-            if(pool[0]){ imgCache.set(key,pool[0].thumburl); return pool[0].thumburl; }
-        }
-    }catch(e){}
-    imgCache.set(key,null); return null;
-}
-function setImg(img, url, name){
-    img.onload = ()=>img.classList.add('img-ok');
-    img.onerror = ()=>{ img.onerror=null; img.src = skyPlaceholder(name); };
-    img.alt = name;
-    img.src = url;
-}
-async function resolveImage(img){
-    const key = img.dataset.imgkey || '';
-    const name = img.dataset.place;
-    const ov = key && CFG.imgOver[key];
-    if(ov){
-        if(ov.src){ setImg(img, ov.src, name); return; }
-        if(ov.kw){ const u = await commonsSearch(ov.kw); setImg(img, u || skyPlaceholder(name), name); return; }
-    }
-    const commons = (img.dataset.commons||'').split('|').map(s=>s.trim()).filter(Boolean);
-    let url = null;
-    if(img.dataset.first==='commons'){ for(const c of commons){ url = await commonsSearch(c); if(url) break; } }
-    if(!url && img.dataset.wikiEn) url = await wikiSummary(img.dataset.wikiEn,'en');
-    if(!url && img.dataset.wikiId) url = await wikiSummary(img.dataset.wikiId,'id');
-    if(!url){ for(const c of commons){ url = await commonsSearch(c); if(url) break; } }
-    setImg(img, url || skyPlaceholder(name), name);
-}
-function resolveAll(scope){ (scope||document).querySelectorAll('img[data-place]').forEach(resolveImage); }
+/* ===== MENU MOBILE ===== */
+function toggleMenu(){const n=$('#nav');const open=n.classList.toggle('open');$('#menuBtn').innerHTML=ico(open?'close':'menu',22);$('#menuBtn').setAttribute('aria-label',open?'Tutup menu':'Buka menu');}
+document.querySelectorAll('#nav a').forEach(a=>a.addEventListener('click',()=>{const n=$('#nav');if(n.classList.contains('open'))toggleMenu();}));
 
-function imgAttrs(spec, key, alt){
-    let s = 'data-place="'+esc(spec.place)+'" loading="lazy" data-imgkey="'+esc(key)+'" alt="'+esc(alt||spec.place)+'"';
-    if(spec.first) s += ' data-first="commons"';
-    if(spec.commons) s += ' data-commons="'+esc(spec.commons)+'"';
-    if(spec.wikiEn) s += ' data-wiki-en="'+esc(spec.wikiEn)+'"';
-    if(spec.wikiId) s += ' data-wiki-id="'+esc(spec.wikiId)+'"';
-    return s;
-}
-function applyStaticImg(el, spec, key){
-    el.setAttribute('data-place', spec.place);
-    el.dataset.imgkey = key;
-    el.dataset.first = spec.first||'';
-    el.dataset.commons = spec.commons||'';
-    el.dataset.wikiEn = spec.wikiEn||'';
-    el.dataset.wikiId = spec.wikiId||'';
-    el.classList.remove('img-ok');
-    el.removeAttribute('src');
-}
-
-/* ============================================================
-   RENDER WEBSITE
-============================================================ */
-function monogramLogo(){
-    const svg = "<svg xmlns='http://www.w3.org/2000/svg' width='104' height='104'>" +
-        "<circle cx='52' cy='52' r='50' fill='#1f7fc4'/>" +
-        "<circle cx='52' cy='52' r='46' fill='none' stroke='#ffd27a' stroke-width='4'/>" +
-        "<text x='52' y='66' text-anchor='middle' font-family='Georgia' font-size='40' font-weight='bold' fill='#fff'>B</text>" +
-        "<path d='M20 84 Q52 66 84 84' stroke='#fff' stroke-width='5' fill='none' stroke-linecap='round'/></svg>";
-    return 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent(svg);
-}
+/* ===== RENDER ===== */
+function stars(r){const n=Math.round(parseFloat(r)||5);return '★'.repeat(n)+'☆'.repeat(5-n);}
 function renderAll(){
-    const logo = $('#logoImg');
-    logo.onerror = ()=>{ logo.onerror=null; logo.src = monogramLogo(); };
-    logo.src = CFG.logo.src || '512B.png';
-    $('#siteName').textContent = CFG.site.name;
-    $('#siteSub').textContent = CFG.site.sub;
-    $('#footName').textContent = CFG.site.name;
-    $('#footDesc').textContent = CFG.site.footDesc;
-    $('#footMail').textContent = CFG.site.email;
-    $('#footMail').href = 'mailto:'+CFG.site.email;
-    $('#footWa').href = waLink('Halo '+CFG.site.name+'! Saya ingin bertanya tentang paket tour.');
-    $('#ctaBtn').href = waLink('Halo '+CFG.site.name+', saya ingin merencanakan perjalanan di Bali.');
-    $('#waFloat').href = waLink('Halo '+CFG.site.name+'! Saya ingin bertanya tentang paket tour.');
-
-    $('#heroSmall').textContent = CFG.hero.small;
-    $('#heroTitle').innerHTML = esc(CFG.hero.title).replace(/\n/g,'<br>');
-    $('#heroDesc').textContent = CFG.hero.desc;
-    $('#heroBtn1').textContent = CFG.hero.btn1;
-    $('#heroBtn2').textContent = CFG.hero.btn2;
-    $('#heroStats').innerHTML = CFG.hero.stats.map(s=>
-        '<div class="hstat"><b>'+esc(s.b)+'</b>'+esc(s.l)+'</div>').join('');
-    applyStaticImg($('#heroImg'), CFG.imgHero, 'hero');
-
-    $('#promoSmall').textContent = CFG.promo.small;
-    $('#promoTitle').textContent = CFG.promo.title;
-    $('#promoDesc').textContent = CFG.promo.desc;
-    $('#promoBtn').textContent = CFG.promo.btn;
-    applyStaticImg($('#promoImg'), CFG.imgPromo, 'promo');
-    $('#ctaTitle').textContent = CFG.cta.title;
-    $('#ctaDesc').textContent = CFG.cta.desc;
-    $('#ctaBtn').textContent = CFG.cta.btn;
-    applyStaticImg($('#ctaImg'), CFG.imgCta, 'cta');
-
-    renderPackages();
-    renderActivities();
-    renderDestinations();
+    const c=CFG;
+    document.title=c.site.name+' | Paket Tour, Aktivitas & Water Sport Bali';
+    $('#siteName').textContent=c.site.name;$('#siteSub').textContent=c.site.sub;
+    if(c.logo.src)$('#logoImg').src=c.logo.src;
+    $('#heroSmall').textContent=c.hero.small;
+    $('#heroTitle').innerHTML=esc(c.hero.title).replace(/\n/g,'<br>');
+    $('#heroDesc').textContent=c.hero.desc;
+    $('#heroBtn1').textContent=c.hero.btn1;$('#heroBtn2').textContent=c.hero.btn2;
+    $('#heroStats').innerHTML=c.hero.stats.map(s=>'<div class="hstat"><b>'+esc(s.b)+'</b>'+esc(s.l)+'</div>').join('');
+    setImage($('#heroImg'),c.imgHero,'hero');
+    $('#sWhere').textContent=c.search.where;$('#sDur').textContent=c.search.dur;$('#sType').textContent=c.search.type;
+    $('#pLabel').textContent=c.sections.paket.label;$('#pTitle').textContent=c.sections.paket.title;$('#pDesc').textContent=c.sections.paket.desc;
+    $('#aLabel').textContent=c.sections.aktivitas.label;$('#aTitle').textContent=c.sections.aktivitas.title;$('#aDesc').textContent=c.sections.aktivitas.desc;
+    $('#dLabel').textContent=c.sections.destinasi.label;$('#dTitle').textContent=c.sections.destinasi.title;
+    $('#lLabel').textContent=c.sections.layanan.label;$('#lTitle').textContent=c.sections.layanan.title;
+    $('#wLabel').textContent=c.sections.tentang.label;$('#wTitle').textContent=c.sections.tentang.title;
+    $('#bLabel').textContent=c.sections.booking.label;$('#bTitle').textContent=c.sections.booking.title;$('#bDesc').textContent=c.sections.booking.desc;
+    /* paket */
+    $('#packageGrid').innerHTML=c.packages.map(p=>{
+        const stops=p.stops.slice(0,4).map((s,j)=>'<div class="stop"><div class="stop-img"><img data-stop="'+p.id+'-'+j+'" alt="'+esc(s.name)+'" loading="lazy" decoding="async"></div><div><div class="stop-name">'+esc(s.name)+'</div><div class="stop-time">'+esc(s.t)+'</div></div></div>').join('');
+        return '<article class="package-card"><div class="package-image">'+(p.badge?'<span class="badge">'+esc(p.badge)+'</span>':'')+'<img data-pkg="'+esc(p.id)+'" alt="'+esc(p.title)+'" loading="lazy" decoding="async"></div><div class="package-body"><div class="package-location">'+esc(p.location)+'</div><h3 class="package-title">'+esc(p.title)+'</h3><div class="rating"><span class="stars">'+stars(p.rating)+'</span><span>'+esc(p.rating)+' • '+esc(p.dur)+'</span></div><div class="stops-label">Rute Perjalanan</div>'+stops+'<div class="package-info"><span>'+ico('pin',13)+p.stops.length+' destinasi</span><span>'+ico('clock',13)+esc(p.dur)+'</span><span>'+ico('check',13)+p.include.length+' fasilitas</span></div><div class="package-bottom"><div><span class="price-label">Mulai dari</span><span class="price">'+rupiah(p.price)+'<small>'+esc(p.unit)+'</small></span></div><button class="detail-btn" onclick="openDetail(\''+esc(p.id)+'\')">Detail Itinerary</button></div></div></article>';}).join('');
+    c.packages.forEach(p=>{setImage(document.querySelector('img[data-pkg="'+p.id+'"]'),p.main,'pkg.'+p.id+'.main');
+        p.stops.forEach((s,j)=>setImage(document.querySelector('img[data-stop="'+p.id+'-'+j+'"]'),s.img,'pkg.'+p.id+'.stop'+j));});
+    /* aktivitas */
+    $('#activityGrid').innerHTML=c.activities.map(a=>'<article class="activity-card"><div class="activity-image"><span class="act-ico">'+ico(actIcon(a),19)+'</span><img data-act="'+esc(a.id)+'" alt="'+esc(a.title)+'" loading="lazy" decoding="async"></div><div class="activity-body"><h3 class="activity-title">'+esc(a.title)+'</h3><p class="activity-desc">'+esc(a.desc)+'</p><div class="act-chips"><span class="act-chip">'+ico('pin',12)+esc(a.loc)+'</span><span class="act-chip">'+ico('clock',12)+esc(a.dur)+'</span></div><div class="act-bottom"><div><span class="price-label">Harga</span><span class="price">'+rupiah(a.price)+'<small>'+esc(a.unit)+'</small></span></div><a class="act-book" href="#booking" onclick="preselectActivity(\''+esc(a.id)+'\')">Booking</a></div></div></article>').join('');
+    c.activities.forEach(a=>setImage(document.querySelector('img[data-act="'+a.id+'"]'),a.img,'act.'+a.id));
+    /* destinasi */
+    $('#destGrid').innerHTML=c.destinations.map((d,i)=>'<div class="destination"><img data-dest="'+i+'" alt="'+esc(d.name)+'" loading="lazy" decoding="async"><div class="destination-overlay"><div><div class="destination-name">'+esc(d.name)+'</div><div class="destination-small">'+esc(d.sub)+'</div></div></div></div>').join('');
+    c.destinations.forEach((d,i)=>setImage(document.querySelector('img[data-dest="'+i+'"]'),d.img,'dest.'+i));
+    /* promo */
+    $('#promoSmall').textContent=c.promo.small;$('#promoTitle').textContent=c.promo.title;$('#promoDesc').textContent=c.promo.desc;$('#promoBtn').textContent=c.promo.btn;
+    setImage($('#promoImg'),c.imgPromo,'promo');
+    /* layanan & why */
+    $('#servicesGrid').innerHTML=c.services.map(s=>'<div class="service"><div class="service-number">'+esc(s.n)+'</div><h3>'+esc(s.t)+'</h3><p>'+esc(s.d)+'</p></div>').join('');
+    $('#whyGrid').innerHTML=c.why.map((w,i)=>'<div class="why-item"><div class="why-number">'+String(i+1).padStart(2,'0')+'</div><div><h3>'+esc(w.t)+'</h3><p>'+esc(w.d)+'</p></div></div>').join('');
+    /* CTA */
+    $('#ctaTitle').textContent=c.cta.title;$('#ctaDesc').textContent=c.cta.desc;$('#ctaBtn').textContent=c.cta.btn;
+    $('#ctaBtn').href=waLink('Halo '+c.site.name+'! Saya ingin bertanya tentang paket perjalanan Bali.');
+    setImage($('#ctaImg'),c.imgCta,'cta');
+    /* footer */
+    $('#footName').textContent=c.site.name;$('#footName2').textContent=c.site.name;$('#footDesc').textContent=c.site.footDesc;
+    $('#footActs').innerHTML=c.activities.map(a=>'<a href="#aktivitas">'+esc(a.title)+'</a>').join('');
+    $('#footMail').innerHTML=ico('mail',13)+esc(c.site.email);$('#footMail').href='mailto:'+c.site.email;
+    $('#footWa').innerHTML=ico('wa',13)+'WhatsApp';$('#footWa').href=waLink('Halo!');
+    $('#footYear').textContent=new Date().getFullYear();
+    $('#waFloat').href=waLink('Halo '+c.site.name+'!');
     renderBookingOptions();
-    bindReveal();
-    resolveAll(document);
-}
+    observeReveals();}
 
-function renderPackages(){
-    $('#packageGrid').innerHTML = CFG.packages.map((p,i)=>{
-        const stops = p.stops.map((s,k)=>
-            '<div class="stop"><div class="stop-img"><img '+imgAttrs(s.img, 'pkg.'+p.id+'.stop'+k, s.name)+'></div>'+
-            '<div><div class="stop-name">'+(k+1)+'. '+esc(s.name)+'</div>'+
-            '<div class="stop-time">'+esc(s.t)+' WITA</div></div></div>').join('');
-        return '<article class="package-card reveal">'+
-            '<div class="package-image">'+
-                '<img '+imgAttrs(p.main, 'pkg.'+p.id+'.main', p.title)+'>'+
-                '<div class="badge">'+esc(p.badge)+'</div>'+
-                '<button class="fav" onclick="favorite(this)">♡</button>'+
-            '</div><div class="package-body">'+
-                '<div class="package-location">'+esc(p.location)+'</div>'+
-                '<h3 class="package-title">'+esc(p.title)+'</h3>'+
-                '<div class="rating"><span class="stars">★★★★★</span><span>'+esc(p.rating)+' • Private Tour</span></div>'+
-                '<div class="stops-label">'+p.stops.length+' Lokasi Tour</div>'+ stops +
-                '<div class="package-info"><span>⏱ '+esc(p.dur)+'</span><span>👥 1–6 Orang</span><span>🚘 + Driver</span></div>'+
-                '<div class="package-bottom"><div><span class="price-label">Mulai dari</span>'+
-                '<div class="price">'+rupiah(p.price)+' <small>'+esc(p.unit)+'</small></div></div>'+
-                '<button class="detail-btn" onclick="openModal(\''+p.id+'\')">Detail →</button>'+
-            '</div></div></article>';
-    }).join('');
-}
-function renderActivities(){
-    $('#activityGrid').innerHTML = CFG.activities.map(a=>
-        '<article class="activity-card reveal">'+
-        '<div class="activity-image"><img '+imgAttrs(a.img,'act.'+a.id,a.title)+'><div class="act-emoji">'+a.emoji+'</div></div>'+
-        '<div class="activity-body"><h3 class="activity-title">'+esc(a.title)+'</h3>'+
-        '<p class="activity-desc">'+esc(a.desc)+'</p>'+
-        '<div class="act-chips"><span class="act-chip">⏱ '+esc(a.dur)+'</span><span class="act-chip">📍 '+esc(a.loc)+'</span></div>'+
-        '<div class="act-bottom"><div><span class="price-label">Mulai dari</span>'+
-        '<div class="price">'+rupiah(a.price)+' <small>'+esc(a.unit)+'</small></div></div>'+
-        '<a class="act-book" target="_blank" href="'+waLink('Halo! Saya tertarik aktivitas '+a.title+' ('+rupiah(a.price)+a.unit+').')+'">Booking</a>'+
-        '</div></div></article>').join('');
-}
-function renderDestinations(){
-    $('#destGrid').innerHTML = CFG.destinations.map((d,i)=>
-        '<div class="destination reveal"><img '+imgAttrs(d.img,'dest.'+i,d.name)+'>'+
-        '<div class="destination-overlay"><div><div class="destination-name">'+esc(d.name)+'</div>'+
-        '<div class="destination-small">'+esc(d.sub)+'</div></div></div></div>').join('');
-}
-
-/* ============================================================
-   MODAL DETAIL PAKET
-============================================================ */
-function openModal(id){
-    const p = CFG.packages.find(x=>x.id===id); if(!p) return;
-    const stops = p.stops.map(s=>
-        '<div class="mstop"><div class="mstop-img"><img '+imgAttrs(s.img,'pkg.'+p.id+'.main',s.name)+'></div>'+
-        '<div><div class="mstop-time">'+esc(s.t)+' WITA</div><h4>'+esc(s.name)+'</h4><p>'+esc(s.desc)+'</p></div></div>').join('');
-    const inc = p.include.map(x=>'<span style="display:inline-block">✓ '+esc(x)+'</span>').join(' ');
-    $('#modalBody').innerHTML =
-        '<div class="modal-hero"><img '+imgAttrs(p.main,'pkg.'+p.id+'.main',p.title)+'></div>'+
-        '<div class="modal-body"><h3>'+esc(p.title)+'</h3>'+
-        '<div class="modal-meta"><span>⏱ '+esc(p.dur)+'</span><span>👥 1–6 orang</span><span>🚘 Private + driver</span><span>⭐ '+esc(p.rating)+'</span></div>'+
-        '<p style="font-size:13px;color:var(--muted);margin-bottom:8px">'+esc(p.desc)+'</p>'+ stops +
-        '<div style="margin-top:18px"><div class="stops-label">Sudah termasuk</div><div class="modal-meta">'+inc+'</div></div>'+
-        '<div class="modal-foot"><div><span class="price-label">Harga paket</span>'+
-        '<div class="price">'+rupiah(p.price)+' <small>'+esc(p.unit)+'</small></div></div>'+
-        '<a class="btn-wa" target="_blank" href="'+waLink('Halo! Saya ingin booking paket "'+p.title+'" ('+rupiah(p.price)+p.unit+').')+'">Booking Paket Ini →</a>'+
-        '</div></div>';
-    $('#modal').classList.add('open');
-    document.body.style.overflow='hidden';
-    resolveAll($('#modalBody'));
-}
-function closeModal(){ $('#modal').classList.remove('open'); document.body.style.overflow=''; }
- $('#modal').addEventListener('click', function(e){ if(e.target===this) closeModal(); });
-document.addEventListener('keydown', e=>{ if(e.key==='Escape'){ closeModal(); closeAdminLogin(); } });
-
-/* ============================================================
-   BOOKING
-============================================================ */
-let pax = 2;
+/* ===== BOOKING ===== */
 function renderBookingOptions(){
-    $('#inPkg').innerHTML = CFG.packages.map(p=>
-        '<option value="'+p.id+'">'+esc(p.title)+' — '+rupiah(p.price)+esc(p.unit)+'</option>').join('');
-    $('#actChecks').innerHTML = CFG.activities.map(a=>
-        '<label class="act-check" data-act="'+a.id+'"><input type="checkbox" value="'+a.id+'">'+
-        '<span>'+a.emoji+' '+esc(a.title)+'<small>'+rupiah(a.price)+esc(a.unit)+'</small></span></label>').join('');
-    document.querySelectorAll('.act-check input').forEach(cb=>{
-        cb.addEventListener('change', ()=>{ cb.closest('.act-check').classList.toggle('on', cb.checked); updateSummary(); });
-    });
-    $('#inPkg').addEventListener('change', updateSummary);
-}
+    const sel=$('#inPkg'),prev=sel.value;
+    sel.innerHTML=CFG.packages.map(p=>'<option value="'+esc(p.id)+'">'+esc(p.title)+' — '+rupiah(p.price)+esc(p.unit)+'</option>').join('');
+    if(prev&&CFG.packages.some(p=>p.id===prev))sel.value=prev;
+    $('#actChecks').innerHTML=CFG.activities.map(a=>'<label class="act-check"><input type="checkbox" data-act-price="'+esc(a.id)+'" onchange="this.closest(\'.act-check\').classList.toggle(\'on\',this.checked);updateSummary()"><span class="ac-ico">'+ico(actIcon(a),17)+'</span><span>'+esc(a.title)+'<small>+'+rupiah(a.price)+esc(a.unit)+'</small></span></label>').join('');
+    updateSummary();}
+function pax(){return Math.max(1,parseInt($('#stVal').textContent)||1);}
 function updateSummary(){
-    const pkg = CFG.packages.find(p=>p.id===$('#inPkg').value);
-    const acts = [...document.querySelectorAll('.act-check input:checked')].map(cb=>CFG.activities.find(a=>a.id===cb.value));
-    $('#sumPkg').textContent = pkg ? pkg.title : '—';
-    const tgl = $('#inTgl').value;
-    $('#sumTgl').textContent = tgl ? new Date(tgl+'T00:00:00').toLocaleDateString('id-ID',{weekday:'long',day:'numeric',month:'long',year:'numeric'}) : '—';
-    $('#sumPickup').textContent = $('#inArea').value;
-    $('#sumPax').textContent = pax+' orang';
-    $('#sumAct').textContent = acts.length ? acts.map(a=>a.title).join(', ') : 'Tanpa aktivitas tambahan';
-    let total = pkg ? (pkg.unit==='/orang' ? pkg.price*pax : pkg.price) : 0;
-    acts.forEach(a=>total += a.price*pax);
-    $('#sumTotal').textContent = rupiah(total);
-    return {pkg, acts, total};
-}
-function bindForm(){
-    const today = new Date(); today.setHours(0,0,0,0);
-    const tgl = $('#inTgl');
-    tgl.min = today.toISOString().slice(0,10);
-    tgl.addEventListener('change', updateSummary);
-    $('#stMin').addEventListener('click', ()=>{ pax=Math.max(1,pax-1); $('#stVal').textContent=pax; updateSummary(); });
-    $('#stPlus').addEventListener('click', ()=>{ pax=Math.min(15,pax+1); $('#stVal').textContent=pax; updateSummary(); });
-    $('#bookForm').addEventListener('submit', e=>{
-        e.preventDefault();
-        const nama = $('#inNama').value.trim();
-        const wa = $('#inWa').value.replace(/\D/g,'');
-        let ok = true;
-        const mark = (id,bad)=>{ document.getElementById(id).classList.toggle('err',bad); if(bad) ok=false; };
-        mark('fNama', nama.length<3);
-        mark('fWa', !(wa.length>=9 && wa.length<=14));
-        mark('fTgl', !tgl.value || new Date(tgl.value+'T00:00:00')<today);
-        if(!ok) return;
-        const s = updateSummary();
-        let msg = 'Halo '+CFG.site.name+'! Saya '+nama+', ingin booking:\n'+
-            '• Paket: '+s.pkg.title+' ('+rupiah(s.pkg.price)+s.pkg.unit+')\n'+
-            '• Tanggal: '+$('#sumTgl').textContent+'\n'+
-            '• Penjemputan: '+$('#inArea').value+'\n'+
-            '• Peserta: '+pax+' orang\n'+
-            (s.acts.length ? '• Aktivitas: '+s.acts.map(a=>a.title).join(', ')+'\n' : '')+
-            '• Estimasi total: '+rupiah(s.total);
-        const cat = $('#inCatatan').value.trim();
-        if(cat) msg += '\n• Catatan: '+cat;
-        $('#btnWa').href = waLink(msg);
-        $('#btnWa').scrollIntoView({behavior:'smooth',block:'center'});
-        toast('Permintaan dibuat — klik Kirim ke WhatsApp');
-    });
-    updateSummary();
-}
-function bindReveal(){
-    const io = new IntersectionObserver(es=>es.forEach(e=>{
-        if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
-    }),{threshold:.1});
-    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-}
+    const p=CFG.packages.find(x=>x.id===$('#inPkg').value)||CFG.packages[0];if(!p)return;
+    const n=pax();
+    $('#sumPkg').textContent=p.title;
+    const t=$('#inTgl').value;
+    $('#sumTgl').textContent=t?new Date(t+'T00:00:00').toLocaleDateString('id-ID',{weekday:'long',day:'numeric',month:'long',year:'numeric'}):'—';
+    $('#sumPickup').textContent=$('#inArea').value;
+    $('#sumPax').textContent=n+' orang';
+    const acts=[...document.querySelectorAll('#actChecks input:checked')].map(i=>CFG.activities.find(a=>a.id===i.dataset.actPrice)).filter(Boolean);
+    $('#sumAct').textContent=acts.length?acts.map(a=>a.title).join(', '):'—';
+    let total=p.unit==='/orang'?p.price*n:p.price;
+    acts.forEach(a=>{total+=a.unit==='/orang'?a.price*n:a.price;});
+    $('#sumTotal').textContent=rupiah(total);}
+ $('#stMin').onclick=()=>{$('#stVal').textContent=Math.max(1,pax()-1);updateSummary();};
+ $('#stPlus').onclick=()=>{$('#stVal').textContent=Math.min(20,pax()+1);updateSummary();};
+function preselectActivity(id){const cb=document.querySelector('#actChecks input[data-act-price="'+id+'"]');if(cb&&!cb.checked){cb.checked=true;cb.closest('.act-check').classList.add('on');updateSummary();}}
+ $('#bookForm').addEventListener('submit',e=>{
+    e.preventDefault();
+    const nama=$('#inNama').value.trim(),wa=$('#inWa').value.replace(/\D/g,''),tgl=$('#inTgl').value;
+    let ok=true;
+    $('#fNama').classList.toggle('err',nama.length<3);if(nama.length<3)ok=false;
+    $('#fWa').classList.toggle('err',!(wa.length>=9&&wa.length<=14));if(!(wa.length>=9&&wa.length<=14))ok=false;
+    const today=new Date();today.setHours(0,0,0,0);
+    const dOk=tgl&&new Date(tgl+'T00:00:00')>=today;
+    $('#fTgl').classList.toggle('err',!dOk);if(!dOk)ok=false;
+    if(!ok){toast('Periksa kembali form yang ditandai merah');return;}
+    const p=CFG.packages.find(x=>x.id===$('#inPkg').value)||CFG.packages[0];const n=pax();
+    const acts=[...document.querySelectorAll('#actChecks input:checked')].map(i=>CFG.activities.find(a=>a.id===i.dataset.actPrice)).filter(Boolean);
+    let total=p.unit==='/orang'?p.price*n:p.price;acts.forEach(a=>{total+=a.unit==='/orang'?a.price*n:a.price;});
+    const tglStr=new Date(tgl+'T00:00:00').toLocaleDateString('id-ID',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
+    let msg='Halo '+CFG.site.name+'!\n\nSaya ingin melakukan booking:\n\n• Nama: '+nama+'\n• Paket: '+p.title+' ('+rupiah(p.price)+p.unit+')\n• Tanggal: '+tglStr+'\n• Penjemputan: '+$('#inArea').value+'\n• Peserta: '+n+' orang';
+    if(acts.length)msg+='\n• Aktivitas: '+acts.map(a=>a.title+' (+'+rupiah(a.unit==='/orang'?a.price*n:a.price)+')').join(', ');
+    msg+='\n• Estimasi total: '+rupiah(total);
+    if($('#inCatatan').value.trim())msg+='\n• Catatan: '+$('#inCatatan').value.trim();
+    msg+='\n\nMohon konfirmasi ketersediaannya. Terima kasih!';
+    window.open(waLink(msg),'_blank');
+    toast('Membuka WhatsApp…');});
 
-/* Tombol WA melayang: tampil setelah hero terlewat */
-function bindWaFloat(){
-    const hero = document.querySelector('.hero');
-    const io = new IntersectionObserver(es=>{
-        es.forEach(e=>{ $('#waFloat').classList.toggle('show', !e.isIntersecting); });
-    },{threshold:.2});
-    if(hero) io.observe(hero);
-}
+/* ===== MODAL DETAIL ===== */
+function openDetail(id){
+    const p=CFG.packages.find(x=>x.id===id);if(!p)return;
+    const stops=p.stops.map((s,j)=>'<div class="mstop"><div class="mstop-img"><img data-mstop="'+j+'" alt="'+esc(s.name)+'" loading="lazy" decoding="async"></div><div><div class="mstop-time">'+esc(s.t)+'</div><h4>'+esc(s.name)+'</h4><p>'+esc(s.desc)+'</p></div></div>').join('');
+    $('#modalBody').innerHTML='<div class="modal-hero"><img data-mmain alt="'+esc(p.title)+'"></div><div class="modal-body"><h3>'+esc(p.title)+'</h3><div class="modal-meta"><span>'+ico('star',12)+esc(p.rating)+'</span><span>'+ico('clock',12)+esc(p.dur)+'</span><span>'+ico('pin',12)+esc(p.location)+'</span>'+(p.badge?'<span>'+esc(p.badge)+'</span>':'')+'</div><p style="font-size:13px;color:var(--muted);line-height:1.7">'+esc(p.desc)+'</p><div class="stops-label" style="margin:14px 0 2px">ITINERARY</div>'+stops+'<div class="stops-label" style="margin:16px 0 6px">SUDAH TERMASUK</div>'+p.include.map(i=>'<div style="font-size:12.5px;padding:4px 0;display:flex;gap:8px;align-items:center;color:var(--text)">'+ico('check',13)+esc(i)+'</div>').join('')+'<div class="modal-foot"><div><span class="price-label">Mulai dari</span><span class="price">'+rupiah(p.price)+'<small>'+esc(p.unit)+'</small></span></div><a class="btn-wa" href="'+waLink('Halo! Saya tertarik dengan paket: '+p.title+' ('+rupiah(p.price)+p.unit+'). Mohon info ketersediaannya.')+'" target="_blank" rel="noopener">'+ico('wa',18)+'<span>Booking Paket Ini</span>'+ico('arrow',16)+'</a></div></div>';
+    setImage(document.querySelector('#modalBody img[data-mmain]'),p.main,'pkg.'+p.id+'.main');
+    p.stops.forEach((s,j)=>setImage(document.querySelector('#modalBody img[data-mstop="'+j+'"]'),s.img,'pkg.'+p.id+'.stop'+j));
+    $('#modal').classList.add('open');document.body.style.overflow='hidden';}
+function closeModal(){$('#modal').classList.remove('open');document.body.style.overflow='';}
+ $('#modal').addEventListener('click',e=>{if(e.target.id==='modal')closeModal();});
 
-/* ============================================================
-   ADMIN — login & setup
-============================================================ */
-const IMGTEMP = {};
-let admTab = 'umum';
+/* reveal on scroll */
+let revObs;
+function observeReveals(){
+    if(!revObs)revObs=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting){en.target.classList.add('in');revObs.unobserve(en.target);}}),{threshold:.12});
+    document.querySelectorAll('.reveal:not(.in)').forEach(el=>revObs.observe(el));}
 
-function openAdminLogin(){
-    if(sessionStorage.getItem('bgt_admin')==='1'){ openAdmin(); return; }
-    $('#setupErr').textContent=''; $('#adminErr').textContent='';
-    $('#setupOld').value=''; $('#setupNew').value=''; $('#setupNew2').value=''; $('#adminCode').value='';
-    const needSetup = !adminHash();
-    $('#setupBox').style.display = needSetup ? 'block' : 'none';
-    $('#loginBox').style.display = needSetup ? 'none' : 'block';
-    if(needSetup) setTimeout(()=>$('#setupOld').focus(),60);
-    else { lockMsg(); setTimeout(()=>$('#adminCode').focus(),60); }
-    $('#adminLogin').classList.add('open');
-}
-function closeAdminLogin(){ $('#adminLogin').classList.remove('open'); }
-
-function doSetup(){
-    const old = $('#setupOld').value;
-    const n1  = $('#setupNew').value;
-    const n2  = $('#setupNew2').value;
-    if(old !== ADMIN_SETUP_CODE){ $('#setupErr').textContent='Kode awal file salah.'; return; }
-    if(n1.length < 6){ $('#setupErr').textContent='Kode baru minimal 6 karakter.'; return; }
-    if(n1 !== n2){ $('#setupErr').textContent='Konfirmasi kode tidak sama.'; return; }
-    localStorage.setItem('bgt_admin_hash', sha256utf8(n1));
-    localStorage.removeItem('bgt_admin_lock'); failCount = 0;
-    sessionStorage.setItem('bgt_admin','1');
-    closeAdminLogin(); openAdmin();
-    toast('Kode admin pribadi berhasil dibuat');
-}
-function tryLogin(){
-    if(lockMsg()) return;
-    const code = $('#adminCode').value;
-    if(sha256utf8(code) === adminHash()){
-        failCount = 0; localStorage.removeItem('bgt_admin_lock');
-        sessionStorage.setItem('bgt_admin','1');
-        closeAdminLogin(); openAdmin();
-        toast('Selamat datang, Admin!');
-    } else {
-        failCount++;
-        if(failCount >= MAX_ATTEMPTS){
-            localStorage.setItem('bgt_admin_lock', Date.now() + LOCK_MINUTES*60*1000);
-            failCount = 0;
-            lockMsg();
-        } else {
-            $('#adminErr').textContent = 'Kode salah. Sisa percobaan: ' + (MAX_ATTEMPTS-failCount) + '.';
-        }
-    }
-}
-function forgotCode(){
-    alert('Kode admin tersimpan terenkripsi (hash) di browser ini.\n\n' +
-          'Jika lupa kode, cara reset:\n' +
-          '1. Tekan F12 → tab Console\n' +
-          '2. Ketik: localStorage.removeItem("bgt_admin_hash")\n' +
-          '3. Tekan Enter, lalu refresh halaman (F5)\n' +
-          '4. Buka admin lagi → buat kode baru memakai kode awal file.');
-}
-function logoutAdmin(){ sessionStorage.removeItem('bgt_admin'); closeAdmin(); toast('Anda telah keluar dari panel admin'); }
-function openAdmin(){ $('#adminPanel').classList.add('open'); document.body.style.overflow='hidden'; renderAdmin(); }
-function closeAdmin(){ $('#adminPanel').classList.remove('open'); document.body.style.overflow=''; }
-
-function changeAdminCode(){
-    const n1 = document.getElementById('admNewCode').value;
-    const n2 = document.getElementById('admNewCode2').value;
-    if(n1.length < 6){ toast('Kode baru minimal 6 karakter'); return; }
-    if(n1 !== n2){ toast('Konfirmasi kode tidak sama'); return; }
-    localStorage.setItem('bgt_admin_hash', sha256utf8(n1));
-    document.getElementById('admNewCode').value='';
-    document.getElementById('admNewCode2').value='';
-    toast('Kode admin berhasil diganti');
-}
-
-/* Pintasan rahasia: Ctrl+Shift+A (komputer) / URL #admin (HP & komputer) */
-document.addEventListener('keydown', e=>{
-    if(e.ctrlKey && e.shiftKey && (e.key==='A'||e.key==='a')){ e.preventDefault(); openAdminLogin(); }
-});
-function checkHashEntry(){ if(location.hash.replace('#','')==='admin') openAdminLogin(); }
-window.addEventListener('hashchange', checkHashEntry);
-
-['adminCode'].forEach(id=>document.getElementById(id).addEventListener('keydown', e=>{ if(e.key==='Enter') tryLogin(); }));
-['setupOld','setupNew','setupNew2'].forEach(id=>document.getElementById(id).addEventListener('keydown', e=>{ if(e.key==='Enter') doSetup(); }));
-
- $('#admSide').addEventListener('click', e=>{
-    const b = e.target.closest('button[data-tab]'); if(!b) return;
-    admTab = b.dataset.tab;
-    document.querySelectorAll('#admSide button').forEach(x=>x.classList.toggle('act', x===b));
-    renderAdmin();
-    $('#admMain').scrollIntoView({block:'nearest'});
+/* ===== ★ SINKRONISASI REAL-TIME DARI ADMIN ★ ===== */
+db.ref('site/config').on('value',snap=>{
+    if(!snap.exists())return;
+    try{
+        CFG=deepMerge(JSON.parse(JSON.stringify(DEFAULTS)),snap.val());
+        persistCfg();
+        renderAll();
+    }catch(e){console.warn('Sinkron gagal:',e);}
 });
 
-/* helper form admin */
-function F(label, path, val, type){
-    if(type==='textarea'||type==='lines') return '<div class="adm-f"><label>'+label+'</label><textarea data-path="'+path+'" data-type="'+(type==='lines'?'lines':'text')+'">'+esc(val)+'</textarea></div>';
-    return '<div class="adm-f"><label>'+label+'</label><input type="'+(type||'text')+'" data-path="'+path+'" value="'+esc(val)+'"></div>';
-}
-function imgWidget(key, spec, alt){
-    const ov = CFG.imgOver[key];
-    const note = ov ? (ov.src ? 'Gambar unggahan/URL khusus aktif' : 'Kata kunci khusus: "'+ov.kw+'"') : 'Otomatis sesuai nama tempat (Wikipedia/Wikimedia)';
-    return '<div class="imgw" data-imgkey="'+key+'">'+
-        '<div class="imgw-thumb"><img src="'+skyPlaceholder(alt||key)+'" alt=""></div>'+
-        '<div class="col">'+
-        '<div class="row"><button type="button" class="mini" onclick="pickFile(this)">📁 Unggah</button>'+
-        '<button type="button" class="mini danger" onclick="clearImg(this)">↺ Auto</button>'+
-        '<small style="color:#63798a">'+note+'</small></div>'+
-        '<input type="text" class="img-val" placeholder="Tempel URL gambar ATAU kata kunci pencarian (kosong = otomatis)">'+
-        '</div></div>';
-}
-function pickFile(btn){
-    const w = btn.closest('.imgw');
-    const inp = document.createElement('input');
-    inp.type='file'; inp.accept='image/*';
-    inp.onchange = ()=>{
-        const f = inp.files[0]; if(!f) return;
-        downscale(f, 1400, dataUrl=>{
-            IMGTEMP[w.dataset.imgkey] = dataUrl;
-            w.querySelector('.imgw-thumb img').src = dataUrl;
-            w.querySelector('.img-val').value = '';
-            toast('Gambar dimuat — jangan lupa Simpan');
-        });
-    };
-    inp.click();
-}
-function clearImg(btn){
-    const w = btn.closest('.imgw');
-    delete IMGTEMP[w.dataset.imgkey];
-    w.querySelector('.img-val').value = '';
-    w.querySelector('.imgw-thumb img').src = skyPlaceholder(w.dataset.imgkey);
-    toast('Kembali ke mode otomatis (sesuai nama tempat)');
-}
-function downscale(file, maxW, cb){
-    const r = new FileReader();
-    r.onload = ()=>{
-        const img = new Image();
-        img.onload = ()=>{
-            const sc = Math.min(1, maxW/img.width);
-            const c = document.createElement('canvas');
-            c.width = Math.round(img.width*sc); c.height = Math.round(img.height*sc);
-            c.getContext('2d').drawImage(img,0,0,c.width,c.height);
-            cb(c.toDataURL('image/jpeg',.82));
-        };
-        img.src = r.result;
-    };
-    r.readAsDataURL(file);
-}
-
-function renderAdmin(){
-    const m = $('#admMain');
-    let h = '';
-
-    if(admTab==='umum'){
-        h += '<div class="adm-sec on"><h2>Umum & Logo</h2><p class="hint">Nama website, kontak WhatsApp, logo, dan kode admin.</p>';
-        h += '<div class="adm-card"><h3>Identitas Website</h3><div class="adm-grid">';
-        h += F('Nama Website','site.name',CFG.site.name);
-        h += F('Tagline (bawah nama)','site.sub',CFG.site.sub);
-        h += F('Nomor WhatsApp (62…)','site.wa',CFG.site.wa);
-        h += F('Email','site.email',CFG.site.email);
-        h += F('Deskripsi Footer','site.footDesc',CFG.site.footDesc,'textarea');
-        h += '</div></div>';
-        h += '<div class="adm-card"><h3>Logo</h3>'+imgWidget('logo',{place:'Logo'},'Logo')+
-             '<p class="hint" style="margin-top:10px">Default memakai file <b>512B.png</b> di folder yang sama. Unggah gambar untuk mengganti, atau kosongkan + Auto untuk kembali ke 512B.png.</p></div>';
-        h += '<div class="adm-card"><h3>🔐 Keamanan — Kode Admin</h3>'+
-             '<div class="adm-grid">'+
-             '<div class="adm-f"><label>Kode Admin Baru (min. 6 karakter)</label><input type="password" id="admNewCode" placeholder="kosongkan bila tidak ingin ganti"></div>'+
-             '<div class="adm-f"><label>Ulangi Kode Baru</label><input type="password" id="admNewCode2"></div>'+
-             '</div>'+
-             '<button type="button" class="adm-btn blue" style="margin-top:10px" onclick="changeAdminCode()">🔑 Ganti Kode Admin</button>'+
-             '<p class="hint" style="margin-top:10px">Kode disimpan hanya sebagai <b>hash SHA-256</b> di browser ini — tidak tertulis di file website. Salah 5× saat login → terkunci 10 menit.</p></div></div>';
-    }
-
-    if(admTab==='hero'){
-        h += '<div class="adm-sec on"><h2>Seksi Hero (Beranda)</h2><p class="hint">Teks besar di halaman depan dan gambarnya.</p><div class="adm-card"><div class="adm-grid">';
-        h += F('Teks Kecil Atas','hero.small',CFG.hero.small);
-        h += F('Tombol 1','hero.btn1',CFG.hero.btn1);
-        h += F('Tombol 2','hero.btn2',CFG.hero.btn2);
-        h += F('Judul Besar (Enter = baris baru)','hero.title',CFG.hero.title,'textarea');
-        h += F('Deskripsi','hero.desc',CFG.hero.desc,'textarea');
-        h += '</div>';
-        h += '<h3 style="margin-top:14px">Statistik</h3><div class="adm-grid">';
-        CFG.hero.stats.forEach((s,i)=>{
-            h += F('Statistik '+(i+1)+' — angka','hero.stats.'+i+'.b',s.b);
-            h += F('Statistik '+(i+1)+' — keterangan','hero.stats.'+i+'.l',s.l);
-        });
-        h += '</div><h3 style="margin-top:14px">Gambar Hero</h3>'+imgWidget('hero',CFG.imgHero,'Hero')+'</div></div>';
-    }
-
-    if(admTab==='paket'){
-        h += '<div class="adm-sec on"><h2>Paket Tour</h2><p class="hint">Ubah judul, harga, rute (jam & nama lokasi), deskripsi, dan gambar setiap paket beserta tiap lokasinya.</p>';
-        CFG.packages.forEach((p,i)=>{
-            h += '<div class="adm-card"><h3>Paket '+(i+1)+': '+esc(p.title)+'</h3><div class="adm-grid">';
-            h += F('Judul','packages.'+i+'.title',p.title);
-            h += F('Lokasi (baris atas kartu)','packages.'+i+'.location',p.location);
-            h += F('Badge','packages.'+i+'.badge',p.badge);
-            h += F('Rating','packages.'+i+'.rating',p.rating);
-            h += F('Harga (Rp)','packages.'+i+'.price',p.price,'number');
-            h += '<div class="adm-f"><label>Satuan harga</label><select data-path="packages.'+i+'.unit">'+
-                 '<option'+(p.unit==='/mobil'?' selected':'')+'>/mobil</option><option'+(p.unit==='/orang'?' selected':'')+'>/orang</option></select></div>';
-            h += F('Durasi','packages.'+i+'.dur',p.dur);
-            h += F('Deskripsi singkat','packages.'+i+'.desc',p.desc,'textarea');
-            h += F('Sudah termasuk (1 per baris)','packages.'+i+'.include',p.include.join('\n'),'textarea lines');
-            h += '</div>';
-            h += '<h3 style="margin-top:12px">Gambar Utama</h3>'+imgWidget('pkg.'+p.id+'.main',p.main,p.title);
-            h += '<h3 style="margin-top:12px">Rute / Lokasi ('+p.stops.length+')</h3>';
-            p.stops.forEach((s,j)=>{
-                h += '<div class="adm-card" style="background:#f7fbfe;margin-bottom:10px"><div class="adm-grid">';
-                h += F('Jam','packages.'+i+'.stops.'+j+'.t',s.t);
-                h += F('Nama Lokasi','packages.'+i+'.stops.'+j+'.name',s.name);
-                h += F('Deskripsi lokasi','packages.'+i+'.stops.'+j+'.desc',s.desc,'textarea');
-                h += '</div>'+imgWidget('pkg.'+p.id+'.stop'+j, s.img, s.name)+
-                     '<div style="margin-top:8px"><button type="button" class="mini danger" onclick="delStop('+i+','+j+')">🗑 Hapus lokasi ini</button></div></div>';
-            });
-            h += '<button type="button" class="mini" onclick="addStop('+i+')">+ Tambah Lokasi</button> '+
-                 '<button type="button" class="mini danger" onclick="delPkg('+i+')">🗑 Hapus Paket Ini</button>';
-            h += '</div>';
-        });
-        h += '<button type="button" class="adm-btn blue" onclick="addPkg()">+ Tambah Paket Baru</button></div>';
-    }
-
-    if(admTab==='aktivitas'){
-        h += '<div class="adm-sec on"><h2>Aktivitas</h2><p class="hint">Arung jeram, ATV, swing, water sport — ubah teks, harga, dan gambar.</p>';
-        CFG.activities.forEach((a,i)=>{
-            h += '<div class="adm-card"><h3>'+a.emoji+' '+esc(a.title)+'</h3><div class="adm-grid">';
-            h += F('Emoji','activities.'+i+'.emoji',a.emoji);
-            h += F('Judul','activities.'+i+'.title',a.title);
-            h += F('Harga (Rp)','activities.'+i+'.price',a.price,'number');
-            h += '<div class="adm-f"><label>Satuan</label><select data-path="activities.'+i+'.unit">'+
-                 '<option'+(a.unit==='/orang'?' selected':'')+'>/orang</option><option'+(a.unit==='/mobil'?' selected':'')+'>/mobil</option></select></div>';
-            h += F('Durasi','activities.'+i+'.dur',a.dur);
-            h += F('Lokasi','activities.'+i+'.loc',a.loc);
-            h += F('Deskripsi','activities.'+i+'.desc',a.desc,'textarea');
-            h += '</div>'+imgWidget('act.'+a.id,a.img,a.title)+'</div>';
-        });
-        h += '</div>';
-    }
-
-    if(admTab==='destinasi'){
-        h += '<div class="adm-sec on"><h2>Destinasi Favorit</h2><p class="hint">Tile foto destinasi di beranda.</p>';
-        CFG.destinations.forEach((d,i)=>{
-            h += '<div class="adm-card"><div class="adm-grid">';
-            h += F('Nama','destinations.'+i+'.name',d.name);
-            h += F('Keterangan','destinations.'+i+'.sub',d.sub);
-            h += '</div>'+imgWidget('dest.'+i,d.img,d.name)+'</div>';
-        });
-        h += '</div>';
-    }
-
-    if(admTab==='lain'){
-        h += '<div class="adm-sec on"><h2>Promo & CTA</h2><p class="hint">Banner promo dan kotak ajakan chat di bawah.</p>';
-        h += '<div class="adm-card"><h3>Seksi Promo</h3><div class="adm-grid">';
-        h += F('Teks kecil','promo.small',CFG.promo.small);
-        h += F('Tombol','promo.btn',CFG.promo.btn);
-        h += F('Judul','promo.title',CFG.promo.title,'textarea');
-        h += F('Deskripsi','promo.desc',CFG.promo.desc,'textarea');
-        h += '</div>'+imgWidget('promo',CFG.imgPromo,'Promo')+'</div>';
-        h += '<div class="adm-card"><h3>Seksi CTA (Ajakan Chat)</h3><div class="adm-grid">';
-        h += F('Judul','cta.title',CFG.cta.title);
-        h += F('Deskripsi','cta.desc',CFG.cta.desc,'textarea');
-        h += F('Teks Tombol','cta.btn',CFG.cta.btn);
-        h += '</div>'+imgWidget('cta',CFG.imgCta,'CTA')+'</div></div>';
-    }
-
-    if(admTab==='data'){
-        h += '<div class="adm-sec on"><h2>Data & Cadangan</h2><p class="hint">Semua perubahan tersimpan di browser ini (localStorage). Gunakan ekspor untuk memindahkan pengaturan ke komputer lain.</p>';
-        h += '<div class="adm-card"><h3>Cadangan</h3>'+
-             '<button type="button" class="adm-btn blue" onclick="exportCfg()">⬇ Ekspor Pengaturan (JSON)</button> '+
-             '<button type="button" class="adm-btn blue" onclick="importCfg()">⬆ Impor Pengaturan</button> '+
-             '<button type="button" class="adm-btn warm" onclick="resetCfg()">⟲ Kembalikan ke Default</button></div>';
-        h += '<div class="adm-card"><h3>Catatan</h3><p class="hint" style="margin:0">'+
-             '• Gambar otomatis diambil sesuai <b>nama tempat</b> dari Wikipedia/Wikimedia Commons.<br>'+
-             '• Untuk memakai foto sendiri: unggah lewat tombol 📁 di tiap gambar.<br>'+
-             '• Perubahan langsung tampil setelah menekan <b>Simpan</b>.<br>'+
-             '• Kode admin tidak pernah tersimpan di file — hanya hash di browser ini.</p></div></div>';
-    }
-
-    m.innerHTML = h;
-    m.querySelectorAll('.imgw').forEach(w=>{
-        const key = w.dataset.imgkey;
-        if(key==='logo'){ if(CFG.logo.src) w.querySelector('.imgw-thumb img').src = CFG.logo.src; return; }
-        const ov = CFG.imgOver[key];
-        if(ov && ov.kw) commonsSearch(ov.kw).then(u=>{ if(u) w.querySelector('.imgw-thumb img').src = u; });
-    });
-}
-
-function addStop(i){
-    CFG.packages[i].stops.push({t:'00.00', name:'Lokasi Baru', desc:'Deskripsi lokasi.', img:{place:'Lokasi Baru', commons:'Bali'}});
-    renderAdmin();
-}
-function delStop(i,j){
-    if(confirm('Hapus lokasi ini dari paket?')){ CFG.packages[i].stops.splice(j,1); renderAdmin(); }
-}
-function addPkg(){
-    const id = 'pkg'+Date.now();
-    CFG.packages.push({id, badge:'BARU', title:'Paket Baru', location:'Bali', rating:'4.9',
-        price:750000, unit:'/mobil', dur:'10 Jam', desc:'Deskripsi paket baru.',
-        main:{place:'Bali', commons:'Bali temple|Bali'},
-        stops:[{t:'09.00', name:'Destinasi Pertama', desc:'Deskripsi.', img:{place:'Destinasi Pertama', commons:'Bali'}}],
-        include:['Mobil AC + driver','Bahan bakar & parkir','Air mineral']});
-    renderAdmin();
-}
-function delPkg(i){
-    if(confirm('Hapus paket ini seluruhnya?')){ CFG.packages.splice(i,1); renderAdmin(); }
-}
-
-function setPath(obj, path, val){
-    const parts = path.split('.');
-    let o = obj;
-    for(let i=0;i<parts.length-1;i++){ o = o[parts[i]]; }
-    o[parts[parts.length-1]] = val;
-}
-function saveAdmin(){
-    document.querySelectorAll('#admMain [data-path]').forEach(inp=>{
-        let v = inp.value;
-        if(inp.type==='number') v = Number(v)||0;
-        if(inp.dataset.type==='lines') v = v.split('\n').map(s=>s.trim()).filter(Boolean);
-        setPath(CFG, inp.dataset.path, v);
-    });
-    const logoW = document.querySelector('.imgw[data-imgkey="logo"]');
-    if(logoW){
-        if(IMGTEMP['logo']) CFG.logo.src = IMGTEMP['logo'];
-        else if(/^https?:/.test(logoW.querySelector('.img-val').value.trim())) CFG.logo.src = logoW.querySelector('.img-val').value.trim();
-        else if(logoW.querySelector('.img-val').value.trim()==='') CFG.logo.src = '';
-    }
-    document.querySelectorAll('.imgw').forEach(w=>{
-        const key = w.dataset.imgkey;
-        if(key==='logo') return;
-        const val = w.querySelector('.img-val').value.trim();
-        if(IMGTEMP[key]) CFG.imgOver[key] = {src:IMGTEMP[key]};
-        else if(/^https?:/.test(val)) CFG.imgOver[key] = {src:val};
-        else if(val) CFG.imgOver[key] = {kw:val};
-        else delete CFG.imgOver[key];
-    });
-    persistCfg();
-    renderAll();
-    toast('Perubahan tersimpan & diterapkan');
-}
-
-function exportCfg(){
-    const blob = new Blob([JSON.stringify(CFG,null,2)], {type:'application/json'});
-    const a = document.createElement('a');
-    a.href = URL.createObjectURL(blob);
-    a.download = 'bgt-pengaturan.json';
-    a.click();
-    toast('Pengaturan diekspor');
-}
-function importCfg(){
-    const inp = document.createElement('input');
-    inp.type='file'; inp.accept='.json,application/json';
-    inp.onchange = ()=>{
-        const f = inp.files[0]; if(!f) return;
-        const r = new FileReader();
-        r.onload = ()=>{
-            try{
-                CFG = deepMerge(JSON.parse(JSON.stringify(DEFAULTS)), JSON.parse(r.result));
-                persistCfg(); renderAll(); renderAdmin();
-                toast('Pengaturan diimpor');
-            }catch(e){ alert('File tidak valid.'); }
-        };
-        r.readAsText(f);
-    };
-    inp.click();
-}
-function resetCfg(){
-    if(confirm('Kembalikan SEMUA pengaturan ke bawaan? Perubahan Anda akan hilang.')){
-        localStorage.removeItem('bgt_config_v2');
-        CFG = JSON.parse(JSON.stringify(DEFAULTS));
-        renderAll(); renderAdmin();
-        toast('Pengaturan dikembalikan ke default');
-    }
-}
-
-document.querySelectorAll('.nav a').forEach(l=>l.addEventListener('click', ()=>$('#nav').classList.remove('open')));
-
-/* ============================================================
-   INISIALISASI
-============================================================ */
-document.addEventListener('DOMContentLoaded', ()=>{
-    renderAll();
-    bindForm();
-    bindWaFloat();
-    checkHashEntry();
-});
+/* init */
+ $('#menuBtn').innerHTML=ico('menu',22);
+ $('#btnWa').innerHTML=ico('wa',18)+'<span>Kirim ke WhatsApp</span>'+ico('arrow',16);
+renderAll();
 </script>
 </body>
 </html>
