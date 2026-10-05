@@ -30,6 +30,8 @@ button{font-family:inherit;cursor:pointer;touch-action:manipulation}
 .nav-book{background:var(--blue);color:#fff!important;padding:11px 17px;border-radius:9px}
 .menu{display:none;align-items:center;justify-content:center;width:44px;height:44px;border:0;background:none;color:var(--blue);border-radius:10px}
 .menu:active{background:#eaf4fc}
+.lang-btn{border:1px solid var(--border);background:#fff;color:var(--blue-ink);border-radius:999px;padding:8px 14px;font-size:12px;font-weight:800;display:flex;align-items:center;gap:6px;min-height:40px}
+.lang-btn:hover{border-color:var(--blue)}
 .hero{position:relative;min-height:88svh;display:flex;align-items:center;overflow:hidden}
 .hero-bg{position:absolute;inset:0;height:100%;object-fit:cover}
 .hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,64,102,.74),rgba(8,64,102,.46) 55%,rgba(180,220,245,.10))}
@@ -204,8 +206,9 @@ html{scroll-padding-top:76px}
 .header{height:62px}.nav{top:62px}
 .header-inner{padding:0 14px}
 .logo img{width:38px;height:38px}
-.logo-name{font-size:15px;max-width:52vw}
+.logo-name{font-size:15px;max-width:44vw}
 .logo-sub{display:none}
+.lang-btn{padding:7px 11px;font-size:11px;min-height:36px}
 .hero{min-height:92svh}
 .hero-inner{padding:96px 16px 64px}
 .hero h1{font-size:clamp(30px,9.5vw,40px)}
@@ -280,7 +283,10 @@ html{scroll-padding-top:76px}
         <a href="#beranda">Beranda</a><a href="#paket">Paket Tour</a><a href="#aktivitas">Aktivitas</a>
         <a href="#destinasi">Destinasi</a><a href="#layanan">Layanan</a><a href="#booking" class="nav-book">Booking</a>
     </nav>
-    <button class="menu" id="menuBtn" onclick="toggleMenu()" aria-label="Buka menu"></button>
+    <div style="display:flex;gap:8px;align-items:center">
+        <button class="lang-btn" id="langBtn" onclick="toggleLang()" aria-label="Ganti bahasa">🌐 EN</button>
+        <button class="menu" id="menuBtn" onclick="toggleMenu()" aria-label="Buka menu"></button>
+    </div>
 </div></header>
 
 <section class="hero" id="beranda">
@@ -378,7 +384,7 @@ html{scroll-padding-top:76px}
             <div class="f-row">
                 <div class="field"><label>Paket Tour</label><select id="inPkg" onchange="updateSummary()"></select></div>
                 <div class="field"><label>Area Penjemputan</label>
-                    <select id="inArea"><option>Kuta / Legian</option><option>Seminyak</option><option>Canggu</option><option>Sanur</option><option>Ubud</option><option>Bandara Ngurah Rai</option><option>Nusa Dua</option></select>
+                    <select id="inArea"><option value="Kuta / Legian">Kuta / Legian</option><option value="Seminyak">Seminyak</option><option value="Canggu">Canggu</option><option value="Sanur">Sanur</option><option value="Ubud">Ubud</option><option value="Bandara Ngurah Rai">Bandara Ngurah Rai</option><option value="Nusa Dua">Nusa Dua</option></select>
                 </div>
             </div>
             <div class="field" style="margin-bottom:10px"><label>Tambah Aktivitas (opsional)</label><div class="act-checks" id="actChecks"></div></div>
@@ -430,9 +436,9 @@ html{scroll-padding-top:76px}
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
 <script>
 /* ================================================================
-   WEBSITE PUBLIK — BALI GLOBAL TRANS (FINAL)
+   WEBSITE PUBLIK — BALI GLOBAL TRANS (FINAL + TERJEMAHAN)
    Sumber data: Firebase site/config — realtime dari admin.
-   Fallback gambar berlapis + logo berlapis + tahan SDK gagal.
+   Fallback gambar berlapis + logo berlapis + ID ⇄ EN translate.
    ================================================================ */
 let db=null;
 try{
@@ -520,6 +526,68 @@ function toast(m){const t=document.createElement('div');t.className='toast';t.in
 function goTo(id){document.getElementById(id).scrollIntoView({behavior:'smooth'});}
 function skyPh(name){const svg="<svg xmlns='http://www.w3.org/2000/svg' width='800' height='520'><rect width='800' height='520' fill='#dcecf7'/><text x='400' y='265' text-anchor='middle' font-family='Arial' font-size='22' font-weight='bold' fill='#7d95a5'>"+(name||'Bali')+"</text></svg>";return 'data:image/svg+xml;charset=UTF-8,'+encodeURIComponent(svg);}
 
+/* ===== ★ PENERJEMAH ID ⇄ EN (cache permanen) ===== */
+const TL_KEY='bgt_lang';
+const TC_KEY='bgt_tcache_v1';
+let LANG=(function(){try{return localStorage.getItem(TL_KEY)||'id';}catch(e){return 'id';}})();
+let TCACHE=(function(){try{return JSON.parse(localStorage.getItem(TC_KEY))||{en:{}};}catch(e){return {en:{}};}})();
+function saveTC(){try{localStorage.setItem(TC_KEY,JSON.stringify(TCACHE));}catch(e){}}
+const TL_SKIP=/^Rp\s?[\d.,]+\s*$/;
+const PH_LIST=[['inNama','cth. Putu Ayu'],['inWa','cth. 0812xxxxxxx'],['inCatatan','cth. bawa anak kecil, vegetarian…']];
+const ATTEMPTED=new Set();
+let tlBusy=false;
+async function apiTranslate(text){
+  const url='https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=en&dt=t&q='+encodeURIComponent(text);
+  const r=await fetch(url);
+  if(!r.ok)throw new Error('HTTP '+r.status);
+  const d=await r.json();
+  return (d[0]||[]).map(x=>(x&&x[0])||'').join('').trim();}
+async function translateBatch(list){
+  if(tlBusy)return;tlBusy=true;
+  const queue=list.slice();let done=0,fail=0;
+  async function worker(){
+    while(queue.length){
+      const s=queue.shift();
+      try{const t=await apiTranslate(s);if(t){TCACHE.en[s]=t;done++;}else fail++;}
+      catch(e){fail++;}
+      await new Promise(r=>setTimeout(r,120));}}
+  await Promise.all([worker(),worker(),worker(),worker()]);
+  saveTC();tlBusy=false;
+  if(done)applyLangDom();
+  if(fail&&!done)toast('⚠️ Layanan terjemahan tidak terjangkau — teks tetap Bahasa Indonesia');}
+function applyLangDom(){
+  const btn=$('#langBtn');if(btn)btn.textContent=LANG==='en'?'ID':'EN';
+  document.documentElement.lang=LANG==='en'?'en':'id';
+  const useEn=LANG==='en',missing=[];
+  PH_LIST.forEach(a=>{const el=document.getElementById(a[0]);if(!el)return;
+    if(useEn){const hit=TCACHE.en[a[1]];el.placeholder=hit||a[1];if(!hit)missing.push(a[1]);}
+    else el.placeholder=a[1];});
+  const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,{acceptNode:function(n){
+    const p=n.parentElement;if(!p)return NodeFilter.FILTER_REJECT;
+    if(p.closest('script,style,#toasts,#langBtn'))return NodeFilter.FILTER_REJECT;
+    const orig=(n.__orig!==undefined)?n.__orig:n.nodeValue;
+    if(!orig||!orig.trim())return NodeFilter.FILTER_REJECT;
+    if(!/[A-Za-z\u00C0-\u024F]/.test(orig))return NodeFilter.FILTER_REJECT;
+    if(TL_SKIP.test(orig.trim()))return NodeFilter.FILTER_REJECT;
+    return NodeFilter.FILTER_ACCEPT;}});
+  const nodes=[];let nd;
+  while((nd=walker.nextNode()))nodes.push(nd);
+  nodes.forEach(function(nd){
+    if(nd.__orig===undefined)nd.__orig=nd.nodeValue;
+    if(useEn){
+      const k=nd.__orig.trim(),hit=TCACHE.en[k];
+      nd.nodeValue=(hit!==undefined&&hit!=='')?hit:nd.__orig;
+      if(hit===undefined)missing.push(k);
+    }else nd.nodeValue=nd.__orig;});
+  if(useEn&&missing.length&&!tlBusy){
+    const uniq=[...new Set(missing)].filter(s=>!ATTEMPTED.has(s));
+    if(uniq.length){uniq.forEach(s=>ATTEMPTED.add(s));translateBatch(uniq);}}}
+function toggleLang(){
+  LANG=(LANG==='en')?'id':'en';
+  try{localStorage.setItem(TL_KEY,LANG);}catch(e){}
+  if(LANG==='en')toast('🌐 Menerjemahkan ke English…');
+  renderAll();}
+
 /* ===== IKON SVG ===== */
 const ICON={
 menu:'<line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>',
@@ -576,7 +644,6 @@ function setImage(el,def,key){
         fell=true;
         const src=el.getAttribute('src')||'';
         if(src.indexOf('ibb.co')>-1){
-            /* SSL terblokir → jalur aman weserv */
             el.onerror=()=>{el.onerror=null;el.src=ph;};
             el.src='https://images.weserv.nl/?url='+encodeURIComponent(src.replace(/^https?:\/\//,''))+'&w=800';
         }else{
@@ -585,7 +652,6 @@ function setImage(el,def,key){
             else{el.onerror=null;el.src=ph;}}};
     el.src=ph;
     resolveImg(def,key).then(u=>{if(u)el.src=u;});}
-/* ★ Logo: langsung → jalur aman → file lokal 512B.png (tidak pernah kosong) */
 function setLogo(el,src){
     if(!el)return;
     el.onerror=null;el.onload=null;
@@ -645,7 +711,8 @@ function renderAll(){
     $('#btnWa').innerHTML=ico('wa',16)+'Kirim via WhatsApp';
     $('#btnWa').href=waLink('Halo '+c.site.name+'!');
     renderBookingOptions();
-    observeReveals();}
+    observeReveals();
+    applyLangDom();}
 
 /* ===== BOOKING ===== */
 function renderBookingOptions(){
@@ -667,7 +734,8 @@ function updateSummary(){
     $('#sumAct').textContent=acts.length?acts.map(a=>a.title).join(', '):'—';
     let total=p.unit==='/orang'?p.price*n:p.price;
     acts.forEach(a=>{total+=a.unit==='/orang'?a.price*n:a.price;});
-    $('#sumTotal').textContent=rupiah(total);}
+    $('#sumTotal').textContent=rupiah(total);
+    if(LANG==='en')applyLangDom();}
  $('#stMin').onclick=()=>{$('#stVal').textContent=Math.max(1,pax()-1);updateSummary();};
  $('#stPlus').onclick=()=>{$('#stVal').textContent=Math.min(20,pax()+1);updateSummary();};
 function preselectActivity(id){const cb=document.querySelector('#actChecks input[data-act-price="'+id+'"]');if(cb&&!cb.checked){cb.checked=true;cb.closest('.act-check').classList.add('on');updateSummary();}}
@@ -702,7 +770,8 @@ function openDetail(id){
     $('#modalBody').innerHTML='<div class="modal-hero"><img data-mpkg="'+esc(p.id)+'" alt="'+esc(p.title)+'"></div><div class="modal-body"><h3>'+esc(p.title)+'</h3><div class="modal-meta"><span>'+ico('pin',12)+esc(p.location)+'</span><span>'+ico('clock',12)+esc(p.dur)+'</span><span>'+ico('star',12)+esc(p.rating)+'</span></div>'+stops+'<div class="modal-foot"><div><div class="price-label">Mulai dari</div><span class="price">'+rupiah(p.price)+'<small>'+esc(p.unit)+'</small></span></div><a class="btn-wa" target="_blank" rel="noopener" href="'+waLink('Halo '+CFG.site.name+'! Saya tertarik dengan paket '+p.title+'.')+'">'+ico('wa',16)+'Booking via WhatsApp</a></div></div>';
     setImage(document.querySelector('img[data-mpkg]'),p.main,'pkg.'+p.id+'.main');
     p.stops.forEach((s,j)=>setImage(document.querySelector('img[data-mstop="'+j+'"]'),s.img,'pkg.'+p.id+'.'+(s.sid||('stop'+j))));
-    $('#modal').classList.add('open');document.body.style.overflow='hidden';}
+    $('#modal').classList.add('open');document.body.style.overflow='hidden';
+    applyLangDom();}
 function closeModal(){$('#modal').classList.remove('open');document.body.style.overflow='';}
  $('#modal').addEventListener('click',e=>{if(e.target.id==='modal')closeModal();});
 
