@@ -32,6 +32,9 @@ button{font-family:inherit;cursor:pointer;touch-action:manipulation}
 .menu:active{background:#eaf4fc}
 .lang-btn{border:1px solid var(--border);background:#fff;color:var(--blue-ink);border-radius:999px;padding:8px 14px;font-size:12px;font-weight:800;display:flex;align-items:center;gap:6px;min-height:40px}
 .lang-btn:hover{border-color:var(--blue)}
+/* ★ Tombol WA di navbar: hanya tampil di HP/tablet */
+.wa-nav-btn{display:none;width:40px;height:40px;border-radius:50%;background:#1faa59;align-items:center;justify-content:center;flex:none}
+.wa-nav-btn svg{width:22px;height:22px;fill:#fff}
 .hero{position:relative;min-height:88svh;display:flex;align-items:center;overflow:hidden}
 .hero-bg{position:absolute;inset:0;height:100%;object-fit:cover}
 .hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,64,102,.74),rgba(8,64,102,.46) 55%,rgba(180,220,245,.10))}
@@ -78,6 +81,10 @@ button{font-family:inherit;cursor:pointer;touch-action:manipulation}
 .stop-img img{height:100%;object-fit:cover}
 .stop-name{font-size:12px;font-weight:700;color:var(--blue-ink);line-height:1.3}
 .stop-time{font-size:10px;color:var(--muted);font-weight:600}
+.tiers{margin-top:8px;border-top:1px dashed var(--border)}
+.tier-row{display:flex;justify-content:space-between;align-items:baseline;gap:8px;padding:5px 0;border-bottom:1px dashed var(--border);font-size:11px;color:var(--muted)}
+.tier-row b{color:var(--blue-ink);white-space:nowrap}
+.tier-row b small{font-size:9px;font-weight:400;color:var(--muted)}
 .package-info{display:flex;gap:14px;padding:11px 0;margin-top:6px;border-top:1px solid var(--border);border-bottom:1px solid var(--border);color:#6b8496;font-size:10px;font-weight:600;flex-wrap:wrap}
 .package-info span{display:inline-flex;align-items:center;gap:5px}
 .package-bottom{display:flex;align-items:end;justify-content:space-between;gap:10px;margin-top:auto;padding-top:14px;flex-wrap:wrap}
@@ -199,6 +206,10 @@ button{font-family:inherit;cursor:pointer;touch-action:manipulation}
 .nav a:active{background:#eaf4fc}
 .nav-book{justify-content:center}
 .menu{display:flex}
+/* ★ HP/Tablet: WA pindah ke navbar, tombol melayang disembunyikan */
+.wa-nav-btn{display:flex}
+.wa-float{display:none}
+#toasts{bottom:calc(24px + env(safe-area-inset-bottom))}
 .promo{grid-template-columns:1fr}.promo-image{min-height:220px}.promo-content{padding:30px 22px}
 }
 @media(max-width:640px){
@@ -206,9 +217,11 @@ html{scroll-padding-top:76px}
 .header{height:62px}.nav{top:62px}
 .header-inner{padding:0 14px}
 .logo img{width:38px;height:38px}
-.logo-name{font-size:15px;max-width:44vw}
+.logo-name{font-size:15px;max-width:40vw}
 .logo-sub{display:none}
 .lang-btn{padding:7px 11px;font-size:11px;min-height:36px}
+.wa-nav-btn{width:36px;height:36px}
+.wa-nav-btn svg{width:20px;height:20px}
 .hero{min-height:92svh}
 .hero-inner{padding:96px 16px 64px}
 .hero h1{font-size:clamp(30px,9.5vw,40px)}
@@ -264,9 +277,7 @@ html{scroll-padding-top:76px}
 .cta-button{width:100%;text-align:center}
 .footer{padding-top:40px}
 .footer-inner{grid-template-columns:1fr;gap:24px}
-.wa-float{width:54px;height:54px;right:14px}
-.wa-float svg{width:26px;height:26px}
-#toasts{bottom:calc(84px + env(safe-area-inset-bottom))}
+#toasts{bottom:calc(20px + env(safe-area-inset-bottom))}
 .toast{font-size:12.5px;padding:11px 16px}
 }
 @media(hover:none){.package-card:hover,.activity-card:hover,.service:hover{transform:none}}
@@ -284,6 +295,9 @@ html{scroll-padding-top:76px}
         <a href="#destinasi">Destinasi</a><a href="#layanan">Layanan</a><a href="#booking" class="nav-book">Booking</a>
     </nav>
     <div style="display:flex;gap:8px;align-items:center">
+        <a class="wa-nav-btn" id="waNav" href="#" target="_blank" rel="noopener" aria-label="Chat WhatsApp">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.297-.497.1-.198.05-.371-.025-.52-.074-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </a>
         <button class="lang-btn" id="langBtn" onclick="toggleLang()" aria-label="Ganti bahasa">🌐 EN</button>
         <button class="menu" id="menuBtn" onclick="toggleMenu()" aria-label="Buka menu"></button>
     </div>
@@ -399,7 +413,7 @@ html{scroll-padding-top:76px}
             <div class="sum-row"><span>Peserta</span><b id="sumPax">—</b></div>
             <div class="sum-row"><span>Aktivitas</span><b id="sumAct">—</b></div>
             <div class="sum-total"><span>Estimasi total</span><b id="sumTotal">—</b></div>
-            <p class="sum-note">*Estimasi = harga paket + tiket aktivitas × jumlah orang.</p>
+            <p class="sum-note">*Sendiri 1 • Berdua 2 • Keluarga 3–6 • Group 7–45 orang. Di atas 45 orang, hubungi kami via WhatsApp. Estimasi = harga sesuai jumlah orang + tiket aktivitas × jumlah orang.</p>
             <a class="btn-wa" id="btnWa" href="#" target="_blank" rel="noopener"></a>
         </aside>
     </div>
@@ -436,9 +450,10 @@ html{scroll-padding-top:76px}
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
 <script>
 /* ================================================================
-   WEBSITE PUBLIK — BALI GLOBAL TRANS (FINAL + TERJEMAHAN)
-   Sumber data: Firebase site/config — realtime dari admin.
-   Fallback gambar berlapis + logo berlapis + ID ⇄ EN translate.
+   WEBSITE PUBLIK — BALI GLOBAL TRANS (FINAL)
+   Sinkron realtime dari admin (senyap) • Fallback gambar berlapis
+   Terjemahan ID⇄EN (senyap) • Tier: Sendiri/Berdua/Keluarga/Group
+   WA di navbar saat HP • Rp⇄$ otomatis
    ================================================================ */
 let db=null;
 try{
@@ -447,7 +462,7 @@ try{
 }catch(e){console.warn('Firebase SDK gagal — mode lokal:',e);}
 
 /* ===== KONFIG BAWAAN — WAJIB SAMA DENGAN admin.html ===== */
-const DEFAULTS={site:{name:'Bali Global Trans',sub:'Your Bali Travel Partner',wa:'6281234567890',email:'info@baliglobaltrans.com',footDesc:'Your Bali Travel Partner. Private tour, paket aktivitas, rental mobil, airport transfer dan perjalanan wisata Bali.'},logo:{src:''},search:{where:'Sunrise Kintamani • Penglipuran • Rafting',dur:'10 Jam',type:'Private Tour'},
+const DEFAULTS={site:{name:'Bali Global Trans',sub:'Your Bali Travel Partner',wa:'6281234567890',email:'info@baliglobaltrans.com',usdRate:16000,footDesc:'Your Bali Travel Partner. Private tour, paket aktivitas, rental mobil, airport transfer dan perjalanan wisata Bali.'},logo:{src:''},search:{where:'Sunrise Kintamani • Penglipuran • Rafting',dur:'10 Jam',type:'Private Tour'},
 sections:{paket:{label:'Pilihan Perjalanan',title:'Paket Tour Bali — 3–4 Destinasi per Paket',desc:'Setiap paket memuat 3–4 lokasi utama dengan rute jam demi jam. Klik Detail untuk itinerary lengkapnya.'},aktivitas:{label:'Adrenalin & Keseruan',title:'Aktivitas Favorit di Bali',desc:'Bisa digabung dengan paket tour atau dipesan terpisah. Semua dengan operator berlisensi dan alat safety lengkap.'},destinasi:{label:'Jelajahi Bali',title:'Destinasi Favorit',desc:''},layanan:{label:'Layanan BGT',title:'Semua kebutuhan perjalanan Bali',desc:''},tentang:{label:'Mengapa BGT',title:'Perjalanan nyaman, pengalaman berkesan.',desc:''},booking:{label:'Pemesanan',title:'Kunci tanggal Anda',desc:'Isi formulir — tanpa bayar di muka. Kami konfirmasi ketersediaan driver lewat WhatsApp.'}},
 services:[{n:'01',t:'Private Tour',d:'Paket perjalanan private dengan driver dan kendaraan nyaman.'},{n:'02',t:'Paket Aktivitas',d:'Arung jeram, ATV, swing, dan water sport dengan operator berlisensi.'},{n:'03',t:'Airport Transfer',d:'Penjemputan dan pengantaran bandara menuju hotel atau villa.'},{n:'04',t:'Custom Trip',d:'Susun sendiri destinasi perjalanan sesuai waktu dan kebutuhan Anda.'}],
 why:[{t:'Driver Profesional',d:'Driver lokal yang memahami rute, jam hitung, dan spot terbaik Bali.'},{t:'Harga Transparan',d:'Harga paket dan aktivitas ditampilkan jelas sebelum booking.'},{t:'Private & Fleksibel',d:'Tidak ikut rombongan; rute dan jam bisa disesuaikan di jalan.'},{t:'Booking Mudah',d:'Konsultasi dan booking langsung melalui WhatsApp, tanpa DP.'}],
@@ -455,12 +470,12 @@ hero:{small:'Explore Bali With BGT',title:'Temukan Bali,\ndengan cara yang berbe
 promo:{small:'Private Bali Experience',title:'Bali dalam satu hari, tanpa terburu-buru.',desc:'Gabungkan paket tour dengan aktivitas favorit Anda — pagi arung jeram, siang swing di atas sawah, sore sunset di Uluwatu. Driver kami bantu susun rutenya.',btn:'Susun Perjalanan Saya'},
 cta:{title:'Siap menjelajahi Bali?',desc:'Ceritakan rencana perjalanan Anda. Bali Global Trans akan membantu memilihkan paket, aktivitas, dan rute yang paling pas.',btn:'Chat dengan Bali Global Trans'},
 packages:[
-{id:'ubud-kintamani',badge:'POPULER',title:'Ubud & Kintamani Tour',location:'Ubud • Tegallalang • Kintamani',rating:'4.9',price:750000,unit:'/mobil',dur:'10 Jam',desc:'Rute klasik terbaik Bali: sawah terasering, pura air suci, kaldera vulkanik, dan hutan monyet.',main:{place:'Tegallalang Rice Terrace',commons:'Tegallalang rice terrace|Tegallalang Bali',wikiEn:'Tegallalang, Gianyar'},stops:[{t:'08.30',name:'Tegallalang Rice Terrace',desc:'Terasering subak warisan UNESCO. Coba jungle swing di tepi lembah (opsional).',img:{place:'Tegallalang Rice Terrace',commons:'Tegallalang rice terrace',wikiEn:'Tegallalang, Gianyar'}},{t:'10.00',name:'Pura Tirta Empul',desc:'Melukat di kolam air suci Tampaksiring yang berusia seribu tahun (opsional).',img:{place:'Pura Tirta Empul',wikiEn:'Pura Tirta Empul',commons:'Tirta Empul Bali'}},{t:'12.30',name:'Kintamani & Danau Batur',desc:'Makan siang di restoran tepi kaldera dengan panorama Gunung & Danau Batur.',img:{place:'Danau Batur, Kintamani',wikiEn:'Lake Batur',commons:'Lake Batur Kintamani|Mount Batur'}},{t:'15.00',name:'Ubud Monkey Forest',desc:'Hutan beringin suci berisi ±1.200 monyet ekor panjang dan pura abad ke-14.',img:{place:'Ubud Monkey Forest',wikiEn:'Ubud Monkey Forest',commons:'Ubud Monkey Forest'}}],include:['Mobil AC + driver','Bahan bakar & parkir','Air mineral','Sarung untuk masuk pura']},
-{id:'sunrise-penglipuran',badge:'SUNRISE',title:'Sunrise Kintamani & Penglipuran',location:'Kintamani • Bangli • Tegallalang',rating:'4.9',price:800000,unit:'/mobil',dur:'10–11 Jam',desc:'Berangkat dini hari: sunrise di kaldera Batur, kampung adat Penglipuran, swing, lalu air terjun.',main:{place:'Sunrise Gunung Batur, Kintamani',commons:'Mount Batur sunrise|Kintamani sunrise',wikiEn:'Mount Batur'},stops:[{t:'04.30',name:'Sunrise Gunung Batur',desc:'Matahari terbit dari penjuru kaldera Kintamani — kopi panas disediakan.',img:{place:'Sunrise Gunung Batur',commons:'Mount Batur sunrise',wikiEn:'Mount Batur'}},{t:'08.30',name:'Kampung Adat Penglipuran',desc:'Kampung adat salah satu terbersih di dunia; rumah tradisional & bambu raksasa.',img:{place:'Kampung Adat Penglipuran',commons:'Penglipuran village|Penglipuran Bali',wikiEn:'Penglipuran'}},{t:'11.00',name:'Alas Harum Swing',desc:'Ayunan ikonik di atas sawah terasering + spot foto sarang burung.',img:{place:'Alas Harum, Tegallalang',commons:'Bali Swing|Alas Harum|Tegallalang rice terrace'}},{t:'13.30',name:'Air Terjun Tegenungan',desc:'Air terjun dekat Ubud yang bisa dipakai berenang — penutup hari yang segar.',img:{place:'Air Terjun Tegenungan',wikiEn:'Tegenungan Waterfall',commons:'Tegenungan waterfall'}}],include:['Mobil AC + driver','Bahan bakar & parkir','Air mineral + kopi pagi','Sarung untuk masuk pura']},
-{id:'adventure',badge:'ADRENALIN',title:'Adventure: Rafting + ATV + Swing',location:'Sungai Ayung • Ubud • Tegallalang',rating:'4.9',price:950000,unit:'/orang',dur:'10 Jam',desc:'Paket seru 3 aktivitas dalam sehari untuk yang suka tantangan — cocok berpasangan atau tim.',main:{place:'Arung Jeram Sungai Ayung',commons:'White water rafting Ayung|Rafting Bali',wikiEn:'Ayung River'},stops:[{t:'08.00',name:'Arung Jeram Sungai Ayung',desc:'Rafting grade II–III ±2 jam melewati tebing, ukiran sungai & air terjun kecil.',img:{place:'Arung jeram Sungai Ayung Bali',commons:'White water rafting Ayung Bali|Rafting Bali',wikiEn:'Ayung River'}},{t:'11.00',name:'ATV Ride Ubud',desc:'Setir quad bike melewati hutan, sungai dangkal, terowongan bambu & jalur lumpur.',img:{place:'ATV ride Bali',commons:'Quad bike Bali|ATV riding',wikiEn:'All-terrain vehicle'}},{t:'13.30',name:'Alas Harum Swing',desc:'Ayunan tinggi di atas sawah + makan siang dengan pemandangan hijau.',img:{place:'Alas Harum Swing',commons:'Bali Swing|Jungle swing Bali'}},{t:'15.30',name:'Air Terjun Tegenungan',desc:'Basuh lumpur & lelah di air terjun Tegenungan sebelum kembali ke hotel.',img:{place:'Air Terjun Tegenungan',wikiEn:'Tegenungan Waterfall',commons:'Tegenungan waterfall'}}],include:['Mobil AC + driver','Instruktur & alat safety','Perlengkapan rafting/ATV','Makan siang sederhana']},
-{id:'watersport',badge:'WATER SPORT',title:'Water Sport & Uluwatu Sunset',location:'Tanjung Benoa • Pandawa • Uluwatu',rating:'4.9',price:850000,unit:'/mobil',dur:'10 Jam',desc:'Pagi seru di laut selatan Bali, siang santai di pantai, sore ditutup kecak api di Uluwatu.',main:{place:'Water sport Tanjung Benoa',commons:'Parasailing Tanjung Benoa|Parasailing Bali|Jet ski Bali',wikiEn:'Tanjung Benoa'},stops:[{t:'09.00',name:'Water Sport Tanjung Benoa',desc:'Paket parasailing + banana boat + jet ski di laut tenang Tanjung Benoa.',img:{place:'Parasailing Tanjung Benoa',commons:'Parasailing Tanjung Benoa|Parasailing beach Bali',wikiEn:'Tanjung Benoa'}},{t:'11.30',name:'Pantai Pandawa',desc:'"Pantai Rahasia" yang terselip di antara tebing kapur putih raksasa.',img:{place:'Pantai Pandawa',commons:'Pandawa beach Bali',wikiEn:'Pandawa Beach'}},{t:'13.30',name:'Garuda Wisnu Kencana',desc:'Patung setinggi 121 meter — ikon tertinggi Bali — di taman budaya GWK.',img:{place:'Patung Garuda Wisnu Kencana',wikiEn:'Garuda Wisnu Kencana',commons:'Garuda Wisnu Kencana'}},{t:'16.30',name:'Uluwatu & Kecak Fire Dance',desc:'Sunset di puncak tebing 70 meter + pertunjukan tari kecak api saat senja (opsional).',img:{place:'Pura Luhur Uluwatu',wikiEn:'Pura Luhur Uluwatu',commons:'Uluwatu temple|Uluwatu sunset'}}],include:['Mobil AC + driver','Bahan bakar & parkir','Air mineral','Bantuan beli tiket aktivitas']},
-{id:'bedugul',badge:'NATURE',title:'Bedugul & Jatiluwih Heritage',location:'Bedugul • Jatiluwih • Mengwi',rating:'4.8',price:850000,unit:'/mobil',dur:'10 Jam',desc:'Udara sejuk pegunungan, pura terapung, gerbang ikonik, dan terasering UNESCO terluas di Bali.',main:{place:'Pura Ulun Danu Bratan',wikiEn:'Pura Ulun Danu Bratan',commons:'Ulun Danu Bratan'},stops:[{t:'09.30',name:'Pura Ulun Danu Bratan',desc:'Pura "terapung" ikonik di Danau Beratan, dibangun 1633 untuk Dewi Danu.',img:{place:'Pura Ulun Danu Bratan',wikiEn:'Pura Ulun Danu Bratan',commons:'Ulun Danu Bratan'}},{t:'11.00',name:'Handara Gate',desc:'Gerbang candi bentar ikonik yang viral — antriannya sepadan dengan fotonya.',img:{place:'Handara Gate Bali',commons:'Handara Gate Bali'}},{t:'13.00',name:'Jatiluwih Rice Terrace',desc:'Terasering UNESCO terluas di Bali dengan pemandangan Gunung Batukaru.',img:{place:'Jatiluwih Rice Terrace',wikiEn:'Jatiluwih',commons:'Jatiluwih rice terrace'}},{t:'15.30',name:'Pura Taman Ayun',desc:'Pura kerajaan Mengwi dengan taman kolam luas — warisan dunia UNESCO.',img:{place:'Pura Taman Ayun',wikiEn:'Pura Taman Ayun',commons:'Taman Ayun temple'}}],include:['Mobil AC + driver','Bahan bakar & parkir','Air mineral','Sarung untuk masuk pura']},
-{id:'lempuyang',badge:'EAST BALI',title:'Lempuyang Gate of Heaven',location:'Karangasem • Timur Bali',rating:'4.9',price:900000,unit:'/mobil',dur:'11–12 Jam',desc:'Perjalanan ke timur Bali: gerbang surga, taman air kerajaan, dan gua kelelawar di tebing laut.',main:{place:'Pura Lempuyang Gate of Heaven',commons:'Lempuyang temple|Gate of Heaven Bali',wikiEn:'Pura Penataran Agung Lempuyang'},stops:[{t:'08.00',name:'Pura Lempuyang',desc:'"Gate of Heaven" dengan latar Gunung Agung — foto paling ikonik di Bali.',img:{place:'Pura Lempuyang Gate of Heaven',commons:'Lempuyang temple|Gate of Heaven Bali',wikiEn:'Pura Penataran Agung Lempuyang'}},{t:'11.00',name:'Tirta Gangga',desc:'Taman air pura dengan patung dewa, kolam ikan raksasa, dan stepping stone.',img:{place:'Tirta Gangga',wikiEn:'Tirta Gangga',commons:'Tirta Gangga Bali'}},{t:'12.30',name:'Taman Ujung',desc:'Taman air kerajaan Karangasem dengan jembatan putih di atas kolam luas.',img:{place:'Taman Ujung Sukasada',commons:'Taman Ujung Sukasada|Sukasada Park'}},{t:'14.30',name:'Pura Goa Lawah',desc:'Pura di mulut gua berisi ribuan kelelawar, tepi pantai timur Bali.',img:{place:'Pura Goa Lawah',wikiEn:'Pura Goa Lawah',commons:'Goa Lawah temple'}}],include:['Mobil AC + driver','Bahan bakar & parkir','Air mineral + snack','Sarung untuk masuk pura']}],
+{id:'ubud-kintamani',badge:'POPULER',title:'Ubud & Kintamani Tour',location:'Ubud • Tegallalang • Kintamani',rating:'4.9',price:750000,unit:'/mobil',dur:'10 Jam',tiers:{solo:750000,duo:700000,family:700000,group:650000},desc:'Rute klasik terbaik Bali: sawah terasering, pura air suci, kaldera vulkanik, dan hutan monyet.',main:{place:'Tegallalang Rice Terrace',commons:'Tegallalang rice terrace|Tegallalang Bali',wikiEn:'Tegallalang, Gianyar'},stops:[{t:'08.30',name:'Tegallalang Rice Terrace',desc:'Terasering subak warisan UNESCO. Coba jungle swing di tepi lembah (opsional).',img:{place:'Tegallalang Rice Terrace',commons:'Tegallalang rice terrace',wikiEn:'Tegallalang, Gianyar'}},{t:'10.00',name:'Pura Tirta Empul',desc:'Melukat di kolam air suci Tampaksiring yang berusia seribu tahun (opsional).',img:{place:'Pura Tirta Empul',wikiEn:'Pura Tirta Empul',commons:'Tirta Empul Bali'}},{t:'12.30',name:'Kintamani & Danau Batur',desc:'Makan siang di restoran tepi kaldera dengan panorama Gunung & Danau Batur.',img:{place:'Danau Batur, Kintamani',wikiEn:'Lake Batur',commons:'Lake Batur Kintamani|Mount Batur'}},{t:'15.00',name:'Ubud Monkey Forest',desc:'Hutan beringin suci berisi ±1.200 monyet ekor panjang dan pura abad ke-14.',img:{place:'Ubud Monkey Forest',wikiEn:'Ubud Monkey Forest',commons:'Ubud Monkey Forest'}}],include:['Mobil AC + driver','Bahan bakar & parkir','Air mineral','Sarung untuk masuk pura']},
+{id:'sunrise-penglipuran',badge:'SUNRISE',title:'Sunrise Kintamani & Penglipuran',location:'Kintamani • Bangli • Tegallalang',rating:'4.9',price:800000,unit:'/mobil',dur:'10–11 Jam',tiers:{solo:0,duo:0,family:0,group:0},desc:'Berangkat dini hari: sunrise di kaldera Batur, kampung adat Penglipuran, swing, lalu air terjun.',main:{place:'Sunrise Gunung Batur, Kintamani',commons:'Mount Batur sunrise|Kintamani sunrise',wikiEn:'Mount Batur'},stops:[{t:'04.30',name:'Sunrise Gunung Batur',desc:'Matahari terbit dari penjuru kaldera Kintamani — kopi panas disediakan.',img:{place:'Sunrise Gunung Batur',commons:'Mount Batur sunrise',wikiEn:'Mount Batur'}},{t:'08.30',name:'Kampung Adat Penglipuran',desc:'Kampung adat salah satu terbersih di dunia; rumah tradisional & bambu raksasa.',img:{place:'Kampung Adat Penglipuran',commons:'Penglipuran village|Penglipuran Bali',wikiEn:'Penglipuran'}},{t:'11.00',name:'Alas Harum Swing',desc:'Ayunan ikonik di atas sawah terasering + spot foto sarang burung.',img:{place:'Alas Harum, Tegallalang',commons:'Bali Swing|Alas Harum|Tegallalang rice terrace'}},{t:'13.30',name:'Air Terjun Tegenungan',desc:'Air terjun dekat Ubud yang bisa dipakai berenang — penutup hari yang segar.',img:{place:'Air Terjun Tegenungan',wikiEn:'Tegenungan Waterfall',commons:'Tegenungan waterfall'}}],include:['Mobil AC + driver','Bahan bakar & parkir','Air mineral + kopi pagi','Sarung untuk masuk pura']},
+{id:'adventure',badge:'ADRENALIN',title:'Adventure: Rafting + ATV + Swing',location:'Sungai Ayung • Ubud • Tegallalang',rating:'4.9',price:950000,unit:'/orang',dur:'10 Jam',tiers:{solo:950000,duo:900000,family:900000,group:850000},desc:'Paket seru 3 aktivitas dalam sehari untuk yang suka tantangan — cocok berpasangan atau tim.',main:{place:'Arung Jeram Sungai Ayung',commons:'White water rafting Ayung|Rafting Bali',wikiEn:'Ayung River'},stops:[{t:'08.00',name:'Arung Jeram Sungai Ayung',desc:'Rafting grade II–III ±2 jam melewati tebing, ukiran sungai & air terjun kecil.',img:{place:'Arung jeram Sungai Ayung Bali',commons:'White water rafting Ayung Bali|Rafting Bali',wikiEn:'Ayung River'}},{t:'11.00',name:'ATV Ride Ubud',desc:'Setir quad bike melewati hutan, sungai dangkal, terowongan bambu & jalur lumpur.',img:{place:'ATV ride Bali',commons:'Quad bike Bali|ATV riding',wikiEn:'All-terrain vehicle'}},{t:'13.30',name:'Alas Harum Swing',desc:'Ayunan tinggi di atas sawah + makan siang dengan pemandangan hijau.',img:{place:'Alas Harum Swing',commons:'Bali Swing|Jungle swing Bali'}},{t:'15.30',name:'Air Terjun Tegenungan',desc:'Basuh lumpur & lelah di air terjun Tegenungan sebelum kembali ke hotel.',img:{place:'Air Terjun Tegenungan',wikiEn:'Tegenungan Waterfall',commons:'Tegenungan waterfall'}}],include:['Mobil AC + driver','Instruktur & alat safety','Perlengkapan rafting/ATV','Makan siang sederhana']},
+{id:'watersport',badge:'WATER SPORT',title:'Water Sport & Uluwatu Sunset',location:'Tanjung Benoa • Pandawa • Uluwatu',rating:'4.9',price:850000,unit:'/mobil',dur:'10 Jam',tiers:{solo:0,duo:0,family:0,group:0},desc:'Pagi seru di laut selatan Bali, siang santai di pantai, sore ditutup kecak api di Uluwatu.',main:{place:'Water sport Tanjung Benoa',commons:'Parasailing Tanjung Benoa|Parasailing Bali|Jet ski Bali',wikiEn:'Tanjung Benoa'},stops:[{t:'09.00',name:'Water Sport Tanjung Benoa',desc:'Paket parasailing + banana boat + jet ski di laut tenang Tanjung Benoa.',img:{place:'Parasailing Tanjung Benoa',commons:'Parasailing Tanjung Benoa|Parasailing beach Bali',wikiEn:'Tanjung Benoa'}},{t:'11.30',name:'Pantai Pandawa',desc:'"Pantai Rahasia" yang terselip di antara tebing kapur putih raksasa.',img:{place:'Pantai Pandawa',commons:'Pandawa beach Bali',wikiEn:'Pandawa Beach'}},{t:'13.30',name:'Garuda Wisnu Kencana',desc:'Patung setinggi 121 meter — ikon tertinggi Bali — di taman budaya GWK.',img:{place:'Patung Garuda Wisnu Kencana',wikiEn:'Garuda Wisnu Kencana',commons:'Garuda Wisnu Kencana'}},{t:'16.30',name:'Uluwatu & Kecak Fire Dance',desc:'Sunset di puncak tebing 70 meter + pertunjukan tari kecak api saat senja (opsional).',img:{place:'Pura Luhur Uluwatu',wikiEn:'Pura Luhur Uluwatu',commons:'Uluwatu temple|Uluwatu sunset'}}],include:['Mobil AC + driver','Bahan bakar & parkir','Air mineral','Bantuan beli tiket aktivitas']},
+{id:'bedugul',badge:'NATURE',title:'Bedugul & Jatiluwih Heritage',location:'Bedugul • Jatiluwih • Mengwi',rating:'4.8',price:850000,unit:'/mobil',dur:'10 Jam',tiers:{solo:0,duo:0,family:0,group:0},desc:'Udara sejuk pegunungan, pura terapung, gerbang ikonik, dan terasering UNESCO terluas di Bali.',main:{place:'Pura Ulun Danu Bratan',wikiEn:'Pura Ulun Danu Bratan',commons:'Ulun Danu Bratan'},stops:[{t:'09.30',name:'Pura Ulun Danu Bratan',desc:'Pura "terapung" ikonik di Danau Beratan, dibangun 1633 untuk Dewi Danu.',img:{place:'Pura Ulun Danu Bratan',wikiEn:'Pura Ulun Danu Bratan',commons:'Ulun Danu Bratan'}},{t:'11.00',name:'Handara Gate',desc:'Gerbang candi bentar ikonik yang viral — antriannya sepadan dengan fotonya.',img:{place:'Handara Gate Bali',commons:'Handara Gate Bali'}},{t:'13.00',name:'Jatiluwih Rice Terrace',desc:'Terasering UNESCO terluas di Bali dengan pemandangan Gunung Batukaru.',img:{place:'Jatiluwih Rice Terrace',wikiEn:'Jatiluwih',commons:'Jatiluwih rice terrace'}},{t:'15.30',name:'Pura Taman Ayun',desc:'Pura kerajaan Mengwi dengan taman kolam luas — warisan dunia UNESCO.',img:{place:'Pura Taman Ayun',wikiEn:'Pura Taman Ayun',commons:'Taman Ayun temple'}}],include:['Mobil AC + driver','Bahan bakar & parkir','Air mineral','Sarung untuk masuk pura']},
+{id:'lempuyang',badge:'EAST BALI',title:'Lempuyang Gate of Heaven',location:'Karangasem • Timur Bali',rating:'4.9',price:900000,unit:'/mobil',dur:'11–12 Jam',tiers:{solo:0,duo:0,family:0,group:0},desc:'Perjalanan ke timur Bali: gerbang surga, taman air kerajaan, dan gua kelelawar di tebing laut.',main:{place:'Pura Lempuyang Gate of Heaven',commons:'Lempuyang temple|Gate of Heaven Bali',wikiEn:'Pura Penataran Agung Lempuyang'},stops:[{t:'08.00',name:'Pura Lempuyang',desc:'"Gate of Heaven" dengan latar Gunung Agung — foto paling ikonik di Bali.',img:{place:'Pura Lempuyang Gate of Heaven',commons:'Lempuyang temple|Gate of Heaven Bali',wikiEn:'Pura Penataran Agung Lempuyang'}},{t:'11.00',name:'Tirta Gangga',desc:'Taman air pura dengan patung dewa, kolam ikan raksasa, dan stepping stone.',img:{place:'Tirta Gangga',wikiEn:'Tirta Gangga',commons:'Tirta Gangga Bali'}},{t:'12.30',name:'Taman Ujung',desc:'Taman air kerajaan Karangasem dengan jembatan putih di atas kolam luas.',img:{place:'Taman Ujung Sukasada',commons:'Taman Ujung Sukasada|Sukasada Park'}},{t:'14.30',name:'Pura Goa Lawah',desc:'Pura di mulut gua berisi ribuan kelelawar, tepi pantai timur Bali.',img:{place:'Pura Goa Lawah',wikiEn:'Pura Goa Lawah',commons:'Goa Lawah temple'}}],include:['Mobil AC + driver','Bahan bakar & parkir','Air mineral + snack','Sarung untuk masuk pura']}],
 activities:[
 {id:'rafting',emoji:'🚣',title:'Arung Jeram (Rafting)',price:450000,unit:'/orang',dur:'±2 jam di air',loc:'Sungai Ayung, Ubud',desc:'Rakit karet melawan arus Sungai Ayung grade II–III selama ±2 jam, melewati tebing, ukiran sungai, dan air terjun kecil. Cocok untuk pemula.',img:{place:'Arung jeram Sungai Ayung Bali',commons:'White water rafting Ayung|Rafting Bali',wikiEn:'Ayung River'}},
 {id:'atv',emoji:'🏍️',title:'ATV Ride',price:400000,unit:'/orang',dur:'±1,5 jam',loc:'Ubud, Gianyar',desc:'Setir sendiri quad bike melewati hutan tropis, sungai dangkal, terowongan bambu, dan jalur lumpur. Ada jalur single track untuk yang berani.',img:{place:'ATV ride di Bali',commons:'Quad bike Bali|ATV riding',wikiEn:'All-terrain vehicle'}},
@@ -503,7 +518,11 @@ function normalizeCfg(){
     if(!p.id)p.id='pkg'+Date.now().toString(36)+Math.random().toString(36).slice(2,6);
     if(!p.main)p.main={place:''};
     p.stops=toArr(p.stops).filter(s=>s&&typeof s==='object'&&!Array.isArray(s));
-    p.include=toArr(p.include);});}
+    p.include=toArr(p.include);
+    p.tiers=(p.tiers&&typeof p.tiers==='object'&&!Array.isArray(p.tiers))?p.tiers:{};
+    if(Number(p.tiers.couple)>0){if(!(Number(p.tiers.solo)>0))p.tiers.solo=p.tiers.couple;if(!(Number(p.tiers.duo)>0))p.tiers.duo=p.tiers.couple;}
+    ['solo','duo','family','group'].forEach(k=>{p.tiers[k]=Number(p.tiers[k])||0;});});
+  if(!CFG.site.usdRate)CFG.site.usdRate=16000;}
 function decodeImgKeys(o){const out={};for(const k in (o||{}))out[String(k).replace(/\|/g,'.')]=o[k];return out;}
 let lastCfgJson='';
 let cloudSynced=false;
@@ -514,7 +533,7 @@ function applyCloud(v){
   CFG=deepMerge(JSON.parse(JSON.stringify(DEFAULTS)),v);
   if(CFG.imgOver)CFG.imgOver=decodeImgKeys(CFG.imgOver);
   normalizeCfg();persistCfg();renderAll();
-  if(!cloudSynced){cloudSynced=true;toast('selanat datang di ejen bali terpercaya BALI GLOBAL TRANS siap mengantar anda keliling bali');}}
+  cloudSynced=true;}
 normalizeCfg();
 
 /* ===== UTIL ===== */
@@ -526,13 +545,13 @@ function toast(m){const t=document.createElement('div');t.className='toast';t.in
 function goTo(id){document.getElementById(id).scrollIntoView({behavior:'smooth'});}
 function skyPh(name){const svg="<svg xmlns='http://www.w3.org/2000/svg' width='800' height='520'><rect width='800' height='520' fill='#dcecf7'/><text x='400' y='265' text-anchor='middle' font-family='Arial' font-size='22' font-weight='bold' fill='#7d95a5'>"+(name||'Bali')+"</text></svg>";return 'data:image/svg+xml;charset=UTF-8,'+encodeURIComponent(svg);}
 
-/* ===== ★ PENERJEMAH ID ⇄ EN (cache permanen) ===== */
+/* ===== PENERJEMAH ID ⇄ EN (cache permanen, senyap) ===== */
 const TL_KEY='bgt_lang';
 const TC_KEY='bgt_tcache_v1';
 let LANG=(function(){try{return localStorage.getItem(TL_KEY)||'id';}catch(e){return 'id';}})();
-let TCACHE=(function(){try{return JSON.parse(localStorage.getItem(TC_KEY))||{en:{}};}catch(e){return {en:{}};}})();
+let TCACHE=(function(){try{const c=JSON.parse(localStorage.getItem(TC_KEY));return (c&&c.en)?c:{en:{}};}catch(e){return {en:{}};}})();
 function saveTC(){try{localStorage.setItem(TC_KEY,JSON.stringify(TCACHE));}catch(e){}}
-const TL_SKIP=/^Rp\s?[\d.,]+\s*$/;
+const TL_SKIP=/^(Rp\s?[\d.,]+|\$[\d.,]+)$/;
 const PH_LIST=[['inNama','cth. Putu Ayu'],['inWa','cth. 0812xxxxxxx'],['inCatatan','cth. bawa anak kecil, vegetarian…']];
 const ATTEMPTED=new Set();
 let tlBusy=false;
@@ -544,17 +563,16 @@ async function apiTranslate(text){
   return (d[0]||[]).map(x=>(x&&x[0])||'').join('').trim();}
 async function translateBatch(list){
   if(tlBusy)return;tlBusy=true;
-  const queue=list.slice();let done=0,fail=0;
+  const queue=list.slice();
   async function worker(){
     while(queue.length){
       const s=queue.shift();
-      try{const t=await apiTranslate(s);if(t){TCACHE.en[s]=t;done++;}else fail++;}
-      catch(e){fail++;}
+      try{const t=await apiTranslate(s);if(t)TCACHE.en[s]=t;}
+      catch(e){}
       await new Promise(r=>setTimeout(r,120));}}
   await Promise.all([worker(),worker(),worker(),worker()]);
   saveTC();tlBusy=false;
-  if(done)applyLangDom();
-  if(fail&&!done)toast('⚠️ Layanan terjemahan tidak terjangkau — teks tetap Bahasa Indonesia');}
+  applyLangDom();}
 function applyLangDom(){
   const btn=$('#langBtn');if(btn)btn.textContent=LANG==='en'?'ID':'EN';
   document.documentElement.lang=LANG==='en'?'en':'id';
@@ -585,8 +603,23 @@ function applyLangDom(){
 function toggleLang(){
   LANG=(LANG==='en')?'id':'en';
   try{localStorage.setItem(TL_KEY,LANG);}catch(e){}
-  if(LANG==='en')toast('🌐 Menerjemahkan ke English…');
   renderAll();}
+
+/* ===== UANG (Rp ⇄ $) & TIER =====
+   Sendiri 1 • Berdua 2 • Keluarga 3–6 • Group 7–45 orang (>45 → WA) */
+function money(n){
+  n=Number(n)||0;
+  if(LANG==='en'){const r=Number(CFG.site.usdRate)||16000;return '$'+Math.round(n/r).toLocaleString('en-US');}
+  return rupiah(n);}
+function tierOf(n){return n<=1?'solo':(n===2?'duo':(n<=6?'family':'group'));}
+function tierLabel(k){return k==='solo'?'Sendiri (1 orang)':(k==='duo'?'Berdua (2 orang)':(k==='family'?'Keluarga (3–6 orang)':'Group (7–45 orang)'));}
+function pkgTierPrice(p,n){const t=p.tiers||{};const v=Number(t[tierOf(n)])||0;return v>0?v:(Number(p.price)||0);}
+function hasTiers(p){const t=p.tiers||{};return Number(t.solo)>0||Number(t.duo)>0||Number(t.family)>0||Number(t.group)>0;}
+function tiersHtml(p){
+  if(!hasTiers(p))return '';
+  const t=p.tiers;
+  const row=(k,ic,lab)=>Number(t[k])>0?'<div class="tier-row"><span>'+ic+' '+lab+'</span><b>'+money(Number(t[k]))+'<small>'+esc(p.unit)+'</small></b></div>':'';
+  return '<div class="tiers">'+row('solo','🧍','1 orang')+row('duo','👫','2 orang')+row('family','👨‍👩‍👧‍👦','3–6 orang')+row('group','👥','7–45 orang')+'</div>';}
 
 /* ===== IKON SVG ===== */
 const ICON={
@@ -688,10 +721,10 @@ function renderAll(){
     $('#bLabel').textContent=c.sections.booking.label;$('#bTitle').textContent=c.sections.booking.title;$('#bDesc').textContent=c.sections.booking.desc;
     $('#packageGrid').innerHTML=c.packages.map(p=>{
         const stops=p.stops.slice(0,4).map((s,j)=>'<div class="stop"><div class="stop-img"><img data-stop="'+p.id+'-'+j+'" alt="'+esc(s.name)+'" loading="lazy" decoding="async"></div><div><div class="stop-name">'+esc(s.name)+'</div><div class="stop-time">'+esc(s.t)+'</div></div></div>').join('');
-        return '<article class="package-card"><div class="package-image">'+(p.badge?'<span class="badge">'+esc(p.badge)+'</span>':'')+'<img data-pkg="'+esc(p.id)+'" alt="'+esc(p.title)+'" loading="lazy" decoding="async"></div><div class="package-body"><div class="package-location">'+esc(p.location)+'</div><h3 class="package-title">'+esc(p.title)+'</h3><div class="rating"><span class="stars">'+stars(p.rating)+'</span><span>'+esc(p.rating)+' • '+esc(p.dur)+'</span></div><div class="stops-label">Rute Perjalanan</div>'+stops+'<div class="package-info"><span>'+ico('pin',13)+p.stops.length+' destinasi</span><span>'+ico('clock',13)+esc(p.dur)+'</span><span>'+ico('check',13)+p.include.length+' fasilitas</span></div><div class="package-bottom"><div><span class="price-label">Mulai dari</span><span class="price">'+rupiah(p.price)+'<small>'+esc(p.unit)+'</small></span></div><button class="detail-btn" onclick="openDetail(\''+esc(p.id)+'\')">Detail Itinerary</button></div></div></article>';}).join('');
+        return '<article class="package-card"><div class="package-image">'+(p.badge?'<span class="badge">'+esc(p.badge)+'</span>':'')+'<img data-pkg="'+esc(p.id)+'" alt="'+esc(p.title)+'" loading="lazy" decoding="async"></div><div class="package-body"><div class="package-location">'+esc(p.location)+'</div><h3 class="package-title">'+esc(p.title)+'</h3><div class="rating"><span class="stars">'+stars(p.rating)+'</span><span>'+esc(p.rating)+' • '+esc(p.dur)+'</span></div><div class="stops-label">Rute Perjalanan</div>'+stops+tiersHtml(p)+'<div class="package-info"><span>'+ico('pin',13)+p.stops.length+' destinasi</span><span>'+ico('clock',13)+esc(p.dur)+'</span><span>'+ico('check',13)+p.include.length+' fasilitas</span></div><div class="package-bottom"><div><span class="price-label">Mulai dari</span><span class="price">'+money(p.price)+'<small>'+esc(p.unit)+'</small></span></div><button class="detail-btn" onclick="openDetail(\''+esc(p.id)+'\')">Detail Itinerary</button></div></div></article>';}).join('');
     c.packages.forEach(p=>{setImage(document.querySelector('img[data-pkg="'+p.id+'"]'),p.main,'pkg.'+p.id+'.main');
         p.stops.forEach((s,j)=>setImage(document.querySelector('img[data-stop="'+p.id+'-'+j+'"]'),s.img,'pkg.'+p.id+'.'+(s.sid||('stop'+j))));});
-    $('#activityGrid').innerHTML=c.activities.map(a=>'<article class="activity-card"><div class="activity-image"><span class="act-ico">'+ico(actIcon(a),19)+'</span><img data-act="'+esc(a.id)+'" alt="'+esc(a.title)+'" loading="lazy" decoding="async"></div><div class="activity-body"><h3 class="activity-title">'+esc(a.title)+'</h3><p class="activity-desc">'+esc(a.desc)+'</p><div class="act-chips"><span class="act-chip">'+ico('pin',12)+esc(a.loc)+'</span><span class="act-chip">'+ico('clock',12)+esc(a.dur)+'</span></div><div class="act-bottom"><div><span class="price-label">Harga</span><span class="price">'+rupiah(a.price)+'<small>'+esc(a.unit)+'</small></span></div><a class="act-book" href="#booking" onclick="preselectActivity(\''+esc(a.id)+'\')">Booking</a></div></div></article>').join('');
+    $('#activityGrid').innerHTML=c.activities.map(a=>'<article class="activity-card"><div class="activity-image"><span class="act-ico">'+ico(actIcon(a),19)+'</span><img data-act="'+esc(a.id)+'" alt="'+esc(a.title)+'" loading="lazy" decoding="async"></div><div class="activity-body"><h3 class="activity-title">'+esc(a.title)+'</h3><p class="activity-desc">'+esc(a.desc)+'</p><div class="act-chips"><span class="act-chip">'+ico('pin',12)+esc(a.loc)+'</span><span class="act-chip">'+ico('clock',12)+esc(a.dur)+'</span></div><div class="act-bottom"><div><span class="price-label">Harga</span><span class="price">'+money(a.price)+'<small>'+esc(a.unit)+'</small></span></div><a class="act-book" href="#booking" onclick="preselectActivity(\''+esc(a.id)+'\')">Booking</a></div></div></article>').join('');
     c.activities.forEach(a=>setImage(document.querySelector('img[data-act="'+a.id+'"]'),a.img,'act.'+a.id));
     $('#destGrid').innerHTML=c.destinations.map((d,i)=>'<div class="destination"><img data-dest="'+i+'" alt="'+esc(d.name)+'" loading="lazy" decoding="async"><div class="destination-overlay"><div><div class="destination-name">'+esc(d.name)+'</div><div class="destination-small">'+esc(d.sub)+'</div></div></div></div>').join('');
     c.destinations.forEach((d,i)=>setImage(document.querySelector('img[data-dest="'+i+'"]'),d.img,'dest.'+i));
@@ -708,36 +741,37 @@ function renderAll(){
     $('#footWa').innerHTML=ico('wa',13)+'WhatsApp';$('#footWa').href=waLink('Halo!');
     $('#footYear').textContent=new Date().getFullYear();
     $('#waFloat').href=waLink('Halo '+c.site.name+'!');
+    const waNav=$('#waNav');if(waNav)waNav.href=waLink('Halo '+c.site.name+'!');
     $('#btnWa').innerHTML=ico('wa',16)+'Kirim via WhatsApp';
     $('#btnWa').href=waLink('Halo '+c.site.name+'!');
     renderBookingOptions();
     observeReveals();
     applyLangDom();}
 
-/* ===== BOOKING ===== */
+/* ===== BOOKING (tier otomatis sesuai jumlah orang) ===== */
 function renderBookingOptions(){
     const sel=$('#inPkg'),prev=sel.value;
-    sel.innerHTML=CFG.packages.map(p=>'<option value="'+esc(p.id)+'">'+esc(p.title)+' — '+rupiah(p.price)+esc(p.unit)+'</option>').join('');
+    sel.innerHTML=CFG.packages.map(p=>'<option value="'+esc(p.id)+'">'+esc(p.title)+' — '+money(p.price)+esc(p.unit)+'</option>').join('');
     if(prev&&CFG.packages.some(p=>p.id===prev))sel.value=prev;
-    $('#actChecks').innerHTML=CFG.activities.map(a=>'<label class="act-check"><input type="checkbox" data-act-price="'+esc(a.id)+'" onchange="this.closest(\'.act-check\').classList.toggle(\'on\',this.checked);updateSummary()"><span class="ac-ico">'+ico(actIcon(a),17)+'</span><span>'+esc(a.title)+'<small>+'+rupiah(a.price)+esc(a.unit)+'</small></span></label>').join('');
+    $('#actChecks').innerHTML=CFG.activities.map(a=>'<label class="act-check"><input type="checkbox" data-act-price="'+esc(a.id)+'" onchange="this.closest(\'.act-check\').classList.toggle(\'on\',this.checked);updateSummary()"><span class="ac-ico">'+ico(actIcon(a),17)+'</span><span>'+esc(a.title)+'<small>+'+money(a.price)+esc(a.unit)+'</small></span></label>').join('');
     updateSummary();}
 function pax(){return Math.max(1,parseInt($('#stVal').textContent)||1);}
 function updateSummary(){
     const p=CFG.packages.find(x=>x.id===$('#inPkg').value)||CFG.packages[0];if(!p)return;
-    const n=pax();
-    $('#sumPkg').textContent=p.title;
+    const n=pax(),tk=tierOf(n);
+    $('#sumPkg').textContent=p.title+' — '+tierLabel(tk);
     const t=$('#inTgl').value;
     $('#sumTgl').textContent=t?new Date(t+'T00:00:00').toLocaleDateString('id-ID',{weekday:'long',day:'numeric',month:'long',year:'numeric'}):'—';
     $('#sumPickup').textContent=$('#inArea').value;
     $('#sumPax').textContent=n+' orang';
     const acts=[...document.querySelectorAll('#actChecks input:checked')].map(i=>CFG.activities.find(a=>a.id===i.dataset.actPrice)).filter(Boolean);
     $('#sumAct').textContent=acts.length?acts.map(a=>a.title).join(', '):'—';
-    let total=p.unit==='/orang'?p.price*n:p.price;
+    let total=p.unit==='/orang'?pkgTierPrice(p,n)*n:pkgTierPrice(p,n);
     acts.forEach(a=>{total+=a.unit==='/orang'?a.price*n:a.price;});
-    $('#sumTotal').textContent=rupiah(total);
+    $('#sumTotal').textContent=money(total);
     if(LANG==='en')applyLangDom();}
  $('#stMin').onclick=()=>{$('#stVal').textContent=Math.max(1,pax()-1);updateSummary();};
- $('#stPlus').onclick=()=>{$('#stVal').textContent=Math.min(20,pax()+1);updateSummary();};
+ $('#stPlus').onclick=()=>{$('#stVal').textContent=Math.min(45,pax()+1);updateSummary();};
 function preselectActivity(id){const cb=document.querySelector('#actChecks input[data-act-price="'+id+'"]');if(cb&&!cb.checked){cb.checked=true;cb.closest('.act-check').classList.add('on');updateSummary();}}
  $('#bookForm').addEventListener('submit',e=>{
     e.preventDefault();
@@ -750,24 +784,24 @@ function preselectActivity(id){const cb=document.querySelector('#actChecks input
     $('#fTgl').classList.toggle('err',!dOk);if(!dOk)ok=false;
     if(!ok){toast('Mohon lengkapi formulir dengan benar.');return;}
     const p=CFG.packages.find(x=>x.id===$('#inPkg').value)||CFG.packages[0];
-    const n=pax();
+    const n=pax(),tk=tierOf(n);
     const acts=[...document.querySelectorAll('#actChecks input:checked')].map(i=>CFG.activities.find(a=>a.id===i.dataset.actPrice)).filter(Boolean);
-    let total=p.unit==='/orang'?p.price*n:p.price;
+    let total=p.unit==='/orang'?pkgTierPrice(p,n)*n:pkgTierPrice(p,n);
     acts.forEach(a=>{total+=a.unit==='/orang'?a.price*n:a.price;});
     const lines=['Halo '+CFG.site.name+'! Saya ingin booking:','','Nama: '+nama,'WhatsApp: '+wa,
       'Tanggal: '+new Date(tgl+'T00:00:00').toLocaleDateString('id-ID',{day:'numeric',month:'long',year:'numeric'}),
-      'Peserta: '+n+' orang','Penjemputan: '+$('#inArea').value,
-      'Paket: '+p.title+' — '+rupiah(p.price)+p.unit];
+      'Peserta: '+n+' orang ('+tierLabel(tk)+')','Penjemputan: '+$('#inArea').value,
+      'Paket: '+p.title+' — '+rupiah(pkgTierPrice(p,n))+p.unit];
     if(acts.length)lines.push('Aktivitas: '+acts.map(a=>a.title).join(', '));
     const cat=$('#inCatatan').value.trim();if(cat)lines.push('Catatan: '+cat);
-    lines.push('Estimasi total: '+rupiah(total));
+    lines.push('Estimasi total: '+rupiah(total)+(LANG==='en'?' (approx. '+money(total)+')':''));
     window.open(waLink(lines.join('\n')),'_blank');});
 
 /* ===== MODAL DETAIL ===== */
 function openDetail(id){
     const p=CFG.packages.find(x=>x.id===id);if(!p)return;
     const stops=p.stops.map((s,j)=>'<div class="mstop"><div class="mstop-img"><img data-mstop="'+j+'" alt="'+esc(s.name)+'"></div><div><div class="mstop-time">'+ico('clock',11)+' '+esc(s.t)+'</div><h4>'+esc(s.name)+'</h4><p>'+esc(s.desc)+'</p></div></div>').join('');
-    $('#modalBody').innerHTML='<div class="modal-hero"><img data-mpkg="'+esc(p.id)+'" alt="'+esc(p.title)+'"></div><div class="modal-body"><h3>'+esc(p.title)+'</h3><div class="modal-meta"><span>'+ico('pin',12)+esc(p.location)+'</span><span>'+ico('clock',12)+esc(p.dur)+'</span><span>'+ico('star',12)+esc(p.rating)+'</span></div>'+stops+'<div class="modal-foot"><div><div class="price-label">Mulai dari</div><span class="price">'+rupiah(p.price)+'<small>'+esc(p.unit)+'</small></span></div><a class="btn-wa" target="_blank" rel="noopener" href="'+waLink('Halo '+CFG.site.name+'! Saya tertarik dengan paket '+p.title+'.')+'">'+ico('wa',16)+'Booking via WhatsApp</a></div></div>';
+    $('#modalBody').innerHTML='<div class="modal-hero"><img data-mpkg="'+esc(p.id)+'" alt="'+esc(p.title)+'"></div><div class="modal-body"><h3>'+esc(p.title)+'</h3><div class="modal-meta"><span>'+ico('pin',12)+esc(p.location)+'</span><span>'+ico('clock',12)+esc(p.dur)+'</span><span>'+ico('star',12)+esc(p.rating)+'</span></div>'+stops+tiersHtml(p)+'<div class="modal-foot"><div><div class="price-label">Mulai dari</div><span class="price">'+money(p.price)+'<small>'+esc(p.unit)+'</small></span></div><a class="btn-wa" target="_blank" rel="noopener" href="'+waLink('Halo '+CFG.site.name+'! Saya tertarik dengan paket '+p.title+'.')+'">'+ico('wa',16)+'Booking via WhatsApp</a></div></div>';
     setImage(document.querySelector('img[data-mpkg]'),p.main,'pkg.'+p.id+'.main');
     p.stops.forEach((s,j)=>setImage(document.querySelector('img[data-mstop="'+j+'"]'),s.img,'pkg.'+p.id+'.'+(s.sid||('stop'+j))));
     $('#modal').classList.add('open');document.body.style.overflow='hidden';
@@ -780,7 +814,7 @@ function observeReveals(){
     const io=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}}),{threshold:.08});
     document.querySelectorAll('.reveal').forEach(el=>io.observe(el));}
 
-/* ===== INISIALISASI & KONEKSI REALTIME ===== */
+/* ===== INISIALISASI & KONEKSI REALTIME (senyap) ===== */
 (function(){const d=new Date();d.setMinutes(d.getMinutes()-d.getTimezoneOffset());$('#inTgl').min=d.toISOString().slice(0,10);})();
 renderAll();
 
@@ -788,13 +822,12 @@ if(db){
   db.ref('site/config').on('value',s=>{
     const v=s.val();
     if(v&&typeof v==='object')applyCloud(v);
-    else if(!cloudSynced){cloudSynced=true;toast('Cloud kosong — admin belum pernah menyimpan');}
+    else cloudSynced=true;
   },err=>{
     console.warn('Cloud config:',err&&err.message);
-    if(err&&/permission/i.test(err.message||''))toast('⚠️ Akses database ditolak — perbaiki Firebase Rules');
   });
 }else{
-  toast('⚠️ Mode lokal — koneksi ke admin tidak aktif');
+  console.warn('Mode lokal — koneksi ke admin tidak aktif');
 }
 </script>
 </body>
