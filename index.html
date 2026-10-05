@@ -2,19 +2,20 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<!-- ★ width=1220 → tampilan di HP = versi PC yang diperkecil (card tetap 3 sebaris) ★ -->
+<meta name="viewport" content="width=1220, viewport-fit=cover">
 <meta name="theme-color" content="#0f5e96">
 <meta name="description" content="Bali Global Trans — Paket tour private, aktivitas seru, water sport, dan airport transfer di Bali.">
 <title>Bali Global Trans | Paket Tour, Aktivitas & Water Sport Bali</title>
 <link rel="icon" href="data:,">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&family=Noto+Sans+SC:wght@400;500;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{--sky:#eaf5fc;--sky-deep:#dcecf7;--blue:#1f7fc4;--blue-dark:#0f5e96;--blue-deep:#0c3550;--blue-ink:#123a54;--text:#2c4356;--muted:#63798a;--gold:#f2a93b;--border:#d7e8f3;--shadow:0 15px 45px rgba(23,94,140,.10)}
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
 html{scroll-behavior:smooth;scroll-padding-top:90px}
-body{font-family:Inter,Arial,sans-serif;color:var(--text);line-height:1.6;overflow-x:hidden;background:linear-gradient(180deg,#f2faff,#e4f2fb 55%,#edf7fd)}
+body{font-family:Inter,"Noto Sans SC","Noto Sans Arabic",Arial,sans-serif;color:var(--text);line-height:1.6;overflow-x:hidden;background:linear-gradient(180deg,#f2faff,#e4f2fb 55%,#edf7fd)}
 img{width:100%;display:block}
 a{text-decoration:none;color:inherit}
 button{font-family:inherit;cursor:pointer;touch-action:manipulation}
@@ -22,7 +23,7 @@ button{font-family:inherit;cursor:pointer;touch-action:manipulation}
 
 /* ===== HEADER ===== */
 .header{height:70px;background:rgba(255,255,255,.92);backdrop-filter:blur(14px);position:sticky;top:0;z-index:1000;border-bottom:1px solid rgba(31,127,196,.12)}
-.header-inner{max-width:1220px;height:100%;margin:auto;padding:0 18px;display:flex;align-items:center;justify-content:space-between}
+.header-inner{max-width:1220px;height:100%;margin:auto;padding:0 18px;display:flex;align-items:center;justify-content:space-between;gap:12px}
 .logo{display:flex;align-items:center;gap:10px;min-width:0}
 .logo img{width:44px;height:44px;object-fit:contain;flex:none}
 .logo-name{font-family:"Playfair Display",serif;font-size:17px;font-weight:600;color:var(--blue-ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
@@ -32,20 +33,27 @@ button{font-family:inherit;cursor:pointer;touch-action:manipulation}
 .nav-book{background:var(--blue);color:#fff!important;padding:11px 17px;border-radius:9px}
 .menu{display:none;align-items:center;justify-content:center;width:44px;height:44px;border:0;background:none;color:var(--blue);border-radius:10px}
 .menu:active{background:#eaf4fc}
+/* ===== PEMILIH BAHASA ===== */
+.lang{display:flex;align-items:center;gap:7px;background:#f4faff;border:1px solid var(--border);border-radius:10px;padding:7px 9px;color:var(--blue-dark);flex:none}
+.lang svg{flex:none;opacity:.8}
+.lang select{border:0;background:transparent;font-family:inherit;font-size:13px;font-weight:700;color:var(--blue-dark);outline:none;cursor:pointer;-webkit-appearance:none;appearance:none;max-width:130px}
+[dir="rtl"] .badge{left:auto;right:12px}
+[dir="rtl"] .act-ico{left:auto;right:10px}
+[dir="rtl"] .modal-close{right:auto;left:12px}
 
 /* ===== HERO ===== */
-.hero{position:relative;min-height:88svh;display:flex;align-items:center;overflow:hidden}
+.hero{position:relative;min-height:min(88svh,58vw);display:flex;align-items:center;overflow:hidden}
 .hero-bg{position:absolute;inset:0;height:100%;object-fit:cover}
 .hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,64,102,.74),rgba(8,64,102,.46) 55%,rgba(180,220,245,.10))}
 .hero-inner{position:relative;z-index:3;width:100%;max-width:1220px;margin:auto;padding:90px 20px 70px}
 .hero-content{max-width:650px;color:#fff}
 .hero-small{text-transform:uppercase;letter-spacing:3px;font-size:10.5px;margin-bottom:14px;opacity:.92}
-.hero h1{font-family:"Playfair Display",serif;font-size:clamp(32px,9vw,56px);line-height:1.12;font-weight:600;margin-bottom:16px;text-shadow:0 2px 20px rgba(8,50,80,.35)}
+.hero h1{font-family:"Playfair Display","Noto Sans SC","Noto Sans Arabic",serif;font-size:clamp(32px,9vw,56px);line-height:1.12;font-weight:600;margin-bottom:16px;text-shadow:0 2px 20px rgba(8,50,80,.35)}
 .hero p{font-size:clamp(13px,3.6vw,15px);line-height:1.8;max-width:560px;color:rgba(255,255,255,.94)}
 .hero-buttons{display:flex;gap:10px;margin-top:24px;flex-wrap:wrap}
 .btn-primary{background:#fff;color:var(--blue-dark);padding:14px 20px;border-radius:10px;font-size:13px;font-weight:700;min-height:48px;display:inline-flex;align-items:center;justify-content:center}
 .btn-outline{border:1px solid rgba(255,255,255,.75);color:#fff;padding:13px 20px;border-radius:10px;font-size:13px;font-weight:600;min-height:48px;display:inline-flex;align-items:center;justify-content:center}
-.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:26px}
+.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:26px;max-width:420px}
 .hstat{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);backdrop-filter:blur(6px);border-radius:12px;padding:10px 8px;color:#fff;font-size:10px;font-weight:600;text-align:center}
 .hstat b{font-family:"Playfair Display",serif;font-size:15px;display:block;margin-bottom:2px}
 
@@ -62,7 +70,7 @@ button{font-family:inherit;cursor:pointer;touch-action:manipulation}
 .container{max-width:1220px;margin:auto;padding:56px 18px}
 .section-head{margin-bottom:26px}
 .section-label{font-size:9.5px;letter-spacing:3px;text-transform:uppercase;color:var(--blue);font-weight:800;margin-bottom:7px}
-.section-title{font-family:"Playfair Display",serif;font-size:clamp(23px,5.6vw,32px);color:var(--blue-ink)}
+.section-title{font-family:"Playfair Display","Noto Sans SC","Noto Sans Arabic",serif;font-size:clamp(23px,5.6vw,32px);color:var(--blue-ink)}
 .section-desc{color:var(--muted);font-size:13px;max-width:620px;line-height:1.7;margin-top:7px}
 .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
 .reveal.in{opacity:1;transform:none}
@@ -77,7 +85,7 @@ button{font-family:inherit;cursor:pointer;touch-action:manipulation}
 .badge{position:absolute;top:12px;left:12px;background:var(--gold);color:#4a3200;padding:6px 11px;border-radius:20px;font-size:10px;font-weight:800;z-index:2}
 .package-body{padding:16px 16px 18px;display:flex;flex-direction:column;flex:1}
 .package-location{color:#8aa2b2;font-size:10px;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
-.package-title{font-family:"Playfair Display",serif;font-size:19px;color:var(--blue-ink);margin-bottom:4px}
+.package-title{font-family:"Playfair Display","Noto Sans SC","Noto Sans Arabic",serif;font-size:19px;color:var(--blue-ink);margin-bottom:4px}
 .rating{display:flex;align-items:center;gap:6px;font-size:11px;margin-bottom:12px}
 .stars{color:var(--gold);letter-spacing:1px}.rating span{color:#7d95a5}
 .stops-label{font-size:10px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--blue);margin-bottom:6px}
@@ -103,12 +111,12 @@ button{font-family:inherit;cursor:pointer;touch-action:manipulation}
 .activity-image img{height:100%;object-fit:cover;transition:.45s}
 .act-ico{position:absolute;top:10px;left:10px;background:#fff;border-radius:50%;width:38px;height:38px;display:flex;align-items:center;justify-content:center;color:var(--blue-dark);box-shadow:0 6px 16px rgba(12,53,80,.18);z-index:2}
 .activity-body{padding:15px 16px 17px;display:flex;flex-direction:column;flex:1}
-.activity-title{font-family:"Playfair Display",serif;font-size:17px;color:var(--blue-ink);margin-bottom:6px}
+.activity-title{font-family:"Playfair Display","Noto Sans SC","Noto Sans Arabic",serif;font-size:17px;color:var(--blue-ink);margin-bottom:6px}
 .activity-desc{font-size:12px;color:var(--muted);line-height:1.7;flex:1}
 .act-chips{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0}
 .act-chip{font-size:9.5px;font-weight:800;color:var(--blue-dark);background:#e2f1fb;border-radius:999px;padding:5px 10px;display:inline-flex;align-items:center;gap:5px}
 .act-bottom{display:flex;align-items:end;justify-content:space-between;border-top:1px solid var(--border);padding-top:12px;gap:8px;flex-wrap:wrap}
-.act-book{background:var(--blue);color:#fff;border:0;border-radius:8px;padding:11px 15px;font-size:11px;font-weight:800;min-height:42px}
+.act-book{background:var(--blue);color:#fff;border:0;border-radius:8px;padding:11px 15px;font-size:11px;font-weight:800;min-height:42px;display:inline-flex;align-items:center;justify-content:center}
 .act-book:hover{background:var(--blue-dark)}
 
 /* ===== DESTINASI ===== */
@@ -117,7 +125,7 @@ button{font-family:inherit;cursor:pointer;touch-action:manipulation}
 .destination img{height:100%;object-fit:cover;transition:.4s}
 .destination:hover img{transform:scale(1.06)}
 .destination-overlay{position:absolute;inset:0;background:linear-gradient(transparent 40%,rgba(8,50,80,.82));display:flex;align-items:end;padding:16px;color:#fff}
-.destination-name{font-family:"Playfair Display",serif;font-size:20px}
+.destination-name{font-family:"Playfair Display","Noto Sans SC","Noto Sans Arabic",serif;font-size:20px}
 .destination-small{font-size:10px;opacity:.85;margin-top:2px}
 
 /* ===== PROMO & LAYANAN ===== */
@@ -125,14 +133,14 @@ button{font-family:inherit;cursor:pointer;touch-action:manipulation}
 .promo-image{min-height:320px}.promo-image img{height:100%;object-fit:cover}
 .promo-content{padding:40px;display:flex;flex-direction:column;justify-content:center}
 .promo-small{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#cfe6f5;margin-bottom:12px}
-.promo h2{font-family:"Playfair Display",serif;font-size:clamp(24px,5vw,34px);line-height:1.2;margin-bottom:14px}
+.promo h2{font-family:"Playfair Display","Noto Sans SC","Noto Sans Arabic",serif;font-size:clamp(24px,5vw,34px);line-height:1.2;margin-bottom:14px}
 .promo p{color:rgba(255,255,255,.8);font-size:13px;line-height:1.8}
 .promo-button{display:inline-block;margin-top:22px;background:#fff;color:var(--blue-dark);padding:14px 20px;border-radius:9px;width:max-content;font-size:12px;font-weight:800;min-height:48px}
 .services{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
 .service{background:#fff;border:1px solid var(--border);border-radius:15px;padding:22px;transition:.2s}
 .service:hover{border-color:#b9d9ee;transform:translateY(-3px)}
 .service-number{color:var(--blue);font-family:"Playfair Display",serif;font-size:25px;margin-bottom:11px}
-.service h3{font-family:"Playfair Display",serif;font-size:17px;color:var(--blue-ink);margin-bottom:6px}
+.service h3{font-family:"Playfair Display","Noto Sans SC","Noto Sans Arabic",serif;font-size:17px;color:var(--blue-ink);margin-bottom:6px}
 .service p{color:var(--muted);font-size:12px;line-height:1.7}
 .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .why-item{background:#fff;border:1px solid var(--border);border-radius:15px;padding:18px;display:flex;gap:13px}
@@ -162,7 +170,7 @@ button{font-family:inherit;cursor:pointer;touch-action:manipulation}
 .btn-submit{width:100%;border:0;background:var(--blue);color:#fff;padding:16px;border-radius:12px;font-size:15px;font-weight:800;margin-top:14px;min-height:54px;display:flex;align-items:center;justify-content:center;gap:8px}
 .btn-submit:hover{background:var(--blue-dark)}
 .summary{background:#fff;border:1px solid var(--border);border-radius:20px;padding:24px;box-shadow:var(--shadow);position:sticky;top:96px}
-.summary h3{font-family:"Playfair Display",serif;font-size:20px;color:var(--blue-ink);margin-bottom:4px}
+.summary h3{font-family:"Playfair Display","Noto Sans SC","Noto Sans Arabic",serif;font-size:20px;color:var(--blue-ink);margin-bottom:4px}
 .summary .sub{font-size:12px;color:var(--muted);margin-bottom:16px}
 .sum-row{display:flex;justify-content:space-between;gap:12px;font-size:13px;padding:9px 0;border-bottom:1px dashed var(--border)}
 .sum-row span{color:var(--muted);flex:none}
@@ -181,13 +189,13 @@ button{font-family:inherit;cursor:pointer;touch-action:manipulation}
 .modal-close{position:absolute;top:12px;right:12px;z-index:5;width:42px;height:42px;border-radius:50%;border:0;background:rgba(255,255,255,.94);color:var(--blue-ink);display:flex;align-items:center;justify-content:center;box-shadow:0 6px 16px rgba(12,53,80,.2)}
 .modal-hero{height:260px;overflow:hidden;background:#dcecf7}.modal-hero img{height:100%;object-fit:cover}
 .modal-body{padding:22px 20px 26px}
-.modal-body h3{font-family:"Playfair Display",serif;font-size:24px;color:var(--blue-ink)}
+.modal-body h3{font-family:"Playfair Display","Noto Sans SC","Noto Sans Arabic",serif;font-size:24px;color:var(--blue-ink)}
 .modal-meta{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0 18px}
 .modal-meta span{font-size:11px;font-weight:700;color:var(--blue-dark);background:#e2f1fb;border-radius:999px;padding:6px 13px;display:inline-flex;align-items:center;gap:5px}
 .mstop{display:flex;gap:12px;padding:14px 0;border-top:1px dashed var(--border)}
 .mstop-img{width:88px;height:68px;border-radius:12px;overflow:hidden;flex:none;background:#dcecf7}
 .mstop-img img{height:100%;object-fit:cover}
-.mstop-time{font-size:10.5px;font-weight:800;color:var(--blue)}
+.mstop-time{font-size:10.5px;font-weight:800;color:var(--blue);display:inline-flex;align-items:center;gap:5px}
 .mstop h4{font-size:14px;color:var(--blue-ink);margin:2px 0 4px}
 .mstop p{font-size:12px;color:var(--muted);line-height:1.65}
 .modal-foot{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;background:#f0f8fe;border-radius:14px;padding:16px 18px;margin-top:18px}
@@ -198,12 +206,12 @@ button{font-family:inherit;cursor:pointer;touch-action:manipulation}
 .cta-bg{position:absolute;inset:0;height:100%;object-fit:cover}
 .cta-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,70,110,.88),rgba(15,94,146,.78))}
 .cta-content{position:relative;z-index:2}
-.cta h2{font-family:"Playfair Display",serif;font-size:clamp(26px,6vw,36px);margin-bottom:12px}
+.cta h2{font-family:"Playfair Display","Noto Sans SC","Noto Sans Arabic",serif;font-size:clamp(26px,6vw,36px);margin-bottom:12px}
 .cta p{color:rgba(255,255,255,.82);font-size:13px;max-width:600px;margin:auto}
 .cta-button{display:inline-block;margin-top:22px;background:#fff;color:var(--blue-dark);padding:15px 24px;border-radius:10px;font-size:13px;font-weight:800;min-height:50px}
 .footer{background:var(--blue-deep);color:#fff;padding:48px 20px calc(24px + env(safe-area-inset-bottom))}
 .footer-inner{max-width:1220px;margin:auto;display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:34px}
-.footer h3{font-family:"Playfair Display",serif;font-size:18px;margin-bottom:12px}
+.footer h3{font-family:"Playfair Display","Noto Sans SC","Noto Sans Arabic",serif;font-size:18px;margin-bottom:12px}
 .footer p,.footer a{color:rgba(255,255,255,.65);font-size:12px;line-height:1.8}
 .footer a{display:flex;align-items:center;gap:7px;margin:7px 0}.footer a:hover{color:#fff}
 .footer-bottom{max-width:1220px;margin:34px auto 0;border-top:1px solid rgba(255,255,255,.12);padding-top:16px;color:rgba(255,255,255,.45);font-size:10.5px}
@@ -214,85 +222,15 @@ button{font-family:inherit;cursor:pointer;touch-action:manipulation}
 #toasts{position:fixed;bottom:calc(90px + env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);z-index:6000;display:flex;flex-direction:column;gap:10px;align-items:center;width:max-content;max-width:92vw}
 .toast{background:var(--blue-ink);color:#fff;padding:12px 18px;border-radius:999px;font-size:13px;font-weight:600;display:flex;align-items:center;gap:8px;text-align:center}
 
-/* ================== TABLET ================== */
+/* ===== MEDIA QUERY (tidak aktif di HP karena viewport=1220) ===== */
 @media(max-width:1020px){.package-grid{grid-template-columns:1fr 1fr}.activity-grid{grid-template-columns:1fr 1fr}.destination-grid{grid-template-columns:1fr 1fr}.services{grid-template-columns:1fr 1fr}.book-grid{grid-template-columns:1fr}.summary{position:static}}
 @media(max-width:950px){
 .nav{display:none;position:absolute;top:70px;left:0;right:0;background:#fff;padding:14px;flex-direction:column;align-items:stretch;gap:4px;box-shadow:0 20px 40px rgba(12,53,80,.12);border-top:1px solid var(--border)}
 .nav.open{display:flex}
 .nav a{padding:13px 12px;border-radius:10px;font-size:14.5px;min-height:48px;display:flex;align-items:center}
-.nav a:active{background:#eaf4fc}
 .nav-book{justify-content:center}
 .menu{display:flex}
 .promo{grid-template-columns:1fr}.promo-image{min-height:220px}.promo-content{padding:30px 22px}
-}
-
-/* ================== MOBILE (HP) ================== */
-@media(max-width:640px){
-html{scroll-padding-top:76px}
-.header{height:62px}.nav{top:62px}
-.header-inner{padding:0 14px}
-.logo img{width:38px;height:38px}
-.logo-name{font-size:15px;max-width:52vw}
-.logo-sub{display:none}
-.hero{min-height:92svh}
-.hero-inner{padding:96px 16px 64px}
-.hero h1{font-size:clamp(30px,9.5vw,40px)}
-.hero p{font-size:14px}
-.hero-buttons{flex-direction:column;gap:9px}
-.btn-primary,.btn-outline{width:100%}
-.search-wrap{margin-top:-26px}
-.search-box{grid-template-columns:1fr;padding:10px}
-.search-field strong{font-size:13px}
-.search-btn{min-height:52px;font-size:14px;width:100%}
-.container{padding:44px 16px}
-.section-head{margin-bottom:20px}
-.package-grid,.activity-grid,.services{grid-template-columns:1fr;gap:14px}
-.package-image{height:200px}
-.package-body{padding:14px 14px 16px}
-.package-title{font-size:17.5px}
-.package-info{gap:10px;font-size:10.5px}
-.package-bottom{flex-direction:column;align-items:stretch;gap:10px}
-.package-bottom>div:first-child{display:flex;align-items:baseline;justify-content:space-between}
-.detail-btn{width:100%;text-align:center}
-.stop-img{width:48px;height:38px}
-.activity-image{height:150px}
-.activity-grid{gap:12px}
-.act-bottom{flex-direction:column;align-items:stretch}
-.act-bottom>div:first-child{display:flex;align-items:baseline;justify-content:space-between}
-.act-book{width:100%;text-align:center;display:flex;align-items:center;justify-content:center}
-.destination-grid{grid-template-columns:1fr 1fr;grid-auto-rows:140px;gap:10px}
-.destination{border-radius:12px}
-.destination-overlay{padding:12px}
-.destination-name{font-size:15.5px}
-.promo{border-radius:18px}
-.promo-content{padding:26px 18px}
-.promo-button{width:100%;text-align:center}
-.service{padding:18px 16px}
-.service-number{font-size:22px}
-.why-grid{grid-template-columns:1fr}
-.why-item{padding:16px}
-.form-card{padding:18px 16px;border-radius:16px}
-.f-row,.act-checks{grid-template-columns:1fr}
-.stepper button{width:48px;height:48px}
-.btn-submit{font-size:14.5px}
-.summary{padding:18px 16px;border-radius:16px}
-.sum-total b{font-size:22px}
-.modal{align-items:flex-end;padding:10px}
-.modal-box{max-height:94dvh;border-radius:20px 20px 0 0}
-.modal-hero{height:170px}
-.modal-body{padding:18px 16px 22px}
-.modal-body h3{font-size:20px}
-.mstop-img{width:72px;height:56px}
-.modal-foot{flex-direction:column;align-items:stretch}
-.modal-foot .btn-wa{width:100%}
-.cta{padding:44px 18px;border-radius:18px}
-.cta-button{width:100%;text-align:center}
-.footer{padding-top:40px}
-.footer-inner{grid-template-columns:1fr;gap:24px}
-.wa-float{width:54px;height:54px;right:14px}
-.wa-float svg{width:26px;height:26px}
-#toasts{bottom:calc(84px + env(safe-area-inset-bottom))}
-.toast{font-size:12.5px;padding:11px 16px}
 }
 @media(hover:none){.package-card:hover,.activity-card:hover,.service:hover{transform:none}}
 </style>
@@ -305,9 +243,20 @@ html{scroll-padding-top:76px}
         <div><div class="logo-name" id="siteName">Bali Global Trans</div><div class="logo-sub" id="siteSub"></div></div>
     </a>
     <nav class="nav" id="nav">
-        <a href="#beranda">Beranda</a><a href="#paket">Paket Tour</a><a href="#aktivitas">Aktivitas</a>
-        <a href="#destinasi">Destinasi</a><a href="#layanan">Layanan</a><a href="#booking" class="nav-book">Booking</a>
+        <a href="#beranda" data-i18n="navHome">Beranda</a><a href="#paket" data-i18n="navPaket">Paket Tour</a><a href="#aktivitas" data-i18n="navAkt">Aktivitas</a>
+        <a href="#destinasi" data-i18n="navDest">Destinasi</a><a href="#layanan" data-i18n="navLay">Layanan</a><a href="#booking" class="nav-book" data-i18n="navBook">Booking</a>
     </nav>
+    <div class="lang" title="Language / Bahasa">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        <select id="langSel" aria-label="Pilih bahasa">
+            <option value="id">ID — Indonesia</option>
+            <option value="en">EN — English</option>
+            <option value="zh">中文 — Chinese</option>
+            <option value="ar">عربي — Arabic</option>
+            <option value="tr">TR — Türkçe</option>
+            <option value="ru">RU — Русский</option>
+        </select>
+    </div>
     <button class="menu" id="menuBtn" onclick="toggleMenu()" aria-label="Buka menu"></button>
 </div></header>
 
@@ -327,10 +276,10 @@ html{scroll-padding-top:76px}
 </section>
 
 <div class="search-wrap"><div class="search-box">
-    <div class="search-field"><label>Mau ke mana?</label><strong id="sWhere"></strong></div>
-    <div class="search-field"><label>Durasi</label><strong id="sDur"></strong></div>
-    <div class="search-field"><label>Tipe perjalanan</label><strong id="sType"></strong></div>
-    <button class="search-btn" onclick="goTo('paket')">Cari Paket</button>
+    <div class="search-field"><label data-i18n="searchWhere">Mau ke mana?</label><strong id="sWhere"></strong></div>
+    <div class="search-field"><label data-i18n="searchDur">Durasi</label><strong id="sDur"></strong></div>
+    <div class="search-field"><label data-i18n="searchType">Tipe perjalanan</label><strong id="sType"></strong></div>
+    <button class="search-btn" onclick="goTo('paket')" data-i18n="searchBtn">Cari Paket</button>
 </div></div>
 
 <section class="container" id="paket">
@@ -394,34 +343,34 @@ html{scroll-padding-top:76px}
     <div class="book-grid">
         <form class="form-card reveal" id="bookForm" novalidate>
             <div class="f-row">
-                <div class="field" id="fNama"><label>Nama Lengkap</label><input type="text" id="inNama" placeholder="cth. Putu Ayu" autocomplete="name"><span class="msg">Nama minimal 3 huruf.</span></div>
-                <div class="field" id="fWa"><label>Nomor WhatsApp</label><input type="tel" id="inWa" placeholder="cth. 0812xxxxxxx" inputmode="numeric" autocomplete="tel"><span class="msg">Nomor tidak valid (9–14 digit).</span></div>
+                <div class="field" id="fNama"><label data-i18n="fName">Nama Lengkap</label><input type="text" id="inNama" placeholder="cth. Putu Ayu" data-i18n-ph="phName" autocomplete="name"><span class="msg" data-i18n="errName">Nama minimal 3 huruf.</span></div>
+                <div class="field" id="fWa"><label data-i18n="fWa">Nomor WhatsApp</label><input type="tel" id="inWa" placeholder="cth. 0812xxxxxxx" data-i18n-ph="phWa" inputmode="numeric" autocomplete="tel"><span class="msg" data-i18n="errWa">Nomor tidak valid (9–14 digit).</span></div>
             </div>
             <div class="f-row">
-                <div class="field" id="fTgl"><label>Tanggal Tour</label><input type="date" id="inTgl"><span class="msg">Pilih tanggal mulai hari ini.</span></div>
-                <div class="field"><label>Jumlah Orang</label>
+                <div class="field" id="fTgl"><label data-i18n="fDate">Tanggal Tour</label><input type="date" id="inTgl"><span class="msg" data-i18n="errDate">Pilih tanggal mulai hari ini.</span></div>
+                <div class="field"><label data-i18n="fPax">Jumlah Orang</label>
                     <div class="stepper"><button type="button" id="stMin" aria-label="Kurangi">−</button><span id="stVal">2</span><button type="button" id="stPlus" aria-label="Tambah">+</button></div>
                 </div>
             </div>
             <div class="f-row">
-                <div class="field"><label>Paket Tour</label><select id="inPkg" onchange="updateSummary()"></select></div>
-                <div class="field"><label>Area Penjemputan</label>
+                <div class="field"><label data-i18n="fPkg">Paket Tour</label><select id="inPkg" onchange="updateSummary()"></select></div>
+                <div class="field"><label data-i18n="fArea">Area Penjemputan</label>
                     <select id="inArea"><option>Kuta / Legian</option><option>Seminyak</option><option>Canggu</option><option>Sanur</option><option>Ubud</option><option>Bandara Ngurah Rai</option><option>Nusa Dua</option></select>
                 </div>
             </div>
-            <div class="field" style="margin-bottom:10px"><label>Tambah Aktivitas (opsional)</label><div class="act-checks" id="actChecks"></div></div>
-            <div class="field"><label>Catatan (opsional)</label><textarea id="inCatatan" rows="2" placeholder="cth. bawa anak kecil, vegetarian…"></textarea></div>
-            <button type="submit" class="btn-submit">Buat Permintaan Booking <svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button>
+            <div class="field" style="margin-bottom:10px"><label data-i18n="fAddAct">Tambah Aktivitas (opsional)</label><div class="act-checks" id="actChecks"></div></div>
+            <div class="field"><label data-i18n="fNote">Catatan (opsional)</label><textarea id="inCatatan" rows="2" placeholder="cth. bawa anak kecil, vegetarian…" data-i18n-ph="phNote"></textarea></div>
+            <button type="submit" class="btn-submit"><span data-i18n="submit">Buat Permintaan Booking</span> <svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button>
         </form>
         <aside class="summary reveal">
-            <h3>Ringkasan permintaan</h3><p class="sub">Periksa sekali lagi, lalu kirim ke WhatsApp kami.</p>
-            <div class="sum-row"><span>Paket</span><b id="sumPkg">—</b></div>
-            <div class="sum-row"><span>Tanggal</span><b id="sumTgl">—</b></div>
-            <div class="sum-row"><span>Penjemputan</span><b id="sumPickup">—</b></div>
-            <div class="sum-row"><span>Peserta</span><b id="sumPax">—</b></div>
-            <div class="sum-row"><span>Aktivitas</span><b id="sumAct">—</b></div>
-            <div class="sum-total"><span>Estimasi total</span><b id="sumTotal">—</b></div>
-            <p class="sum-note">*Estimasi = harga paket + tiket aktivitas × jumlah orang.</p>
+            <h3 data-i18n="sumTitle">Ringkasan permintaan</h3><p class="sub" data-i18n="sumSub">Periksa sekali lagi, lalu kirim ke WhatsApp kami.</p>
+            <div class="sum-row"><span data-i18n="sumPkg">Paket</span><b id="sumPkgV">—</b></div>
+            <div class="sum-row"><span data-i18n="sumDate">Tanggal</span><b id="sumTgl">—</b></div>
+            <div class="sum-row"><span data-i18n="sumPickup">Penjemputan</span><b id="sumPickup">—</b></div>
+            <div class="sum-row"><span data-i18n="sumPax">Peserta</span><b id="sumPax">—</b></div>
+            <div class="sum-row"><span data-i18n="sumActs">Aktivitas</span><b id="sumAct">—</b></div>
+            <div class="sum-total"><span data-i18n="sumTotalLbl">Estimasi total</span><b id="sumTotal">—</b></div>
+            <p class="sum-note" data-i18n="sumNote">*Estimasi = harga paket + tiket aktivitas × jumlah orang.</p>
             <a class="btn-wa" id="btnWa" href="#" target="_blank" rel="noopener"></a>
         </aside>
     </div>
@@ -440,15 +389,15 @@ html{scroll-padding-top:76px}
 <footer class="footer" id="kontak">
 <div class="footer-inner">
     <div><h3 id="footName"></h3><p id="footDesc"></p></div>
-    <div><h3>Navigasi</h3><a href="#paket">Paket Tour</a><a href="#aktivitas">Aktivitas</a><a href="#destinasi">Destinasi</a><a href="#booking">Booking</a></div>
-    <div><h3>Aktivitas</h3><div id="footActs"></div></div>
-    <div><h3>Kontak</h3><a href="#">Bali, Indonesia</a><a href="#" id="footMail"></a><a href="#" id="footWa" target="_blank" rel="noopener"></a></div>
+    <div><h3 data-i18n="footNav">Navigasi</h3><a href="#paket" data-i18n="navPaket">Paket Tour</a><a href="#aktivitas" data-i18n="navAkt">Aktivitas</a><a href="#destinasi" data-i18n="navDest">Destinasi</a><a href="#booking" data-i18n="navBook">Booking</a></div>
+    <div><h3 data-i18n="footActs">Aktivitas</h3><div id="footActs"></div></div>
+    <div><h3 data-i18n="footContact">Kontak</h3><a href="#">Bali, Indonesia</a><a href="#" id="footMail"></a><a href="#" id="footWa" target="_blank" rel="noopener"></a></div>
 </div>
 <div class="footer-bottom">© <span id="footYear"></span> <span id="footName2"></span>. All Rights Reserved. Foto destinasi: Wikimedia Commons.</div>
 </footer>
 
 <a class="wa-float" id="waFloat" href="#" target="_blank" rel="noopener" aria-label="Chat WhatsApp">
-<svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.297-.497.1-.198.05-.371-.025-.52-.074-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+<svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.297-.497.1-.198.05-.371-.025-.52-.074-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.89-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
 
 <div class="modal" id="modal"><div class="modal-box"><button class="modal-close" onclick="closeModal()" aria-label="Tutup"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button><div id="modalBody"></div></div></div>
@@ -458,29 +407,230 @@ html{scroll-padding-top:76px}
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
 <script>
 const FIREBASE_CONFIG={apiKey:"AIzaSyB9DbCSfzFp8ech7tAhR0uxqKTNWe-HIXA",authDomain:"bali-global-trans-94154.firebaseapp.com",databaseURL:"https://bali-global-trans-94154-default-rtdb.firebaseio.com",projectId:"bali-global-trans-94154",storageBucket:"bali-global-trans-94154.firebasestorage.app",messagingSenderId:"408014293746",appId:"1:408014293746:web:d09808f265c6f1a6045e6b"};
-try{firebase.initializeApp(FIREBASE_CONFIG);}catch(e){}
-const db=firebase.database();
+let db=null;
+try{firebase.initializeApp(FIREBASE_CONFIG);db=firebase.database();}catch(e){}
 
-/* ===== ★ SALIN BLOK DEFAULTS LENGKAP DARI admin.html KE SINI ★ ===== */
-const DEFAULTS={/* GANTI: tempel blok const DEFAULTS={...}; dari admin.html, harus identik */};
+/* ============================================================
+   ★ KONEKSI ADMIN.HTML — path SUDAH DISAMAKAN ★
+   Admin menyimpan config ke : site/config   (pushCloud)
+   Booking ditulis ke        : site/bookings + bookings
+   ============================================================ */
+const CONFIG_PATHS=['site/config','config'];
+const BOOKING_PATHS=['site/bookings','bookings'];
+let configPathFound=null;
+
+function normalizeFB(v){
+  if(Array.isArray(v))return v.map(normalizeFB);
+  if(v&&typeof v==='object'){
+    const keys=Object.keys(v);
+    if(keys.length>0&&keys.every(k=>/^\d+$/.test(k))){
+      const arr=[];keys.sort((a,b)=>Number(a)-Number(b)).forEach(k=>arr.push(normalizeFB(v[k])));return arr;}
+    const o={};keys.forEach(k=>o[k]=normalizeFB(v[k]));return o;}
+  return v;}
+function looksLikeConfig(v){return !!(v&&typeof v==='object'&&(v.site||v.hero||v.sections||v.packages));}
+
+/* ============================================================
+   ★ DEFAULTS — SALINAN IDENTIK dari admin.html kamu ★
+   (cadangan jika cloud masih kosong; begitu admin pernah
+   klik "Simpan & Tayangkan", data cloud otomatis menimpanya)
+   ============================================================ */
+const DEFAULTS={site:{name:'Bali Global Trans',sub:'Your Bali Travel Partner',wa:'6281234567890',email:'info@baliglobaltrans.com',footDesc:'Your Bali Travel Partner. Private tour, paket aktivitas, rental mobil, airport transfer dan perjalanan wisata Bali.'},logo:{src:''},search:{where:'Sunrise Kintamani • Penglipuran • Rafting',dur:'10 Jam',type:'Private Tour'},
+sections:{paket:{label:'Pilihan Perjalanan',title:'Paket Tour Bali — 3–4 Destinasi per Paket',desc:'Setiap paket memuat 3–4 lokasi utama dengan rute jam demi jam. Klik Detail untuk itinerary lengkapnya.'},aktivitas:{label:'Adrenalin & Keseruan',title:'Aktivitas Favorit di Bali',desc:'Bisa digabung dengan paket tour atau dipesan terpisah. Semua dengan operator berlisensi dan alat safety lengkap.'},destinasi:{label:'Jelajahi Bali',title:'Destinasi Favorit',desc:''},layanan:{label:'Layanan BGT',title:'Semua kebutuhan perjalanan Bali',desc:''},tentang:{label:'Mengapa BGT',title:'Perjalanan nyaman, pengalaman berkesan.',desc:''},booking:{label:'Pemesanan',title:'Kunci tanggal Anda',desc:'Isi formulir — tanpa bayar di muka. Kami konfirmasi ketersediaan driver lewat WhatsApp.'}},
+services:[{n:'01',t:'Private Tour',d:'Paket perjalanan private dengan driver dan kendaraan nyaman.'},{n:'02',t:'Paket Aktivitas',d:'Arung jeram, ATV, swing, dan water sport dengan operator berlisensi.'},{n:'03',t:'Airport Transfer',d:'Penjemputan dan pengantaran bandara menuju hotel atau villa.'},{n:'04',t:'Custom Trip',d:'Susun sendiri destinasi perjalanan sesuai waktu dan kebutuhan Anda.'}],
+why:[{t:'Driver Profesional',d:'Driver lokal yang memahami rute, jam hitung, dan spot terbaik Bali.'},{t:'Harga Transparan',d:'Harga paket dan aktivitas ditampilkan jelas sebelum booking.'},{t:'Private & Fleksibel',d:'Tidak ikut rombongan; rute dan jam bisa disesuaikan di jalan.'},{t:'Booking Mudah',d:'Konsultasi dan booking langsung melalui WhatsApp, tanpa DP.'}],
+hero:{small:'Explore Bali With BGT',title:'Temukan Bali,\ndengan cara yang berbeda.',desc:'Paket private tour 10 jam dengan 3–4 destinasi terbaik, ditambah aktivitas seru: arung jeram, ATV, jungle swing, dan water sport. Semua fleksibel sesuai gaya perjalanan Anda.',btn1:'Lihat Paket Tour',btn2:'Aktivitas Seru',stats:[{b:'4.9/5',l:'2.400+ ulasan'},{b:'10 Jam',l:'private per mobil'},{b:'1–6 Orang',l:'plus driver lokal'}]},
+promo:{small:'Private Bali Experience',title:'Bali dalam satu hari, tanpa terburu-buru.',desc:'Gabungkan paket tour dengan aktivitas favorit Anda — pagi arung jeram, siang swing di atas sawah, sore sunset di Uluwatu. Driver kami bantu susun rutenya.',btn:'Susun Perjalanan Saya'},
+cta:{title:'Siap menjelajahi Bali?',desc:'Ceritakan rencana perjalanan Anda. Bali Global Trans akan membantu memilihkan paket, aktivitas, dan rute yang paling pas.',btn:'Chat dengan Bali Global Trans'},
+packages:[
+{id:'ubud-kintamani',badge:'POPULER',title:'Ubud & Kintamani Tour',location:'Ubud • Tegallalang • Kintamani',rating:'4.9',price:750000,unit:'/mobil',dur:'10 Jam',desc:'Rute klasik terbaik Bali: sawah terasering, pura air suci, kaldera vulkanik, dan hutan monyet.',main:{place:'Tegallalang Rice Terrace',commons:'Tegallalang rice terrace|Tegallalang Bali',wikiEn:'Tegallalang, Gianyar'},stops:[{t:'08.30',name:'Tegallalang Rice Terrace',desc:'Terasering subak warisan UNESCO. Coba jungle swing di tepi lembah (opsional).',img:{place:'Tegallalang Rice Terrace',commons:'Tegallalang rice terrace',wikiEn:'Tegallalang, Gianyar'}},{t:'10.00',name:'Pura Tirta Empul',desc:'Melukat di kolam air suci Tampaksiring yang berusia seribu tahun (opsional).',img:{place:'Pura Tirta Empul',wikiEn:'Pura Tirta Empul',commons:'Tirta Empul Bali'}},{t:'12.30',name:'Kintamani & Danau Batur',desc:'Makan siang di restoran tepi kaldera dengan panorama Gunung & Danau Batur.',img:{place:'Danau Batur, Kintamani',wikiEn:'Lake Batur',commons:'Lake Batur Kintamani|Mount Batur'}},{t:'15.00',name:'Ubud Monkey Forest',desc:'Hutan beringin suci berisi ±1.200 monyet ekor panjang dan pura abad ke-14.',img:{place:'Ubud Monkey Forest',wikiEn:'Ubud Monkey Forest',commons:'Ubud Monkey Forest'}}],include:['Mobil AC + driver','Bahan bakar & parkir','Air mineral','Sarung untuk masuk pura']},
+{id:'sunrise-penglipuran',badge:'SUNRISE',title:'Sunrise Kintamani & Penglipuran',location:'Kintamani • Bangli • Tegallalang',rating:'4.9',price:800000,unit:'/mobil',dur:'10–11 Jam',desc:'Berangkat dini hari: sunrise di kaldera Batur, kampung adat Penglipuran, swing, lalu air terjun.',main:{place:'Sunrise Gunung Batur, Kintamani',commons:'Mount Batur sunrise|Kintamani sunrise',wikiEn:'Mount Batur'},stops:[{t:'04.30',name:'Sunrise Gunung Batur',desc:'Matahari terbit dari penjuru kaldera Kintamani — kopi panas disediakan.',img:{place:'Sunrise Gunung Batur',commons:'Mount Batur sunrise',wikiEn:'Mount Batur'}},{t:'08.30',name:'Kampung Adat Penglipuran',desc:'Kampung adat salah satu terbersih di dunia; rumah tradisional & bambu raksasa.',img:{place:'Kampung Adat Penglipuran',commons:'Penglipuran village|Penglipuran Bali',wikiEn:'Penglipuran'}},{t:'11.00',name:'Alas Harum Swing',desc:'Ayunan ikonik di atas sawah terasering + spot foto sarang burung.',img:{place:'Alas Harum, Tegallalang',commons:'Bali Swing|Alas Harum|Tegallalang rice terrace'}},{t:'13.30',name:'Air Terjun Tegenungan',desc:'Air terjun dekat Ubud yang bisa dipakai berenang — penutup hari yang segar.',img:{place:'Air Terjun Tegenungan',wikiEn:'Tegenungan Waterfall',commons:'Tegenungan waterfall'}}],include:['Mobil AC + driver','Bahan bakar & parkir','Air mineral + kopi pagi','Sarung untuk masuk pura']},
+{id:'adventure',badge:'ADRENALIN',title:'Adventure: Rafting + ATV + Swing',location:'Sungai Ayung • Ubud • Tegallalang',rating:'4.9',price:950000,unit:'/orang',dur:'10 Jam',desc:'Paket seru 3 aktivitas dalam sehari untuk yang suka tantangan — cocok berpasangan atau tim.',main:{place:'Arung Jeram Sungai Ayung',commons:'White water rafting Ayung|Rafting Bali',wikiEn:'Ayung River'},stops:[{t:'08.00',name:'Arung Jeram Sungai Ayung',desc:'Rafting grade II–III ±2 jam melewati tebing, ukiran sungai & air terjun kecil.',img:{place:'Arung jeram Sungai Ayung Bali',commons:'White water rafting Ayung Bali|Rafting Bali',wikiEn:'Ayung River'}},{t:'11.00',name:'ATV Ride Ubud',desc:'Setir quad bike melewati hutan, sungai dangkal, terowongan bambu & jalur lumpur.',img:{place:'ATV ride Bali',commons:'Quad bike Bali|ATV riding',wikiEn:'All-terrain vehicle'}},{t:'13.30',name:'Alas Harum Swing',desc:'Ayunan tinggi di atas sawah + makan siang dengan pemandangan hijau.',img:{place:'Alas Harum Swing',commons:'Bali Swing|Jungle swing Bali'}},{t:'15.30',name:'Air Terjun Tegenungan',desc:'Basuh lumpur & lelah di air terjun Tegenungan sebelum kembali ke hotel.',img:{place:'Air Terjun Tegenungan',wikiEn:'Tegenungan Waterfall',commons:'Tegenungan waterfall'}}],include:['Mobil AC + driver','Instruktur & alat safety','Perlengkapan rafting/ATV','Makan siang sederhana']},
+{id:'watersport',badge:'WATER SPORT',title:'Water Sport & Uluwatu Sunset',location:'Tanjung Benoa • Pandawa • Uluwatu',rating:'4.9',price:850000,unit:'/mobil',dur:'10 Jam',desc:'Pagi seru di laut selatan Bali, siang santai di pantai, sore ditutup kecak api di Uluwatu.',main:{place:'Water sport Tanjung Benoa',commons:'Parasailing Tanjung Benoa|Parasailing Bali|Jet ski Bali',wikiEn:'Tanjung Benoa'},stops:[{t:'09.00',name:'Water Sport Tanjung Benoa',desc:'Paket parasailing + banana boat + jet ski di laut tenang Tanjung Benoa.',img:{place:'Parasailing Tanjung Benoa',commons:'Parasailing Tanjung Benoa|Parasailing beach Bali',wikiEn:'Tanjung Benoa'}},{t:'11.30',name:'Pantai Pandawa',desc:'"Pantai Rahasia" yang terselip di antara tebing kapur putih raksasa.',img:{place:'Pantai Pandawa',commons:'Pandawa beach Bali',wikiEn:'Pandawa Beach'}},{t:'13.30',name:'Garuda Wisnu Kencana',desc:'Patung setinggi 121 meter — ikon tertinggi Bali — di taman budaya GWK.',img:{place:'Patung Garuda Wisnu Kencana',wikiEn:'Garuda Wisnu Kencana',commons:'Garuda Wisnu Kencana'}},{t:'16.30',name:'Uluwatu & Kecak Fire Dance',desc:'Sunset di puncak tebing 70 meter + pertunjukan tari kecak api saat senja (opsional).',img:{place:'Pura Luhur Uluwatu',wikiEn:'Pura Luhur Uluwatu',commons:'Uluwatu temple|Uluwatu sunset'}}],include:['Mobil AC + driver','Bahan bakar & parkir','Air mineral','Bantuan beli tiket aktivitas']},
+{id:'bedugul',badge:'NATURE',title:'Bedugul & Jatiluwih Heritage',location:'Bedugul • Jatiluwih • Mengwi',rating:'4.8',price:850000,unit:'/mobil',dur:'10 Jam',desc:'Udara sejuk pegunungan, pura terapung, gerbang ikonik, dan terasering UNESCO terluas di Bali.',main:{place:'Pura Ulun Danu Bratan',wikiEn:'Pura Ulun Danu Bratan',commons:'Ulun Danu Bratan'},stops:[{t:'09.30',name:'Pura Ulun Danu Bratan',desc:'Pura "terapung" ikonik di Danau Beratan, dibangun 1633 untuk Dewi Danu.',img:{place:'Pura Ulun Danu Bratan',wikiEn:'Pura Ulun Danu Bratan',commons:'Ulun Danu Bratan'}},{t:'11.00',name:'Handara Gate',desc:'Gerbang candi bentar ikonik yang viral — antriannya sepadan dengan fotonya.',img:{place:'Handara Gate Bali',commons:'Handara Gate Bali'}},{t:'13.00',name:'Jatiluwih Rice Terrace',desc:'Terasering UNESCO terluas di Bali dengan pemandangan Gunung Batukaru.',img:{place:'Jatiluwih Rice Terrace',wikiEn:'Jatiluwih',commons:'Jatiluwih rice terrace'}},{t:'15.30',name:'Pura Taman Ayun',desc:'Pura kerajaan Mengwi dengan taman kolam luas — warisan dunia UNESCO.',img:{place:'Pura Taman Ayun',wikiEn:'Pura Taman Ayun',commons:'Taman Ayun temple'}}],include:['Mobil AC + driver','Bahan bakar & parkir','Air mineral','Sarung untuk masuk pura']},
+{id:'lempuyang',badge:'EAST BALI',title:'Lempuyang Gate of Heaven',location:'Karangasem • Timur Bali',rating:'4.9',price:900000,unit:'/mobil',dur:'11–12 Jam',desc:'Perjalanan ke timur Bali: gerbang surga, taman air kerajaan, dan gua kelelawar di tebing laut.',main:{place:'Pura Lempuyang Gate of Heaven',commons:'Lempuyang temple|Gate of Heaven Bali',wikiEn:'Pura Penataran Agung Lempuyang'},stops:[{t:'08.00',name:'Pura Lempuyang',desc:'"Gate of Heaven" dengan latar Gunung Agung — foto paling ikonik di Bali.',img:{place:'Pura Lempuyang Gate of Heaven',commons:'Lempuyang temple|Gate of Heaven Bali',wikiEn:'Pura Penataran Agung Lempuyang'}},{t:'11.00',name:'Tirta Gangga',desc:'Taman air pura dengan patung dewa, kolam ikan raksasa, dan stepping stone.',img:{place:'Tirta Gangga',wikiEn:'Tirta Gangga',commons:'Tirta Gangga Bali'}},{t:'12.30',name:'Taman Ujung',desc:'Taman air kerajaan Karangasem dengan jembatan putih di atas kolam luas.',img:{place:'Taman Ujung Sukasada',commons:'Taman Ujung Sukasada|Sukasada Park'}},{t:'14.30',name:'Pura Goa Lawah',desc:'Pura di mulut gua berisi ribuan kelelawar, tepi pantai timur Bali.',img:{place:'Pura Goa Lawah',wikiEn:'Pura Goa Lawah',commons:'Goa Lawah temple'}}],include:['Mobil AC + driver','Bahan bakar & parkir','Air mineral + snack','Sarung untuk masuk pura']}],
+activities:[
+{id:'rafting',emoji:'🚣',title:'Arung Jeram (Rafting)',price:450000,unit:'/orang',dur:'±2 jam di air',loc:'Sungai Ayung, Ubud',desc:'Rakit karet melawan arus Sungai Ayung grade II–III selama ±2 jam, melewati tebing, ukiran sungai, dan air terjun kecil. Cocok untuk pemula.',img:{place:'Arung jeram Sungai Ayung Bali',commons:'White water rafting Ayung|Rafting Bali',wikiEn:'Ayung River'}},
+{id:'atv',emoji:'🏍️',title:'ATV Ride',price:400000,unit:'/orang',dur:'±1,5 jam',loc:'Ubud, Gianyar',desc:'Setir sendiri quad bike melewati hutan tropis, sungai dangkal, terowongan bambu, dan jalur lumpur. Ada jalur single track untuk yang berani.',img:{place:'ATV ride di Bali',commons:'Quad bike Bali|ATV riding',wikiEn:'All-terrain vehicle'}},
+{id:'swing',emoji:'🌳',title:'Jungle Swing',price:150000,unit:'/orang',dur:'±1 jam',loc:'Alas Harum, Tegallalang',desc:'Ayunan raksasa di atas sawah terasering Tegallalang dengan pemandangan lembah hijau. Termasuk spot foto sarang burung.',img:{place:'Bali jungle swing',commons:'Bali Swing|Jungle swing Bali|Alas Harum'}},
+{id:'watersport',emoji:'🪂',title:'Water Sport',price:350000,unit:'/orang',dur:'±2 jam',loc:'Tanjung Benoa, Badung',desc:'Paket 3 kegiatan laut di Tanjung Benoa: parasailing, banana boat, dan jet ski, dengan instruktur dan alat safety lengkap.',img:{place:'Parasailing Tanjung Benoa',commons:'Parasailing Tanjung Benoa|Parasailing Bali',wikiEn:'Tanjung Benoa'}}],
+destinations:[
+{name:'Ubud',sub:'Seni • Budaya • Alam',img:{place:'Ubud, Bali',commons:'Ubud Bali|Ubud palace',wikiEn:'Ubud'}},
+{name:'Kintamani',sub:'Sunrise • Gunung & Danau Batur',img:{place:'Kintamani, Gunung Batur',wikiEn:'Mount Batur',commons:'Kintamani Bali|Mount Batur'}},
+{name:'Tanah Lot',sub:'Pura laut • Sunset',img:{place:'Pura Tanah Lot',wikiEn:'Tanah Lot',commons:'Tanah Lot temple'}},
+{name:'Uluwatu',sub:'Tebing • Kecak • Ocean',img:{place:'Pura Luhur Uluwatu',wikiEn:'Pura Luhur Uluwatu',commons:'Uluwatu temple'}},
+{name:'Nusa Penida',sub:'Kelingking • Crystal Bay',img:{place:'Nusa Penida',wikiEn:'Nusa Penida',commons:'Nusa Penida Kelingking'}},
+{name:'Bedugul',sub:'Danau Beratan • Ulun Danu',img:{place:'Danau Beratan, Bedugul',wikiEn:'Lake Bratan',commons:'Lake Bratan Bali'}}],
+imgHero:{place:'Sunrise Gunung Batur, Kintamani',commons:'Mount Batur sunrise|Kintamani sunrise Bali',wikiEn:'Mount Batur'},
+imgPromo:{place:'Handara Gate, Bali',commons:'Handara Gate Bali'},
+imgCta:{place:'Danau Beratan, Bedugul',wikiEn:'Pura Ulun Danu Bratan',commons:'Ulun Danu Bratan lake'},
+imgOver:{}};
 
 /* ===== MUAT KONFIG ===== */
 const CFG_KEY='bgt_config_v6';
 let CFG=loadCfg();
-function loadCfg(){let base=JSON.parse(JSON.stringify(DEFAULTS));try{const raw=localStorage.getItem(CFG_KEY);if(raw&&raw!=='__RESET__')return deepMerge(base,JSON.parse(raw));}catch(e){}return base;}
+function loadCfg(){let base=JSON.parse(JSON.stringify(DEFAULTS));try{const raw=localStorage.getItem(CFG_KEY);if(raw&&raw!=='__RESET__'){const stored=normalizeFB(JSON.parse(raw));return deepMerge(base,stored);}}catch(e){}return base;}
 function deepMerge(b,o){for(const k in o){if(o[k]&&typeof o[k]==='object'&&!Array.isArray(o[k])&&b[k]&&typeof b[k]==='object'&&!Array.isArray(b[k]))deepMerge(b[k],o[k]);else b[k]=o[k];}return b;}
-function persistCfg(){try{localStorage.setItem(CFG_KEY,JSON.stringify(CFG));}catch(e){}}
+
+/* ================================================================
+   ★ SISTEM TERJEMAHAN — disesuaikan dengan paket asli admin ★
+   ================================================================ */
+let LANG='id';
+try{LANG=localStorage.getItem('bgt_lang')||'id';}catch(e){}
+const LOC={id:'id-ID',en:'en-GB',zh:'zh-CN',ar:'ar',tr:'tr-TR',ru:'ru-RU'};
+/* deteksi satuan "/orang" dalam bahasa apapun (agar hitung total tetap benar) */
+function isPer(u){return /orang|person|人|شخص|kişi|чел/i.test(String(u||''));}
+
+const UI={
+id:{navHome:'Beranda',navPaket:'Paket Tour',navAkt:'Aktivitas',navDest:'Destinasi',navLay:'Layanan',navBook:'Booking',searchWhere:'Mau ke mana?',searchDur:'Durasi',searchType:'Tipe perjalanan',searchBtn:'Cari Paket',routeLabel:'Rute Perjalanan',countDest:'{n} destinasi',countInc:'{n} fasilitas',from:'Mulai dari',priceLbl:'Harga',detailBtn:'Detail Itinerary',book:'Booking',fName:'Nama Lengkap',fWa:'Nomor WhatsApp',fDate:'Tanggal Tour',fPax:'Jumlah Orang',fPkg:'Paket Tour',fArea:'Area Penjemputan',fAddAct:'Tambah Aktivitas (opsional)',fNote:'Catatan (opsional)',phName:'cth. Putu Ayu',phWa:'cth. 0812xxxxxxx',phNote:'cth. bawa anak kecil, vegetarian…',errName:'Nama minimal 3 huruf.',errWa:'Nomor tidak valid (9–14 digit).',errDate:'Pilih tanggal mulai hari ini.',submit:'Buat Permintaan Booking',sumTitle:'Ringkasan permintaan',sumSub:'Periksa sekali lagi, lalu kirim ke WhatsApp kami.',sumPkg:'Paket',sumDate:'Tanggal',sumPickup:'Penjemputan',sumPax:'Peserta',sumActs:'Aktivitas',sumTotalLbl:'Estimasi total',sumNote:'*Estimasi = harga paket + tiket aktivitas × jumlah orang.',paxUnit:'{n} orang',mRoute:'Rute & Itinerary',mInc:'Fasilitas Termasuk',mBook:'Booking via WhatsApp',mStopDesc:'Destinasi ke-{n} dalam rute {t}.',mDesc:'Rute {n} destinasi dengan mobil private dan driver berpengalaman.',footNav:'Navigasi',footActs:'Aktivitas',footContact:'Kontak',wa:'WhatsApp',sendWa:'Kirim ke WhatsApp',toastErr:'Periksa kembali form yang ditandai merah',toastOk:'Permintaan terkirim! Melanjutkan ke WhatsApp…',langChanged:'Bahasa berhasil diganti',waHi:'Halo {name}!',waCta:'Halo {name}! Saya ingin bertanya tentang paket perjalanan Bali.',waInterest:'Halo {name}! Saya tertarik dengan paket {pkg}. Boleh info ketersediaan & detailnya?',waHello:'Halo {name}! Saya ingin membuat permintaan booking.',waName:'Nama',waNumber:'No. WhatsApp',waPkg:'Paket',waDate:'Tanggal',waPickup:'Penjemputan',waGuests:'Peserta',waActs:'Aktivitas',waTotal:'Estimasi total',waNote:'Catatan',waClosing:'Mohon konfirmasi ketersediaan & detailnya. Terima kasih!'},
+en:{navHome:'Home',navPaket:'Tour Packages',navAkt:'Activities',navDest:'Destinations',navLay:'Services',navBook:'Book Now',searchWhere:'Where to?',searchDur:'Duration',searchType:'Trip type',searchBtn:'Search Packages',routeLabel:'Itinerary',countDest:'{n} destinations',countInc:'{n} inclusions',from:'From',priceLbl:'Price',detailBtn:'View Itinerary',book:'Book',fName:'Full Name',fWa:'WhatsApp Number',fDate:'Tour Date',fPax:'Guests',fPkg:'Tour Package',fArea:'Pickup Area',fAddAct:'Add Activities (optional)',fNote:'Notes (optional)',phName:'e.g. Putu Ayu',phWa:'e.g. 0812xxxxxxx',phNote:'e.g. traveling with kids, vegetarian…',errName:'Name must be at least 3 letters.',errWa:'Invalid number (9–14 digits).',errDate:'Pick a date from today onwards.',submit:'Request Booking',sumTitle:'Booking Summary',sumSub:'Double-check everything, then send it to our WhatsApp.',sumPkg:'Package',sumDate:'Date',sumPickup:'Pickup',sumPax:'Guests',sumActs:'Activities',sumTotalLbl:'Estimated total',sumNote:'*Estimate = package price + activity tickets × number of guests.',paxUnit:'{n} guest(s)',mRoute:'Route & Itinerary',mInc:"What's Included",mBook:'Book via WhatsApp',mStopDesc:'Stop {n} of the {t} route.',mDesc:'A {n}-stop route with a private car and an experienced driver.',footNav:'Navigation',footActs:'Activities',footContact:'Contact',wa:'WhatsApp',sendWa:'Send via WhatsApp',toastErr:'Please check the highlighted fields',toastOk:'Request sent! Continuing to WhatsApp…',langChanged:'Language updated',waHi:'Hello {name}!',waCta:'Hello {name}! I would like to ask about your Bali tour packages.',waInterest:"Hello {name}! I'm interested in the {pkg} package. Could you share availability and details?",waHello:'Hello {name}! I would like to request a booking.',waName:'Name',waNumber:'WhatsApp No.',waPkg:'Package',waDate:'Date',waPickup:'Pickup',waGuests:'Guests',waActs:'Activities',waTotal:'Estimated total',waNote:'Notes',waClosing:'Please confirm availability and details. Thank you!'},
+zh:{navHome:'首页',navPaket:'旅游套餐',navAkt:'活动',navDest:'景点',navLay:'服务',navBook:'立即预订',searchWhere:'想去哪里？',searchDur:'行程时长',searchType:'旅行类型',searchBtn:'搜索套餐',routeLabel:'行程路线',countDest:'{n} 个景点',countInc:'{n} 项服务',from:'起价',priceLbl:'价格',detailBtn:'查看行程',book:'预订',fName:'姓名',fWa:'WhatsApp 号码',fDate:'出行日期',fPax:'人数',fPkg:'旅游套餐',fArea:'接送地点',fAddAct:'添加活动（可选）',fNote:'备注（可选）',phName:'例：张小明',phWa:'例：0812xxxxxxx',phNote:'例：带小孩、素食…',errName:'姓名至少 3 个字符。',errWa:'号码无效（9–14 位数字）。',errDate:'请选择今天或以后的日期。',submit:'提交预订申请',sumTitle:'预订摘要',sumSub:'请再次核对，然后发送到我们的 WhatsApp。',sumPkg:'套餐',sumDate:'日期',sumPickup:'接送',sumPax:'人数',sumActs:'活动',sumTotalLbl:'预估总价',sumNote:'*预估 = 套餐价格 + 活动票 × 人数。',paxUnit:'{n} 人',mRoute:'路线与行程',mInc:'费用包含',mBook:'通过 WhatsApp 预订',mStopDesc:'第 {n} 站 · {t}',mDesc:'包含 {n} 个景点的行程，私人专车与资深司机。',footNav:'导航',footActs:'活动',footContact:'联系方式',wa:'WhatsApp',sendWa:'通过 WhatsApp 发送',toastErr:'请检查标红的栏目',toastOk:'已发送！正在跳转到 WhatsApp…',langChanged:'语言已切换',waHi:'你好 {name}！',waCta:'你好 {name}！我想咨询巴厘岛旅游套餐。',waInterest:'你好 {name}！我对「{pkg}」套餐感兴趣，请告知档期和详情。',waHello:'你好 {name}！我想提交预订申请。',waName:'姓名',waNumber:'WhatsApp 号码',waPkg:'套餐',waDate:'日期',waPickup:'接送',waGuests:'人数',waActs:'活动',waTotal:'预估总价',waNote:'备注',waClosing:'请确认档期与详情，谢谢！'},
+ar:{navHome:'الرئيسية',navPaket:'باقات الجولات',navAkt:'الأنشطة',navDest:'الوجهات',navLay:'الخدمات',navBook:'احجز الآن',searchWhere:'إلى أين؟',searchDur:'المدة',searchType:'نوع الرحلة',searchBtn:'ابحث عن باقة',routeLabel:'برنامج الرحلة',countDest:'{n} وجهات',countInc:'{n} خدمات',from:'يبدأ من',priceLbl:'السعر',detailBtn:'عرض البرنامج',book:'احجز',fName:'الاسم الكامل',fWa:'رقم واتساب',fDate:'تاريخ الجولة',fPax:'عدد الأشخاص',fPkg:'باقة الجولة',fArea:'منطقة الانطلاق',fAddAct:'إضافة أنشطة (اختياري)',fNote:'ملاحظات (اختياري)',phName:'مثال: أحمد',phWa:'مثال: 0812xxxxxxx',phNote:'مثال: مع أطفال، نباتي…',errName:'الاسم 3 أحرف على الأقل.',errWa:'رقم غير صالح (9–14 رقمًا).',errDate:'اختر تاريخًا من اليوم فصاعدًا.',submit:'إرسال طلب الحجز',sumTitle:'ملخص الطلب',sumSub:'راجع مرة أخيرة ثم أرسله إلى واتساب.',sumPkg:'الباقة',sumDate:'التاريخ',sumPickup:'الانطلاق',sumPax:'المشاركون',sumActs:'الأنشطة',sumTotalLbl:'التكلفة التقديرية',sumNote:'*التقدير = سعر الباقة + تذاكر الأنشطة × عدد الأشخاص.',paxUnit:'{n} أشخاص',mRoute:'المسار والبرنامج',mInc:'الخدمات المشمولة',mBook:'احجز عبر واتساب',mStopDesc:'المحطة {n} في مسار {t}',mDesc:'مسار من {n} محطات بسيارة خاصة وسائق ذي خبرة.',footNav:'التنقل',footActs:'الأنشطة',footContact:'اتصل بنا',wa:'واتساب',sendWa:'إرسال عبر واتساب',toastErr:'يرجى مراجعة الحقول المحددة بالأحمر',toastOk:'تم الإرسال! جارٍ التحويل إلى واتساب…',langChanged:'تم تغيير اللغة',waHi:'مرحبًا {name}!',waCta:'مرحبًا {name}! أود الاستفسار عن باقات الجولات في بالي.',waInterest:'مرحبًا {name}! أنا مهتم بباقة {pkg}. هل يمكن إخباري بالتوفر والتفاصيل؟',waHello:'مرحبًا {name}! أود تقديم طلب حجز.',waName:'الاسم',waNumber:'رقم واتساب',waPkg:'الباقة',waDate:'التاريخ',waPickup:'الانطلاق',waGuests:'المشاركون',waActs:'الأنشطة',waTotal:'التقدير',waNote:'ملاحظات',waClosing:'يرجى تأكيد التوفر والتفاصيل. شكرًا!'},
+tr:{navHome:'Ana Sayfa',navPaket:'Tur Paketleri',navAkt:'Aktiviteler',navDest:'Destinasyonlar',navLay:'Hizmetler',navBook:'Rezervasyon',searchWhere:'Nereye?',searchDur:'Süre',searchType:'Tur tipi',searchBtn:'Paket Ara',routeLabel:'Güzergah',countDest:'{n} destinasyon',countInc:'{n} hizmet',from:'Başlangıç',priceLbl:'Fiyat',detailBtn:'Programı Gör',book:'Rezervasyon',fName:'Ad Soyad',fWa:'WhatsApp Numarası',fDate:'Tur Tarihi',fPax:'Kişi Sayısı',fPkg:'Tur Paketi',fArea:'Alış Bölgesi',fAddAct:'Aktivite Ekle (isteğe bağlı)',fNote:'Notlar (isteğe bağlı)',phName:'örn. Putu Ayu',phWa:'örn. 0812xxxxxxx',phNote:'örn. çocuklu aile, vejetaryen…',errName:'İsim en az 3 harf olmalı.',errWa:'Geçersiz numara (9–14 hane).',errDate:'Bugünden itibaren bir tarih seçin.',submit:'Rezervasyon Talebi Gönder',sumTitle:'Rezervasyon Özeti',sumSub:"Son kez kontrol edin, ardından WhatsApp'tan gönderin.",sumPkg:'Paket',sumDate:'Tarih',sumPickup:'Alış',sumPax:'Katılımcı',sumActs:'Aktiviteler',sumTotalLbl:'Tahmini toplam',sumNote:'*Tahmin = paket fiyatı + aktivite biletleri × kişi sayısı.',paxUnit:'{n} kişi',mRoute:'Güzergah & Program',mInc:'Dahil Olanlar',mBook:"WhatsApp'tan Rezervasyon",mStopDesc:'{t} turunun {n}. durağı',mDesc:'{n} duraklı güzergah; özel araç ve deneyimli şoför ile.',footNav:'Menü',footActs:'Aktiviteler',footContact:'İletişim',wa:'WhatsApp',sendWa:"WhatsApp'tan Gönder",toastErr:'Kırmızı ile işaretlenen alanları kontrol edin',toastOk:'Talep gönderildi! WhatsApp"a yönlendiriliyorsunuz…',langChanged:'Dil değiştirildi',waHi:'Merhaba {name}!',waCta:'Merhaba {name}! Bali tur paketleriniz hakkında bilgi almak istiyorum.',waInterest:'Merhaba {name}! {pkg} paketiyle ilgileniyorum. Uygunluk ve detayları paylaşabilir misiniz?',waHello:'Merhaba {name}! Bir rezervasyon talebi oluşturmak istiyorum.',waName:'Ad',waNumber:'WhatsApp No.',waPkg:'Paket',waDate:'Tarih',waPickup:'Alış',waGuests:'Katılımcı',waActs:'Aktiviteler',waTotal:'Tahmini toplam',waNote:'Notlar',waClosing:'Uygunluk ve detayları teyit edebilir misiniz? Teşekkürler!'},
+ru:{navHome:'Главная',navPaket:'Турпакеты',navAkt:'Активности',navDest:'Направления',navLay:'Услуги',navBook:'Бронь',searchWhere:'Куда едем?',searchDur:'Длительность',searchType:'Тип поездки',searchBtn:'Найти туры',routeLabel:'Маршрут',countDest:'{n} мест',countInc:'{n} услуг',from:'От',priceLbl:'Цена',detailBtn:'Смотреть программу',book:'Бронь',fName:'Полное имя',fWa:'Номер WhatsApp',fDate:'Дата тура',fPax:'Кол-во человек',fPkg:'Турпакет',fArea:'Место подачи',fAddAct:'Добавить активности (необязательно)',fNote:'Примечания (необязательно)',phName:'напр. Putu Ayu',phWa:'напр. 0812xxxxxxx',phNote:'напр. с детьми, вегетарианец…',errName:'Имя — минимум 3 буквы.',errWa:'Неверный номер (9–14 цифр).',errDate:'Выберите дату, начиная с сегодняшней.',submit:'Отправить заявку',sumTitle:'Сводка заявки',sumSub:'Проверьте ещё раз и отправьте в WhatsApp.',sumPkg:'Пакет',sumDate:'Дата',sumPickup:'Подача',sumPax:'Участники',sumActs:'Активности',sumTotalLbl:'Примерная стоимость',sumNote:'*Оценка = цена пакета + билеты на активности × кол-во человек.',paxUnit:'{n} чел.',mRoute:'Маршрут и программа',mInc:'Что включено',mBook:'Забронировать через WhatsApp',mStopDesc:'Точка {n} маршрута {t}',mDesc:'Маршрут из {n} точек с личным авто и опытным водителем.',footNav:'Навигация',footActs:'Активности',footContact:'Контакты',wa:'WhatsApp',sendWa:'Отправить в WhatsApp',toastErr:'Проверьте поля, выделенные красным',toastOk:'Заявка отправлена! Открываем WhatsApp…',langChanged:'Язык изменён',waHi:'Привет, {name}!',waCta:'Здравствуйте, {name}! Хочу узнать про ваши туры на Бали.',waInterest:'Здравствуйте, {name}! Интересует тур {pkg}. Подскажите, пожалуйста, наличие и детали?',waHello:'Здравствуйте, {name}! Хочу оформить заявку на бронирование.',waName:'Имя',waNumber:'WhatsApp',waPkg:'Пакет',waDate:'Дата',waPickup:'Подача',waGuests:'Участники',waActs:'Активности',waTotal:'Оценка',waNote:'Примечания',waClosing:'Подтвердите, пожалуйста, наличие и детали. Спасибо!'}
+};
+
+/* Terjemahan konten — id paket/aktivitas SAMA dengan admin.html.
+   Nama stop & include (nama tempat) sengaja tidak diterjemahkan. */
+const TRANSLATIONS={
+en:{site:{footDesc:"Your Bali Travel Partner. Private tours, activity packages, car rental, airport transfer and Bali sightseeing."},
+hero:{title:"Discover Bali,\nin a different way.",desc:"10-hour private tour packages with 3–4 top destinations, plus fun activities: rafting, ATV, jungle swing, and water sport. Fully flexible to your travel style.",btn1:"View Tour Packages",btn2:"Fun Activities",stats:[{b:"4.9/5",l:"2,400+ reviews"},{b:"10 Hours",l:"private per car"},{b:"1–6 Guests",l:"plus local driver"}]},
+search:{dur:"10 Hours",type:"Private Tour"},
+sections:{paket:{label:"Tour Packages",title:"Bali Tour Packages — 3–4 Destinations per Package",desc:"Each package includes 3–4 main locations with an hour-by-hour route. Click Details for the full itinerary."},aktivitas:{label:"Adrenaline & Fun",title:"Favorite Activities in Bali",desc:"Combine with a tour package or book separately. Licensed operators with complete safety gear."},destinasi:{label:"Explore Bali",title:"Favorite Destinations"},layanan:{label:"BGT Services",title:"Everything you need for your Bali trip"},tentang:{label:"Why BGT",title:"Comfortable journeys, memorable experiences."},booking:{label:"Booking",title:"Lock in your date",desc:"Fill in the form — no upfront payment. We confirm driver availability via WhatsApp."}},
+packages:[
+{id:"ubud-kintamani",badge:"POPULAR",dur:"10 Hours",unit:"/car",desc:"Bali's classic best route: terraced rice fields, a holy water temple, a volcanic caldera, and the monkey forest."},
+{id:"sunrise-penglipuran",badge:"SUNRISE",dur:"10–11 Hours",unit:"/car",desc:"Early-morning departure: sunrise at the Batur caldera, Penglipuran traditional village, jungle swing, then a waterfall."},
+{id:"adventure",badge:"ADRENALINE",dur:"10 Hours",unit:"/person",desc:"Three thrilling activities in one day for challenge seekers — perfect for couples or teams."},
+{id:"watersport",badge:"WATER SPORT",dur:"10 Hours",unit:"/car",desc:"A fun morning on Bali's southern sea, a relaxed beach afternoon, and the kecak fire dance at Uluwatu at dusk."},
+{id:"bedugul",badge:"NATURE",dur:"10 Hours",unit:"/car",desc:"Cool mountain air, a floating temple, the iconic gate, and Bali's largest UNESCO rice terraces."},
+{id:"lempuyang",badge:"EAST BALI",dur:"11–12 Hours",unit:"/car",desc:"Journey to east Bali: the Gate of Heaven, royal water gardens, and a cliff-top bat cave temple."}],
+activities:[
+{id:"rafting",title:"Rafting (Ayung River)",dur:"±2 hours on water",unit:"/person",desc:"Raft against the grade II–III Ayung River for ±2 hours, past cliffs, river carvings, and small waterfalls. Beginner friendly."},
+{id:"atv",title:"ATV Ride",dur:"±1.5 hours",unit:"/person",desc:"Drive your own quad bike through tropical forest, shallow rivers, bamboo tunnels, and mud tracks. Single track for the brave."},
+{id:"swing",title:"Jungle Swing",dur:"±1 hour",unit:"/person",desc:"Giant swings above the Tegallalang rice terraces with green valley views. Includes bird-nest photo spots."},
+{id:"watersport",title:"Water Sport",dur:"±2 hours",unit:"/person",desc:"Three sea activities at Tanjung Benoa: parasailing, banana boat, and jet ski, with instructors and full safety gear."}],
+destinations:[{sub:"Art • Culture • Nature"},{sub:"Sunrise • Mount & Lake Batur"},{sub:"Sea temple • Sunset"},{sub:"Cliff • Kecak • Ocean"},{sub:"Kelingking • Crystal Bay"},{sub:"Lake Beratan • Ulun Danu"}],
+promo:{title:"All of Bali in one day, unhurried.",desc:"Combine a tour package with your favorite activities — morning rafting, midday swing over rice fields, sunset at Uluwatu. Our drivers help plan the route.",btn:"Plan My Trip"},
+cta:{title:"Ready to explore Bali?",desc:"Tell us your travel plans. Bali Global Trans will help you pick the best package, activities, and route.",btn:"Chat with Bali Global Trans"},
+services:[{t:"Private Tour",d:"Private journeys with a friendly driver and a comfortable vehicle."},{t:"Activity Packages",d:"Rafting, ATV, swing, and water sport with licensed operators."},{t:"Airport Transfer",d:"Pick-up and drop-off between the airport and your hotel or villa."},{t:"Custom Trip",d:"Design your own route based on your time and needs."}],
+why:[{t:"Professional Drivers",d:"Local drivers who know the routes, timing, and Bali's best spots."},{t:"Transparent Prices",d:"Package and activity prices are clearly shown before booking."},{t:"Private & Flexible",d:"No shared groups; routes and timing adjustable on the go."},{t:"Easy Booking",d:"Consult and book directly via WhatsApp, no deposit."}]},
+zh:{site:{footDesc:"您值得信赖的巴厘岛旅行伙伴。私人包车游、活动套餐、租车、机场接送及巴厘岛观光。"},
+hero:{title:"换一种方式，\n发现巴厘岛。",desc:"10 小时私人包车游套餐，含 3–4 个精华景点，再加上刺激活动：漂流、ATV、丛林秋千和水上运动。行程完全按您的节奏灵活安排。",btn1:"查看旅游套餐",btn2:"精彩活动",stats:[{b:"4.9/5",l:"2,400+ 条评价"},{b:"10 小时",l:"私家车包车"},{b:"1–6 人",l:"含当地司机"}]},
+search:{dur:"10 小时",type:"私人包车游"},
+sections:{paket:{label:"旅游套餐",title:"巴厘岛旅游套餐 — 每条线路 3–4 个景点",desc:"每条套餐包含 3–4 个主要景点，按小时规划路线。点击「详情」查看完整行程。"},aktivitas:{label:"肾上腺素与乐趣",title:"巴厘岛人气活动",desc:"可与包车游套餐搭配，也可单独预订。均由持证运营商提供，安全装备齐全。"},destinasi:{label:"探索巴厘岛",title:"人气景点"},layanan:{label:"BGT 服务",title:"巴厘岛旅行一站式服务"},tentang:{label:"为什么选择 BGT",title:"舒适旅程，难忘体验。"},booking:{label:"预订",title:"锁定您的日期",desc:"填写表格——无需预付款。我们将通过 WhatsApp 确认司机档期。"}},
+packages:[
+{id:"ubud-kintamani",badge:"热门",dur:"10 小时",unit:"/车",desc:"巴厘岛经典最佳路线：梯田、圣泉寺、火山口湖全景与圣猴森林。"},
+{id:"sunrise-penglipuran",badge:"日出",dur:"10–11 小时",unit:"/车",desc:"凌晨出发：巴图尔火山口日出、彭利普安传统村落、丛林秋千，最后游览瀑布。"},
+{id:"adventure",badge:"刺激",dur:"10 小时",unit:"/人",desc:"一天内体验三项刺激活动，适合喜欢挑战的游客——情侣或团队皆宜。"},
+{id:"watersport",badge:"水上运动",dur:"10 小时",unit:"/车",desc:"上午在巴厘岛南部海域玩水，下午海滩休闲，黄昏在乌鲁瓦图欣赏克查克火舞。"},
+{id:"bedugul",badge:"自然",dur:"10 小时",unit:"/车",desc:"清凉山间空气、水上寺庙、标志性大门，以及巴厘岛最大的联合国教科文组织梯田。"},
+{id:"lempuyang",badge:"东巴厘",dur:"11–12 小时",unit:"/车",desc:"东巴厘岛之旅：天空之门、皇家水景园林，以及悬崖上的蝙蝠洞寺庙。"}],
+activities:[
+{id:"rafting",title:"阿勇河漂流",dur:"水上约 2 小时",unit:"/人",desc:"在 II–III 级的阿勇河上漂流约 2 小时，途经悬崖、河壁石刻与小瀑布。适合初学者。"},
+{id:"atv",title:"ATV 越野",dur:"约 1.5 小时",unit:"/人",desc:"亲自驾驶沙滩车穿越热带雨林、浅滩、竹隧道与泥地赛道。另有单轨赛道供挑战者选择。"},
+{id:"swing",title:"丛林秋千",dur:"约 1 小时",unit:"/人",desc:"在德格拉朗梯田上空荡巨型秋千，俯瞰绿色山谷，含鸟巢拍照点。"},
+{id:"watersport",title:"水上运动",dur:"约 2 小时",unit:"/人",desc:"丹戎贝诺瓦三项海上活动：拖曳伞、香蕉船与摩托艇，含教练与全套安全装备。"}],
+destinations:[{sub:"艺术 • 文化 • 自然"},{sub:"日出 • 巴图尔火山与湖泊"},{sub:"海神庙 • 日落"},{sub:"悬崖 • 克查克舞 • 海景"},{sub:"精灵坠崖 • 水晶湾"},{sub:"贝拉坦湖 • 乌伦达努寺"}],
+promo:{title:"一天玩转巴厘岛，不慌不忙。",desc:"将包车游与您喜爱的活动相结合——清晨漂流、午后梯田秋千、黄昏乌鲁瓦图日落。司机将协助您规划路线。",btn:"定制我的行程"},
+cta:{title:"准备好探索巴厘岛了吗？",desc:"告诉我们您的旅行计划，Bali Global Trans 将为您挑选最合适的套餐、活动与路线。",btn:"联系 Bali Global Trans"},
+services:[{t:"私人包车游",d:"私家车 + 贴心司机，舒适出行。"},{t:"活动套餐",d:"漂流、ATV、秋千与水上运动，均由持证运营商提供。"},{t:"机场接送",d:"机场与酒店/别墅之间的准时接送。"},{t:"定制行程",d:"按您的时间和需求自由设计路线。"}],
+why:[{t:"专业司机",d:"熟悉路线、时间安排与巴厘岛最佳景点的当地司机。"},{t:"价格透明",d:"套餐与活动价格在下单前清晰展示。"},{t:"私家 & 灵活",d:"不拼团；路线与时间可随时调整。"},{t:"轻松预订",d:"直接通过 WhatsApp 咨询与预订，无需订金。"}]},
+ar:{site:{footDesc:"شريكك للسفر في بالي. جولات خاصة، باقات أنشطة، تأجير سيارات، نقل من المطار وجولات سياحية في بالي."},
+hero:{title:"اكتشف بالي،\nبطريقة مختلفة.",desc:"باقات جولات خاصة لمدة 10 ساعات تشمل 3–4 وجهات رئيسية، بالإضافة إلى أنشطة ممتعة: رفتنغ ودراجات ATV وأرجوحة الغابة والرياضات المائية — كل ذلك مرن بما يناسب أسلوب سفرك.",btn1:"استعرض الباقات",btn2:"أنشطة ممتعة",stats:[{b:"4.9/5",l:"أكثر من 2400 تقييم"},{b:"10 ساعات",l:"خاص لكل سيارة"},{b:"1–6 أشخاص",l:"مع سائق محلي"}]},
+search:{dur:"10 ساعات",type:"جولة خاصة"},
+sections:{paket:{label:"باقات الجولات",title:"باقات جولات بالي — 3–4 وجهات لكل باقة",desc:"كل باقة تشمل 3–4 مواقع رئيسية ببرنامج ساعة بساعة. اضغط التفاصيل لعرض البرنامج الكامل."},aktivitas:{label:"إثارة ومتعة",title:"الأنشطة المفضلة في بالي",desc:"يمكن دمجها مع باقة الجولة أو حجزها منفصلة. مشغّلون مرخّصون ومعدات سلامة كاملة."},destinasi:{label:"استكشف بالي",title:"الوجهات المفضلة"},layanan:{label:"خدمات BGT",title:"كل ما تحتاجه لرحلتك في بالي"},tentang:{label:"لماذا BGT",title:"رحلات مريحة وتجارب لا تُنسى."},booking:{label:"الحجز",title:"احجز تاريخك",desc:"املأ النموذج — بدون دفع مقدم. نؤكد توفر السائق عبر واتساب."}},
+packages:[
+{id:"ubud-kintamani",badge:"الأكثر طلبًا",dur:"10 ساعات",unit:"/سيارة",desc:"أفضل ruta كلاسيكية في بالي: مدرجات الأرز، معبد المياه المقدسة، كالديرا بركانية، وغابة القرود."},
+{id:"sunrise-penglipuran",badge:"الشروق",dur:"10–11 ساعة",unit:"/سيارة",desc:"انطلاق قبل الفجر: شروق الشمس عند كالديرا باتور، قرية بنغليبوران التقليدية، الأرجوحة، ثم شلال."},
+{id:"adventure",badge:"إثارة",dur:"10 ساعات",unit:"/شخص",desc:"ثلاث أنشطة مثيرة في يوم واحد لمحبي التحدي — مثالية للأزواج أو المجموعات."},
+{id:"watersport",badge:"رياضات مائية",dur:"10 ساعات",unit:"/سيارة",desc:"صباح ممتع في بحر جنوب بالي، وبعد ظهر هادئ على الشاطئ، ورقصة كيتشاك النارية في أولواتو عند الغروب."},
+{id:"bedugul",badge:"طبيعة",dur:"10 ساعات",unit:"/سيارة",desc:"هواء جبلي بارد، معبد عائم، بوابة أيقونية، وأوسع مدرجات أرز مصنفة من اليونسكو في بالي."},
+{id:"lempuyang",badge:"شرق بالي",dur:"11–12 ساعة",unit:"/سيارة",desc:"رحلة إلى شرق بالي: بوابة السماء، حدائق مائية ملكية، ومعبد كهف الخفافيش على الجرف."}],
+activities:[
+{id:"rafting",title:"رفتنغ (نهر أيونغ)",dur:"± ساعتان على الماء",unit:"/شخص",desc:"تجديف ضد تيار نهر أيونغ من الفئة II–III لمدة ± ساعتين بين المنحدرات والنقوش النهرية والشلالات الصغيرة. مناسب للمبتدئين."},
+{id:"atv",title:"دراجات ATV",dur:"± 1.5 ساعة",unit:"/شخص",desc:"قُد دراجة الربع بنفسك عبر الغابة الاستوائية والأنهار الضحلة وأنفاق الخيزران ومسارات الطين. مسار فردي للجسورين."},
+{id:"swing",title:"أرجوحة الغابة",dur:"± ساعة",unit:"/شخص",desc:"أرجوحة عملاقة فوق مدرجات تيغالالانغ مع إطلالة الوادي الأخضر، وتشمل مواقع تصوير «عش الطيور»."},
+{id:"watersport",title:"رياضات مائية",dur:"± ساعتان",unit:"/شخص",desc:"ثلاث أنشطة بحرية في تانجونغ بينوا: باراسيلينغ وقارب موز وجت سكي، مع مدربين ومعدات سلامة كاملة."}],
+destinations:[{sub:"فنون • ثقافة • طبيعة"},{sub:"شروق • جبل وبحيرة باتور"},{sub:"معبد البحر • غروب"},{sub:"جرف • كيتشاك • المحيط"},{sub:"كيلينكينغ • كريستال باي"},{sub:"بحيرة بيراتان • أولون دانو"}],
+promo:{title:"بالي كلها في يوم واحد، بلا استعجال.",desc:"اجمع باقة الجولة مع أنشطتك المفضلة — رفتنغ صباحًا، أرجوحة فوق المدرجات ظهرًا، وغروب في أولواتو. سائقونا يساعدونك في تخطيط المسار.",btn:"خطط رحلتي"},
+cta:{title:"هل أنت مستعد لاستكشاف بالي؟",desc:"أخبرنا بخطط رحلتك، وستساعدك Bali Global Trans في اختيار الباقة والأنشطة والمسار الأنسب.",btn:"تحدث مع Bali Global Trans"},
+services:[{t:"جولة خاصة",d:"رحلات خاصة مع سائق ودود ومركبة مريحة."},{t:"باقات الأنشطة",d:"رفتنغ وATV وأرجوحة ورياضات مائية مع مشغلين مرخصين."},{t:"نقل المطار",d:"استلام وتوصيل بين المطار والفندق أو الفيلا."},{t:"رحلة مخصصة",d:"صمّم مسارك حسب وقتك واحتياجاتك."}],
+why:[{t:"سائقون محترفون",d:"سائقون محليون يعرفون المسارات والتوقيتات وأفضل مواقع بالي."},{t:"أسعار شفافة",d:"أسعار الباقات والأنشطة معروضة بوضوح قبل الحجز."},{t:"خاص ومرن",d:"بدون مجموعات مشتركة؛ يمكن تعديل المسار والتوقيت أثناء الطريق."},{t:"حجز سهل",d:"استشارة وحجز مباشر عبر واتساب، بدون عربون."}]},
+tr:{site:{footDesc:"Bali seyahat partneriniz. Özel turlar, aktivite paketleri, araç kiralama, havalimanı transferi ve Bali gezileri."},
+hero:{title:"Bali'yi\nfarklı bir şekilde keşfedin.",desc:"3–4 öne çıkan destinasyonlu 10 saatlik özel tur paketleri; artı eğlenceli aktiviteler: rafting, ATV, orman salıncağı ve su sporu. Tamamen sizin seyahat tarzınıza göre esnek.",btn1:"Tur Paketlerini Gör",btn2:"Eğlenceli Aktiviteler",stats:[{b:"4.9/5",l:"2.400+ yorum"},{b:"10 Saat",l:"araç başına özel"},{b:"1–6 Kişi",l:"yerel şoför dahil"}]},
+search:{dur:"10 Saat",type:"Özel Tur"},
+sections:{paket:{label:"Tur Paketleri",title:"Bali Tur Paketleri — Paket Başına 3–4 Destinasyon",desc:"Her paket saat saat güzergahla 3–4 ana lokasyon içerir. Tam program için Detay'a tıklayın."},aktivitas:{label:"Adrenalin & Eğlence",title:"Bali'nin Favori Aktiviteleri",desc:"Tur paketiyle birleştirilebilir veya ayrı rezerve edilebilir. Lisanslı operatörler ve tam güvenlik ekipmanı."},destinasi:{label:"Bali'yi Keşfet",title:"Favori Destinasyonlar"},layanan:{label:"BGT Hizmetleri",title:"Bali tatiliniz için ihtiyacınız olan her şey"},tentang:{label:"Neden BGT",title:"Konforlu yolculuk, unutulmaz deneyim."},booking:{label:"Rezervasyon",title:"Tarihinizi ayırtın",desc:"Formu doldurun — peşin ödeme yok. Şoför uygunluğunu WhatsApp'tan teyit ediyoruz."}},
+packages:[
+{id:"ubud-kintamani",badge:"POPÜLER",dur:"10 Saat",unit:"/araç",desc:"Bali'nin klasik en iyi güzergahı: teraslı pirinç tarlaları, kutsal su tapınağı, volkanik kaldera ve maymun ormanı."},
+{id:"sunrise-penglipuran",badge:"GÜN DOĞUMU",dur:"10–11 Saat",unit:"/araç",desc:"Erken çıkışlı: Batur kalderasında gün doğumu, Penglipuran geleneksel köyü, salıncak ve şelale."},
+{id:"adventure",badge:"ADRENALİN",dur:"10 Saat",unit:"/kişi",desc:"Maceraseverler için günde 3 aktivite — çiftler veya ekipler için ideal."},
+{id:"watersport",badge:"SU SPORU",dur:"10 Saat",unit:"/araç",desc:"Bali'nin güney denizinde eğlenceli bir sabah, sakin bir plaj öğleden sonrası ve alacakaranlıkta Uluwatu'da kecak ateş dansı."},
+{id:"bedugul",badge:"DOĞA",dur:"10 Saat",unit:"/araç",desc:"Serin dağ havası, su üstündeki tapınak, ikonik kapı ve Bali'nin en büyük UNESCO pirinç terasları."},
+{id:"lempuyang",badge:"DOĞU BALİ",dur:"11–12 Saat",unit:"/araç",desc:"Doğu Bali yolculuğu: Cennet Kapısı, kraliyet su bahçeleri ve kayalık uçtaki yarasa mağarası tapınağı."}],
+activities:[
+{id:"rafting",title:"Rafting (Ayung Nehri)",dur:"suda ±2 saat",unit:"/kişi",desc:"II–III seviye Ayung Nehri'nde ±2 saat rafting; kayalıklar, nehir oymaları ve küçük şelaleler arasında. Yeni başlayanlara uygun."},
+{id:"atv",title:"ATV Turu",dur:"±1,5 saat",unit:"/kişi",desc:"Kendi ATV'nizi sürün: tropik orman, sığ nehirler, bambu tünelleri ve çamur pistleri. Cesurlar için single track var."},
+{id:"swing",title:"Orman Salıncağı",dur:"±1 saat",unit:"/kişi",desc:"Tegallalang pirinç terasları üzerinde dev salıncaklar, yeşil vadi manzarası ve kuş yuvası foto noktaları dahil."},
+{id:"watersport",title:"Su Sporları",dur:"±2 saat",unit:"/kişi",desc:"Tanjung Benoa'da 3 deniz aktivitesi: parasailing, muz tekne ve jet ski; eğitmen ve tam güvenlik ekipmanıyla."}],
+destinations:[{sub:"Sanat • Kültür • Doğa"},{sub:"Gün doğumu • Batur Dağı ve Gölü"},{sub:"Deniz tapınağı • Gün batımı"},{sub:"Uçurum • Kecak • Okyanus"},{sub:"Kelingking • Crystal Bay"},{sub:"Beratan Gölü • Ulun Danu"}],
+promo:{title:"Bali'nin tamamı bir günde, acele etmeden.",desc:"Tur paketini favori aktivitelerinizle birleştirin — sabah rafting, öğlen pirinç tarlalarında salıncak, akşamüstü Uluwatu'da gün batımı. Şoförlerimiz rotayı planlamanıza yardım eder.",btn:"Turumu Planla"},
+cta:{title:"Bali'yi keşfetmeye hazır mısınız?",desc:"Seyahat planınızı anlatın; Bali Global Trans size en uygun paketi, aktiviteleri ve rotayı seçmede yardım etsin.",btn:"Bali Global Trans ile Yazış"},
+services:[{t:"Özel Tur",d:"Samimi şoför ve konforlu araçla özel yolculuklar."},{t:"Aktivite Paketleri",d:"Rafting, ATV, salıncak ve su sporu — lisanslı operatörlerle."},{t:"Havalimanı Transferi",d:"Havalimanı ile otel/villa arasında karşılama ve bırakma."},{t:"Özel Tur",d:"Kendi zamanınıza ve ihtiyaçlarınıza göre rota tasarlayın."}],
+why:[{t:"Profesyonel Şoförler",d:"Rotaları, zamanlamayı ve Bali'nin en iyi noktalarını bilen yerel şoförler."},{t:"Şeffaf Fiyatlar",d:"Paket ve aktivite fiyatları rezervasyondan önce net gösterilir."},{t:"Özel & Esnek",d:"Ortak gruplar yok; rota ve saatler yolda ayarlanabilir."},{t:"Kolay Rezervasyon",d:"Doğrudan WhatsApp'tan danışın ve rezerve edin, depozito yok."}]},
+ru:{site:{footDesc:"Ваш партнёр по путешествиям на Бали. Частные туры, пакеты активностей, аренда авто, трансфер из аэропорта и экскурсии по Бали."},
+hero:{title:"Откройте Бали\nпо-новому.",desc:"Пакеты частных туров на 10 часов с 3–4 лучшими точками, плюс яркие активности: рафтинг, ATV, качели в джунглях и водные виды спорта. Всё гибко под ваш стиль путешествия.",btn1:"Смотреть туры",btn2:"Весёлые активности",stats:[{b:"4.9/5",l:"2 400+ отзывов"},{b:"10 часов",l:"частно на авто"},{b:"1–6 человек",l:"плюс местный водитель"}]},
+search:{dur:"10 часов",type:"Частный тур"},
+sections:{paket:{label:"Турпакеты",title:"Туры на Бали — 3–4 точки в каждом пакете",desc:"Каждый пакет включает 3–4 главных места с почасовым маршрутом. Нажмите «Подробнее» для полной программы."},aktivitas:{label:"Адреналин и веселье",title:"Популярные активности на Бали",desc:"Можно совместить с туром или забронировать отдельно. Лицензированные операторы и полный комплект безопасности."},destinasi:{label:"Исследуйте Бали",title:"Любимые направления"},layanan:{label:"Услуги BGT",title:"Всё необходимое для вашего путешествия"},tentang:{label:"Почему BGT",title:"Комфортные поездки, незабываемые впечатления."},booking:{label:"Бронирование",title:"Забронируйте свою дату",desc:"Заполните форму — без предоплаты. Подтверждаем наличие водителя через WhatsApp."}},
+packages:[
+{id:"ubud-kintamani",badge:"ПОПУЛЯРНО",dur:"10 ч",unit:"/авто",desc:"Классический лучший маршрут Бали: рисовые террасы, храм святой воды, вулканическая кальдера и лес обезьян."},
+{id:"sunrise-penglipuran",badge:"РАССВЕТ",dur:"10–11 ч",unit:"/авто",desc:"Ранний выезд: рассвет в кальдере Батур, традиционная деревня Пенглипуран, качели и водопад."},
+{id:"adventure",badge:"АДРЕНАЛИН",dur:"10 ч",unit:"/чел.",desc:"Три яркие активности за один день для любителей испытаний — идеально для пар и команд."},
+{id:"watersport",badge:"ВОДНЫЙ СПОРТ",dur:"10 ч",unit:"/авто",desc:"Весёлое утро в южном море Бали, спокойный день на пляже и танец кечак с огнём на Улувату на закате."},
+{id:"bedugul",badge:"ПРИРОДА",dur:"10 ч",unit:"/авто",desc:"Прохладный горный воздух, храм на воде, знаменитые ворота и крупнейшие террасы ЮНЕСКО на Бали."},
+{id:"lempuyang",badge:"ВОСТОК БАЛИ",dur:"11–12 ч",unit:"/авто",desc:"Поездка на восток Бали: Врата Небес, королевские водные сады и храм в пещере летучих мышей на утёсе."}],
+activities:[
+{id:"rafting",title:"Рафтинг (река Аюнг)",dur:"±2 часа на воде",unit:"/чел.",desc:"Сплав по реке Аюнг II–III категории около 2 часов — мимо скал, речных барельефов и маленьких водопадов. Подходит новичкам."},
+{id:"atv",title:"Поездка на ATV",dur:"±1,5 часа",unit:"/чел.",desc:"Самостоятельно ведите квадроцикл через тропический лес, мелкие реки, бамбуковые туннели и грязевые трассы. Есть single track для смелых."},
+{id:"swing",title:"Качели в джунглях",dur:"±1 час",unit:"/чел.",desc:"Гигантские качели над террасами Тегаллаланг с видом на зелёную долину. Включает фотозоны «птичьи гнёзда»."},
+{id:"watersport",title:"Водные виды спорта",dur:"±2 часа",unit:"/чел.",desc:"Три морские активности в Танджунг-Беноа: парасейлинг, банан и гидроцикл — с инструкторами и полным снаряжением."}],
+destinations:[{sub:"Искусство • Культура • Природа"},{sub:"Рассвет • Вулкан и озеро Батур"},{sub:"Храм в море • Закат"},{sub:"Утёс • Кечак • Океан"},{sub:"Келингкинг • Кристал Бэй"},{sub:"Озеро Бератан • Улун Дану"}],
+promo:{title:"Весь Бали за один день, без спешки.",desc:"Совместите тур с любимыми активностями — утром рафтинг, днём качели над рисовыми полями, на закате Улувату. Водители помогут составить маршрут.",btn:"Спланировать поездку"},
+cta:{title:"Готовы исследовать Бали?",desc:"Расскажите о своих планах — Bali Global Trans поможет выбрать самый подходящий пакет, активности и маршрут.",btn:"Написать Bali Global Trans"},
+services:[{t:"Частный тур",d:"Частные поездки с приветливым водителем и комфортным авто."},{t:"Пакеты активностей",d:"Рафтинг, ATV, качели и водный спорт с лицензированными операторами."},{t:"Трансфер из аэропорта",d:"Встреча и проводы между аэропортом и отелем или виллой."},{t:"Индивидуальный тур",d:"Составьте маршрут под своё время и потребности."}],
+why:[{t:"Профессиональные водители",d:"Местные водители, знающие маршруты, тайминг и лучшие точки Бали."},{t:"Прозрачные цены",d:"Цены пакетов и активностей ясно показаны до бронирования."},{t:"Частно и гибко",d:"Без общих групп; маршрут и время можно менять в пути."},{t:"Простое бронирование",d:"Консультация и бронь прямо в WhatsApp, без депозита."}]}
+};
+
+function mergeDeep(base,over){
+  if(over===undefined||over===null)return base;
+  if(Array.isArray(base)){
+    if(!Array.isArray(over))return over;
+    return base.map((b,i)=>{let o=over[i];
+      if(b&&typeof b==='object'&&!Array.isArray(b)&&b.id){const m=over.find(x=>x&&x.id===b.id);if(m)o=m;}
+      return mergeDeep(b,o);});}
+  if(typeof base==='object'&&typeof over==='object'&&!Array.isArray(over)){
+    const r=Object.assign({},base);
+    for(const k in over)r[k]=mergeDeep(base?base[k]:undefined,over[k]);
+    return r;}
+  return over;}
+function DC(){const t=TRANSLATIONS[LANG];return t?mergeDeep(CFG,t):CFG;}
+function getUI(){return Object.assign({},UI.id,UI[LANG]||{});}
+function setLang(l){LANG=(TRANSLATIONS[l]||l==='id')?l:'id';try{localStorage.setItem('bgt_lang',LANG);}catch(e){}
+  const sel=$('#langSel');if(sel)sel.value=LANG;
+  renderAll();toast(getUI().langChanged);}
+function applyI18n(){const U=getUI();
+  document.documentElement.lang=LANG;document.documentElement.dir=(LANG==='ar')?'rtl':'ltr';
+  document.querySelectorAll('[data-i18n]').forEach(el=>{const v=U[el.getAttribute('data-i18n')];if(v!=null)el.textContent=v;});
+  document.querySelectorAll('[data-i18n-ph]').forEach(el=>{const v=U[el.getAttribute('data-i18n-ph')];if(v!=null)el.placeholder=v;});}
 
 /* ===== UTIL ===== */
 const $=s=>document.querySelector(s);
 function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
 function rupiah(n){return 'Rp'+Number(n||0).toLocaleString('id-ID');}
-function waLink(t){return 'https://wa.me/'+CFG.site.wa+'?text='+encodeURIComponent(t);}
+function waLink(t){return 'https://wa.me/'+(CFG.site&&CFG.site.wa?CFG.site.wa:'')+'?text='+encodeURIComponent(t);}
 function toast(m){const t=document.createElement('div');t.className='toast';t.innerHTML='<svg class="ic" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>'+esc(m)+'</span>';$('#toasts').appendChild(t);setTimeout(()=>t.remove(),2600);}
 function goTo(id){document.getElementById(id).scrollIntoView({behavior:'smooth'});}
 function skyPh(name){const svg="<svg xmlns='http://www.w3.org/2000/svg' width='800' height='520'><rect width='800' height='520' fill='#dcecf7'/><text x='400' y='265' text-anchor='middle' font-family='Arial' font-size='22' font-weight='bold' fill='#7d95a5'>"+(name||'Bali')+"</text></svg>";return 'data:image/svg+xml;charset=UTF-8,'+encodeURIComponent(svg);}
 
-/* ===== ★ PUSTAKA IKON SVG (gaya garis profesional — bukan emoji) ★ ===== */
+/* ===== PUSTAKA IKON SVG ===== */
 const ICON={
 menu:'<line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>',
 close:'<line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>',
@@ -488,14 +638,13 @@ pin:'<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" c
 clock:'<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>',
 check:'<polyline points="20 6 9 17 4 12"/>',
 star:'<path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>',
-arrow:'<line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>',
 mail:'<rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/>',
 activity:'<path d="M22 12h-4l-3 9L9 3l-3 9H2"/>',
 waves:'<path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/>',
 bike:'<circle cx="18.5" cy="17.5" r="3.5"/><circle cx="5.5" cy="17.5" r="3.5"/><circle cx="15" cy="5" r="1"/><path d="M12 17.5V14l-3-3 4-3 2 3h2"/>',
 tree:'<path d="m17 14 3 3.3a1 1 0 0 1-.7 1.7H4.7a1 1 0 0 1-.7-1.7L7 14h-.3a1 1 0 0 1-.7-1.7L9 9h-.2A1 1 0 0 1 8 7.3L12 3l4 4.3a1 1 0 0 1-.8 1.7H15l3 3.3a1 1 0 0 1-.7 1.7H17Z"/><path d="M12 22v-3"/>',
 wind:'<path d="M17.7 7.7a2.5 2.5 0 1 1 1.8 4.3H2"/><path d="M9.6 4.6A2 2 0 1 1 11 8H2"/><path d="M12.6 19.4A2 2 0 1 0 14 16H2"/>',
-wa:'<path fill="currentColor" stroke="none" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.297-.497.1-.198.05-.371-.025-.52-.074-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>'};
+wa:'<path fill="currentColor" stroke="none" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.297-.497.1-.198.05-.371-.025-.52-.074-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.89-11.893a11.821 11.821 0 00-3.48-8.413z"/>'};
 function ico(n,s){s=s||14;return '<svg class="ic" width="'+s+'" height="'+s+'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+(ICON[n]||ICON.activity)+'</svg>';}
 function actIcon(a){const id=String(a.id||'').toLowerCase();
  if(id.indexOf('raft')>-1||a.emoji==='🚣')return'waves';
@@ -538,132 +687,189 @@ document.querySelectorAll('#nav a').forEach(a=>a.addEventListener('click',()=>{c
 
 /* ===== RENDER ===== */
 function stars(r){const n=Math.round(parseFloat(r)||5);return '★'.repeat(n)+'☆'.repeat(5-n);}
+function stopKey(p,s,j){return 'pkg.'+p.id+'.'+(s.sid||('stop'+j));} /* ★ format kunci sama dgn admin (sid) ★ */
 function renderAll(){
-    const c=CFG;
+    const c=DC();const U=getUI();
+    if(!c||!c.site||!c.hero)return;
     document.title=c.site.name+' | Paket Tour, Aktivitas & Water Sport Bali';
-    $('#siteName').textContent=c.site.name;$('#siteSub').textContent=c.site.sub;
-    if(c.logo.src)$('#logoImg').src=c.logo.src;
+    $('#siteName').textContent=c.site.name;$('#siteSub').textContent=c.site.sub||'';
+    $('#logoImg').src=(c.logo&&c.logo.src)||(c.site&&c.site.logo&&c.site.logo.src)||'512B.png';
     $('#heroSmall').textContent=c.hero.small;
     $('#heroTitle').innerHTML=esc(c.hero.title).replace(/\n/g,'<br>');
     $('#heroDesc').textContent=c.hero.desc;
     $('#heroBtn1').textContent=c.hero.btn1;$('#heroBtn2').textContent=c.hero.btn2;
-    $('#heroStats').innerHTML=c.hero.stats.map(s=>'<div class="hstat"><b>'+esc(s.b)+'</b>'+esc(s.l)+'</div>').join('');
+    $('#heroStats').innerHTML=(c.hero.stats||[]).map(s=>'<div class="hstat"><b>'+esc(s.b)+'</b>'+esc(s.l)+'</div>').join('');
     setImage($('#heroImg'),c.imgHero,'hero');
     $('#sWhere').textContent=c.search.where;$('#sDur').textContent=c.search.dur;$('#sType').textContent=c.search.type;
-    $('#pLabel').textContent=c.sections.paket.label;$('#pTitle').textContent=c.sections.paket.title;$('#pDesc').textContent=c.sections.paket.desc;
-    $('#aLabel').textContent=c.sections.aktivitas.label;$('#aTitle').textContent=c.sections.aktivitas.title;$('#aDesc').textContent=c.sections.aktivitas.desc;
+    $('#pLabel').textContent=c.sections.paket.label;$('#pTitle').textContent=c.sections.paket.title;$('#pDesc').textContent=c.sections.paket.desc||'';
+    $('#aLabel').textContent=c.sections.aktivitas.label;$('#aTitle').textContent=c.sections.aktivitas.title;$('#aDesc').textContent=c.sections.aktivitas.desc||'';
     $('#dLabel').textContent=c.sections.destinasi.label;$('#dTitle').textContent=c.sections.destinasi.title;
     $('#lLabel').textContent=c.sections.layanan.label;$('#lTitle').textContent=c.sections.layanan.title;
     $('#wLabel').textContent=c.sections.tentang.label;$('#wTitle').textContent=c.sections.tentang.title;
-    $('#bLabel').textContent=c.sections.booking.label;$('#bTitle').textContent=c.sections.booking.title;$('#bDesc').textContent=c.sections.booking.desc;
+    $('#bLabel').textContent=c.sections.booking.label;$('#bTitle').textContent=c.sections.booking.title;$('#bDesc').textContent=c.sections.booking.desc||'';
     /* paket */
-    $('#packageGrid').innerHTML=c.packages.map(p=>{
-        const stops=p.stops.slice(0,4).map((s,j)=>'<div class="stop"><div class="stop-img"><img data-stop="'+p.id+'-'+j+'" alt="'+esc(s.name)+'" loading="lazy" decoding="async"></div><div><div class="stop-name">'+esc(s.name)+'</div><div class="stop-time">'+esc(s.t)+'</div></div></div>').join('');
-        return '<article class="package-card"><div class="package-image">'+(p.badge?'<span class="badge">'+esc(p.badge)+'</span>':'')+'<img data-pkg="'+esc(p.id)+'" alt="'+esc(p.title)+'" loading="lazy" decoding="async"></div><div class="package-body"><div class="package-location">'+esc(p.location)+'</div><h3 class="package-title">'+esc(p.title)+'</h3><div class="rating"><span class="stars">'+stars(p.rating)+'</span><span>'+esc(p.rating)+' • '+esc(p.dur)+'</span></div><div class="stops-label">Rute Perjalanan</div>'+stops+'<div class="package-info"><span>'+ico('pin',13)+p.stops.length+' destinasi</span><span>'+ico('clock',13)+esc(p.dur)+'</span><span>'+ico('check',13)+p.include.length+' fasilitas</span></div><div class="package-bottom"><div><span class="price-label">Mulai dari</span><span class="price">'+rupiah(p.price)+'<small>'+esc(p.unit)+'</small></span></div><button class="detail-btn" onclick="openDetail(\''+esc(p.id)+'\')">Detail Itinerary</button></div></div></article>';}).join('');
-    c.packages.forEach(p=>{setImage(document.querySelector('img[data-pkg="'+p.id+'"]'),p.main,'pkg.'+p.id+'.main');
-        p.stops.forEach((s,j)=>setImage(document.querySelector('img[data-stop="'+p.id+'-'+j+'"]'),s.img,'pkg.'+p.id+'.stop'+j));});
+    $('#packageGrid').innerHTML=(c.packages||[]).map(p=>{
+        const stops=(p.stops||[]).slice(0,4).map((s,j)=>'<div class="stop"><div class="stop-img"><img data-stop="'+stopKey(p,s,j)+'" alt="'+esc(s.name)+'" loading="lazy" decoding="async"></div><div><div class="stop-name">'+esc(s.name)+'</div><div class="stop-time">'+esc(s.t)+'</div></div></div>').join('');
+        return '<article class="package-card"><div class="package-image">'+(p.badge?'<span class="badge">'+esc(p.badge)+'</span>':'')+'<img data-pkg="'+esc(p.id)+'" alt="'+esc(p.title)+'" loading="lazy" decoding="async"></div><div class="package-body"><div class="package-location">'+esc(p.location||'')+'</div><h3 class="package-title">'+esc(p.title)+'</h3><div class="rating"><span class="stars">'+stars(p.rating)+'</span><span>'+esc(p.rating||'')+' • '+esc(p.dur||'')+'</span></div><div class="stops-label">'+U.routeLabel+'</div>'+stops+'<div class="package-info"><span>'+ico('pin',13)+U.countDest.replace('{n}',(p.stops||[]).length)+'</span><span>'+ico('clock',13)+esc(p.dur||'')+'</span><span>'+ico('check',13)+U.countInc.replace('{n}',(p.include||[]).length)+'</span></div><div class="package-bottom"><div><span class="price-label">'+U.from+'</span><span class="price">'+rupiah(p.price)+'<small>'+esc(p.unit||'')+'</small></span></div><button class="detail-btn" onclick="openDetail(\''+esc(p.id)+'\')">'+U.detailBtn+'</button></div></div></article>';}).join('');
+    (c.packages||[]).forEach(p=>{setImage(document.querySelector('img[data-pkg="'+p.id+'"]'),p.main,'pkg.'+p.id+'.main');
+        (p.stops||[]).forEach((s,j)=>setImage(document.querySelector('img[data-stop="'+stopKey(p,s,j)+'"]'),s.img,stopKey(p,s,j)));});
     /* aktivitas */
-    $('#activityGrid').innerHTML=c.activities.map(a=>'<article class="activity-card"><div class="activity-image"><span class="act-ico">'+ico(actIcon(a),19)+'</span><img data-act="'+esc(a.id)+'" alt="'+esc(a.title)+'" loading="lazy" decoding="async"></div><div class="activity-body"><h3 class="activity-title">'+esc(a.title)+'</h3><p class="activity-desc">'+esc(a.desc)+'</p><div class="act-chips"><span class="act-chip">'+ico('pin',12)+esc(a.loc)+'</span><span class="act-chip">'+ico('clock',12)+esc(a.dur)+'</span></div><div class="act-bottom"><div><span class="price-label">Harga</span><span class="price">'+rupiah(a.price)+'<small>'+esc(a.unit)+'</small></span></div><a class="act-book" href="#booking" onclick="preselectActivity(\''+esc(a.id)+'\')">Booking</a></div></div></article>').join('');
-    c.activities.forEach(a=>setImage(document.querySelector('img[data-act="'+a.id+'"]'),a.img,'act.'+a.id));
+    $('#activityGrid').innerHTML=(c.activities||[]).map(a=>'<article class="activity-card"><div class="activity-image"><span class="act-ico">'+ico(actIcon(a),19)+'</span><img data-act="'+esc(a.id)+'" alt="'+esc(a.title)+'" loading="lazy" decoding="async"></div><div class="activity-body"><h3 class="activity-title">'+esc(a.title)+'</h3><p class="activity-desc">'+esc(a.desc||'')+'</p><div class="act-chips"><span class="act-chip">'+ico('pin',12)+esc(a.loc||'')+'</span><span class="act-chip">'+ico('clock',12)+esc(a.dur||'')+'</span></div><div class="act-bottom"><div><span class="price-label">'+U.priceLbl+'</span><span class="price">'+rupiah(a.price)+'<small>'+esc(a.unit||'')+'</small></span></div><a class="act-book" href="#booking" onclick="preselectActivity(\''+esc(a.id)+'\')">'+U.book+'</a></div></div></article>').join('');
+    (c.activities||[]).forEach(a=>setImage(document.querySelector('img[data-act="'+a.id+'"]'),a.img,'act.'+a.id));
     /* destinasi */
-    $('#destGrid').innerHTML=c.destinations.map((d,i)=>'<div class="destination"><img data-dest="'+i+'" alt="'+esc(d.name)+'" loading="lazy" decoding="async"><div class="destination-overlay"><div><div class="destination-name">'+esc(d.name)+'</div><div class="destination-small">'+esc(d.sub)+'</div></div></div></div>').join('');
-    c.destinations.forEach((d,i)=>setImage(document.querySelector('img[data-dest="'+i+'"]'),d.img,'dest.'+i));
+    $('#destGrid').innerHTML=(c.destinations||[]).map((d,i)=>'<div class="destination"><img data-dest="'+i+'" alt="'+esc(d.name)+'" loading="lazy" decoding="async"><div class="destination-overlay"><div><div class="destination-name">'+esc(d.name)+'</div><div class="destination-small">'+esc(d.sub||'')+'</div></div></div></div>').join('');
+    (c.destinations||[]).forEach((d,i)=>setImage(document.querySelector('img[data-dest="'+i+'"]'),d.img,'dest.'+i));
     /* promo */
     $('#promoSmall').textContent=c.promo.small;$('#promoTitle').textContent=c.promo.title;$('#promoDesc').textContent=c.promo.desc;$('#promoBtn').textContent=c.promo.btn;
     setImage($('#promoImg'),c.imgPromo,'promo');
     /* layanan & why */
-    $('#servicesGrid').innerHTML=c.services.map(s=>'<div class="service"><div class="service-number">'+esc(s.n)+'</div><h3>'+esc(s.t)+'</h3><p>'+esc(s.d)+'</p></div>').join('');
-    $('#whyGrid').innerHTML=c.why.map((w,i)=>'<div class="why-item"><div class="why-number">'+String(i+1).padStart(2,'0')+'</div><div><h3>'+esc(w.t)+'</h3><p>'+esc(w.d)+'</p></div></div>').join('');
+    $('#servicesGrid').innerHTML=(c.services||[]).map(s=>'<div class="service"><div class="service-number">'+esc(s.n)+'</div><h3>'+esc(s.t)+'</h3><p>'+esc(s.d)+'</p></div>').join('');
+    $('#whyGrid').innerHTML=(c.why||[]).map((w,i)=>'<div class="why-item"><div class="why-number">'+String(i+1).padStart(2,'0')+'</div><div><h3>'+esc(w.t)+'</h3><p>'+esc(w.d)+'</p></div></div>').join('');
     /* CTA */
     $('#ctaTitle').textContent=c.cta.title;$('#ctaDesc').textContent=c.cta.desc;$('#ctaBtn').textContent=c.cta.btn;
-    $('#ctaBtn').href=waLink('Halo '+c.site.name+'! Saya ingin bertanya tentang paket perjalanan Bali.');
+    $('#ctaBtn').href=waLink(U.waCta.replace('{name}',c.site.name));
     setImage($('#ctaImg'),c.imgCta,'cta');
     /* footer */
     $('#footName').textContent=c.site.name;$('#footName2').textContent=c.site.name;$('#footDesc').textContent=c.site.footDesc;
-    $('#footActs').innerHTML=c.activities.map(a=>'<a href="#aktivitas">'+esc(a.title)+'</a>').join('');
+    $('#footActs').innerHTML=(c.activities||[]).map(a=>'<a href="#aktivitas">'+esc(a.title)+'</a>').join('');
     $('#footMail').innerHTML=ico('mail',13)+esc(c.site.email);$('#footMail').href='mailto:'+c.site.email;
-    $('#footWa').innerHTML=ico('wa',13)+'WhatsApp';$('#footWa').href=waLink('Halo!');
+    $('#footWa').innerHTML=ico('wa',13)+U.wa;$('#footWa').href=waLink(U.waHi.replace('{name}',c.site.name));
     $('#footYear').textContent=new Date().getFullYear();
-    $('#waFloat').href=waLink('Halo '+c.site.name+'!');
+    $('#waFloat').href=waLink(U.waHi.replace('{name}',c.site.name));
+    $('#btnWa').innerHTML=ico('wa',15)+U.sendWa;
+    $('#btnWa').href=waLink(U.waCta.replace('{name}',c.site.name));
     renderBookingOptions();
+    applyI18n();
     observeReveals();}
 
 /* ===== BOOKING ===== */
 function renderBookingOptions(){
+    const cfg=DC();
     const sel=$('#inPkg'),prev=sel.value;
-    sel.innerHTML=CFG.packages.map(p=>'<option value="'+esc(p.id)+'">'+esc(p.title)+' — '+rupiah(p.price)+esc(p.unit)+'</option>').join('');
-    if(prev&&CFG.packages.some(p=>p.id===prev))sel.value=prev;
-    $('#actChecks').innerHTML=CFG.activities.map(a=>'<label class="act-check"><input type="checkbox" data-act-price="'+esc(a.id)+'" onchange="this.closest(\'.act-check\').classList.toggle(\'on\',this.checked);updateSummary()"><span class="ac-ico">'+ico(actIcon(a),17)+'</span><span>'+esc(a.title)+'<small>+'+rupiah(a.price)+esc(a.unit)+'</small></span></label>').join('');
+    sel.innerHTML=(cfg.packages||[]).map(p=>'<option value="'+esc(p.id)+'">'+esc(p.title)+' — '+rupiah(p.price)+esc(p.unit||'')+'</option>').join('');
+    if(prev&&(cfg.packages||[]).some(p=>p.id===prev))sel.value=prev;
+    $('#actChecks').innerHTML=(cfg.activities||[]).map(a=>'<label class="act-check"><input type="checkbox" data-act-price="'+esc(a.id)+'" onchange="this.closest(\'.act-check\').classList.toggle(\'on\',this.checked);updateSummary()"><span class="ac-ico">'+ico(actIcon(a),17)+'</span><span>'+esc(a.title)+'<small>+'+rupiah(a.price)+esc(a.unit||'')+'</small></span></label>').join('');
     updateSummary();}
+function pkgTotal(p,n){return isPer(p.unit)?p.price*n:p.price;}
+function actTotal(a,n){return isPer(a.unit)?a.price*n:a.price;}
 function pax(){return Math.max(1,parseInt($('#stVal').textContent)||1);}
 function updateSummary(){
-    const p=CFG.packages.find(x=>x.id===$('#inPkg').value)||CFG.packages[0];if(!p)return;
+    const cfg=DC(),U=getUI();
+    const p=(cfg.packages||[]).find(x=>x.id===$('#inPkg').value)||(cfg.packages||[])[0];if(!p)return;
     const n=pax();
-    $('#sumPkg').textContent=p.title;
-    const t=$('#inTgl').value;
-    $('#sumTgl').textContent=t?new Date(t+'T00:00:00').toLocaleDateString('id-ID',{weekday:'long',day:'numeric',month:'long',year:'numeric'}):'—';
+    $('#sumPkgV').textContent=p.title;
+    const t=$('#inTgl').value,loc=LOC[LANG]||'id-ID';
+    $('#sumTgl').textContent=t?new Date(t+'T00:00:00').toLocaleDateString(loc,{weekday:'long',day:'numeric',month:'long',year:'numeric'}):'—';
     $('#sumPickup').textContent=$('#inArea').value;
-    $('#sumPax').textContent=n+' orang';
-    const acts=[...document.querySelectorAll('#actChecks input:checked')].map(i=>CFG.activities.find(a=>a.id===i.dataset.actPrice)).filter(Boolean);
+    $('#sumPax').textContent=U.paxUnit.replace('{n}',n);
+    const acts=[...document.querySelectorAll('#actChecks input:checked')].map(i=>(cfg.activities||[]).find(a=>a.id===i.dataset.actPrice)).filter(Boolean);
     $('#sumAct').textContent=acts.length?acts.map(a=>a.title).join(', '):'—';
-    let total=p.unit==='/orang'?p.price*n:p.price;
-    acts.forEach(a=>{total+=a.unit==='/orang'?a.price*n:a.price;});
+    let total=pkgTotal(p,n);acts.forEach(a=>{total+=actTotal(a,n);});
     $('#sumTotal').textContent=rupiah(total);}
  $('#stMin').onclick=()=>{$('#stVal').textContent=Math.max(1,pax()-1);updateSummary();};
  $('#stPlus').onclick=()=>{$('#stVal').textContent=Math.min(20,pax()+1);updateSummary();};
 function preselectActivity(id){const cb=document.querySelector('#actChecks input[data-act-price="'+id+'"]');if(cb&&!cb.checked){cb.checked=true;cb.closest('.act-check').classList.add('on');updateSummary();}}
  $('#bookForm').addEventListener('submit',e=>{
     e.preventDefault();
-    const nama=$('#inNama').value.trim(),wa=$('#inWa').value.replace(/\D/g,''),tgl=$('#inTgl').value;
+    const U=getUI(),cfg=DC();
+    const nama=$('#inNama').value.trim(),wa=$('#inWa').value.replace(/\D/g,''),tgl=$('#inTgl').value,catatan=$('#inCatatan').value.trim();
     let ok=true;
     $('#fNama').classList.toggle('err',nama.length<3);if(nama.length<3)ok=false;
     $('#fWa').classList.toggle('err',!(wa.length>=9&&wa.length<=14));if(!(wa.length>=9&&wa.length<=14))ok=false;
     const today=new Date();today.setHours(0,0,0,0);
     const dOk=tgl&&new Date(tgl+'T00:00:00')>=today;
     $('#fTgl').classList.toggle('err',!dOk);if(!dOk)ok=false;
-    if(!ok){toast('Periksa kembali form yang ditandai merah');return;}
-    const p=CFG.packages.find(x=>x.id===$('#inPkg').value)||CFG.packages[0];const n=pax();
-    const acts=[...document.querySelectorAll('#actChecks input:checked')].map(i=>CFG.activities.find(a=>a.id===i.dataset.actPrice)).filter(Boolean);
-    let total=p.unit==='/orang'?p.price*n:p.price;acts.forEach(a=>{total+=a.unit==='/orang'?a.price*n:a.price;});
-    const tglStr=new Date(tgl+'T00:00:00').toLocaleDateString('id-ID',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
-    let msg='Halo '+CFG.site.name+'!\n\nSaya ingin melakukan booking:\n\n• Nama: '+nama+'\n• Paket: '+p.title+' ('+rupiah(p.price)+p.unit+')\n• Tanggal: '+tglStr+'\n• Penjemputan: '+$('#inArea').value+'\n• Peserta: '+n+' orang';
-    if(acts.length)msg+='\n• Aktivitas: '+acts.map(a=>a.title+' (+'+rupiah(a.unit==='/orang'?a.price*n:a.price)+')').join(', ');
-    msg+='\n• Estimasi total: '+rupiah(total);
-    if($('#inCatatan').value.trim())msg+='\n• Catatan: '+$('#inCatatan').value.trim();
-    msg+='\n\nMohon konfirmasi ketersediaannya. Terima kasih!';
+    if(!ok){toast(U.toastErr);return;}
+    const p=cfg.packages.find(x=>x.id===$('#inPkg').value)||cfg.packages[0];const n=pax();
+    const acts=[...document.querySelectorAll('#actChecks input:checked')].map(i=>(cfg.activities||[]).find(a=>a.id===i.dataset.actPrice)).filter(Boolean);
+    let total=pkgTotal(p,n);acts.forEach(a=>{total+=actTotal(a,n);});
+    const loc=LOC[LANG]||'id-ID';
+    const tglStr=new Date(tgl+'T00:00:00').toLocaleDateString(loc,{weekday:'long',day:'numeric',month:'long',year:'numeric'});
+    const actStr=acts.length?acts.map(a=>a.title).join(', '):'-';
+    let msg=U.waHello.replace('{name}',cfg.site.name)+'\n\n'+
+        '• '+U.waName+': '+nama+'\n'+
+        '• '+U.waNumber+': '+wa+'\n'+
+        '• '+U.waPkg+': '+p.title+'\n'+
+        '• '+U.waDate+': '+tglStr+'\n'+
+        '• '+U.waPickup+': '+$('#inArea').value+'\n'+
+        '• '+U.waGuests+': '+U.paxUnit.replace('{n}',n)+'\n'+
+        '• '+U.waActs+': '+actStr+'\n'+
+        '• '+U.waTotal+': '+rupiah(total)+
+        (catatan?'\n• '+U.waNote+': '+catatan:'')+
+        '\n\n'+U.waClosing;
+    /* ★ kirim ke Firebase → terbaca di admin.html (2 path sekaligus) ★ */
+    if(db){
+        const data={nama:nama,wa:wa,pkgId:p.id,paket:p.title,tgl:tgl,pickup:$('#inArea').value,pax:n,aktivitas:acts.map(a=>a.title),total:total,catatan:catatan,status:'baru',lang:LANG,ts:Date.now()};
+        BOOKING_PATHS.forEach(bp=>{try{db.ref(bp).push(data);}catch(err){}});
+    }
     window.open(waLink(msg),'_blank');
-    toast('Membuka WhatsApp…');});
+    toast(U.toastOk);
+});
 
 /* ===== MODAL DETAIL ===== */
 function openDetail(id){
-    const p=CFG.packages.find(x=>x.id===id);if(!p)return;
-    const stops=p.stops.map((s,j)=>'<div class="mstop"><div class="mstop-img"><img data-mstop="'+j+'" alt="'+esc(s.name)+'" loading="lazy" decoding="async"></div><div><div class="mstop-time">'+esc(s.t)+'</div><h4>'+esc(s.name)+'</h4><p>'+esc(s.desc)+'</p></div></div>').join('');
-    $('#modalBody').innerHTML='<div class="modal-hero"><img data-mmain alt="'+esc(p.title)+'"></div><div class="modal-body"><h3>'+esc(p.title)+'</h3><div class="modal-meta"><span>'+ico('star',12)+esc(p.rating)+'</span><span>'+ico('clock',12)+esc(p.dur)+'</span><span>'+ico('pin',12)+esc(p.location)+'</span>'+(p.badge?'<span>'+esc(p.badge)+'</span>':'')+'</div><p style="font-size:13px;color:var(--muted);line-height:1.7">'+esc(p.desc)+'</p><div class="stops-label" style="margin:14px 0 2px">ITINERARY</div>'+stops+'<div class="stops-label" style="margin:16px 0 6px">SUDAH TERMASUK</div>'+p.include.map(i=>'<div style="font-size:12.5px;padding:4px 0;display:flex;gap:8px;align-items:center;color:var(--text)">'+ico('check',13)+esc(i)+'</div>').join('')+'<div class="modal-foot"><div><span class="price-label">Mulai dari</span><span class="price">'+rupiah(p.price)+'<small>'+esc(p.unit)+'</small></span></div><a class="btn-wa" href="'+waLink('Halo! Saya tertarik dengan paket: '+p.title+' ('+rupiah(p.price)+p.unit+'). Mohon info ketersediaannya.')+'" target="_blank" rel="noopener">'+ico('wa',18)+'<span>Booking Paket Ini</span>'+ico('arrow',16)+'</a></div></div>';
-    setImage(document.querySelector('#modalBody img[data-mmain]'),p.main,'pkg.'+p.id+'.main');
-    p.stops.forEach((s,j)=>setImage(document.querySelector('#modalBody img[data-mstop="'+j+'"]'),s.img,'pkg.'+p.id+'.stop'+j));
-    $('#modal').classList.add('open');document.body.style.overflow='hidden';}
+    const U=getUI(),cfg=DC();
+    const p=(cfg.packages||[]).find(x=>x.id===id);if(!p)return;
+    const stops=(p.stops||[]).map((s,i)=>'<div class="mstop"><div class="mstop-img"><img id="ms-'+p.id+'-'+i+'" alt="'+esc(s.name)+'" loading="lazy"></div><div><div class="mstop-time">'+ico('clock',11)+' '+esc(s.t||'')+'</div><h4>'+esc(s.name)+'</h4><p>'+esc(s.desc||s.d||U.mStopDesc.replace('{n}',i+1).replace('{t}',p.title))+'</p></div></div>').join('');
+    $('#modalBody').innerHTML=
+        '<div class="modal-hero"><img id="mHero" alt="'+esc(p.title)+'"></div>'+
+        '<div class="modal-body">'+
+        '<h3>'+esc(p.title)+'</h3>'+
+        '<div class="modal-meta"><span>'+ico('pin',12)+esc(p.location||'')+'</span><span>'+ico('clock',12)+esc(p.dur||'')+'</span><span>'+ico('star',12)+esc(p.rating||'')+'</span></div>'+
+        '<p style="color:var(--muted);font-size:13px;line-height:1.8">'+esc(p.desc||U.mDesc.replace('{n}',(p.stops||[]).length))+'</p>'+
+        '<div class="stops-label" style="margin-top:18px">'+U.mRoute+'</div>'+stops+
+        '<div class="stops-label" style="margin-top:16px">'+U.mInc+'</div>'+
+        '<div class="modal-meta" style="margin-bottom:0">'+(p.include||[]).map(f=>'<span>'+ico('check',12)+esc(f)+'</span>').join('')+'</div>'+
+        '<div class="modal-foot"><div><span class="price-label">'+U.from+'</span><div class="price">'+rupiah(p.price)+'<small>'+esc(p.unit||'')+'</small></div></div>'+
+        '<a class="btn-wa" target="_blank" rel="noopener" href="'+waLink(U.waInterest.replace('{name}',cfg.site.name).replace('{pkg}',p.title))+'">'+ico('wa',15)+U.mBook+'</a></div>'+
+        '</div>';
+    setImage(document.getElementById('mHero'),p.main,'pkg.'+p.id+'.main');
+    (p.stops||[]).forEach((s,i)=>setImage(document.getElementById('ms-'+p.id+'-'+i),s.img,stopKey(p,s,i)));
+    $('#modal').classList.add('open');
+    document.body.style.overflow='hidden';
+}
 function closeModal(){$('#modal').classList.remove('open');document.body.style.overflow='';}
  $('#modal').addEventListener('click',e=>{if(e.target.id==='modal')closeModal();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
 
-/* reveal on scroll */
+/* ===== REVEAL ANIMATION ===== */
 let revObs;
 function observeReveals(){
-    if(!revObs)revObs=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting){en.target.classList.add('in');revObs.unobserve(en.target);}}),{threshold:.12});
-    document.querySelectorAll('.reveal:not(.in)').forEach(el=>revObs.observe(el));}
+    if(!('IntersectionObserver' in window)){document.querySelectorAll('.reveal').forEach(el=>el.classList.add('in'));return;}
+    if(revObs)revObs.disconnect();
+    revObs=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting){en.target.classList.add('in');revObs.unobserve(en.target);}}),{threshold:.12});
+    document.querySelectorAll('.reveal:not(.in)').forEach(el=>revObs.observe(el));
+}
 
-/* ===== ★ SINKRONISASI REAL-TIME DARI ADMIN ★ ===== */
-db.ref('site/config').on('value',snap=>{
-    if(!snap.exists())return;
+/* ================================================================
+   ★ SINKRON DENGAN ADMIN.HTML — path 'site/config' (persis sama) ★
+   ================================================================ */
+if(db){
+  CONFIG_PATHS.forEach(p=>{
     try{
-        CFG=deepMerge(JSON.parse(JSON.stringify(DEFAULTS)),snap.val());
-        persistCfg();
+      db.ref(p).on('value',s=>{
+        if(configPathFound&&configPathFound!==p)return;
+        const raw=s.val();
+        if(!raw||typeof raw!=='object')return;
+        const v=normalizeFB(raw);
+        if(!looksLikeConfig(v))return;
+        configPathFound=p;
+        console.log('%c[BGT] ✅ TERHUBUNG ke admin — config ditemukan di "'+p+'" ('+((v.packages||[]).length||0)+' paket)','color:#1faa59;font-weight:bold');
+        try{localStorage.setItem(CFG_KEY,JSON.stringify(v));}catch(e){}
+        CFG=deepMerge(JSON.parse(JSON.stringify(DEFAULTS)),v);
         renderAll();
-    }catch(e){console.warn('Sinkron gagal:',e);}
-});
+      },err=>{console.warn('[BGT] Gagal baca "'+p+'" ('+(err.code||err.message)+') — cek Rules Firebase.');});
+    }catch(e){}
+  });
+  setTimeout(()=>{
+    if(configPathFound){console.log('[BGT] Status: TERHUBUNG dengan admin.html ✔');}
+    else{console.warn('[BGT] Belum ada config di cloud. Buka admin.html → klik "Simpan & Tayangkan", lalu refresh.');toast('Buka admin.html lalu klik Simpan & Tayangkan');}
+  },4000);
+}
 
-/* init */
- $('#menuBtn').innerHTML=ico('menu',22);
- $('#btnWa').innerHTML=ico('wa',18)+'<span>Kirim ke WhatsApp</span>'+ico('arrow',16);
+/* ===== INIT ===== */
+const langSel=$('#langSel');
+if(langSel){langSel.value=LANG;langSel.addEventListener('change',e=>setLang(e.target.value));}
 renderAll();
 </script>
 </body>
