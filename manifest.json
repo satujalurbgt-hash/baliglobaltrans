@@ -1,0 +1,13 @@
+{
+  "name": "Bali Global Trans — Paket Tour, Aktivitas & Water Sport Bali",
+  "short_name": "Bali Global Trans",
+  "description": "Paket tour private, aktivitas seru, water sport, dan airport transfer di Bali.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0f5e96",
+  "theme_color": "#0f5e96",
+  "icons": [
+    { "src": "512B.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "512B.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
