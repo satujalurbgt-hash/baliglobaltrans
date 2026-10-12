@@ -398,10 +398,8 @@ button{font-family:inherit;cursor:pointer;touch-action:manipulation}
 <script>
 /* ================================================================
    WEBSITE — BALI GLOBAL TRANS (FINAL + BILINGUAL ID/EN)
-   • Terjemahan penuh: hero, section, paket, aktivitas, destinasi,
-     layanan, promo, CTA, ringkasan, pesan WA
    • Total = (harga kategori + aktivitas) × jumlah orang
-   • Ikon SVG real • Alamat+GPS • WA link Google Maps
+   • FIX: kategori harga selalu tampil (fallback otomatis jika tiers=0)
    ================================================================ */
 let db=null;
 try{
@@ -444,7 +442,7 @@ packages:[
 {id:'adventure',badge:'ADRENALIN',title:'Adventure: Rafting + ATV + Swing',location:'Sungai Ayung • Ubud • Tegallalang',rating:'4.9',price:950000,unit:'/orang',dur:'10 Jam',tiers:{solo:950000,duo:900000,family:900000,group:850000},desc:'Paket seru 3 aktivitas dalam sehari untuk yang suka tantangan — cocok berpasangan atau tim.',main:{place:'Arung Jeram Sungai Ayung',commons:'White water rafting Ayung|Rafting Bali'},stops:[{sid:'s0',t:'08.00',name:'Arung Jeram Sungai Ayung',desc:'Rafting grade II–III ±2 jam melewati tebing, ukiran sungai & air terjun kecil.',img:{place:'Rafting Bali',commons:'White water rafting Ayung Bali'}},{sid:'s1',t:'11.00',name:'ATV Ride Ubud',desc:'Setir quad bike melewati hutan, sungai dangkal, terowongan bambu & jalur lumpur.',img:{place:'ATV ride Bali',commons:'Quad bike Bali'}},{sid:'s2',t:'13.30',name:'Alas Harum Swing',desc:'Ayunan tinggi di atas sawah + makan siang dengan pemandangan hijau.',img:{place:'Alas Harum Swing',commons:'Bali Swing'}},{sid:'s3',t:'15.30',name:'Air Terjun Tegenungan',desc:'Basuh lumpur & lelah di air terjun Tegenungan sebelum kembali ke hotel.',img:{place:'Air Terjun Tegenungan',commons:'Tegenungan waterfall'}}],include:['Mobil AC + driver','Instruktur & alat safety','Perlengkapan rafting/ATV','Makan siang sederhana']},
 {id:'watersport',badge:'WATER SPORT',title:'Water Sport & Uluwatu Sunset',location:'Tanjung Benoa • Pandawa • Uluwatu',rating:'4.9',price:850000,unit:'/mobil',dur:'10 Jam',tiers:{solo:0,duo:0,family:0,group:0},desc:'Pagi seru di laut selatan Bali, siang santai di pantai, sore ditutup kecak api di Uluwatu.',main:{place:'Water sport Tanjung Benoa',commons:'Parasailing Tanjung Benoa'},stops:[{sid:'s0',t:'09.00',name:'Water Sport Tanjung Benoa',desc:'Paket parasailing + banana boat + jet ski di laut tenang Tanjung Benoa.',img:{place:'Parasailing Tanjung Benoa',commons:'Parasailing Tanjung Benoa'}},{sid:'s1',t:'11.30',name:'Pantai Pandawa',desc:'"Pantai Rahasia" yang terselip di antara tebing kapur putih raksasa.',img:{place:'Pantai Pandawa',commons:'Pandawa beach Bali'}},{sid:'s2',t:'13.30',name:'Garuda Wisnu Kencana',desc:'Patung setinggi 121 meter — ikon tertinggi Bali — di taman budaya GWK.',img:{place:'Garuda Wisnu Kencana',commons:'Garuda Wisnu Kencana'}},{sid:'s3',t:'16.30',name:'Uluwatu & Kecak Fire Dance',desc:'Sunset di puncak tebing 70 meter + pertunjukan tari kecak api saat senja (opsional).',img:{place:'Pura Luhur Uluwatu',commons:'Uluwatu temple|Uluwatu sunset'}}],include:['Mobil AC + driver','Bahan bakar & parkir','Air mineral','Bantuan beli tiket aktivitas']},
 {id:'bedugul',badge:'NATURE',title:'Bedugul & Jatiluwih Heritage',location:'Bedugul • Jatiluwih • Mengwi',rating:'4.8',price:850000,unit:'/mobil',dur:'10 Jam',tiers:{solo:0,duo:0,family:0,group:0},desc:'Udara sejuk pegunungan, pura terapung, gerbang ikonik, dan terasering UNESCO terluas di Bali.',main:{place:'Pura Ulun Danu Bratan',commons:'Ulun Danu Bratan'},stops:[{sid:'s0',t:'09.30',name:'Pura Ulun Danu Bratan',desc:'Pura "terapung" ikonik di Danau Beratan, dibangun 1633 untuk Dewi Danu.',img:{place:'Pura Ulun Danu Bratan',commons:'Ulun Danu Bratan'}},{sid:'s1',t:'11.00',name:'Handara Gate',desc:'Gerbang candi bentar ikonik yang viral — antriannya sepadan dengan fotonya.',img:{place:'Handara Gate Bali',commons:'Handara Gate Bali'}},{sid:'s2',t:'13.00',name:'Jatiluwih Rice Terrace',desc:'Terasering UNESCO terluas di Bali dengan pemandangan Gunung Batukaru.',img:{place:'Jatiluwih Rice Terrace',commons:'Jatiluwih rice terrace'}},{sid:'s3',t:'15.30',name:'Pura Taman Ayun',desc:'Pura kerajaan Mengwi dengan taman kolam luas — warisan dunia UNESCO.',img:{place:'Pura Taman Ayun',commons:'Taman Ayun temple'}}],include:['Mobil AC + driver','Bahan bakar & parkir','Air mineral','Sarung untuk masuk pura']},
-{id:'lempuyang',badge:'EAST BALI',title:'Lempuyang Gate of Heaven',location:'Karangasem • Timur Bali',rating:'4.9',price:900000,unit:'/mobil',dur:'11–12 Jam',tiers:{solo:0,duo:0,family:0,group:0},desc:'Perjalanan ke timur Bali: gerbang surga, taman air kerajaan, dan gua kelelawar di tebing laut.',main:{place:'Pura Lempuyang',commons:'Lempuyang temple|Gate of Heaven Bali'},stops:[{sid:'s0',t:'08.00',name:'Pura Lempuyang',desc:'"Gate of Heaven" dengan latar Gunung Agung — foto paling ikonik di Bali.',img:{place:'Pura Lempuyang',commons:'Lempuyang temple'}},{sid:'s1',t:'11.00',name:'Tirta Gangga',desc:'Taman air pura kerajaan Karangasem dengan patung, kolam iko, dan langkah batu.',img:{place:'Tirta Gangga',commons:'Tirta Gangga water palace'}},{sid:'s2',t:'13.00',name:'Taman Ujung Sukasada',desc:'Taman air kerajaan dengan jembatan putih dan danau menghadap lautan.',img:{place:'Taman Ujung Sukasada',commons:'Taman Ujung water palace'}},{sid:'s3',t:'15.30',name:'Goa Lawah Temple',desc:'Pura di mulut gua berisi ribuan kelelawar, menghadap pantai selatan Lombok.',img:{place:'Goa Lawah',commons:'Goa Lawah temple'}}],include:['Mobil AC + driver','Bahan bakar & parkir','Air mineral','Sarung untuk masuk pura']}
+{id:'lempuyang',badge:'EAST BALI',title:'Lempuyang Gate of Heaven',location:'Karangasem • Timur Bali',rating:'4.9',price:900000,unit:'/mobil',dur:'11–12 Jam',tiers:{solo:0,duo:0,family:0,group:0},desc:'Perjalanan ke timur Bali: gerbang surga, taman air kerajaan, dan gua kelelawar di tebing laut.',main:{place:'Pura Lempuyang',commons:'Lempuyang temple|Gate of Heaven Bali'},stops:[{sid:'s0',t:'08.00',name:'Pura Lempuyang',desc:'"Gate of Heaven" dengan latar Gunung Agung — foto paling ikonik di Bali.',img:{place:'Pura Lempuyang',commons:'Lempuyang temple'}},{sid:'s1',t:'11.00',name:'Tirta Gangga',desc:'Taman air pura kerajaan Karangasem dengan patung, kolam ikan, dan langkah batu.',img:{place:'Tirta Gangga',commons:'Tirta Gangga water palace'}},{sid:'s2',t:'13.00',name:'Taman Ujung Sukasada',desc:'Taman air kerajaan dengan jembatan putih dan danau menghadap lautan.',img:{place:'Taman Ujung Sukasada',commons:'Taman Ujung water palace'}},{sid:'s3',t:'15.30',name:'Goa Lawah Temple',desc:'Pura di mulut gua berisi ribuan kelelawar, menghadap pantai selatan Lombok.',img:{place:'Goa Lawah',commons:'Goa Lawah temple'}}],include:['Mobil AC + driver','Bahan bakar & parkir','Air mineral','Sarung untuk masuk pura']}
 ]};
 
 /* ===== DATA AKTIVITAS & DESTINASI (fallback jika admin belum isi) ===== */
@@ -455,7 +453,7 @@ const FALLBACK_ACTS=[
 {id:'parasailing',title:'Parasailing Tanjung Benoa',desc:'Terbang layang di atas laut tenang Tanjung Benoa ditarik speedboat.',price:250000,unit:'/orang',emoji:'🪂',img:{place:'Parasailing Bali',commons:'Parasailing Tanjung Benoa'},chips:['Laut Tenang','1x Terbang']},
 {id:'snorkeling',title:'Snorkeling Blue Lagoon',desc:'Dua spot snorkeling dengan terumbu karang dan ikan warna-warni, alat lengkap.',price:350000,unit:'/orang',emoji:'🤿',img:{place:'Snorkeling Bali',commons:'Snorkeling Bali'},chips:['2 Spot','Alat Lengkap']},
 {id:'jetski',title:'Jet Ski Tanjung Benoa',desc:'Kemudikan jet ski sendiri di laut tenang selama 15 menit dengan instruktur.',price:300000,unit:'/15 menit',emoji:'🚤',img:{place:'Jet ski Bali',commons:'Jet ski Bali'},chips:['Sendiri','15 Menit']},
-{id:'tubing',title:'Bali Tubing Serayu',desc:'Menyusuri sungai santai dengan ban tubung — seru untuk keluarga dengan anak.',price:300000,unit:'/orang',emoji:'🛟',img:{place:'Bali tubing',commons:'River tubing Bali'},chips:['Keluarga','Santai']},
+{id:'tubing',title:'Bali Tubing Serayu',desc:'Menyusuri sungai santai dengan ban tubing — seru untuk keluarga dengan anak.',price:300000,unit:'/orang',emoji:'🛟',img:{place:'Bali tubing',commons:'River tubing Bali'},chips:['Keluarga','Santai']},
 {id:'batur',title:'Sunrise Trekking Mount Batur',desc:'Trekking dini hari ke puncak Batur (1.717 mdpl) + sarapan di atas awan.',price:450000,unit:'/orang',emoji:'⛰️',img:{place:'Mount Batur sunrise',commons:'Mount Batur sunrise'},chips:['Dini Hari','Sarapan']}
 ];
 const FALLBACK_DESTS=[
@@ -468,10 +466,10 @@ const FALLBACK_DESTS=[
 ];
 
 /* ===== TEKS UI (ID) ===== */
-const ID_UI={navHome:'Beranda',navPaket:'Paket Tour',navAct:'Aktivitas',navDest:'Destinasi',navLay:'Layanan',navBook:'Booking',sWhereL:'Mau ke mana?',sDurL:'Durasi',sTypeL:'Tipe perjalanan',sBtn:'Cari Paket',fNama:'Nama Lengkap',fNamaMsg:'Nama minimal 3 huruf.',fWa:'Nomor WhatsApp',fWaMsg:'Nomor tidak valid (9–14 digit).',fTgl:'Tanggal Tour',fTglMsg:'Pilih tanggal mulai hari ini.',fPax:'Jumlah Orang',fPkg:'Paket Tour',fArea:'Area Penjemputan',areaOther:'Lainnya (tulis di alamat)',fTier:'Kategori Harga',fAlamat:'Alamat Penjemputan Lengkap',fAlamatMsg:'Tulis alamat lengkap ATAU kirim titik lokasi GPS.',fActs:'Tambah Aktivitas (opsional)',fNote:'Catatan (opsional)',fSubmit:'Buat Permintaan Booking',sumTitle:'Ringkasan permintaan',sumSub:'Periksa sekali lagi, lalu kirim ke WhatsApp kami.',sumPkg:'Paket',sumTierL:'Kategori',sumCalcL:'Perhitungan',sumTgl:'Tanggal',sumPick:'Penjemputan',sumAlamat:'Alamat',sumPax:'Peserta',sumAct:'Aktivitas',sumTot:'Estimasi total',sumNote:'*Sendiri 1 • Berdua 2 • Keluarga 3–6 • Group 7–45 orang. Estimasi = (harga kategori + tiket aktivitas) × jumlah orang.',btnWa:'Kirim via WhatsApp',footNav:'Navigasi',footActs:'Aktivitas',footKontak:'Kontak',from:'Mulai dari',detail:'Detail',pick:'Pilih',book:'Booking Paket Ini',locBtn:'Pakai Lokasi Saya',locOk:'Lokasi terdeteksi:',locErr:'Gagal mengambil lokasi. Izinkan akses lokasi atau tulis alamat.',locBusy:'Mencari…',sent:'Permintaan terkirim! Membuka WhatsApp…',addrOk:'Alamat/GPS wajib diisi.',tonight:'per orang',percar:'per mobil',perperson:'per orang',tiers:{solo:'Sendiri',duo:'Berdua',family:'Keluarga',group:'Group'},tiersSub:{solo:'1 orang',duo:'2 orang',family:'3–6 orang',group:'7+ orang'},stops:'Rute & Jadwal',include:'Termasuk',noAct:'—'};
+const ID_UI={navHome:'Beranda',navPaket:'Paket Tour',navAct:'Aktivitas',navDest:'Destinasi',navLay:'Layanan',navBook:'Booking',sWhereL:'Mau ke mana?',sDurL:'Durasi',sTypeL:'Tipe perjalanan',sBtn:'Cari Paket',fNama:'Nama Lengkap',fNamaMsg:'Nama minimal 3 huruf.',fWa:'Nomor WhatsApp',fWaMsg:'Nomor tidak valid (9–14 digit).',fTgl:'Tanggal Tour',fTglMsg:'Pilih tanggal mulai hari ini.',fPax:'Jumlah Orang',fPkg:'Paket Tour',fArea:'Area Penjemputan',areaOther:'Lainnya (tulis di alamat)',fTier:'Kategori Harga',fAlamat:'Alamat Penjemputan Lengkap',fAlamatMsg:'Tulis alamat lengkap ATAU kirim titik lokasi GPS.',fActs:'Tambah Aktivitas (opsional)',fNote:'Catatan (opsional)',fSubmit:'Buat Permintaan Booking',sumTitle:'Ringkasan permintaan',sumSub:'Periksa sekali lagi, lalu kirim ke WhatsApp kami.',sumPkg:'Paket',sumTierL:'Kategori',sumCalcL:'Perhitungan',sumTgl:'Tanggal',sumPick:'Penjemputan',sumAlamat:'Alamat',sumPax:'Peserta',sumAct:'Aktivitas',sumTot:'Estimasi total',sumNote:'*Sendiri 1 • Berdua 2 • Keluarga 3–6 • Group 7–45 orang. Estimasi = (harga kategori + tiket aktivitas) × jumlah orang.',btnWa:'Kirim via WhatsApp',footNav:'Navigasi',footActs:'Aktivitas',footKontak:'Kontak',from:'Mulai dari',detail:'Detail',pick:'Pilih',book:'Booking Paket Ini',locBtn:'Pakai Lokasi Saya',locOk:'Lokasi terdeteksi:',locErr:'Gagal mengambil lokasi. Izinkan akses lokasi atau tulis alamat.',locBusy:'Mencari…',sent:'Permintaan terkirim! Membuka WhatsApp…',addrOk:'Periksa kembali data yang belum lengkap.',tonight:'per orang',percar:'per mobil',perperson:'per orang',tiers:{solo:'Sendiri',duo:'Berdua',family:'Keluarga',group:'Group'},tiersSub:{solo:'1 orang',duo:'2 orang',family:'3–6 orang',group:'7+ orang'},stops:'Rute & Jadwal',include:'Termasuk',noAct:'—'};
 
 /* ===== TERJEMAHAN INGGRIS ===== */
-const EN={ui:{navHome:'Home',navPaket:'Tour Packages',navAct:'Activities',navDest:'Destinations',navLay:'Services',navBook:'Booking',sWhereL:'Where to?',sDurL:'Duration',sTypeL:'Trip type',sBtn:'Browse Packages',fNama:'Full Name',fNamaMsg:'Name must be at least 3 letters.',fWa:'WhatsApp Number',fWaMsg:'Invalid number (9–14 digits).',fTgl:'Tour Date',fTglMsg:'Pick a date from today onward.',fPax:'Participants',fPkg:'Tour Package',fArea:'Pickup Area',areaOther:'Other (write in address)',fTier:'Price Tier',fAlamat:'Full Pickup Address',fAlamatMsg:'Write the full address OR send a GPS pin.',fActs:'Add Activities (optional)',fNote:'Notes (optional)',fSubmit:'Request Booking',sumTitle:'Request summary',sumSub:'Check once more, then send to our WhatsApp.',sumPkg:'Package',sumTierL:'Tier',sumCalcL:'Calculation',sumTgl:'Date',sumPick:'Pickup area',sumAlamat:'Address',sumPax:'Participants',sumAct:'Activities',sumTot:'Estimated total',sumNote:'*Solo 1 • Couple 2 • Family 3–6 • Group 7–45 people. Estimate = (tier price + activity tickets) × participants.',btnWa:'Send via WhatsApp',footNav:'Navigation',footActs:'Activities',footKontak:'Contact',from:'From',detail:'Detail',pick:'Select',book:'Book This Package',locBtn:'Use My Location',locOk:'Location detected:',locErr:'Could not get location. Allow access or type your address.',locBusy:'Locating…',sent:'Request sent! Opening WhatsApp…',addrOk:'Address or GPS is required.',percar:'per car',perperson:'per person',tiers:{solo:'Solo',duo:'Couple',family:'Family',group:'Group'},tiersSub:{solo:'1 pax',duo:'2 pax',family:'3–6 pax',group:'7+ pax'},stops:'Route & Schedule',include:'Includes',noAct:'—'},
+const EN={ui:{navHome:'Home',navPaket:'Tour Packages',navAct:'Activities',navDest:'Destinations',navLay:'Services',navBook:'Booking',sWhereL:'Where to?',sDurL:'Duration',sTypeL:'Trip type',sBtn:'Browse Packages',fNama:'Full Name',fNamaMsg:'Name must be at least 3 letters.',fWa:'WhatsApp Number',fWaMsg:'Invalid number (9–14 digits).',fTgl:'Tour Date',fTglMsg:'Pick a date from today onward.',fPax:'Participants',fPkg:'Tour Package',fArea:'Pickup Area',areaOther:'Other (write in address)',fTier:'Price Tier',fAlamat:'Full Pickup Address',fAlamatMsg:'Write the full address OR send a GPS pin.',fActs:'Add Activities (optional)',fNote:'Notes (optional)',fSubmit:'Request Booking',sumTitle:'Request summary',sumSub:'Check once more, then send to our WhatsApp.',sumPkg:'Package',sumTierL:'Tier',sumCalcL:'Calculation',sumTgl:'Date',sumPick:'Pickup area',sumAlamat:'Address',sumPax:'Participants',sumAct:'Activities',sumTot:'Estimated total',sumNote:'*Solo 1 • Couple 2 • Family 3–6 • Group 7–45 people. Estimate = (tier price + activity tickets) × participants.',btnWa:'Send via WhatsApp',footNav:'Navigation',footActs:'Activities',footKontak:'Contact',from:'From',detail:'Detail',pick:'Select',book:'Book This Package',locBtn:'Use My Location',locOk:'Location detected:',locErr:'Could not get location. Allow access or type your address.',locBusy:'Locating…',sent:'Request sent! Opening WhatsApp…',addrOk:'Please check the incomplete fields.',percar:'per car',perperson:'per person',tiers:{solo:'Solo',duo:'Couple',family:'Family',group:'Group'},tiersSub:{solo:'1 pax',duo:'2 pax',family:'3–6 pax',group:'7+ pax'},stops:'Route & Schedule',include:'Includes',noAct:'—'},
 search:{where:'Sunrise Kintamani • Penglipuran • Rafting',dur:'10 Hours',type:'Private Tour'},
 sections:{paket:{label:'Journey Options',title:'Bali Tour Packages — 3–4 Destinations per Package',desc:'Every package includes 3–4 main stops with an hour-by-hour route. Tap Detail for the full itinerary.'},aktivitas:{label:'Adrenalin & Fun',title:'Favorite Activities in Bali',desc:'Combine with a tour package or book separately. All run by licensed operators with full safety gear.'},destinasi:{label:'Explore Bali',title:'Favorite Destinations',desc:''},layanan:{label:'BGT Services',title:'Everything you need for your Bali trip',desc:''},tentang:{label:'Why BGT',title:'Comfortable journeys, memorable experiences.',desc:''},booking:{label:'Reservation',title:'Lock in your date',desc:'Fill the form — no upfront payment. We confirm driver availability via WhatsApp.'}},
 services:[{n:'01',t:'Private Tour',d:'Private journeys with a friendly driver and a comfortable vehicle.'},{n:'02',t:'Activity Packages',d:'Rafting, ATV, swing, and water sports with licensed operators.'},{n:'03',t:'Airport Transfer',d:'Pickup and drop-off between the airport and your hotel or villa.'},{n:'04',t:'Custom Trip',d:'Build your own itinerary to match your time and interests.'}],
@@ -510,11 +508,11 @@ function deepMerge(base,ext){
 }
 function fmtIDR(n){return 'Rp '+Number(n||0).toLocaleString('id-ID');}
 function T(){return LANG==='en'?EN.ui:ID_UI;}
-function content(sec){ // konten section: EN override, fallback CFG (ID)
+function content(sec){
   if(LANG==='en'&&EN.sections[sec]){const e=EN.sections[sec];const c=CFG.sections[sec]||{};return{label:e.label,title:e.title,desc:e.desc||c.desc||''};}
   return CFG.sections[sec]||{};
 }
-function pkgT(p,f){ // terjemahan field paket
+function pkgT(p,f){
   if(LANG==='en'&&EN.pkgs[p.id]&&EN.pkgs[p.id][f]!=null)return EN.pkgs[p.id][f];
   return p[f];
 }
@@ -536,7 +534,23 @@ function unitT(u){
 }
 function tierLabel(k){const t=T();return t.tiers[k];}
 function tierSub(k){const t=T();return t.tiersSub[k];}
-function tierPrice(p,k){const v=(p.tiers&&p.tiers[k])||0;return v>0?v:p.price;}
+
+/* ============================================================
+   FIX UTAMA: HARGA KATEGORI SELALU ADA
+   Jika tiers di data = 0 (belum diisi admin), harga dihitung
+   otomatis dari harga dasar paket dengan diskon per kategori,
+   dibulatkan ke 50.000 terdekat.
+   Diskon: Sendiri 0% • Berdua -7% • Keluarga -7% • Group -13%
+   ============================================================ */
+function tierPrice(p,k){
+  if(!p)return 0;
+  const v=(p.tiers&&p.tiers[k])||0;
+  if(v>0)return v;                           // pakai harga dari admin jika ada
+  const base=p.price||0;                     // fallback dari harga dasar
+  const disc={solo:1,duo:0.93,family:0.93,group:0.87}[k]||1;
+  return Math.round(base*disc/50000)*50000;  // bulatkan ke 50.000
+}
+
 function dests(){return (CFG.destinations&&CFG.destinations.length)?CFG.destinations:FALLBACK_DESTS;}
 function acts(){return (CFG.activities&&CFG.activities.length)?CFG.activities:FALLBACK_ACTS;}
 function getWa(){return (CFG.site&&CFG.site.wa)||'6281234567890';}
@@ -556,7 +570,7 @@ function wikiThumb(q){
 }
 function setImg(el,imgObj,fallbackQ){
   if(!el)return;
-  if(imgObj&&imgObj.url){el.src=imgObj.url;return;} // admin bisa set img:{url:'...'} langsung
+  if(imgObj&&imgObj.url){el.src=imgObj.url;return;}
   const q=(imgObj&&(imgObj.commons||'').split('|')[0])||(imgObj&&imgObj.place)||fallbackQ||'Bali';
   wikiThumb(q).then(u=>{if(u)el.src=u;});
 }
@@ -689,7 +703,7 @@ function applyAll(){applyBrand();renderHero();renderSearch();renderSectionHeads(
 /* ===== MODAL ===== */
 function openModal(id){
   const p=(CFG.packages||[]).find(x=>x.id===id);if(!p)return;
-  const t=T(),en=LANG==='en'?EN.pkgs[id]:null;
+  const t=T();
   const meta='<span>'+ic('clock',13)+esc(p.dur||'')+'</span><span>'+ic('star',13)+esc(p.rating||'')+'</span><span>'+ic('pin',13)+esc(p.location||'')+'</span>';
   const stops=(p.stops||[]).map((s,i)=>{
     const st=pkgStopT(p,i,s);
@@ -702,7 +716,7 @@ function openModal(id){
     '<div class="modal-body"><h3>'+esc(pkgT(p,'title')||p.title)+'</h3><div class="modal-meta">'+meta+'</div>'+
     '<p style="font-size:13px;color:var(--muted);line-height:1.7">'+esc(pkgT(p,'desc')||p.desc)+'</p>'+stops+incHtml+
     '<div class="modal-foot"><div><span class="price-label">'+t.from+'</span><span class="price" style="font-size:20px">'+fmtIDR(tp)+'<small> '+unitT(p.unit)+'</small></span></div>'+
-    '<button class="btn-wa" onclick="bookFromModal(\''+p.id+'\')">'+ic('star',16)+t.book+'</button></div></div>';
+    '<button class="btn-wa" onclick="bookFromModal(\''+p.id+'\')">'+t.book+'</button></div></div>';
   $('modal').classList.add('open');
   $('modalBody').querySelectorAll('img[data-q]').forEach(im=>setImg(im,{commons:im.getAttribute('data-q')}));
   document.body.style.overflow='hidden';
@@ -731,12 +745,21 @@ function bookActivity(actId){
 function buildPkgSelect(){
   const prev=$('inPkg').value;
   $('inPkg').innerHTML=(CFG.packages||[]).map(p=>'<option value="'+p.id+'">'+esc(pkgT(p,'title')||p.title)+'</option>').join('');
-  if(selPkg&&$( 'inPkg').querySelector('option[value="'+selPkg+'"]'))$('inPkg').value=selPkg;
+  if(selPkg&&$('inPkg').querySelector('option[value="'+selPkg+'"]'))$('inPkg').value=selPkg;
   else if(prev)$('inPkg').value=prev;
   selPkg=$('inPkg').value;
 }
+
+/* ============================================================
+   FIX: KATEGORI HARGA DI FORM BOOKING
+   • Selalu render 4 kategori: Sendiri / Berdua / Keluarga / Group
+   • Jika paket terpilih tidak ditemukan, pakai paket pertama
+     (tidak pernah kosong lagi)
+   ============================================================ */
 function buildTierPick(){
-  const p=(CFG.packages||[]).find(x=>x.id===selPkg);if(!p)return;
+  let p=(CFG.packages||[]).find(x=>x.id===selPkg)||(CFG.packages||[])[0];
+  if(!p)return;
+  selPkg=p.id;
   $('tierPick').innerHTML=['solo','duo','family','group'].map(k=>
     '<button type="button" class="tier-opt'+(k===selTier?' on':'')+'" data-k="'+k+'" onclick="selTier=\''+k+'\';buildTierPick();updateSummary()">'+tierLabel(k)+'<small>'+tierSub(k)+' • '+fmtIDR(tierPrice(p,k))+'</small></button>').join('');
 }
@@ -748,7 +771,7 @@ function buildActChecks(){
   }).join('');
 }
 function updateSummary(){
-  const p=(CFG.packages||[]).find(x=>x.id===($('inPkg').value||selPkg));if(!p)return;
+  const p=(CFG.packages||[]).find(x=>x.id===($('inPkg').value||selPkg))||(CFG.packages||[])[0];if(!p)return;
   selPkg=p.id;
   const tp=tierPrice(p,selTier);
   const chosen=[...document.querySelectorAll('#actChecks input:checked')].map(cb=>acts().find(a=>a.id===cb.value)).filter(Boolean);
@@ -763,14 +786,13 @@ function updateSummary(){
   $('sumPickup').textContent=$('inArea').value||'—';
   const alamat=$('inAlamat').value.trim();
   $('sumAlamat').textContent=gps&&!alamat?(t.locOk+' '+gps.lat.toFixed(5)+', '+gps.lng.toFixed(5)):(alamat||'—');
-  $('sumPax').textContent=pax+' '+tierSub(selTier).replace(/^\d+\s*/,'').replace(/^(orang|pax)\s*/,'').trim()||pax;
   $('sumPax').textContent=pax;
-  $('sumAct').textContent=chosen.length?chosen.map(a=>actT(a).title.split(' ')[0]).join(', '):t.noAct;
+  $('sumAct').textContent=chosen.length?chosen.map(a=>actT(a).title).join(', '):t.noAct;
   $('sumTotal').textContent=fmtIDR(total);
   updateWaHref(total,chosen);
 }
 function buildWaText(total,chosen){
-  const p=(CFG.packages||[]).find(x=>x.id===selPkg);
+  const p=(CFG.packages||[]).find(x=>x.id===selPkg)||(CFG.packages||[])[0];
   const L=LANG==='id'?{
     head:'*PERMINTAAN BOOKING — BALI GLOBAL TRANS*',nama:'Nama',wa:'WhatsApp',tgl:'Tanggal',pax:'Peserta',pkg:'Paket',tier:'Kategori',pick:'Penjemputan',addr:'Alamat',gps:'Titik GPS',act:'Aktivitas',note:'Catatan',calc:'Perhitungan',tot:'*Estimasi Total'
   }:{
@@ -815,7 +837,7 @@ function setErr(id,on){$(id).classList.toggle('err',on);}
   const eNama=nama.length<3,eWa=!(wa.length>=9&&wa.length<=14),eTgl=!tgl||new Date(tgl+'T00:00:00')<today,eAl=!(alamat.length>=10||gps);
   setErr('fNama',eNama);setErr('fWa',eWa);setErr('fTgl',eTgl);setErr('fAlamat',eAl);
   if(eNama||eWa||eTgl||eAl){toast(t.addrOk);return;}
-  const p=(CFG.packages||[]).find(x=>x.id===selPkg);
+  const p=(CFG.packages||[]).find(x=>x.id===selPkg)||(CFG.packages||[])[0];
   const chosen=[...document.querySelectorAll('#actChecks input:checked')].map(cb=>acts().find(a=>a.id===cb.value)).filter(Boolean);
   const total=(tierPrice(p,selTier)+chosen.reduce((s,a)=>s+(a.price||0),0))*pax;
   const rec={nama:nama,wa:wa,tgl:tgl,pax:pax,pkgId:selPkg,pkgTitle:p.title,tier:selTier,area:$('inArea').value,alamat:alamat,gps:gps||null,acts:chosen.map(a=>({id:a.id,title:a.title,price:a.price})),catatan:$('inCatatan').value.trim(),total:total,lang:LANG,at:Date.now()};
