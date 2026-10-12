@@ -397,9 +397,13 @@ button{font-family:inherit;cursor:pointer;touch-action:manipulation}
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
 <script>
 /* ================================================================
-   WEBSITE — BALI GLOBAL TRANS (FINAL + BILINGUAL ID/EN)
-   • Total = (harga kategori + aktivitas) × jumlah orang
-   • FIX: kategori harga selalu tampil (fallback otomatis jika tiers=0)
+   WEBSITE — BALI GLOBAL TRANS (FINAL + BILINGUAL ID/EN)  [v3]
+   FIX FORM BOOKING:
+   • Data list dinormalisasi — aman walau Firebase menyimpan
+     packages/activities sebagai OBJECT bukan ARRAY
+   • Setiap render dibungkus try/catch — error di 1 bagian
+     TIDAK mematikan bagian lain (form booking tetap terisi)
+   • Kategori harga selalu tampil + fallback otomatis jika tiers=0
    ================================================================ */
 let db=null;
 try{
@@ -407,12 +411,11 @@ try{
   db=firebase.database();
 }catch(e){console.warn('Firebase gagal:',e);}
 
-/* ===== IKON SVG REAL ===== */
+/* ===== IKON SVG ===== */
 const ICONS={
 globe:'<circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>',
 clock:'<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>',
 star:'<path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>',
-car:'<path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/>',
 pin:'<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>',
 waves:'<path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/>',
 bike:'<circle cx="18.5" cy="17.5" r="3.5"/><circle cx="5.5" cy="17.5" r="3.5"/><circle cx="15" cy="5" r="1"/><path d="M12 17.5V14l-3-3 4-3 2 3h2"/>',
@@ -445,7 +448,7 @@ packages:[
 {id:'lempuyang',badge:'EAST BALI',title:'Lempuyang Gate of Heaven',location:'Karangasem • Timur Bali',rating:'4.9',price:900000,unit:'/mobil',dur:'11–12 Jam',tiers:{solo:0,duo:0,family:0,group:0},desc:'Perjalanan ke timur Bali: gerbang surga, taman air kerajaan, dan gua kelelawar di tebing laut.',main:{place:'Pura Lempuyang',commons:'Lempuyang temple|Gate of Heaven Bali'},stops:[{sid:'s0',t:'08.00',name:'Pura Lempuyang',desc:'"Gate of Heaven" dengan latar Gunung Agung — foto paling ikonik di Bali.',img:{place:'Pura Lempuyang',commons:'Lempuyang temple'}},{sid:'s1',t:'11.00',name:'Tirta Gangga',desc:'Taman air pura kerajaan Karangasem dengan patung, kolam ikan, dan langkah batu.',img:{place:'Tirta Gangga',commons:'Tirta Gangga water palace'}},{sid:'s2',t:'13.00',name:'Taman Ujung Sukasada',desc:'Taman air kerajaan dengan jembatan putih dan danau menghadap lautan.',img:{place:'Taman Ujung Sukasada',commons:'Taman Ujung water palace'}},{sid:'s3',t:'15.30',name:'Goa Lawah Temple',desc:'Pura di mulut gua berisi ribuan kelelawar, menghadap pantai selatan Lombok.',img:{place:'Goa Lawah',commons:'Goa Lawah temple'}}],include:['Mobil AC + driver','Bahan bakar & parkir','Air mineral','Sarung untuk masuk pura']}
 ]};
 
-/* ===== DATA AKTIVITAS & DESTINASI (fallback jika admin belum isi) ===== */
+/* ===== FALLBACK AKTIVITAS & DESTINASI ===== */
 const FALLBACK_ACTS=[
 {id:'rafting',title:'Arung Jeram Sungai Ayung',desc:'Rafting grade II–III ±2 jam melewati tebing hijau, ukiran sungai, dan air terjun kecil.',price:450000,unit:'/orang',emoji:'🛶',img:{place:'Rafting Bali',commons:'White water rafting Ayung Bali'},chips:['Grade II–III','±2 Jam']},
 {id:'atv',title:'ATV Ride Ubud',desc:'Kendalikan quad bike melewati hutan, sungai dangkal, terowongan bambu & jalur lumpur.',price:400000,unit:'/orang',emoji:'🏍️',img:{place:'ATV Bali',commons:'Quad bike Bali'},chips:['Quad Bike','±1,5 Jam']},
@@ -466,7 +469,7 @@ const FALLBACK_DESTS=[
 ];
 
 /* ===== TEKS UI (ID) ===== */
-const ID_UI={navHome:'Beranda',navPaket:'Paket Tour',navAct:'Aktivitas',navDest:'Destinasi',navLay:'Layanan',navBook:'Booking',sWhereL:'Mau ke mana?',sDurL:'Durasi',sTypeL:'Tipe perjalanan',sBtn:'Cari Paket',fNama:'Nama Lengkap',fNamaMsg:'Nama minimal 3 huruf.',fWa:'Nomor WhatsApp',fWaMsg:'Nomor tidak valid (9–14 digit).',fTgl:'Tanggal Tour',fTglMsg:'Pilih tanggal mulai hari ini.',fPax:'Jumlah Orang',fPkg:'Paket Tour',fArea:'Area Penjemputan',areaOther:'Lainnya (tulis di alamat)',fTier:'Kategori Harga',fAlamat:'Alamat Penjemputan Lengkap',fAlamatMsg:'Tulis alamat lengkap ATAU kirim titik lokasi GPS.',fActs:'Tambah Aktivitas (opsional)',fNote:'Catatan (opsional)',fSubmit:'Buat Permintaan Booking',sumTitle:'Ringkasan permintaan',sumSub:'Periksa sekali lagi, lalu kirim ke WhatsApp kami.',sumPkg:'Paket',sumTierL:'Kategori',sumCalcL:'Perhitungan',sumTgl:'Tanggal',sumPick:'Penjemputan',sumAlamat:'Alamat',sumPax:'Peserta',sumAct:'Aktivitas',sumTot:'Estimasi total',sumNote:'*Sendiri 1 • Berdua 2 • Keluarga 3–6 • Group 7–45 orang. Estimasi = (harga kategori + tiket aktivitas) × jumlah orang.',btnWa:'Kirim via WhatsApp',footNav:'Navigasi',footActs:'Aktivitas',footKontak:'Kontak',from:'Mulai dari',detail:'Detail',pick:'Pilih',book:'Booking Paket Ini',locBtn:'Pakai Lokasi Saya',locOk:'Lokasi terdeteksi:',locErr:'Gagal mengambil lokasi. Izinkan akses lokasi atau tulis alamat.',locBusy:'Mencari…',sent:'Permintaan terkirim! Membuka WhatsApp…',addrOk:'Periksa kembali data yang belum lengkap.',tonight:'per orang',percar:'per mobil',perperson:'per orang',tiers:{solo:'Sendiri',duo:'Berdua',family:'Keluarga',group:'Group'},tiersSub:{solo:'1 orang',duo:'2 orang',family:'3–6 orang',group:'7+ orang'},stops:'Rute & Jadwal',include:'Termasuk',noAct:'—'};
+const ID_UI={navHome:'Beranda',navPaket:'Paket Tour',navAct:'Aktivitas',navDest:'Destinasi',navLay:'Layanan',navBook:'Booking',sWhereL:'Mau ke mana?',sDurL:'Durasi',sTypeL:'Tipe perjalanan',sBtn:'Cari Paket',fNama:'Nama Lengkap',fNamaMsg:'Nama minimal 3 huruf.',fWa:'Nomor WhatsApp',fWaMsg:'Nomor tidak valid (9–14 digit).',fTgl:'Tanggal Tour',fTglMsg:'Pilih tanggal mulai hari ini.',fPax:'Jumlah Orang',fPkg:'Paket Tour',fArea:'Area Penjemputan',areaOther:'Lainnya (tulis di alamat)',fTier:'Kategori Harga',fAlamat:'Alamat Penjemputan Lengkap',fAlamatMsg:'Tulis alamat lengkap ATAU kirim titik lokasi GPS.',fActs:'Tambah Aktivitas (opsional)',fNote:'Catatan (opsional)',fSubmit:'Buat Permintaan Booking',sumTitle:'Ringkasan permintaan',sumSub:'Periksa sekali lagi, lalu kirim ke WhatsApp kami.',sumPkg:'Paket',sumTierL:'Kategori',sumCalcL:'Perhitungan',sumTgl:'Tanggal',sumPick:'Penjemputan',sumAlamat:'Alamat',sumPax:'Peserta',sumAct:'Aktivitas',sumTot:'Estimasi total',sumNote:'*Sendiri 1 • Berdua 2 • Keluarga 3–6 • Group 7–45 orang. Estimasi = (harga kategori + tiket aktivitas) × jumlah orang.',btnWa:'Kirim via WhatsApp',footNav:'Navigasi',footActs:'Aktivitas',footKontak:'Kontak',from:'Mulai dari',detail:'Detail',pick:'Pilih',book:'Booking Paket Ini',locBtn:'Pakai Lokasi Saya',locOk:'Lokasi terdeteksi:',locErr:'Gagal mengambil lokasi. Izinkan akses lokasi atau tulis alamat.',locBusy:'Mencari…',sent:'Permintaan terkirim! Membuka WhatsApp…',addrOk:'Periksa kembali data yang belum lengkap.',percar:'per mobil',perperson:'per orang',tiers:{solo:'Sendiri',duo:'Berdua',family:'Keluarga',group:'Group'},tiersSub:{solo:'1 orang',duo:'2 orang',family:'3–6 orang',group:'7+ orang'},stops:'Rute & Jadwal',include:'Termasuk',noAct:'—'};
 
 /* ===== TERJEMAHAN INGGRIS ===== */
 const EN={ui:{navHome:'Home',navPaket:'Tour Packages',navAct:'Activities',navDest:'Destinations',navLay:'Services',navBook:'Booking',sWhereL:'Where to?',sDurL:'Duration',sTypeL:'Trip type',sBtn:'Browse Packages',fNama:'Full Name',fNamaMsg:'Name must be at least 3 letters.',fWa:'WhatsApp Number',fWaMsg:'Invalid number (9–14 digits).',fTgl:'Tour Date',fTglMsg:'Pick a date from today onward.',fPax:'Participants',fPkg:'Tour Package',fArea:'Pickup Area',areaOther:'Other (write in address)',fTier:'Price Tier',fAlamat:'Full Pickup Address',fAlamatMsg:'Write the full address OR send a GPS pin.',fActs:'Add Activities (optional)',fNote:'Notes (optional)',fSubmit:'Request Booking',sumTitle:'Request summary',sumSub:'Check once more, then send to our WhatsApp.',sumPkg:'Package',sumTierL:'Tier',sumCalcL:'Calculation',sumTgl:'Date',sumPick:'Pickup area',sumAlamat:'Address',sumPax:'Participants',sumAct:'Activities',sumTot:'Estimated total',sumNote:'*Solo 1 • Couple 2 • Family 3–6 • Group 7–45 people. Estimate = (tier price + activity tickets) × participants.',btnWa:'Send via WhatsApp',footNav:'Navigation',footActs:'Activities',footKontak:'Contact',from:'From',detail:'Detail',pick:'Select',book:'Book This Package',locBtn:'Use My Location',locOk:'Location detected:',locErr:'Could not get location. Allow access or type your address.',locBusy:'Locating…',sent:'Request sent! Opening WhatsApp…',addrOk:'Please check the incomplete fields.',percar:'per car',perperson:'per person',tiers:{solo:'Solo',duo:'Couple',family:'Family',group:'Group'},tiersSub:{solo:'1 pax',duo:'2 pax',family:'3–6 pax',group:'7+ pax'},stops:'Route & Schedule',include:'Includes',noAct:'—'},
@@ -530,33 +533,47 @@ function unitT(u){
   const t=T();
   if(u==='/mobil')return t.percar;
   if(u==='/orang')return t.perperson;
-  return u;
+  return u||'';
 }
-function tierLabel(k){const t=T();return t.tiers[k];}
-function tierSub(k){const t=T();return t.tiersSub[k];}
+function tierLabel(k){const t=T();return t.tiers[k]||k;}
+function tierSub(k){const t=T();return t.tiersSub[k]||'';}
 
-/* ============================================================
-   FIX UTAMA: HARGA KATEGORI SELALU ADA
-   Jika tiers di data = 0 (belum diisi admin), harga dihitung
-   otomatis dari harga dasar paket dengan diskon per kategori,
-   dibulatkan ke 50.000 terdekat.
-   Diskon: Sendiri 0% • Berdua -7% • Keluarga -7% • Group -13%
-   ============================================================ */
+/* FIX: harga kategori selalu ada — fallback otomatis jika tiers=0 */
 function tierPrice(p,k){
   if(!p)return 0;
   const v=(p.tiers&&p.tiers[k])||0;
-  if(v>0)return v;                           // pakai harga dari admin jika ada
-  const base=p.price||0;                     // fallback dari harga dasar
+  if(v>0)return v;
+  const base=p.price||0;
   const disc={solo:1,duo:0.93,family:0.93,group:0.87}[k]||1;
-  return Math.round(base*disc/50000)*50000;  // bulatkan ke 50.000
+  return Math.round(base*disc/50000)*50000;
 }
 
-function dests(){return (CFG.destinations&&CFG.destinations.length)?CFG.destinations:FALLBACK_DESTS;}
-function acts(){return (CFG.activities&&CFG.activities.length)?CFG.activities:FALLBACK_ACTS;}
+/* ============================================================
+   FIX UTAMA: NORMALISASI DATA LIST
+   Firebase bisa menyimpan array sebagai object {0:{...},1:{...}}
+   — fungsi ini mengubahnya kembali ke array agar .map() tidak error
+   ============================================================ */
+function toArr(v){
+  if(Array.isArray(v))return v.filter(Boolean);
+  if(v&&typeof v==='object')return Object.values(v).filter(Boolean);
+  return [];
+}
+function pkgList(){
+  const l=toArr(CFG.packages);
+  return l.length?l:toArr(DEFAULTS.packages); // TIDAK PERNAH kosong
+}
+function acts(){
+  const l=toArr(CFG.activities);
+  return l.length?l:FALLBACK_ACTS;
+}
+function dests(){
+  const l=toArr(CFG.destinations);
+  return l.length?l:FALLBACK_DESTS;
+}
 function getWa(){return (CFG.site&&CFG.site.wa)||'6281234567890';}
 function waLink(text){return 'https://wa.me/'+getWa()+'?text='+encodeURIComponent(text);}
 
-/* ===== GAMBAR WIKIPEDIA (tanpa hosting gambar) ===== */
+/* ===== GAMBAR WIKIPEDIA ===== */
 function wikiThumb(q){
   if(!q)return Promise.resolve('');
   if(imgCache[q])return Promise.resolve(imgCache[q]);
@@ -575,7 +592,7 @@ function setImg(el,imgObj,fallbackQ){
   wikiThumb(q).then(u=>{if(u)el.src=u;});
 }
 
-/* ===== LOAD KONFIG (Firebase + localStorage) ===== */
+/* ===== LOAD KONFIG ===== */
 function loadCfg(){
   const ls=localStorage.getItem('bgt_cfg');
   if(ls){try{CFG=deepMerge(DEFAULTS,JSON.parse(ls));}catch(e){}}
@@ -634,7 +651,7 @@ function renderSectionHeads(){
 function stars(r){const n=Math.round(parseFloat(r)||5);return '★'.repeat(n)+'☆'.repeat(5-n);}
 function renderPackages(){
   const t=T();
-  $('packageGrid').innerHTML=(CFG.packages||[]).map(p=>{
+  $('packageGrid').innerHTML=pkgList().map(p=>{
     const tp=tierPrice(p,'duo');
     const tierRows=['solo','duo','family','group'].map(k=>{
       const v=tierPrice(p,k);
@@ -698,11 +715,19 @@ function renderCTA(){
   $('ctaTitle').textContent=c.title||'';$('ctaDesc').textContent=c.desc||'';$('ctaBtn').textContent=c.btn||'';
   setImg($('ctaImg'),{commons:'Uluwatu temple sunset'},'Uluwatu');
 }
-function applyAll(){applyBrand();renderHero();renderSearch();renderSectionHeads();renderPackages();renderActivities();renderDestinations();renderServices();renderWhy();renderPromo();renderCTA();buildPkgSelect();buildTierPick();buildActChecks();updateSummary();}
+
+/* ============================================================
+   FIX: applyAll dengan try/catch per langkah
+   → error di satu bagian TIDAK menghentikan form booking
+   ============================================================ */
+function applyAll(){
+  const steps=[applyBrand,renderHero,renderSearch,renderSectionHeads,renderPackages,renderActivities,renderDestinations,renderServices,renderWhy,renderPromo,renderCTA,buildPkgSelect,buildTierPick,buildActChecks,updateSummary];
+  steps.forEach(fn=>{try{fn();}catch(e){console.warn('Render gagal di '+fn.name+':',e);}});
+}
 
 /* ===== MODAL ===== */
 function openModal(id){
-  const p=(CFG.packages||[]).find(x=>x.id===id);if(!p)return;
+  const p=pkgList().find(x=>x.id===id);if(!p)return;
   const t=T();
   const meta='<span>'+ic('clock',13)+esc(p.dur||'')+'</span><span>'+ic('star',13)+esc(p.rating||'')+'</span><span>'+ic('pin',13)+esc(p.location||'')+'</span>';
   const stops=(p.stops||[]).map((s,i)=>{
@@ -724,14 +749,16 @@ function openModal(id){
 function closeModal(){$('modal').classList.remove('open');document.body.style.overflow='';}
 function bookFromModal(id){
   closeModal();
-  selPkg=id;$('inPkg').value=id;
+  selPkg=id;const sel=$('inPkg');if(sel&&sel.querySelector('option[value="'+id+'"]'))sel.value=id;
   selTier='duo';
   goTo('booking');buildTierPick();updateSummary();
 }
 function pickTierFromCard(pkgId,k){
-  selPkg=pkgId;$('inPkg').value=pkgId;selTier=k;
+  selPkg=pkgId;const sel=$('inPkg');if(sel&&sel.querySelector('option[value="'+pkgId+'"]'))sel.value=pkgId;
+  selTier=k;
   goTo('booking');buildTierPick();updateSummary();
-  toast(tierLabel(k)+' • '+fmtIDR(tierPrice((CFG.packages||[]).find(x=>x.id===pkgId),k)));
+  const p=pkgList().find(x=>x.id===pkgId);
+  if(p)toast(tierLabel(k)+' • '+fmtIDR(tierPrice(p,k)));
 }
 function bookActivity(actId){
   const a=acts().find(x=>x.id===actId);if(!a)return;
@@ -743,23 +770,22 @@ function bookActivity(actId){
 
 /* ===== FORM BOOKING ===== */
 function buildPkgSelect(){
-  const prev=$('inPkg').value;
-  $('inPkg').innerHTML=(CFG.packages||[]).map(p=>'<option value="'+p.id+'">'+esc(pkgT(p,'title')||p.title)+'</option>').join('');
-  if(selPkg&&$('inPkg').querySelector('option[value="'+selPkg+'"]'))$('inPkg').value=selPkg;
-  else if(prev)$('inPkg').value=prev;
-  selPkg=$('inPkg').value;
+  const list=pkgList();
+  if(!list.length)return;
+  const cur=selPkg||$('inPkg').value;
+  $('inPkg').innerHTML=list.map(p=>'<option value="'+esc(p.id)+'">'+esc(pkgT(p,'title')||p.title)+'</option>').join('');
+  if(cur&&list.some(p=>p.id===cur))$('inPkg').value=cur;
+  selPkg=$('inPkg').value||list[0].id;
 }
 
-/* ============================================================
-   FIX: KATEGORI HARGA DI FORM BOOKING
-   • Selalu render 4 kategori: Sendiri / Berdua / Keluarga / Group
-   • Jika paket terpilih tidak ditemukan, pakai paket pertama
-     (tidak pernah kosong lagi)
-   ============================================================ */
+/* FIX: kategori harga SELALU dirender (4 tombol), pakai paket
+   pertama sebagai cadangan bila paket terpilih tidak ditemukan */
 function buildTierPick(){
-  let p=(CFG.packages||[]).find(x=>x.id===selPkg)||(CFG.packages||[])[0];
+  const list=pkgList();
+  const p=list.find(x=>x.id===selPkg)||list[0];
   if(!p)return;
   selPkg=p.id;
+  if(['solo','duo','family','group'].indexOf(selTier)<0)selTier='duo';
   $('tierPick').innerHTML=['solo','duo','family','group'].map(k=>
     '<button type="button" class="tier-opt'+(k===selTier?' on':'')+'" data-k="'+k+'" onclick="selTier=\''+k+'\';buildTierPick();updateSummary()">'+tierLabel(k)+'<small>'+tierSub(k)+' • '+fmtIDR(tierPrice(p,k))+'</small></button>').join('');
 }
@@ -767,11 +793,13 @@ function buildActChecks(){
   const t=T();
   $('actChecks').innerHTML=acts().map(a=>{
     const at=actT(a),name=actIconName(at);
-    return '<label class="act-check"><input type="checkbox" value="'+a.id+'" onchange="this.closest(\'.act-check\').classList.toggle(\'on\',this.checked);updateSummary()">'+ic(name,16)+'<span>'+esc(at.title)+'<small>+'+fmtIDR(a.price)+' '+unitT(a.unit)+'</small></span></label>';
+    return '<label class="act-check"><input type="checkbox" value="'+esc(a.id)+'" onchange="this.closest(\'.act-check\').classList.toggle(\'on\',this.checked);updateSummary()">'+ic(name,16)+'<span>'+esc(at.title)+'<small>+'+fmtIDR(a.price)+' '+unitT(a.unit)+'</small></span></label>';
   }).join('');
 }
 function updateSummary(){
-  const p=(CFG.packages||[]).find(x=>x.id===($('inPkg').value||selPkg))||(CFG.packages||[])[0];if(!p)return;
+  const list=pkgList();
+  const p=list.find(x=>x.id===($('inPkg').value||selPkg))||list[0];
+  if(!p)return;
   selPkg=p.id;
   const tp=tierPrice(p,selTier);
   const chosen=[...document.querySelectorAll('#actChecks input:checked')].map(cb=>acts().find(a=>a.id===cb.value)).filter(Boolean);
@@ -792,7 +820,7 @@ function updateSummary(){
   updateWaHref(total,chosen);
 }
 function buildWaText(total,chosen){
-  const p=(CFG.packages||[]).find(x=>x.id===selPkg)||(CFG.packages||[])[0];
+  const p=pkgList().find(x=>x.id===selPkg)||pkgList()[0];
   const L=LANG==='id'?{
     head:'*PERMINTAAN BOOKING — BALI GLOBAL TRANS*',nama:'Nama',wa:'WhatsApp',tgl:'Tanggal',pax:'Peserta',pkg:'Paket',tier:'Kategori',pick:'Penjemputan',addr:'Alamat',gps:'Titik GPS',act:'Aktivitas',note:'Catatan',calc:'Perhitungan',tot:'*Estimasi Total'
   }:{
@@ -837,7 +865,7 @@ function setErr(id,on){$(id).classList.toggle('err',on);}
   const eNama=nama.length<3,eWa=!(wa.length>=9&&wa.length<=14),eTgl=!tgl||new Date(tgl+'T00:00:00')<today,eAl=!(alamat.length>=10||gps);
   setErr('fNama',eNama);setErr('fWa',eWa);setErr('fTgl',eTgl);setErr('fAlamat',eAl);
   if(eNama||eWa||eTgl||eAl){toast(t.addrOk);return;}
-  const p=(CFG.packages||[]).find(x=>x.id===selPkg)||(CFG.packages||[])[0];
+  const p=pkgList().find(x=>x.id===selPkg)||pkgList()[0];
   const chosen=[...document.querySelectorAll('#actChecks input:checked')].map(cb=>acts().find(a=>a.id===cb.value)).filter(Boolean);
   const total=(tierPrice(p,selTier)+chosen.reduce((s,a)=>s+(a.price||0),0))*pax;
   const rec={nama:nama,wa:wa,tgl:tgl,pax:pax,pkgId:selPkg,pkgTitle:p.title,tier:selTier,area:$('inArea').value,alamat:alamat,gps:gps||null,acts:chosen.map(a=>({id:a.id,title:a.title,price:a.price})),catatan:$('inCatatan').value.trim(),total:total,lang:LANG,at:Date.now()};
