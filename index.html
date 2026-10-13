@@ -322,8 +322,6 @@ button{font-family:inherit;cursor:pointer;touch-action:manipulation}
     </div>
     <div class="book-grid">
         <form class="form-card reveal" id="bookForm" novalidate>
-           <div class="book-grid">
-        <form class="form-card reveal" id="bookForm" novalidate>
             <div class="f-row">
                 <div class="field" id="fNama"><label data-i18n="fNama">Nama Lengkap</label><input type="text" id="inNama" autocomplete="name"><span class="msg" data-i18n="fNamaMsg">Nama minimal 3 huruf.</span></div>
                 <div class="field" id="fWa"><label data-i18n="fWa">Nomor WhatsApp</label><input type="tel" id="inWa" inputmode="numeric" autocomplete="tel"><span class="msg" data-i18n="fWaMsg">Nomor tidak valid (9–14 digit).</span></div>
@@ -340,38 +338,6 @@ button{font-family:inherit;cursor:pointer;touch-action:manipulation}
                     <select id="inArea"><option value="Kuta / Legian">Kuta / Legian</option><option value="Seminyak">Seminyak</option><option value="Canggu">Canggu</option><option value="Sanur">Sanur</option><option value="Ubud">Ubud</option><option value="Bandara Ngurah Rai">Bandara Ngurah Rai</option><option value="Nusa Dua">Nusa Dua</option><option value="Denpasar">Denpasar</option><option value="Jimbaran">Jimbaran</option><option value="Lovina / Buleleng">Lovina / Buleleng</option><option value="Amed / Karangasem">Amed / Karangasem</option><option value="Lainnya (tulis di alamat)" data-i18n="areaOther">Lainnya (tulis di alamat)</option></select>
                 </div>
             </div>
-            <div class="field" style="margin-bottom:12px" id="fTierWrap">
-                <label data-i18n="fTier">Kategori Harga</label>
-                <div class="tier-pick" id="tierPick"></div>
-            </div>
-            <div class="field" style="margin-bottom:12px" id="fAlamat">
-                <label data-i18n="fAlamat">Alamat Penjemputan Lengkap</label>
-                <textarea id="inAlamat" rows="2"></textarea>
-                <div style="display:flex;gap:8px;margin-top:8px;flex-wrap:wrap;align-items:center">
-                    <button type="button" class="loc-btn" id="btnLoc" onclick="useMyLocation(this)"><span id="btnLocTxt"></span></button>
-                    <span class="loc-info" id="locInfo"></span>
-                </div>
-                <span class="msg" data-i18n="fAlamatMsg">Tulis alamat lengkap ATAU kirim titik lokasi GPS.</span>
-            </div>
-            <div class="field" style="margin-bottom:10px"><label data-i18n="fActs">Tambah Aktivitas (opsional)</label><div class="act-checks" id="actChecks"></div></div>
-            <div class="field"><label data-i18n="fNote">Catatan (opsional)</label><textarea id="inCatatan" rows="2"></textarea></div>
-            <button type="submit" class="btn-submit"><span id="fSubmit" data-i18n="fSubmit">Buat Permintaan Booking</span> <svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button>
-        </form>
-        <aside class="summary reveal">
-            <h3 data-i18n="sumTitle">Ringkasan permintaan</h3><p class="sub" data-i18n="sumSub">Periksa sekali lagi, lalu kirim ke WhatsApp kami.</p>
-            <div class="sum-row"><span data-i18n="sumPkg">Paket</span><b id="sumPkg">—</b></div>
-            <div class="sum-row"><span data-i18n="sumTierL">Kategori</span><b id="sumTier">—</b></div>
-            <div class="sum-row"><span data-i18n="sumCalcL">Perhitungan</span><b id="sumCalc">—</b></div>
-            <div class="sum-row"><span data-i18n="sumTgl">Tanggal</span><b id="sumTgl">—</b></div>
-            <div class="sum-row"><span data-i18n="sumPick">Penjemputan</span><b id="sumPickup">—</b></div>
-            <div class="sum-row"><span data-i18n="sumAlamat">Alamat</span><b id="sumAlamat">—</b></div>
-            <div class="sum-row"><span data-i18n="sumPax">Peserta</span><b id="sumPax">—</b></div>
-            <div class="sum-row"><span data-i18n="sumAct">Aktivitas</span><b id="sumAct">—</b></div>
-            <div class="sum-total"><span data-i18n="sumTot">Estimasi total</span><b id="sumTotal">—</b></div>
-            <p class="sum-note" data-i18n="sumNote">*Sendiri 1 • Berdua 2 • Keluarga 3–6 • Group 7–45 orang. Estimasi = (harga kategori + tiket aktivitas) × jumlah orang.</p>
-            <a class="btn-wa" id="btnWa" href="#" target="_blank" rel="noopener" data-i18n="btnWa">Kirim via WhatsApp</a>
-        </aside>
-    </div>
             <div class="field" style="margin-bottom:12px" id="fTierWrap">
                 <label data-i18n="fTier">Kategori Harga</label>
                 <div class="tier-pick" id="tierPick"></div>
